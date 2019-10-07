@@ -1,0 +1,88 @@
+
+
+
+
+<html>
+
+<head>
+<title>calc</title>
+
+<meta http-equiv="content-type" content="text/html" >
+
+<style type=text/css>
+ .i{border:7px solid red;}
+</style>
+
+<script>
+ var x=0,y=0,b=0, zn;
+  
+  function n1(){  document.getElementById('num').value+=1; if(!b){x*=10;x+=1;}else{y*=10;y+=1; }}
+  function n2(){  document.getElementById('num').value+=2; if(!b){x*=10;x+=2;}else{y*=10;y+=2; }}
+  function n3(){  document.getElementById('num').value+=3; if(!b){x*=10;x+=3;}else{y*=10;y+=3; }}
+  function n4(){  document.getElementById('num').value+=4; if(!b){x*=10;x+=4;}else{y*=10;y+=4; }}
+  function n5(){  document.getElementById('num').value+=5; if(!b){x*=10;x+=5;}else{y*=10;y+=5; }}
+  function n6(){  document.getElementById('num').value+=6; if(!b){x*=10;x+=6;}else{y*=10;y+=6; }}
+  function n7(){  document.getElementById('num').value+=7; if(!b){x*=10;x+=7;}else{y*=10;y+=7; }}
+  function n8(){  document.getElementById('num').value+=8; if(!b){x*=10;x+=8;}else{y*=10;y+=8; }}
+  function n9(){  document.getElementById('num').value+=9; if(!b){x*=10;x+=9;}else{y*=10;y+=9; }}
+  function n0(){ document.getElementById('num').value+=0; if(!b){x*=10;x+=0;}else{y*=10;y+=0;  }}
+  
+  function setpl(){ document.getElementById('num').value+='+';  b=1; zn='+';  }  
+  function setmin(){ document.getElementById('num').value+='-'; b=1; zn='-' }  
+  function setmul(){ document.getElementById('num').value+='*';  b=1; zn='*';  }  
+  function setdiv(){ document.getElementById('num').value+='/'; b=1; zn='/' }  
+  
+  function clc()
+  { 
+   document.getElementById('num').value='';  
+   switch(zn)
+   {
+    case '+': x+=y; break;
+	case '-': x-=y; break;
+    case '*': x*=y; break;
+	case '/': x/=y; break;
+   }
+    
+	y=0;
+   document.getElementById('num').value=x; 
+  
+  }
+  
+  function c(){  document.getElementById('num').value=''; x=y=0; b=0;}
+  
+  
+</script>
+
+</head>
+
+<body>
+
+<input type=number value id=num  onclick>      <br>
+
+<input type=submit value=1 id=1  onclick=n1()>
+<input type=submit value=2 id=2  onclick=n2()>
+<input type=submit value=3 id=3  onclick=n3()>  <br> 
+<input type=submit value=4 id=4  onclick=n4()>
+<input type=submit value=5 id=5  onclick=n5()>
+<input type=submit value=6 id=6  onclick=n6()>  <br>
+<input type=submit value=7 id=7  onclick=n7()>
+<input type=submit value=8 id=8  onclick=n8()>
+<input type=submit value=9 id=9  onclick=n9()> <br>  
+<input type=submit value=0 id=0  onclick=n0()> <br>
+
+  
+<input type=submit value='+' id=pl onclick=setpl()> 
+<input type=submit value='-' id=min onclick=setmin()> 
+<input type=submit value='*' id=mul onclick=setmul()> 
+<input type=submit value='/' id=div onclick=setdiv()> 
+
+<input type=submit value='=' id onclick=clc()><br>
+
+<input type=submit value='c' id onclick=c()> 
+<br>
+
+
+</body>
+
+
+</html>
