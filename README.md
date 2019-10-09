@@ -1,2 +1,2 @@
 # yavor1980.github.io
-yavor1980.github.com
+yavor1980.githubbb.com
