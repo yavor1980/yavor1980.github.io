@@ -1,2 +1,2 @@
-how to launck main.html
+how to launch main.html
 
