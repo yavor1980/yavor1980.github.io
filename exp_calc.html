@@ -1,0 +1,110 @@
+
+
+
+
+<html>
+
+<head>
+<title>exp_calc</title>
+
+<meta http-equiv="content-type" content="text/html" >
+
+<style type=text/css>
+  div
+ {
+  position:absolute;
+  margin:11%;
+  padding:9px;
+  border:27px ridge red;
+  background:yellow;
+  text-align:center;
+ }
+ input
+ {
+  margin-top:9px;
+ }
+</style>
+
+<script>
+ var x=[]; var zn=[]; var op=[]; var n=0; 
+  
+ x[0]=x[1]=x[2]=x[3]=x[4]=0; zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0'; op[0]=op[1]=op[2]=op[3]=op[4]=0;
+  
+  function setn(v){  document.getElementById('num').value+=v; x[n]*=10;x[n]+=v;}
+  
+  
+  function setpl(){if(zn[n]=='0')zn[n]='+'; document.getElementById('num').value+='+';   n++; zn[n]='+'; }  
+  function setmin(){ document.getElementById('num').value+='-';  n++; zn[n]='-'; }  
+  function setmul(){ document.getElementById('num').value+='*';  n++; op[n]='*'; }  
+  function setdiv(){ document.getElementById('num').value+='/';  n++; op[n]='/';}  
+  
+  
+  function c()
+  {document.getElementById('num').value=''; n=0; 
+   x[0]=x[1]=x[2]=x[3]=x[4]=0;
+   zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0'; 
+   op[0]=op[1]=op[2]=op[3]=op[4]=0; 
+  }
+  
+  
+  function clc()
+  { n++;
+   document.getElementById('num').value='';  
+   for(var i=0;i<n;i++)
+    if(zn[i]=='-') x[i]*=-1;
+
+   for(var i=0;i<n;i++)
+   {
+    if(op[i]=='*') {x[i]*=x[i-1]; x[i-1]=0;}
+	if(op[i]=='/') {x[i]=x[i-1]/x[i]; x[i-1]=0;}
+   }
+   for(var i=1;i<n;i++)
+     x[0]+=x[i];  
+	   n=0;   
+	   
+    x[1]=x[2]=x[3]=x[4]=0;
+     zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0';
+	op[0]=op[1]=op[2]=op[3]=op[4]=0;
+	
+   document.getElementById('num').value=x[0]; 
+  
+  }
+  
+  
+</script>
+
+</head>
+
+<body>
+
+<div>
+
+<input type value id=num  onclick>      <br>
+
+<input type=submit value=1 id=1  onclick=setn(1)>
+<input type=submit value=2 id=2  onclick=setn(2)>
+<input type=submit value=3 id=3  onclick=setn(3)>  <br> 
+<input type=submit value=4 id=4  onclick=setn(4)>
+<input type=submit value=5 id=5  onclick=setn(5)>
+<input type=submit value=6 id=6  onclick=setn(6)>  <br>
+<input type=submit value=7 id=7  onclick=setn(7)>
+<input type=submit value=8 id=8  onclick=setn(8)>
+<input type=submit value=9 id=9  onclick=setn(9)> <br>  
+<input type=submit value=0 id=0  onclick=setn(0)> <br>
+
+  
+<input type=submit value='+' id=pl onclick=setpl()> 
+<input type=submit value='-' id=min onclick=setmin()> 
+<input type=submit value='*' id=mul onclick=setmul()> 
+<input type=submit value='/' id=div onclick=setdiv()> 
+
+<input type=submit value='=' id onclick=clc()><br>
+
+<input type=submit value='c' id onclick=c()> <br><br>
+
+</div>
+
+</body>
+
+
+</html>

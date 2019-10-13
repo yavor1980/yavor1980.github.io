@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<body onkeydown=s.sd()>
+<style>
+p{position;
+ height:11px;
+}
+
+</style>
+<canvas id="myCanvas" width="888" height="555" style="border:1px solid #d3d3d3;" onmousedown=s.sh()>
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+<p id=idp onclick></p>
+<input id=idi onkeydown=f() >
+
+<script>
+p=document.getElementById('idp');
+i=document.getElementById('idi');
+
+function f()
+{
+ if(event.keyCode==13) p.innerHTML=i.value;
+}
+
+var c = document.getElementById("myCanvas");
+var p=document.getElementById('idp');
+var ctx = c.getContext("2d");
+var w =c.width; 
+var h =c.height;
+
+var s={x:9,y:9,r:4,d:3,dx:0,dy:0,
+       sd:function()
+	   {
+	     switch(event.keyCode)
+        {
+         case 38: s.d=0; break;
+         case 40: s.d=1; break;
+         case 37: s.d=2; break;
+         case 39: s.d=3; break;
+        }
+	   },
+       cl:function()
+	   {
+	    switch(s.d)
+        {
+         case 0: s.y-=5; break;
+         case 1: s.y+=5; break;
+         case 2: s.x-=5; break;
+         case 3: s.x+=5; break;
+         }
+        if(s.x>w){s.d=2; }
+        if(s.x<0){s.d=3;}
+        if(s.y>h){s.d=0;}
+        if(s.y<0){s.d=1; }
+		
+		/*for(i=0;i<no;i++)
+         if((s.x>o[i].x-o[i].r)&&(s.x<o[i].x+o[i].r)&&(s.y>o[i].y-o[i].r)&&(s.y<o[i].y+o[i].r))
+         {  o[i].x=0; o[i].y=0; o[i].r=0; o[i].dx=-1; no--; p.innerHTML=no;    }*/
+
+	   },
+	   sh:function()
+	   {
+	    s.dx=(event.clientX-s.x)/10;
+		s.dy=(event.clientY-s.y)/10;
+		 s.x+=s.dx; s.y+=s.dy;
+	   },
+	   
+	  };
+
+
+/*
+function del()
+{for(i=0;i<no;i++)
+  if((event.clientX>o[i].x-o[i].r)&&(event.clientX<o[i].x+o[i].r)&&
+      (event.clientY>o[i].y-o[i].r)&&(event.clientY<o[i].y+o[i].r)) 
+        { delete o[i]; }//no--; p.innerHTML=no; }
+
+}*/
+//x:Math.random()*w, y:Math.random()*h, dx:Math.random()*6-3, dy:Math.random()*6-3,  r:12,br:0, 
+  
+  o=
+{
+     a:[], 
+	 
+	cl:function()
+	{
+	  o.x+=o.dx;  o.y+=o.dy; 
+	   //o[i].inc_r();
+	  if((o.x>w)||(o.x<0)) o.dx*=-1;
+	  if((o.y>h)||(o.y<0)) o.dy*=-1;
+	},
+	/*inc_r:function()
+	{
+	  if((o.r<4)||(o[i].r>33))  o[i].br=!o[i].br;   
+	  if(o.br) o[i].r++; else o[i].r--;
+	}*/
+  
+}
+ 
+
+function dr()
+{
+
+ctx.clearRect(0,0,w,h);
+  
+  s.cl(); o.cl();
+   ctx.beginPath(); 
+    ctx.arc(s.x, s.y, s.r, 0,2*Math.PI); 
+	
+	ctx.fillStyle='black';
+	ctx.fill();
+  
+ // for(i=0;i<no;i++)
+  {      
+    
+   ctx.beginPath(); 
+    ctx.arc(o.x, o.y, o.r, 0,2*Math.PI); 
+	
+	ctx.fillStyle='red';
+	ctx.fill();
+  }
+    //no++; 
+	
+  
+
+};
+
+//setInterval(dr,22);
+
+</script> 
+
+</body>
+</html>
