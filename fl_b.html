@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+#cntnr 
+{
+ position:absolute;
+  width:99%;
+  height:99%;
+  
+  background: yellow;
+}
+
+#s
+{ position: absolute;
+  width: 11px;
+  height: 11px;
+ 
+  background: red;
+  border-radius:50%;
+}
+
+
+</style>
+<body id=b onkeydown=s.sd()>
+
+<div id ="cntnr" onclick=cl()>
+<div id ="s" ></div>
+</div>
+
+<input type=number id=idn onkeydown=setr()>
+<p id=idp></p>
+
+
+<script>
+  var idn = document.getElementById("idn");
+  var con = document.getElementById("cntnr");
+  var p=document.getElementById('idp');
+   idn.value=23;  p.innerHTML=0;
+  
+function setr()
+{ if(event.keyCode==13)
+ for(i=0;i<n;i++)
+ { r=idn.value;
+  o[i].elm.style.width=r+'px';
+  o[i].elm.style.height=r+'px';
+ }
+}  
+   
+var s={  
+x:0, y:0, d:3, elm:document.getElementById("s"), sc:0, b:0,
+  sd:function()
+ {
+   switch(event.keyCode)
+        {
+         case 38: s.d=0; break;
+         case 40: s.d=1; break;
+         case 37: s.d=2; break;
+         case 39: s.d=3; break;
+        }
+ },
+ 
+ cl:function()
+{
+    switch(s.d)
+    {   
+	 case 0:  s.y--; break; 
+     case 1:  s.y++; break;
+	 case 2:  s.x--; break; 
+     case 3:  s.x++; break;
+    }  
+	  s.elm.style.top = s.y+'px'; 
+      s.elm.style.left = s.x+'px';
+	    s.cho();
+    if(s.x>890) s.d=2;
+	if(s.x<0)   s.d=3;
+	if(s.y>590) s.d=0;
+	if(s.y<0)   s.d=1;
+},
+
+cho:function()
+{ //s.elm.style.left = s.x;
+ for(i=0;i<n;i++)
+  if((s.x>o[i].x)&&(s.y>o[i].y)&&(s.x<o[i].x+r)&&(s.y<o[i].y+r)) 
+ { o[i].x=-99;  s.sc++; p.innerHTML=s.sc;   }
+}
+}
+
+o=[],n=9,r=23;
+
+for(i=0;i<n;i++)
+ o[i]=
+{elm:document.createElement("div"), x:99, y:99, 
+ dx:0, dy:0,
+init:function()
+{ 
+ this.x=Math.random()*890;
+ this.y=Math.random()*590;
+ this.dx=Math.random()*6-3;
+ this.dy=Math.random()*6-3
+ 
+ this.elm.style.position='absolute';
+ this.elm.style.background='green';
+ this.elm.style.width=idn.value+'px';
+ this.elm.style.height=idn.value+'px';
+ this.elm.style.top = this.y+'px'; 
+ this.elm.style.left = this.x + 'px';      
+ 
+   con.appendChild(this.elm);
+  
+},
+
+cl:function()
+{
+  this.x+=this.dx;  this.y+=this.dy;
+      this.elm.style.top = this.y+'px'; 
+      this.elm.style.left = this.x+'px';
+  if((this.x>900)||(this.x<0)) this.dx*=-1;
+  if((this.y>600)||(this.y<0)) this.dy*=-1;
+  
+},
+
+
+}
+
+
+
+for(i=0;i<n;i++) o[i].init();
+ 
+ function acl()
+ {
+  for(i=0;i<n;i++) o[i].cl();
+ 
+ }
+
+
+function cl()
+{
+ 
+ //setInterval(s.cl,5);
+  //setInterval(o.cl,5555);
+ setInterval(acl,35);
+ 
+  
+}
+
+</script>
+
+</body>
+</html>

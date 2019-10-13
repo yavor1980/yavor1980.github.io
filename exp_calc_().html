@@ -1,0 +1,190 @@
+
+
+
+
+<html>
+
+<head>
+<title>exp_calc_()</title>
+
+<meta http-equiv="content-type" content="text/html" >
+
+<style type=text/css>
+  div
+ {
+  position:absolute;
+  margin;
+  padding:9px;
+  border:27px ridge red;
+  background:yellow;
+  text-align:center;
+ }
+ 
+ input
+ {
+  margin-top:9px;
+ }
+ 
+ canvas
+ {
+  position:absolute;
+  border-left:3px ridge black;
+  border-bottom:3px ridge black;
+  left:40%;
+  width:55%;
+  height:55%;
+  
+ }
+ 
+</style>
+
+<script>
+
+ var x=[]; var zn=[]; var op=[]; var v=[];  
+ var n=0, nvar=0; val=0; var bfr=0,degfr=0.1; var res=0,resx=0;
+ 
+for(var i=0;i<99;i++)
+{ 
+ x[i]=0.0; zn[i]=0; op[i]==0; v[i]=0; 
+} 
+  
+function n1(){  document.getElementById('num').value+=1; }
+function n2(){  document.getElementById('num').value+=2; }
+function n3(){  document.getElementById('num').value+=3; } 
+function n4(){  document.getElementById('num').value+=4; }
+function n5(){  document.getElementById('num').value+=5; }
+function n6(){  document.getElementById('num').value+=6; }
+function n7(){  document.getElementById('num').value+=7; }
+function n8(){  document.getElementById('num').value+=8; }
+function n9(){  document.getElementById('num').value+=9; }
+function n0(){ document.getElementById('num').value+=0;  }
+function pnt(){ document.getElementById('num').value+='.'; bfr=1; }
+function sx(){ document.getElementById('num').value+='x'; v[nvar]=1; }
+  
+  function setpl()
+  {if(zn[n]==0)zn[n]='+'; 
+   document.getElementById('num').value+='+'; nvar++;  n++; bfr=0; degfr=0.1; zn[n]='+'; 
+  }  
+  function setmin(){ document.getElementById('num').value+='-'; nvar++; n++;bfr=0; degfr=0.1; zn[n]='-'; }  
+  function setmul(){ document.getElementById('num').value+='*'; n++;bfr=0; degfr=0.1; op[n]='*'; }  
+  function setdiv(){ document.getElementById('num').value+='/'; n++;bfr=0; degfr=0.1; op[n]='/';}  
+  function setf(){ document.getElementById('num').value+='('; n++; bfr=0; degfr=0.1;  }  
+  function setb(){ document.getElementById('num').value+=')'; n++; bfr=0; degfr=0.1; }  
+  function setx(){ document.getElementById('num').value+='x'; v[nvar]=1; n++; bfr=0; degfr=0.1; } 
+ 
+  function c()
+  {document.getElementById('num').value='';  
+   bfr=0;degfr=0.1;
+   for(var i=0;i<n;i++)
+   { 
+     x[i]=0.0; zn[i]=0; op[i]=0; v[i]=0;
+   } 
+     n=val=res=resx=0;
+  }
+  
+  
+  function clc()
+  {  n++;
+   document.getElementById('num').value='';  
+   for(var i=0;i<n;i++)
+    if(zn[i]=='-') x[i]*=-1;
+
+   for(var i=0;i<n;i++) 
+   {
+    if(op[i]=='*') {x[i]*=x[i-1]; x[i-1]=0;}
+	if(op[i]=='/') {x[i]=x[i-1]/x[i]; x[i-1]=0;}
+   }
+   for(var i=1;i<n;i++)
+   { 
+	if(v[i]==0) res+=x[i];
+    if(v[i]) resx+=x[i];	
+    } 
+	 document.getElementById('num').value=res+resx;
+	 
+	      bfr=0;degfr=0.1;
+    
+   for(var i=0;i<n;i++)
+   { 
+    zn[i]=0; op[i]=0; 
+   }  
+   for(var i=1;i<n;i++)
+   {x[i]=v[i]=0; }
+   
+	n=0;   
+  
+  }
+  
+  //<progress value=3 max=9> yyy  </progress>
+  
+</script>
+
+</head>
+
+<body>
+
+
+<div id=idf>
+
+<input type value id=num  onclick>      <br>
+
+<input type=submit value=1 id=idb  onclick=n1()>
+<input type=submit value=2 id=idb  onclick=n2()>
+<input type=submit value=3 id=idb  onclick=n3()>  <br> 
+<input type=submit value=4 id=idb  onclick=n4()>
+<input type=submit value=5 id=idb  onclick=n5()>
+<input type=submit value=6 id=idb  onclick=n6()>  <br>
+<input type=submit value=7 id=idb  onclick=n7()>
+<input type=submit value=8 id=idb  onclick=n8()>
+<input type=submit value=9 id=idb  onclick=n9()> <br>  
+<input type=submit value=. id=idb  onclick=pnt()> 
+<input type=submit value=0 id=idb  onclick=n0()> 
+<input type=submit value=x id=idb  onclick=sx()> <br><br>
+
+  
+<input type=submit value='+' id=idb onclick=setpl()> 
+<input type=submit value='-' id=idb onclick=setmin()> 
+<input type=submit value='*' id=idb onclick=setmul()> 
+<input type=submit value='/' id=idb onclick=setdiv()> 
+<input type=submit value='=' id=idb onclick=clc()><br><br>
+
+<input type=submit value='(' id=idb onclick=setf()> 
+<input type=submit value=')' id=idb onclick=setb()> 
+
+
+<input type=submit value='c' id=idb onclick=c()> <br><br>
+
+</div>
+
+<canvas id='idc' onclick=draw()>
+ no
+</canvas>
+
+<script>
+//x=0;
+function draw()
+{
+//location.reload();
+ var c= document.getElementById('idc');
+ var cc=idc.getContext('2d');
+ 
+ lx=0; ly=0;
+for(i=0;i<4;i++)
+{ 
+  xx=Math.random()*222
+  yy=Math.random()*222
+  
+  cc.moveTo(lx,ly);
+  cc.lineTo(xx,yy);
+   cc.stroke();
+   lx=xx; ly=yy;
+} 
+}
+
+
+
+</script>
+
+</body>
+
+
+</html>
