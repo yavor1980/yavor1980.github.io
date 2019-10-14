@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<style>
+#cont {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#s{
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  background: red;
+  border-radius:50%;
+  
+}
+#b{
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  background: black;
+  border-radius:50%;
+  
+}
+</style>
+<body>
+
+<div id ="cont" onclick=s.clk()>
+  
+</div>
+<p id=idp></p> 
+
+<script>
+p = document.getElementById("idp");
+cont = document.getElementById("cont");   
+
+s={
+
+x:200,y:200,dx:0,dy:0,a:[],n:0,
+el:document.createElement("div"),
+init:function()
+ {s.el.id='s'
+   
+  s.el.style.left = s.x + "px" 
+  s.el.style.top = s.y + "px"
+  cont.appendChild(s.el)
+   s.load();
+ },
+load:function(n=9)
+{for(i=0;i<n;i++){
+s.a[i]=
+{el:document.createElement("div"),
+ x:2,y:2,dx:0,dy:0,
+  init:function()
+ {this.el.id='b'
+  this.el.style.left = this.x + "px" 
+  this.el.style.top = this.y + "px"
+  s.el.appendChild(this.el)
+ },
+   cl:function() 
+  {   
+      this.x+=this.dx; this.y+=this.dy
+      this.el.style.left = this.x + "px"
+      this.el.style.top = this.y + "px" 
+    if((this.x+202>o.x)&&(this.x+202<(o.x+22))&&
+        (this.y+202>o.y)&&(this.y+202<(o.y+22)))
+        {o.y=-99; o.el.style.top=o.y+'px'}
+       
+     //if(this.x-200-o.x==0)
+     
+      //p.innerHTML=this.x+200+'<br>'+o.x;
+     
+     
+  },
+   clk:function() 
+   {
+    this.dx=(event.clientX-s.x)/44
+    this.dy=(event.clientY-s.y)/44
+      
+   },
+  }
+   s.a[i].init();
+  } 
+ }, /**/
+ cl:function() 
+ {   for(i=0;i<s.n;i++)
+     { //a[i].x+=a[i].dx; a[i].y+=a[i].dy 
+       s.a[i].cl()
+        
+     }
+ },
+ clk:function() 
+ {
+    s.a[s.n].clk(); 
+    s.n++;
+    
+ },
+} 
+s.init();
+
+function so()
+{
+o={
+x:Math.random()*400,y:Math.random()*400,
+dx:0,dy:0,a:[],n:0,
+el:document.createElement("div"),
+init:function()
+ {this.el.id='s'
+   this.el.style.width=22+'px';
+   this.el.style.height=22+'px';
+  this.el.style.left =this.x+"px" 
+  this.el.style.top =this.y+"px"
+  cont.appendChild(this.el)
+   
+ },
+}; o.init(); 
+}
+
+so();
+p.innerHTML=s.a[0].x+200+'<br>'+o.x;
+function cl()
+{ s.cl(); }
+//{n++; }
+setInterval(cl, 99)
+ //o={x:0,f:function(){o.x++; } }
+
+
+</script>
+
+</body>
+</html>

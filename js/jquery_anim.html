@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+div {   
+ position:absolute;
+  background:red;
+  
+  width:111px;
+  height:111px;
+  border-radius:0%;
+  opacity:1;
+  
+}
+
+#d1
+{
+left:99px;
+border-radius;
+}
+#d2
+{
+left:222px;
+border-radius;
+}
+#d3
+{
+left:133px;
+border-radius;
+}
+
+#compl
+{
+position:relative;
+margin-left:9px;
+margin-top:195px;
+}
+
+button,input
+{
+margin-left:9px;
+margin-top:9px;
+}
+
+</style>
+
+</head>
+<body>
+<p id=idp>0</p>
+<div class=o></div>
+<div class=o></div>
+<div class=o></div>
+
+<div id=compl>
+<button id=ii>increase</button>
+<button id=id>decrease</button><br>
+<button id=ih>hide</button>
+<button id=ish>show</button>
+<button id=iopac>opacity</button><br>
+<button id=irnd>round</button>
+<button id=istr>straighten</button><br>
+<input id=icol type=color><br>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> //
+//cont = document.getElementsByTagName("body");
+p = document.getElementById("idp");
+d=document.getElementsByClassName("o");
+ic = document.getElementById("icol");
+//d[0].style.left=33px
+o={x:111, y:111, rr:0,b:-1,dop:1,dirop:0,i:0,}
+a=[],i=0;
+  for(j=0;j<3;j++)
+  {
+   a[j]=o
+    d[j].style.left=j*133+'px'
+  }
+
+//o2={x:222,y:111,r:0,b:-1,dop:1,dirop:0,}
+//o3={x:333,y:111,r:0,b:-1,dop:1,dirop:0,}    
+  
+  
+$(document).ready(function(){
+  $("#ii").click(function()
+  {
+    a[i].b=1
+  })
+  $("#id").click(function()
+  {
+    a[i].b=0
+  })
+  $("#ih").click(function()
+  {
+    a[i].b=4
+  })
+  $("#ish").click(function()
+  {
+    $('.o').show();
+  })
+  $("#iopac").click(function()
+  {
+   a[i].b=6
+  })
+  $("#irnd").click(function()
+  {
+    a[i].b=2
+  })
+  $("#istr").click(function()
+  {
+    a[i].b=3
+  })
+  $("#icol").click(function()
+  {
+    a[i].b=5
+  })
+  /* $("body").click(function()
+  {
+   r=document.createElement('div')
+    r.style.left=event.clientX
+	r.style.top=event.clientY
+	 r.style.width=88px
+     r.style.height=88px 
+  })*/
+  
+  $(".o").click(function()
+  { //alert(this)
+    //i=
+   if(a[i].b==1){a[i].x+=2;a[i].y+=2;}
+   if(a[i].b==0){a[i].x-=2;a[i].y-=2;}
+   if(a[i].b==2){a[i].rr+=2; }
+   if(a[i].b==3){a[i].rr-=2; }
+   if(a[i].b==4){$(this).hide(); }
+   if(a[i].b==5){$(this).css('background',ic.value) }
+   if(a[i].b==6)
+   {if(a[i].dirop==0)a[i].dop-=0.1; else a[i].dop+=0.1;  
+    if(a[i].dop>=1) a[i].dirop=0; 
+    if(a[i].dop<=0) a[i].dirop=1;
+   
+   }
+    $(this).css('opacity',a[i].dop)
+    $(this).css( 'border-radius',a[i].rr);
+    $(this).css('width',a[i].x)
+    $(this).css('height',a[i].y)
+    p.innerHTML='i: '+i+' width: '+a[i].x+' height: '+a[i].y+' radius: '+a[i].rr+' color: '+ic.value+' dop '+a[i].dop;
+  })
+ })
+ 
+ 
+//function cls(){s.cl();}      
+  // setInterval(cls,33) 
+  ///{for(i=0;i<no;i++)o[i].cl();}    
+</script>
+</body>
+</html>

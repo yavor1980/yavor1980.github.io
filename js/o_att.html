@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<style>
+#cont {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+  
+}
+#s {
+ left;
+ top;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  background-color: red;
+  border-radius:50%;
+}
+</style>
+<body> 
+
+<div id ="cont" onclick=s.sh()>
+  <div id ="s"></div>
+</div>
+<p id=idp></p>
+
+<script>
+  
+  p = document.getElementById("idp");
+  cont = document.getElementById("cont");
+  
+s=
+{el:document.getElementById("s"),
+ x:200,y:200,dx:0,dy:0,
+ load:function() 
+  {        
+      p.innerHTML=s.x;
+  },
+  sh:function() 
+  {s.dx=(event.clientX-s.x)/33;
+   s.dy=(event.clientY-s.y)/33;
+    s.x+=s.dx; s.y+=s.dy; 
+     s.el.style.left = s.x + "px";  
+     s.el.style.top = s.y + "px";       
+  },
+  cl:function() 
+  {
+   s.x+=s.dx; s.y+=s.dy; 
+     s.el.style.left = s.x + "px";  
+     s.el.style.top = s.y + "px";       
+ for(i=0;i<no;i++)
+  if((s.x>o[i].x)&&(s.y>o[i].y)&&(s.x<o[i].x+8)&&    (s.y<o[i].y+8)) 
+ { o[i].x=-99; nno--;}  //p.innerHTML=nno;     
+  //s.att();
+  },
+  att:function() 
+  {
+   for(i=0;i<no;i++)
+     if((Math.abs(this.x-o[i].x)<22)&&
+        (Math.abs(this.y-o[i].y)<22))
+        {
+         this.dx=Math.abs(this.x-o[i].x)/9;
+         this.dy=Math.abs(this.y-o[i].y)/9;
+        } 
+  }
+}  
+
+ setInterval(s.cl,66);
+ 
+o=[],no=0,nno=0;
+function so() 
+{ 
+o[no]=
+{el:document.createElement("div"),
+ x:Math.random()*400,
+ y:Math.random()*400,
+ dx:0,//Math.random()*4-2,
+ dy:0,//Math.random()*4-2,
+ init:function() 
+ {
+  this.el.id='s';
+   this.el.style.background='green';
+   //this.el.style.width=13+'px';
+   //this.el.style.height=13+'px';
+   cont.appendChild(this.el);
+  
+ },
+  cl:function() 
+  {
+   this.dx=-(this.x-s.x)/99; 
+   this.dy=-(this.y-s.y)/99;  
+    this.x+=this.dx; this.y+=this.dy; 
+     this.el.style.left = this.x + "px";  
+     this.el.style.top = this.y + "px";       
+  if((this.x>400)||(this.x<0)) this.dx*=-1;
+  if((this.y>400)||(this.y<0)) this.dy*=-1;
+   p.innerHTML=o[0].dx;
+  }, 
+}
+o[no].init(); no++; nno++;
+}
+
+setInterval(so,3333);
+function cl(){for(i=0;i<no;i++)o[i].cl();}
+setInterval(cl,99);
+
+
+</script>
+
+</body>
+</html>

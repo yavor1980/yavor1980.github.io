@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.o {   
+ position:absolute;
+  background:red;
+  left:133px;
+  width:111px;
+  height:111px;
+  border-radius:0%;
+  opacity:1;
+  border-radius;
+}
+
+#compl
+{
+position:relative;
+margin-left:9px;
+margin-top:195px;
+}
+
+button,input
+{
+margin-left:9px;
+margin-top:9px;
+}
+
+</style>
+
+</head>
+<body>
+<p id=idp>0</p>
+<div class=o></div>
+<div class=o></div>
+<div class=o></div>
+
+<div id=compl>
+<button id=ii>increase</button>
+<button id=id>decrease</button><br>
+<button id=ih>hide</button>
+<button id=ish>show</button><br>
+<button id=irnd>round</button>
+<button id=istr>straighten</button><br>
+<input id=icol type=color><br>
+</div>
+<p>Choose a method by click on the button, and click on the object</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> //
+//cont = document.getElementsByTagName("body");
+p = document.getElementById("idp");
+d = document.getElementsByClassName("o");
+ic = document.getElementById("icol");
+//d[0].style.left=33px
+for(i=0;i<3;i++) d[i].style.left=i*166+'px';
+
+function clk(){d.style.height--;}        
+  o={x:111,y:111,r:0}
+ var b=-1;
+ // 
+   
+$(document).ready(function(){
+  $("#ii").click(function()
+  {
+    b=1
+  })
+  $("#id").click(function()
+  {
+    b=0
+  })
+  $("#ih").click(function()
+  {
+    b=4
+  })
+  $("#ish").click(function()
+  {
+    $('.o').show();
+  })
+  $("#irnd").click(function()
+  {
+    b=2
+  })
+  $("#istr").click(function()
+  {
+    b=3
+  })
+  $("#icol").click(function()
+  {
+    b=5
+  })
+   
+  $(".o").click(function()
+  {if(b==1){o.x+=2;o.y+=2;}
+   if(b==0){o.x-=2;o.y-=2;}
+   if(b==2){o.r+=2; }
+   if(b==3){o.r-=2; }
+   if(b==4){$(this).hide(); }
+   if(b==5){$(this).css('background',ic.value) }
+    $(this).css( 'border-radius',o.r);
+    $(this).css('width',o.x)
+    $(this).css('height',o.y)
+    p.innerHTML='width: '+o.x+' height: '+o.y+' radius: '+o.r+' color: '+ic.value;
+  })
+ })
+ 
+ 
+//function cls(){s.cl();}      
+  // setInterval(cls,33) 
+  ///{for(i=0;i<no;i++)o[i].cl();}    
+</script>
+</body>
+</html>

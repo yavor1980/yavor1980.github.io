@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<style>
+#cont {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#s{
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  background: red;
+  border-radius:50%;
+  
+}
+#b{
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  background: black;
+  border-radius:50%;
+  
+}
+</style>
+<body>
+
+<div id ="cont" onclick=s.clk()>
+  
+</div>
+<p id=idp></p> 
+
+<script>
+p = document.getElementById("idp");
+cont = document.getElementById("cont");   
+
+s={
+
+x:200,y:200,d:0,a:[],n:0,
+el:document.createElement("div"),
+init:function()
+ {s.el.id='s'
+   
+  s.el.style.left = s.x + "px" 
+  s.el.style.top = s.y + "px"
+  cont.appendChild(s.el)
+   s.load();
+ },
+load:function(n=19)
+{for(i=0;i<n;i++){
+s.a[i]=
+{el:document.createElement("div"),
+ x:2,y:2,dx:0,dy:0,
+  init:function()
+ {this.el.id='b'
+  this.el.style.left = this.x + "px" 
+  this.el.style.top = this.y + "px"
+  s.el.appendChild(this.el)
+ },
+   cl:function() 
+  {   
+      this.x+=this.dx; this.y+=this.dy
+      this.el.style.left = this.x + "px"
+      this.el.style.top = this.y + "px" 
+    /*for(i=0;i<s.n;i++) 
+    if(((this.x+202)>a.x)&&(this.x+202<(a.x+22))&&
+        ((this.y+202)>a[i].y)&&((this.y+202)<(a.y+22))) 
+        {a.y=-99; a.el.style.top=a.y+'px';
+        p.innerHTML=s.n}*/
+         if((this.x+202>o.x)&&   
+       (this.x+202<(o.x+22))&&
+        (this.y+202>o.y)&&(this.y+202<(o.y+22)))
+        {o.y=-99; o.el.style.top=o.y+'px'; so();
+                 { this.dx=0; this.dy=0;}
+        }
+        
+              
+  },      
+   clk:function() 
+   {
+    this.dx=(event.clientX-s.x)/44
+    this.dy=(event.clientY-s.y)/44
+      p.innerHTML;
+   },
+  }
+   s.a[i].init();
+  } 
+ }, /**/
+ cl:function() 
+ {   for(i=0;i<s.n;i++)
+     { 
+       s.a[i].cl()
+        
+     }
+ },
+ clk:function() 
+ {
+    s.a[s.n].clk(); 
+    s.n++;
+    
+ },
+} 
+s.init();
+
+
+o=0
+function so()
+{
+o={
+x:Math.random()*400,y:Math.random()*400,
+dx:1,dy:1,a:[],n:0,
+el:document.createElement("div"),
+init:function()
+ {this.el.id='s'
+   this.el.style.width=22+'px';
+   this.el.style.height=22+'px';
+ 
+  this.el.style.left =this.x+"px" 
+  this.el.style.top =this.y+"px"
+  cont.appendChild(this.el)
+   o.load();
+ },
+ load:function(n=19)
+{for(i=0;i<n;i++){
+o.a[i]=
+{el:document.createElement("div"),
+ x:9,y:9,dx:0,dy:0,b:0,
+  init:function()
+ {this.el.id='b'
+  this.el.style.left = this.x + "px" 
+  this.el.style.top = this.y + "px"
+  o.el.appendChild(this.el)
+ },
+   cl:function() 
+  {   
+      this.x+=this.dx; this.y+=this.dy
+      this.el.style.left = this.x + "px"
+      this.el.style.top = this.y + "px" 
+    /*
+         if((this.x+202>o.x)&&   
+       (this.x+202<(o.x+22))&&
+        (this.y+202>o.y)&&(this.y+202<(o.y+22)))
+        {o.y=-99; o.el.style.top=o.y+'px'; so();
+                 { this.dx=0; this.dy=0;}
+        }
+      */  
+              
+  },      
+   clk:function() 
+   {
+    this.dx=-(o.x-s.x)/44
+    this.dy=-(o.y-s.y)/44
+      p.innerHTML=88;
+   },
+  }
+   o.a[i].init();
+  } 
+ }, 
+ cl:function()
+ { this.dx=-(o.x-s.x)/44; this.dy=-(o.y-s.y)/44;
+  this.x+=this.dx; this.y+=this.dy
+      this.el.style.left = this.x + "px"
+      this.el.style.top = this.y + "px" 
+      if((this.x>378)||(this.x<0))o.dx*=-1
+      if((this.y>378)||(this.y<0))o.dy*=-1
+     if(Math.sqrt(Math.pow((o.x-s.x),2)+
+      Math.pow((o.y-s.y),2))<99)     
+      { if(!this.b)
+       {o.a[o.n].clk(); //o.a[o.n].clk();
+        o.n++; this.b=1;}
+         
+      }
+      if(Math.sqrt(Math.pow((o.x-s.x),2)+
+      Math.pow((o.y-s.y),2))>99)     
+      {this.b=0;}
+      for(i=0;i<o.n;i++)
+     { 
+       o.a[i].cl()
+        
+     }
+ },
+}; o.init(); //no++;
+}
+so()
+function cl(){ s.cl(); }
+function ocl(){ o.cl(); }
+
+setInterval(s.cl, 99)
+setInterval(ocl, 39)
+/*s={a:[],o:{x:8,y:9},f:function()
+{for(i in s.o)  p.innerHTML=0; }}
+s.f();*/
+
+</script>
+
+</body>
+</html>
