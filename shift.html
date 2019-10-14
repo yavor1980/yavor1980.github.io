@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body onload>
+
+<canvas id="myCanvas" width="888" height="555" style="border:1px solid #d3d3d3;" onclick=clm()>
+Your browser does not support the HTML5 canvas tag.</canvas>
+<p id=idp ></p>
+<script>
+var c = document.getElementById("myCanvas");
+var cc = c.getContext("2d");
+var p=document.getElementById("idp");
+var w =c.width; 
+var h =c.height; 
+var bctch=0;
+var a=[],n=0; 
+
+
+var o={x:Math.random()*w, y:Math.random()*h,
+       dx:Math.random()*3-6, dy:Math.random()*3-6, r:9, }
+function clo()
+{
+ o.x+=o[i].dx;
+ o[i].y+=o[i].dy;
+}  
+setInterval(clo,22);
+                     //sh:function(){if(event.clientX>)}
+function clm()
+{
+
+a[n]=
+{x:event.clientX, y:event.clientY, r:4, bd:1, }
+ //{x:Math.random()*w, y:Math.random()*h, r:4, bd:1,}
+//p.innerHTML+='iop';
+//cc.arc(99,99,5,0,2*Math.PI);
+
+cc.beginPath();
+cc.arc(a[n].x,a[n].y,a[n].r,0,2*Math.PI);
+cc.stroke();
+n++;
+//ch();
+}
+
+function ch()
+{cc.clearRect(0,0,888,555);
+for(i=0;i<n;i++)
+{if(a[i].bd==1)a[i].r++; else 
+a[i].r--;
+if(a[i].r==33)a[i].bd=0;
+if(a[i].r==8)a[i].bd=1;
+cc.beginPath();
+cc.arc(a[i].x,a[i].y,a[i].r,0,2*Math.PI);
+cc.stroke();
+
+//p.+=a[i].x+' '+a[i].y+'<br>'
+}
+}
+setInterval(ch,222);
+</script> 
+
+</body>
+</html>
