@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#cont{   
+ position:relative;
+  background:yellow;
+  width:444px;
+  height:444px;
+}
+#s{   
+ position:absolute;
+  background:red;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div id="cont" onclick=clk()>
+ <div id='s'> </div>
+</div>
+<p id=idp>0</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> //.css("background","green") 
+cont=document.getElementById("cont")
+s={x:8,y:9,dx:0,dy:0,
+clk:function()
+{
+s.dx=(event.clientX-s.x)/88;
+s.dy=(event.clientY-s.y)/88;
+$('#s').css('left',s.x)
+         .css('top',s.y)
+},
+cl:function()
+{
+s.x+=s.dx; s.y+=s.dy;
+$('#s').css('left',s.x)
+         .css('top',s.y)
+},
+}
+/**/
+o=[]; no=0
+function so()
+{
+ o[no]=
+ {x:Math.random()*444,y:Math.random()*444,
+  dx:Math.random()*4-2,dy:Math.random()*4-2,
+  el:document.createElement("div"),
+  init:function()
+  {
+   this.el.id='s'
+    this.el.style.left=this.x+'px'
+    this.el.style.top=this.y+'px'
+    this.el.style.background='green'
+   cont.appendChild(this.el)
+        
+  },
+  cl:function()
+ {
+  this.x+=this.dx; this.y+=this.dy;
+   //$('this#s').css('left',this.x)
+     //    .css('top',this.y)
+    this.el.style.left=this.x+'px'
+    this.el.style.top=this.y+'px'
+    if((this.x>433)||(this.x<0)) this.dx*=-1;
+    if((this.y>433)||(this.y<0)) this.dy*=-1;
+    
+ },
+ 
+ }
+ o[no].init();  no++;
+}
+
+ setInterval(so,5555)
+
+function cl()
+{for(i=0;i<no;i++)o[i].cl();}
+setInterval(cl,99)        
+$(document).ready(function(){
+  $("#cont").click(function(){s.clk();})
+ })
+ 
+function cls(){s.cl();}
+    //$('p').text(o[0].x)    
+   setInterval(cls,33) 
+      
+</script>
+</body>
+</html>
