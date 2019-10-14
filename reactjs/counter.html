@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>counter</title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+	
+	<style>
+	div{position:absolute; }
+	
+	 #idd1
+	 {	  
+	  
+	 width:333px;
+	  height:333px;
+	  background:red;
+	  text-align:center;
+	  border-radius:50%;
+	  top:44px;
+	 }
+	
+    </style>
+  
+  </head>
+  <body>
+    
+    <div id="idd1" ></div>
+    <div id="idd2"></div>
+    <div id="idd3"></div>	
+	
+ <!--style='width:50%;background:red'
+    <script src="../../build/react.js"></script>
+   <script src="../../build/react-dom.js"></script>
+   -->
+ <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+ <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+ 
+ <script type="text/babel">
+  //"../../build/react.js"
+  //"../../build/react-dom.js"
+  //Style='background:red' 
+  var b=0
+ 
+
+
+class Timer extends React.Component {
+  constructor(props) {   
+    super(props);
+    this.chL = this.chL.bind(this);
+    this.Set = this.Set.bind(this);
+    this.Clear = this.Clear.bind(this);
+
+    this.state = { s: 0, l:0, st:0 };
+    
+
+  }
+
+  tick() {if(this.state.st) if(this.state.s<this.state.l)
+    this.setState(state => ({
+      s: state.s + 1
+    }));
+  }   
+  chL(e)
+  {
+   this.setState({ l: e.target.value });
+
+  }
+Set()
+  {
+   this.setState({ st: 1 });
+
+  }
+ Clear()  {
+   this.setState({ st:0,l:0,s:0 });
+
+  } 
+  
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
+  render() {
+    return (
+      <div Style='top:30%; left:20%;'>
+        Enter time:<br/>
+        <input  type='number'  onChange={this.chL}/>
+        <input  type='button' value='start'  onClick={this.Set} />
+        <input  type='button' value='clear' onClick={this.Clear} />
+        <br/><br/>
+        Seconds: {this.state.s}
+
+
+      </div>
+    );
+  }
+}
+
+
+
+
+ReactDOM.render(
+  <Timer />,
+  document.getElementById('idd1')
+);
+
+
+
+
+
+  /* */
+	  
+   </script>
+  </body>
+</html>

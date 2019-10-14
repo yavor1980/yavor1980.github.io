@@ -1,0 +1,39 @@
+class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.f = this.f.bind(this);
+
+    this.state = { s: 0,a:[], };
+     
+  }
+
+  tick() {
+    this.setState(state => ({
+      s: state.s + 1,
+    }));
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+ f(){this.state.s=55; this.state.a[0]=55;}
+  render() {
+    return (
+      <div>
+        Секунды: {this.state.s} {this.state.a[0]}
+   <input onClick={this.f} /> 
+         
+
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Timer />,
+  document.getElementById('timer-example')
+);

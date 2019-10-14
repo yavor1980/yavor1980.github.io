@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+	
+	<style>
+	div{position//:absolute; 
+	   }
+	
+	 #cont
+	 {	 	  
+	  width:333px;
+	  height:333px;
+	  background:yellow;
+	  text-align:center;
+	  border-radius:50%;
+	  top:44px;
+	 }
+	 #idd
+	 {	 	  
+	  width:9px;
+	  height:9px;
+	  background:green;	  
+	  border-radius:50%;
+	  left:0px;
+	 }
+
+    </style>
+  
+  </head>
+  <body>
+    
+    <div id="cont" ></div>
+    <div id></div>
+    <div id></div>	
+
+ 
+   
+   
+ <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+ <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+ 
+ 
+ <script type="text/babel">
+  //"../../build/react.js"
+  //"../../build/react-dom.js"
+   //<script src="../../build/react.js">
+   //<script src="../../build/react-dom.js">
+ 
+
+class Gr extends React.Component {
+  constructor(props) {   
+    super(props);
+    //this.chL = this.chL.bind(this);
+    this.set = this.set.bind(this);
+    this.clr = this.clr.bind(this);
+
+    this.state = { s:0, st:1, a:[] };
+    
+
+  }
+
+  tick() 
+  {
+   //if(this.state.st) 
+    this.setState(state=>({
+      s: state.s + 1
+    }));
+  }   
+  
+ set()
+  { //this.state.st=!this.state.st
+    //this.setState(state=>({ st:state.st }));
+
+  }
+ clr()  
+ {
+  //this.state.a[this.state.n]=this.state.s;
+     //
+     
+  this.setState({ s:0,
+   a:this.state.a.concat(this.state.s+' '), });
+ } 
+  
+  componentDidMount() 
+  {//this.state.a[0]*=2;
+    this.interval = setInterval(()=>this.tick(), 999);
+   
+  }
+
+  componentWillUnmount() 
+  {
+    clearInterval(this.interval)
+  }
+
+  render() {
+    return (
+      <div Style='top:40%; left:25%;'>
+               
+        <input  type='button' value='s' 
+		 onClick={()=>this.set()} />
+        <input  type='button' value='clear' 
+		onClick={()=>this.clr()} />
+        <br/><br/>  
+         Seconds: {this.state.s}<br/>
+		  {this.state.a} <br/>
+      	  {this.state.a.max}	
+		              
+         
+     </div>
+    );
+  }
+}
+  
+     
+
+ReactDOM.render(
+   <Gr />,
+  document.getElementById('cont')
+);
+
+
+
+
+
+  /* */
+	  
+   </script>
+  </body>
+</html>

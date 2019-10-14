@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>balls</title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+	
+	<style>
+	input{position:absolute;}
+	
+	 #fld
+	 {	 position:absolute;	 
+	  width:444px;
+	  height:444px;
+	  background:yellow;
+	  text-align:center;
+	  border-radius;
+	  top:66px;
+	 }
+	 #ids
+	 {	 position:absolute;
+	  width:9px;
+	  height:9px;
+	  left;
+	  top;
+	  background:green;	  
+	  border-radius:50%;
+	  
+	 }
+	 #ido
+	 {	 position:absolute;
+	  width:22px;
+	  height:22px;
+	  left;
+	  top;
+	  background:brown;	  
+	  border-radius:50%;
+	  
+	 }
+
+    </style>
+  
+  </head>
+  <body>
+    
+    <div id=cont ></div>
+    <div id></div>
+    <div id></div>	 
+   
+   
+ <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+ <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+ 
+ 
+ <script type="text/babel">
+  //"../../build/react.js"
+  //"../../build/react-dom.js"
+   //<script src="../../build/react.js">
+   //<script src="../../build/react-dom.js">
+ 
+//===========================================================Gr
+class Gr extends React.Component {
+  constructor(props) {   
+    super(props);
+    //this.chL = this.chL.bind(this);
+    //this.stop = this.stop.bind(this);
+    this.clk = this.clk.bind(this);
+    //this.clr = this.clr.bind(this);
+	
+    this.state = {
+	  x:Math.random()*444,
+	  y:Math.random()*444,
+	  dx:0,dy:0,
+	 a:[], el:document.getElementById('ids')   }    
+
+  }
+
+  clk()
+  {
+   this.state.dx=(event.clientX-this.state.x)/44
+   this.state.dy=(event.clientY-this.state.y)/44
+   //alert(event.clientX)
+   //this.setState(state=>({dx:1}));   
+   //ido.style.display='block'  
+  }
+ 
+  cl()
+  {
+   this.state.x+=this.state.dx
+   this.state.y+=this.state.dy
+   //this.setState(state=>({x:state.x+1,
+     //                     x:state.y+1}))
+    if((this.state.x>425)||(this.state.x<0))
+	  this.state.dx*=-1	  
+	if((this.state.y>425)||(this.state.y<0))
+	  this.state.dy*=-1                     
+   
+	 /*  
+	   if((this.state.x>ido.style.left)&&
+	      (this.state.x<ido.style.left+22)&&
+		  (this.state.y>ido.style.top)&&
+	      (this.state.y<ido.style.top+22)
+		 )
+	    ido.style.background='green'
+   */
+    ids.style.left=this.state.x+'px'
+    ids.style.top=this.state.y+'px'
+  }
+  
+  //ct(){}
+  
+  clr()
+  {
+   this.state.dx=0; this.state.dy=0
+  }
+  
+  componentDidMount() 
+  {
+   this.interval = setInterval(()=>this.cl(), 51);
+     
+  }
+
+  componentWillUnmount() 
+  {
+    clearInterval(this.interval)
+  }
+//
+  render() 
+  {
+    return (	
+<div >
+
+<div>	
+Click on the yellow field 
+	 to operate by green ball.
+  Try to push the red ball.	 
+</div>
+    <div id='fld' onClick={this.clk}>
+            
+			 <div id='ids'  ></div> 
+		 <O s={this.state} />	
+	    
+  </div>
+	  <div >	       			     
+
+		<br/>
+	<input type='button' Style='left:17%;top:91%'		  
+		  onClick={()=>this.clr()} 
+		  value='stop' />	  
+	  </div>
+  </div> 
+	 
+    );
+  }
+};
+
+//=========================================================O
+class O extends React.Component {
+  constructor(props) 
+  {   
+    super(props);
+	  this.state = {
+	  x:Math.random()*444,
+	  y:Math.random()*444,
+	  cnt:0,
+	  dx:Math.random()-2,dy:Math.random()-2, 
+	 a:[], el:document.getElementById('i')   } 	
+  }
+  
+  cl()
+  {
+   this.state.x+=this.state.dx
+   this.state.y+=this.state.dy
+    ido.style.left=this.state.x+'px'
+    ido.style.top=this.state.y+'px'
+	 if((this.state.x>425)||(this.state.x<0))
+	  this.state.dx*=-1	  
+	 if((this.state.y>425)||(this.state.y<0))
+	  this.state.dy*=-1
+	   if((this.props.s.x>this.state.x)&&
+	      (this.props.s.x<this.state.x+22)&&
+		  (this.props.s.y>this.state.y)&&
+	      (this.props.s.y<this.state.y+22)
+		 )
+	    {
+		 this.state.x=Math.random()*433
+		 this.state.y=Math.random()*433
+		  this.setState(state=>({cnt:state.cnt+1}));
+		}
+		//ido.style.display='none'  
+  }
+  
+  componentDidMount() 
+  {
+    
+  this.interval = setInterval(()=>this.cl(), 51);
+     
+  }
+
+  componentWillUnmount() 
+  {
+    clearInterval(this.interval)
+  }	
+  
+  render()
+  {return ( 
+  <div>
+   <div id='ido'></div>
+    {this.state.cnt}
+  </div> )
+  
+  }
+  
+}	
+//	
+
+ReactDOM.render(
+   <Gr />,
+  document.getElementById('cont')
+);
+
+	  
+   </script>
+  </body>
+</html>

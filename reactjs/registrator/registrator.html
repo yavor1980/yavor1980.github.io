@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+	
+	<style>
+	div{
+	    position//:absolute; 
+	   }
+	
+	 #cont
+	 {	 	  
+	  width:333px;
+	  height:333px;
+	  background:yellow;
+	  text-align:center;
+	  border-radius;
+	  top//:44px;
+	 }
+	 
+
+    </style>
+  
+  </head>
+  <body>
+    
+    <div id='cont' ></div>
+    <div id></div>
+    <div id></div>	
+ 
+   
+ <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+ <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+ 
+ 
+ <script type="text/babel">
+  //"../../build/react.js"
+  //"../../build/react-dom.js"
+   //<script src="../../build/react.js">
+   //<script src="../../build/react-dom.js">
+ 
+ 
+//===========================================================
+
+class C extends React.Component
+{
+    constructor(props)
+	{ super(props);
+	  this.state={b:0, v:0, a:[], sum:0,}
+	}
+  render()  
+  {
+    return ( 
+	<form>
+	 <div onClick={()=>this.clr()} > {this.state.v} </div> 
+	 <div> {this.state.a} </div> 
+	 <div> {this.state.sum} </div> 
+
+	 <input type='button' onClick={()=>this.strt()}  />	 
+	</form> 
+	) 
+  }
+ 
+  strt()
+  { var bb=!this.state.b
+   this.setState({b:bb}) 
+  }
+
+  clr()
+  {
+	 this.setState(state=>({a:state.a.concat(state.v+' '), v:0}))	  
+  }
+  
+  fsum()
+  {
+   this.state.a.map(item=>(this.state.sum+=item))
+  }
+
+  cl()
+  {
+    if(this.state.b) 
+	 this.setState({v:this.state.v+1})
+  }
+  
+  componentDidMount()
+  { //
+       setInterval(()=>this.cl(),99)
+	    //{this.fsum}
+		
+  }
+} 
+
+//========================================================
+class Rgstr extends React.Component
+{
+    constructor(props)
+	{
+	 super(props);
+	  this.state={a:[],n:'',v:0,b:0,}
+	}
+	sn()
+	{ 	   
+	  this.setState({n:event.target.value})  //event.target.value
+	  //
+	}
+	sa()
+	{  
+	 var it={n:this.state.n,v:this.state.v}
+	   
+	   this.setState({a:this.state.a.concat(it)})
+	          
+	        
+	   
+	}
+	clr()
+	{
+	 this.setState({n:'',v:0,a:[],})
+	}
+   strt()
+  { 
+   var bb=!this.state.b
+    if(bb) this.state.v=0
+   this.setState({b:bb}) 
+  }
+  cl()
+  {
+    if(this.state.b) 
+	 this.setState({v:this.state.v+1})
+  }	
+  componentDidMount()
+  { //
+       setInterval(()=>this.cl(),99)
+	    //{this.fsum}
+		
+  }
+  render()
+  { 
+     var bt={background:'red'}
+    return	(  
+	<div  > 
+	 name: <input onChange={()=>this.sn()}  />
+    <div>
+	 <input type='button' value='data'
+	   onClick={()=>this.strt()} />  
+	 
+	 <input type='button' value='to list'
+	   onClick={()=>this.sa()} />
+	 <input type='button' value='clear'
+	   onClick={()=>this.clr()} />
+	</div>
+	  <div> {this.state.n} {this.state.v} </div>
+	  
+	  <Dspl a={this.state.a} />
+	</div>)  
+  }
+} 
+//for(var i=0;i<2;i++)
+	   //<li>{this.props.av}</li>
+	   
+class Dspl extends React.Component 
+{
+ 
+ render()
+ { var i=0;
+  return (
+     
+    <ul> 
+	 {
+	  this.props.a.map(item=>(
+	   <li >{item.n} {item.v}</li>
+	  ))
+	 }
+	</ul>  
+  	
+  )
+ }
+}
+
+ReactDOM.render(  
+    <Rgstr  />,
+   //<C/>,
+  document.getElementById('cont')
+);
+
+   
+	  
+   </script>
+  </body>
+</html>

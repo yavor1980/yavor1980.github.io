@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+	
+	<style>
+	div{
+	    position//:absolute; 
+	   }
+	
+	 #cont
+	 {	 	  
+	  width:333px;
+	  height:333px;
+	  background:yellow;
+	  text-align:center;
+	  border-radius;
+	  top:44px;
+	 }
+	 .square
+	 {	 	  
+	  width:22px;
+	  height:22px;
+	  background;	  
+	 
+	  left:11%;
+	 }
+
+    </style>
+  
+  </head>
+  <body>
+    
+    <div id='cont' ></div>
+    <div id></div>
+    <div id></div>	
+ 
+   
+ <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+ <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+ 
+ 
+ <script type="text/babel">
+  //"../../build/react.js"
+  //"../../build/react-dom.js"
+   //<script src="../../build/react.js">
+   //<script src="../../build/react-dom.js">
+ 
+ 
+//   Style={color:'red'}
+function F(p){return p.n;}
+
+class C extends React.Component
+{
+ constructor(props)
+ {super(props);
+   this.state={x:0,a:[],zn:[],r:0,n:0,v:[]}
+ }  
+ setnum(n)
+ { 
+  this.state.r*=10
+    this.state.r+=n
+	 
+ }
+ init()
+ { 
+    
+  this.setState({a:
+    this.state.a.concat(this.state.r)})
+ }
+
+ eq()
+ {var r=0;
+  this.setState({a:
+    this.state.a.concat(this.state.r)})
+  for(var i=0;i<this.state.a.length;i++) 
+    r+=this.state.a[i]
+    this.setState({r:r})
+ }
+ 
+ clr()
+ {
+  this.setState({x:0,a:[],zn:[],r:0,n:0,v:[],
+    })
+ 
+ }
+ 
+  el(){return <F  n={this.state.a}/>;  }
+ 
+ render(){
+   return( 
+   <div>  
+    {this.el()}
+     <br/>
+      <input type='button' value='1' 
+	   onClick={()=>this.setnum(1)} />
+	  <input type='button' value='2'
+	   onClick={()=>this.setnum(2)}/>
+	  <input type='button' value='3' 
+	   onClick={()=>this.setnum(3)}/><br/>
+	  <input type='button' value='4' 
+	   onClick={()=>this.setnum(4)} />
+	  <input type='button' value='5'
+	   onClick={()=>this.setnum(5)}/>
+	  <input type='button' value='6' 
+	   onClick={()=>this.setnum(6)}/> <br/>
+	   <input type='button' value='7' 
+	   onClick={()=>this.setnum(7)} />
+	  <input type='button' value='8'
+	   onClick={()=>this.setnum(8)}/>
+	  <input type='button' value='9' 
+	   onClick={()=>this.setnum(9)}/><br/>
+	  <input type='button' value='0'
+	   onClick={()=>this.setnum(0)}/> <br/>
+	  <input type='button' value='+' 
+	   onClick={()=>this.init()} />
+	  <input type='button' value='-' 
+	   onClick={()=>this.init()} />  
+	  <input type='button' value='=' 
+	   onClick={()=>this.eq()} />      <br/> 
+	  <input type='button' value='c' 
+	   onClick={()=>this.clr()} />      <br/>  
+	   {this.state.r}
+   </div>  
+    )
+  }
+
+};
+
+var x='fir' /**/
+
+ReactDOM.render(  
+   <C />,
+  document.getElementById('cont')
+);
+
+   
+	  
+   </script>
+  </body>
+</html>

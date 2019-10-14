@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+	
+	<style>
+	div{
+	    position//:absolute; 
+	   }
+	
+	 #cont
+	 {	 	  
+	  width:333px;
+	  height:333px;
+	  background:yellow;
+	  text-align:center;
+	  border-radius;
+	  top//:44px;
+	 }
+	 .square
+	 {	 	  
+	  width:22px;
+	  height:22px;
+	  background;	  
+	 
+	  left:11%;
+	 }
+
+    </style>
+  
+  </head>
+  <body>
+    
+    <div id='cont' ></div>
+    <div id></div>
+    <div id></div>	
+ 
+   
+ <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+ <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+ 
+ 
+ <script type="text/babel">
+  //"../../build/react.js"
+  //"../../build/react-dom.js"
+   //<script src="../../build/react.js">
+   //<script src="../../build/react-dom.js">
+ 
+ class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      //value: null,
+    };
+  }
+//
+//
+  render() { //this.props.val*=5
+    return ( 
+      <button
+        className="square"
+        onClick={this.props.onClick }
+      >
+        {this.props.value}
+      </button>
+    );
+  }
+}
+
+class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      s: Array(90).fill(null),
+	  st:0,
+      b:0,
+	  win:'',
+	  
+    };
+	
+  }
+
+  handleClick(i) {
+   const s = this.state.s;
+     
+   if(!s[i]) 
+     s[i]='X';
+	
+	 this.state.st=Math.round(Math.random()*9); 
+	if(!s[this.state.st])
+    	s[this.state.st]='O';
+	  else 
+	    this.state.st=Math.round(Math.random()*9);
+	  
+if(((s[0]==s[4])&&(s[8]==s[4]))&&(s[0]=='X'))
+   this.setState({win:'winner X'});
+if(((s[2]==s[4])&&(s[6]==s[4]))&&(s[2]=='X'))
+   this.setState({win:'winner X'});     
+if(((s[0]==s[1])&&(s[2]==s[1]))&&(s[0]=='X'))
+   this.setState({win:'winner X'});
+if(((s[3]==s[4])&&(s[5]==s[4]))&&(s[3]=='X'))
+   this.setState({win:'winner X'});		 
+if(((s[6]==s[7])&&(s[8]==s[7]))&&(s[6]=='X'))
+   this.setState({win:'winner X'});
+if(((s[0]==s[3])&&(s[6]==s[3]))&&(s[0]=='X'))
+   this.setState({win:'winner X'});	  
+if(((s[1]==s[4])&&(s[7]==s[4]))&&(s[1]=='X'))
+   this.setState({win:'winner X'});
+if(((s[2]==s[5])&&(s[8]==s[5]))&&(s[2]=='X'))
+   this.setState({win:'winner X'}); 
+
+if(((s[0]==s[4])&&(s[8]==s[4]))&&(s[0]=='O'))
+   this.setState({win:'winner O'});
+if(((s[2]==s[4])&&(s[6]==s[4]))&&(s[2]=='O'))
+   this.setState({win:'winner O'});     
+if(((s[0]==s[1])&&(s[2]==s[1]))&&(s[0]=='O'))
+   this.setState({win:'winner O'});
+if(((s[3]==s[4])&&(s[5]==s[4]))&&(s[3]=='O'))
+   this.setState({win:'winner O'});		 
+if(((s[6]==s[7])&&(s[8]==s[7]))&&(s[6]=='O'))
+   this.setState({win:'winner O'});
+if(((s[0]==s[3])&&(s[6]==s[3]))&&(s[0]=='O'))
+   this.setState({win:'winner O'});	  
+if(((s[1]==s[4])&&(s[7]==s[4]))&&(s[1]=='O'))
+   this.setState({win:'winner O'});
+if(((s[2]==s[5])&&(s[8]==s[5]))&&(s[2]=='O'))
+   this.setState({win:'winner O'});    
+   
+    this.setState({
+      s: s,
+      b:!this.state.b,
+	  //ai:this.state.ai.concat(i),
+    });
+  }
+
+  renderSquare(i) {
+    return (
+      <Square
+        value={this.state.s[i]}
+        onClick={()=>this.handleClick(i)}
+      />
+    );
+  }
+  
+  getWinner()
+  {
+   //if(this.state.squares[0]==0) 
+    
+	 //return this.state.ai ;
+  }
+//{this.getWinner()}{this.state.b}
+  render() 
+  {
+   
+    return (
+	
+     <div >
+	  
+	  <div Style='position:relative;top:33px'>  	   
+       Click any button   
+        <div >
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        </div>
+        <div className>
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        </div>
+        <div className>
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+        </div>
+		  {this.state.win}
+      </div>
+	</div > 
+       )
+  }
+}
+
+var v=11
+
+function TTL(p)
+{
+  return <div>{p.n} </div>
+}
+
+//React.createElement('div',{},'mmm')
+class C extends React.Component
+{
+ 
+constructor(p)
+{
+  super(p)
+   this.state={a:[],i:0,b:0,sum:0}
+}
+
+inc()
+{
+
+ if(this.state.b) 
+   this.setState(state=>({i:state.i+1}));
+}
+
+clr()
+{
+  this.setState(state=>({a:state.a.concat(state.i+' '), 
+         sum:(state.sum+state.i), i:0,}));
+}
+// 
+start()
+{
+  this.setState(state=>({b:!state.b}));
+}
+
+componentDidMount()
+{
+ setInterval(()=>this.inc(),999);
+}
+
+render()
+{
+  return (
+  <div>
+   <TTL n='MEIN' /> 
+   
+   <div>{this.state.i}</div> 
+   <div>{this.state.a}</div> 
+    <div>{this.state.sum}</div> 
+    <input type='button' onClick={()=>this.start()} />
+	<input type='button' onClick={()=>this.clr()} />
+  </div>
+  )
+   	
+
+}
+
+}
+//<F />
+
+
+ReactDOM.render( // <Board />, 
+   <C />,     
+  
+  document.getElementById('cont')
+);
+
+   
+	  
+   </script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JSX</title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+	
+	<style>
+	 div
+	 {
+	  background:red;
+	  text-align:center;
+	 }
+	
+    </style>
+  
+  </head>
+  <body>
+    <h1>T</h1>
+    <div id="idd1" onclick></div>
+    <div id="idd2"></div>
+    <div id="idd3"></div>	
+	<div id="idd4"></div>  
+	<div id="idd5"></div>  
+	<div id="idd6"></div>
+	<div id="idd7"></div>
+	<div id="idd8"></div>
+	
+	
+   <p id=idp>{o}</p>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  <script type="text/babel">
+        
+    //var p= document.getElementById('idp');
+	 var o={x:178,y:2}
+	//p.innerHTML=o.x+o.y;
+	
+  class T extends React.Component 
+  {
+    constructor(props) 
+	{
+      super(props);
+      this.state ={value: o.x};
+	  props.name;//='tyu';
+    }
+
+    render() 
+	{
+      const val = this.state.value;
+      return (
+        <div>
+		 <h2>complex component created by the class T:</h2>
+		 <h2>{'o.x: '+o.x}</h2>
+		 <h2>{'o.y: '+o.y}</h2>
+	    </div>
+        )
+	}	
+      
+    
+  } 
+  
+ 
+ const INTERVAL = 100;
+
+  class Timer extends React.Component 
+  {
+    constructor(props) 
+   {
+      super(props);
+       this.state = {value: 0};
+   }
+
+    render() 
+   {
+      const value= this.state.value
+      return (
+         <div>
+          <p>Таймер:</p>
+          <p>
+            <span>{789} : </span>
+            <span>{Math.round(value/INTERVAL/60)} : </span>
+            <span>{Math.round(value/INTERVAL)} . </span>
+            <span>{value % INTERVAL}</span>
+          </p>
+        </div>
+      )
+    }
+  };
+  
+  //Math.round(value/INTERVAL/60/60)this.state.value
+    
+ function Wel(props) {
+      return <h1>Hello, {props.name}</h1>
+    }
+ 
+    function App() {
+      return (
+        <div>
+          
+         <Wel name="f" />
+        </div>) 
+      
+    }
+	
+var x=0, l=0, iop='iop'; 
+ function incf(){ if((x==9)||(x==0))l=!l; if(l) x++; else x--; return x;}
+ //<h2></h2>
+	function inc() 
+	{
+      const el = (
+        <div>
+          <text name={iop}/>
+          <h2>It is function with a condition: {incf()}</h2>
+        </div>
+      );
+      ReactDOM.render(el, document.getElementById('idd7'));
+    }
+  
+    setInterval(inc, 1000);
+    
+   var el=<h2 >component in the var: {'o.x='+o.x+' '+'o.y='+o.y}</h2>    
+   function F(){  return <div >functional complex component: <h2>{'o.x='+o.x}</h2> <h2>{'o.y='+o.y}</h2> </div>}
+   function Sm(){if(o) return <h2>functional component with a condition: {o.x+o.y}</h2>}
+   <F/>
+      ReactDOM.render(<h2 >{'o.x='+o.x+' '+'o.y='+o.y}</h2>,
+	    document.getElementById('idd1'));  	  
+	  ReactDOM.render(el,document.getElementById('idd2')); 
+	  ReactDOM.render(<F/>,document.getElementById('idd3'));   
+      ReactDOM.render(<Sm/>,document.getElementById('idd4')); 
+	  ReactDOM.render(<T/>,document.getElementById('idd5'));   
+     //setInterval (ReactDOM.render(<Timer/>,document.getElementById('idd6')),22); 
+	 
+	 ReactDOM.render(<Timer/>,document.getElementById('idd7'));
+	 ReactDOM.render(<App />,document.getElementById('idd8'));  
+    
+           
+	  
+	  
+    </script>
+  </body>
+</html>
