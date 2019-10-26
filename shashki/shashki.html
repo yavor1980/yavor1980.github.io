@@ -2,11 +2,10 @@
 <html>
 <body id=idb>
 <style>
-*{position}
 
   #cont
 {position:absolute;
- left;
+ top;
  margin;
  width: 400px;
  height: 400px; 
@@ -17,6 +16,7 @@
  position: absolute;
  width: 50px;
  height: 50px;
+ opacity:0.4;
  
 }
   .f
@@ -24,24 +24,29 @@
  position: absolute;
  width: 50px;
  height: 50px;
- background:#000;
+ background:#aaa;
  border-radius:50%;
 
 }
+#idp
+{
+ position:absolute;
+ top:77%;
+}
+
 </style>
 
 <div id=cont onmousedown onmousemove
   onmouseup>
 </div>
 
-<p id='idp'>_</p>
+ <p id='idp' style >_</p>
 
+<script src=o.js ></script>
 <script >
-  cont=document.getElementById("cont")
+  //cont=document.getElementById("cont")
+   b=1
   
-   p=document.getElementById("idp")
-   tn=document.getElementsByTagName("div")
-  // p.style.background
   cl=[]
   for(j=0;j<8;j++)
   {
@@ -56,9 +61,13 @@
       cont.appendChild(cl[i]);
   };
   }
+  
+  
+  
 </script>
 <script src=s.js ></script>
-<script src=o.js ></script>
+
+
 
 </body>
 </html>

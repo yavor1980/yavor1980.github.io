@@ -14,7 +14,8 @@
         this.el.className='f';  
         	this.el.onmousedown=()=>{this.chs(); }
 			this.el.onmousemove=()=>{this.mv(); }
-			//this.d.onmouseup=()=>{this.dest();}
+			this.el.onmouseup=()=>{this.dest();}
+			this.el.style.cursor='pointer'
         this.el.style.left=this.x*50+'px'
         this.el.style.top=this.y*50+'px'  
          cont.appendChild(this.el);
@@ -23,14 +24,7 @@
 	   //
        chs:function()
        { 
-	    /* if(this.b==1)
-		 {
-	      this.x=this.x/50
-          this.y=this.y/50
-	    this.d.style.left=this.x+'px'; 
-	    this.d.style.top=this.y+'px';   
-			 
-		 }*/
+	    if(b==1)
 	     this.b=!this.b;
 	    	  
        },
@@ -42,9 +36,20 @@
 		this.y=(event.clientY-35);
 		 this.el.style.left=this.x+'px'
          this.el.style.top=this.y+'px'  
+		 //idp.innerHTML=this.x
 	  }
 	 },
-	  
+	dest:function()
+   {
+    this.x=Math.round(this.x/50)
+	this.y=Math.round(this.y/50)
+	 this.el.style.left=this.x*50+'px'
+     this.el.style.top=this.y*50+'px' 
+	this.b=!this.b;
+	 
+	   o.mv()
+	 idp.innerHTML=b
+   },
 	        
     }
      s.a[i].set();  
@@ -53,10 +58,7 @@
    chs:function()
    {
    },
-   dest:function()
-   {
-    
-   },
+   
    
   }
     s.set()	 

@@ -1,7 +1,8 @@
+//#import s.js
 
 o=
   {
-   a:[],
+   a:[],i:0,
    set:function()
    { j=7
     for(i=0;i<12;i++)    
@@ -12,29 +13,30 @@ o=
        set:function()
        {if(j%2==1){this.x+=1;}
         this.el.className='f';  
-        	this.el.onmousedown=()=>{this.chs(); }
-			this.el.onmousemove=()=>{this.mv(); }
-			
-		this.el.style.background='#aaa'	
+        	//this.el.onmousedown=()=>{this.chs(); }
+			//this.el.onmousemove=()=>{this.mv(); }
+			//this.el.style.cursor='pointer'
+		this.el.style.background='#000'	
         this.el.style.left=this.x*50+'px'
         this.el.style.top=this.y*50+'px'  
          cont.appendChild(this.el);
-		  this.b=0;
+		  
        },  
        chs:function()
        {
-		   this.b=!this.b;
+		   
        },
 	          
-     mv:function()
-	 {
-	  if(this.b==1)	  
-      { 
-        this.x=(event.clientX-35);
-		this.y=(event.clientY-35);
-		 this.el.style.left=this.x+'px'
-         this.el.style.top=this.y+'px'  
-	  }
+       mv:function()
+	 {    
+       
+	  this.x-=1
+	  this.y-=1
+	    this.el.style.left=this.x*50+'px'
+        this.el.style.top=this.y*50+'px'
+		
+		 idp.innerHTML=b
+	
 	 },
         
    }
@@ -48,9 +50,10 @@ o=
       
     },
 	
-    dest:function()
+    mv:function()
     {//for(i=0;i<12;i++) s.a[i].dest();      
-    
+      o.a[Math.round(Math.random()*3)+8].mv()
+       
     },
    
   }
