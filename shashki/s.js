@@ -24,7 +24,7 @@
 	   //
        chs:function()
        { 
-	    if(b==1)
+	    
 	     this.b=!this.b;
 	    	  
        },
@@ -36,7 +36,7 @@
 		this.y=(event.clientY-35);
 		 this.el.style.left=this.x+'px'
          this.el.style.top=this.y+'px'  
-		 //idp.innerHTML=this.x
+		 
 	  }
 	 },
 	dest:function()
@@ -46,9 +46,9 @@
 	 this.el.style.left=this.x*50+'px'
      this.el.style.top=this.y*50+'px' 
 	this.b=!this.b;
-	 
+	  idp.innerHTML=this.x
 	   o.mv()
-	 idp.innerHTML=b
+	 //idp.innerHTML=b
    },
 	        
     }
@@ -62,4 +62,4 @@
    
   }
     s.set()	 
-
+ 
