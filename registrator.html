@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>registrator</title>
+<meta charset="utf-8" >
+
+<style>
+body
+{
+ background:yellow;
+}
+
+input
+{
+ margin:5px;
+}
+
+#id2
+{ 
+ margin-left;
+  background;
+  opacity;
+}
+
+</style>
+
+</head>
+
+<body >
+
+<span>name: </span><input id=ide ><br>
+<input id=id_go type=submit value='go' >
+<input id=id_list type=submit value='to list' >
+<input id=id_sh_l type=submit value='show list' >
+<input id=id_sh type=submit value='show' >
+<br><br>
+
+<span >time: </span><div style='display:inline' id=id1 >0</div><br>
+
+<div id=i1 style='display:none'>
+ <span style='background:white'>list: </span><br>
+ <div style=display:inline id=id2 ></div><br>
+</div>
+<div id=i2 style='display:none' >
+ <span >medial: </span><div style='display:inline' id=id3  ></div>
+</div>
+<div id=i3 style='display:none' >
+ <span >min: </span><div style='display:inline' id=id4  ></div>
+</div>
+<div id=i4 style='display:none' >
+ <span >medial: </span><div style='display:inline' id=id5  ></div>
+</div>
+<script>//
+ s={nm:'', n:0};
+var a=[],n=0;
+var b_go=0, bshl=0, bsh=0, sm=0, sr=0;
+
+ ide.onchange=()=>
+ {
+  s.nm=ide.value; 
+ }
+ 
+ var f=()=>{s.n++; id1.innerHTML=s.n; }
+
+  id_go.onclick=()=>
+ {b_go=!b_go; 
+  if(b_go){ i=setInterval(f,9); id_go.value='stop'; }
+   else { clearInterval(i); id_go.value='go'; }
+ 
+ } 
+ 
+   id_list.onclick=()=>
+   { id1.innerHTML=0;
+	  ide.value='';
+	 if(!s.nm) s.nm='someone';
+     
+	   a.push(s);
+	
+    	n++;
+ 
+	 id2.innerHTML+=a[n-1].nm+' '+a[n-1].n+'<br>'; 	
+	sm+=s.n; sr=sm/n;
+	  id3.innerHTML=sr;
+	  
+	 s.nm='';  s.n=0; 	
+	 
+  }
+
+ id_sh_l.onclick=()=>
+ { bshl=!bshl;
+  if(bshl){i1.style.display='block'; id_sh_l.value='hide list'; }
+   else {i1.style.display='none'; id_sh_l.value='show list'; }
+ }   
+ 
+ id_sh.onclick=()=>
+ { bsh=!bsh;
+  if(bsh){i2.style.display='block'; id_sh.value='hide'; }
+   else {i2.style.display='none'; id_sh.value='show'; }
+ }   
+
+</script>
+
+</body>
+
+
+</html>
