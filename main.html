@@ -8,6 +8,18 @@
 <link rel='stylesheet' type='text/css' href='main.css'>
 
 <style>
+ a
+ {
+  opacity:1;
+  
+ }
+ 
+ a:hover
+ {
+  opacity:1;
+  background:
+ }
+ 
 </style>
 </head>
 
@@ -20,51 +32,56 @@
  <p style=''> JS:</p>
   
   <a href=calc.html  >calculator</a><br>
-  <a href=exp_calc.html  >expression calculator</a><br>
-  <a href=registrator.html  >registrator</a><br>
+  <a href=exp_calc.html  >expressive calculator</a><br>
+  <a href=calc_graph/exp_calc_graph.html  >
+    expressive calculator with figure</a><br>
   <a href=fl_b.html  >flying_balls</a><br>
   <a href=fl_balls_canvas.html  >flying_balls_canvas</a><br>  
   <a href=fl_q.html  >canvas_q</a><br>  
-  <a href=shashki/shashki.html  >checkers</a><br>
+  <a href=js/shashki.html  >shashki</a><br>
   <a href=counter/counter.html  >counter</a><br>
   <a href=balls/balls.html  >shift balls</a><br><br>
    <p style=''>jQuery:</p>
   <a href=jquery_balls.html  >jquery_ball</a><br>
-  <a href=pics/face.html  >face</a><br><br>
 </div>
   
 <div id=cnt  >
- <p style=''> React:</p>
+ <p style=''> ReactJS:</p>
   <a href=reactjs/balls.html  >push_ball</a><br>
   <a href=reactjs/calc1.html  >calculator</a><br>
   <a href=reactjs/tictactoe.html  >tictactoe</a><br>
   <a href=reactjs/counter.html  >counter</a><br>  
   <a href=reactjs/gr.html  >values to array</a><br>
   <a href=reactjs/registrator/registrator.html  >registrator</a><br>
-  <a href=vrstka/paralaks/index.html  >paralaks</a><br>
    
 </div>
- 
-<div id=fld> 
- 
- 
-</div>
+
+<div id=fld> </div>
+
 
 <footer id=idf  >
  
 </footer>
 
 <script >
-//BackgroundImage=url('tree.png');
- 
-x=0
-  function f()
-  {
-   fld.style.translate=x+'px'
-    x++
-  }
+
+//fld.style.backgroundImage='pics/tree.png';
+b=1, v=1, dv=0.1
+  c=idh.style.background='red'
+   
   
-      fld.onclick=()=>f()
+  function f()
+  {       
+	//if(!b) fld.style.opacity=1; else fld.style.opacity=0;
+	   //b=!b
+	  fld.innerHTML=b 
+  }  
+     	 
+    fld.onclick=()=>{f(); }
+	
+	
+	
+	  
 </script>
 
 
