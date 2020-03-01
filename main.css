@@ -2,24 +2,27 @@ body
 {
 }
 
-header
-{ 
+#idh
+{ border:3px red ridge;
+  z-index:1;
  position:absolute;
  height:6%;
- width:100%; 
- background:red;
- padding:3px;
+ width:99%; 
+ background:#f4f;
+ left:0px;
  text-align:center; 
 
- 
 }
 
-footer
-{ position:absolute;
- background:yellow;
- width:100%;
+#idf
+{ border:3px green ridge;
+  z-index:1;
+ left:0px; 
+ position:absolute;
+ background:#4ff;
+ width:99%;
  height:6%;
- bottom:1%;
+ bottom:1px;
  text-align:center;
  
 }
@@ -29,10 +32,9 @@ footer
  width:33%; 
  height:86%;
   top:8%;
-  padding-top;  
-   left:0;
+ left:-1px; 
   text-align:center;
-  background:radial-gradient(red,yellow);
+  background:linear-gradient(#f4f,#4ff);
   
 }
 
@@ -41,21 +43,34 @@ footer
  width:33%; 
  height:86%;
   top:8%;
-  left:33%;   
- text-align:center;   
-  background:linear-gradient(red,yellow);  
+  left:32%;
+    text-align:center;   
+  background:linear-gradient(#f4f,#4ff);  
 }
 
+#rght
+{ position:absolute;
+ width:35%; 
+ height:86%;
+  top:8%;
+  left:65%;
+    text-align:center;   
+  background:linear-gradient(#f4f,#4ff);  
+}
+
+
 #fld
-{
- position:absolute;	
-  background-image:url(pics/profile.png);   
-   background-size:99% 99%;
-   width:99px;
-   height:155px;
-   left:50%;
-   top:50%;
-    
+{ position:absolute;  
+  z-index:1;
+  left:44%;
+  top:33%;
+  border-radius:9px;
+	width:111px;
+	height:111px;
+	background:red;
+	opacity:0.8;
+	cursor:move;
+	text-align:center;
 }
 
 

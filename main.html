@@ -8,36 +8,23 @@
 <link rel='stylesheet' type='text/css' href='main.css'>
 
 <style>
- a
- {
-  opacity:1;
-  
- }
- 
- a:hover
- {
-  opacity:1;
-  background:
- }
  
 </style>
 </head>
 
 <body id=idbd onmousedown onclick>
-<header id=idh  >
+
+<div id=idh  >
  
-</header>
+</div>
 
 <div id=lft  >
  <p style=''> JS:</p>
   
   <a href=calc.html  >calculator</a><br>
   <a href=exp_calc.html  >expressive calculator</a><br>
-  <a href=calc_graph/exp_calc_graph.html  >
-    expressive calculator with figure</a><br>
   <a href=fl_b.html  >flying_balls</a><br>
   <a href=fl_balls_canvas.html  >flying_balls_canvas</a><br>  
-  <a href=fl_q.html  >canvas_q</a><br>  
   <a href=js/shashki.html  >shashki</a><br>
   <a href=counter/counter.html  >counter</a><br>
   <a href=balls/balls.html  >shift balls</a><br><br>
@@ -55,32 +42,110 @@
   <a href=reactjs/registrator/registrator.html  >registrator</a><br>
    
 </div>
+<div id=rght></div>
 
-<div id=fld> </div>
+<div id=fld></div>
 
-
-<footer id=idf  >
- 
-</footer>
+<div id=idf  >
+</div>
 
 <script >
-
-//fld.style.backgroundImage='pics/tree.png';
-b=1, v=1, dv=0.1
-  c=idh.style.background='red'
-   
+b=0, i=0
+ a=document.getElementsByTagName('a') 
+ s_clc='you can calculate simple expression with 1 operation'
+ s_clc2='you can calculate expression with several operations'
+ s_fl_b='you can operate by red ball'
+ s_fl_b_cnv='you can operate by black ball'
+ s_chkr="it's uncompleted game"
+ s_cnt="counter of any process"
+ s_tic_tac='interactive tic_tac_toe game'
+ s_sh_b='you can sfift accidently appeared balls'
+ 
+  function mv()
+  { if(b) 
+    { 
+     fld.style.left=event.clientX-55+'px'     
+     fld.style.top=event.clientY-55+'px' 
+    }		    	  	 
+  }     
+  function cl(s)
+  { 
+  // if(i<s.length)
+   { 
+    fld.innerHTML=s 
+    // i++
+   } //else i=0;	
   
-  function f()
-  {       
-	//if(!b) fld.style.opacity=1; else fld.style.opacity=0;
-	   //b=!b
-	  fld.innerHTML=b 
   }  
-     	 
-    fld.onclick=()=>{f(); }
-	
-	
-	
+  //setInterval(()=>,99)  setInterval(()=>,99); 
+  //idb.onmouseover=()=>{i=0; fld.innerHTML='';}   
+  a[0].onmouseover=()=>
+  {cl(s_clc); 
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[0].onmouseout=()=>{i=0; fld.innerHTML='';} 
+  
+  a[1].onmouseover=()=>
+  {
+   cl(s_clc2)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[1].onmouseout=()=>{i=0; fld.innerHTML='';} 
+  
+  a[2].onmouseover=()=>
+  {
+   cl(s_fl_b)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[2].onmouseout=()=>{i=0; fld.innerHTML='';} 
+  
+  a[3].onmouseover=()=>
+  {
+   cl(s_fl_b_cnv)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[3].onmouseout=()=>{i=0; fld.innerHTML='';} 
+  
+  a[4].onmouseover=()=>
+  {
+   cl(s_chkr)
+    fld.style.left=event.clientX+33+'px' 
+    fld.style.top=event.clientY+'px' 
+  }
+  a[4].onmouseout=()=>{i=0; fld.innerHTML='';}  
+  
+  a[5].onmouseover=()=>
+  {
+   cl(s_cnt)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[5].onmouseout=()=>{i=0; fld.innerHTML='';}   
+  
+  a[6].onmouseover=()=>
+  {
+   cl(s_sh_b)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[6].onmouseout=()=>{i=0; fld.innerHTML='';}  
+ 
+ a[10].onmouseover=()=>
+ {
+  cl(s_tic_tac)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+ }
+  a[10].onmouseout=()=>{i=0; fld.innerHTML='';}    
+   
+   fld.onclick=()=>{b=!b; }	
+   fld.onmousemove=()=>{mv(); }		
+ 	  
+	  
 	  
 </script>
 
