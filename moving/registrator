@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>registrator</title>
+<meta charset="utf-8" >
+<link rel='stylesheet' type='text/css'
+ href='reg.css'></link>
+
+</head>
+
+<body id=idb>
+
+<aside id=idas >aside</aside>
+   
+<main id=idmn>
+<select id=idsl >
+ <option> fir</option>
+ <option> sec</option>
+</select>
+<br>
+<div>
+ <input id=idcol type=color ><br>
+ 
+</div>
+
+ <div id class=d ></div> 
+ <div id class=d ></div>
+ <div id class=d></div>
+ 
+  <br>
+
+ <img id=idim src >
+ 
+</main>
+
+<footer id=idf>
+   footer   
+</footer>
+
+<script src='reg.js'>
+
+</script>
+</body>
+
+</html>

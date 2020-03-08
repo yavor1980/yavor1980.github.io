@@ -1,0 +1,78 @@
+*{margin:5px;}
+body
+{
+ background:yellow;
+ text-align:center;  
+}
+main
+{
+position:absolute;	
+background:orange;
+width:77%;
+height:77%;
+
+}
+
+#aside
+{position:absolute; 
+ left:77%;
+ width:23%;
+ height:77%;
+ background:brown;   
+ cursor:move; 
+ opacity:0.2;	
+ transition: 2s;
+ 
+}
+#aside:hover
+{
+ opacity:1;
+  font-size:3em;	
+}
+
+img
+{
+ position:absolute;	
+ width:111px;
+ height:111px;  
+ cursor:pointer;
+}
+
+.d
+{
+position:absolute;
+width:16%;
+height:21%;
+padding;
+background:red;
+cursor:move;
+transition:1s;
+}
+.d:hover
+{ 
+width:88px;
+height:88px;
+background:radial-gradient(red,yellow);
+transform:scale(1.1);
+}
+
+
+#ftr
+{
+ position:absolute;
+ text-align:center;
+ bottom:0%;
+ width:96%;
+ height:14%;
+ border-radius:22%;
+ background:grey;
+ opacity:0.2;
+ transition: 1s;
+ font-size:1em;
+}
+#ftr:hover
+{
+ cursor:move;
+ opacity:1;
+ font-size:3em;
+}
