@@ -26,6 +26,7 @@
   <a href=fl_b.html  >flying_balls</a><br>
   <a href=moving/moving.html  >moving</a><br>  
   <a href=js/shashki.html  >shashki</a><br>
+  <a href=counter/counter.html  >counter</a><br>
   <a href=balls/balls.html  >shift balls</a><br><br>
    <p style=''>jQuery:</p>
   <a href=jquery_balls.html  >jquery_ball</a><br>
@@ -49,101 +50,148 @@
 </div>
 
 <script >
-b=0, i=0
+b=0, n=0, dn=1
+
  a=document.getElementsByTagName('a') 
+ 
  s_clc='you can calculate simple expression with 1 operation'
  s_clc2='you can calculate expression with several operations'
  s_fl_b='you can operate by red ball'
- s_fl_b_cnv='you can operate by black ball'
+ s_moving='you can see the moving parameters'
  s_chkr="it's uncompleted game"
  s_cnt="counter of any process"
  s_tic_tac='interactive tic_tac_toe game'
  s_sh_b='you can sfift accidently appeared balls'
  
-  function mv()
-  { if(b) 
-    { 
-     fld.style.left=event.clientX-55+'px'     
-     fld.style.top=event.clientY-55+'px' 
-    }		    	  	 
-  }     
+ 
+  function cll()
+  {      
+	 a[n].style.fontSize='2em'    
+        
+    if(n>0) a[n-dn].style.fontSize='1em' 
+       if(n<0||n==a.length-1) dn*=-1	
+	 n+=dn
+  }   
+  
   function cl(s)
   { 
-  // if(i<s.length)
-   { 
-    fld.innerHTML=s 
-    // i++
-   } //else i=0;	
+    fld.innerHTML=s   	
   
   }  
-  //setInterval(()=>,99)  setInterval(()=>,99); 
-  //idb.onmouseover=()=>{i=0; fld.innerHTML='';}   
+  //cll(); cll()
+  setInterval(()=>{cll()},999)  
+     
   a[0].onmouseover=()=>
-  {cl(s_clc); 
+  {fld.style.opacity=1
+   cl(s_clc); 
    fld.style.left=event.clientX+33+'px' 
    fld.style.top=event.clientY+'px' 
   }
-  a[0].onmouseout=()=>{i=0; fld.innerHTML='';} 
+  a[0].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  } 
   
   a[1].onmouseover=()=>
-  {
+  { fld.style.opacity=1
    cl(s_clc2)
    fld.style.left=event.clientX+33+'px' 
    fld.style.top=event.clientY+'px' 
   }
-  a[1].onmouseout=()=>{i=0; fld.innerHTML='';} 
+  a[1].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  } 
   
   a[2].onmouseover=()=>
-  {
+  {fld.style.opacity=1
    cl(s_fl_b)
    fld.style.left=event.clientX+33+'px' 
    fld.style.top=event.clientY+'px' 
   }
-  a[2].onmouseout=()=>{i=0; fld.innerHTML='';} 
+  a[2].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  } 
   
   a[3].onmouseover=()=>
-  {
-   cl(s_fl_b_cnv)
+  {fld.style.opacity=1
+   cl(s_moving)
    fld.style.left=event.clientX+33+'px' 
    fld.style.top=event.clientY+'px' 
   }
-  a[3].onmouseout=()=>{i=0; fld.innerHTML='';} 
+  a[3].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  } 
   
   a[4].onmouseover=()=>
-  {
+  {fld.style.opacity=1
    cl(s_chkr)
     fld.style.left=event.clientX+33+'px' 
     fld.style.top=event.clientY+'px' 
   }
-  a[4].onmouseout=()=>{i=0; fld.innerHTML='';}  
+  a[4].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  }  
   
   a[5].onmouseover=()=>
-  {
+  {fld.style.opacity=1
    cl(s_cnt)
    fld.style.left=event.clientX+33+'px' 
    fld.style.top=event.clientY+'px' 
   }
-  a[5].onmouseout=()=>{i=0; fld.innerHTML='';}   
+  a[5].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  }   
   
   a[6].onmouseover=()=>
-  {
+  {fld.style.opacity=1
    cl(s_sh_b)
    fld.style.left=event.clientX+33+'px' 
    fld.style.top=event.clientY+'px' 
   }
-  a[6].onmouseout=()=>{i=0; fld.innerHTML='';}  
+  a[6].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  }  
+ 
+ a[7].onmouseover=()=>
+  {fld.style.opacity=1
+   cl(s_fl_b)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[7].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  }  
+ 
+ a[8].onmouseover=()=>
+  {fld.style.opacity=1
+   cl(s_fl_b)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[8].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  }  
+  
+  a[9].onmouseover=()=>
+  {fld.style.opacity=1
+   cl(s_fl_b)
+   fld.style.left=event.clientX+33+'px' 
+   fld.style.top=event.clientY+'px' 
+  }
+  a[9].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  }  
  
  a[10].onmouseover=()=>
- {
+ {fld.style.opacity=1
   cl(s_tic_tac)
    fld.style.left=event.clientX+33+'px' 
    fld.style.top=event.clientY+'px' 
  }
-  a[10].onmouseout=()=>{i=0; fld.innerHTML='';}    
-   
-   fld.onclick=()=>{b=!b; }	
-   fld.onmousemove=()=>{mv(); }		
- 	  
+  a[10].onmouseout=()=>{i=0; fld.innerHTML='';
+   fld.style.opacity=0
+  }    
+  
+ 
 	  
 	  
 </script>
