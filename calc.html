@@ -8,23 +8,130 @@
 <meta http-equiv="content-type" content="text/html" >
 
 <style type=text/css>
- div
+body
+{
+ background:#bbb;
+}
+
+ #idclc
  {
   position:absolute;
-  margin:11%;
+  margin:9%;
   padding:9px;
   border:27px ridge red;
   background:yellow;
   text-align:center;
+  cursor:pointer;
+  box-shadow:3px 3px 2px grey;
  }
- input
+ 
+ #res
  {
-  margin-top:9px;
+ position:absolute;
+ background:#0ff;
+ left:66%;
+ top;
+ width:22%;
+ height;
+ color:red;
+ font-size:3em;
+ text-align:center;
  }
+ 
+ 
+ .dd
+ { bottom:8%;
+  position:absolute;
+  color:white;
+  animation: background 9s infinite;
+  border-radius:50%;
+  text-align:center;  
+ }
+ 
+  input
+ {
+  background;
+  margin:5px;
+  cursor:pointer;
+ }
+ 
+ <!-- --> 
+
+@keyframes background {
+  
+  0% {background: radial-gradient(red,green);
+   width:99px; height:99px; font-size:3em;}
+  50% {background: radial-gradient(green,blue);
+   width:11px; height:11px; font-size:1px;}
+  100% {background: radial-gradient(blue,yellow);
+   width:99px; height:99px; font-size:3em;}
+    
+}
+ 
 </style>
 
+
+</head>
+
+<body id=idbd>
+
+<div id=idclc>
+
+<input type=number value id=num  onclick>      <br>
+
+<input type=submit value=1 id=1  onclick=n1()>
+<input type=submit value=2 id=2  onclick=n2()>
+<input type=submit value=3 id=3  onclick=n3()>  <br> 
+<input type=submit value=4 id=4  onclick=n4()>
+<input type=submit value=5 id=5  onclick=n5()>
+<input type=submit value=6 id=6  onclick=n6()>  <br>
+<input type=submit value=7 id=7  onclick=n7()>
+<input type=submit value=8 id=8  onclick=n8()>
+<input type=submit value=9 id=9  onclick=n9()> <br>  
+<input type=submit value=0 id=0  onclick=n0()> <br>
+
+  
+<input type=submit value='+' id=pl onclick=setpl()> 
+<input type=submit value='-' id=min onclick=setmin()> 
+<input type=submit value='*' id=mul onclick=setmul()> 
+<input type=submit value='/' id=div onclick=setdiv()> 
+
+<input type=submit value='=' id onclick=clc()><br>
+
+<input type=submit value='c' id onclick=c()> <br>
+
+</div>
+
+<div id=res></div>
+
+<div class=dd></div>
+<div class=dd></div>
+<div class=dd></div>
+<div class=dd></div>
+<div class=dd></div>
 <script>
- var x=0,y=0,b=0, zn;
+
+ d=document.getElementsByClassName('dd')  
+ n=0,v=0;
+  //r=Math.round(Math.random()*9)
+  //g=Math.round(Math.random()*9)
+  //
+ 
+  //alert(v)
+  function cl()
+  { d[n].style.position='absolute'
+   
+   v=Math.round(Math.random()*99)    
+    d[n].style.left=44+Math.random()*55+'%'
+    d[n].style.top=Math.random()*99+'%'
+   d[n].innerHTML=v  
+  
+	 n++; n%=5
+  }
+  
+   setInterval(cl,999)
+ 
+ var x=0, y=0, b=0, zn;  
   
   function n1(){  document.getElementById('num').value+=1; if(!b){x*=10;x+=1;}else{y*=10;y+=1; }}
   function n2(){  document.getElementById('num').value+=2; if(!b){x*=10;x+=2;}else{y*=10;y+=2; }}
@@ -51,48 +158,20 @@
 	case '-': x-=y; break;
     case '*': x*=y; break;
 	case '/': x/=y; break;
-   }
-    
+   }    
 	y=0;
    document.getElementById('num').value=x; 
+     
+	//res.innerHTML='<br>'+
+		
+ }
   
-  }
-  
-  function c(){  document.getElementById('num').value=''; x=y=0; b=0;}
-  
+function c(){  document.getElementById('num').value=''; 
+   x=y=0; b=0;}
+ 
+ 
   
 </script>
-
-</head>
-
-<body>
-
-<div>
-
-<input type=number value id=num  onclick>      <br>
-
-<input type=submit value=1 id=1  onclick=n1()>
-<input type=submit value=2 id=2  onclick=n2()>
-<input type=submit value=3 id=3  onclick=n3()>  <br> 
-<input type=submit value=4 id=4  onclick=n4()>
-<input type=submit value=5 id=5  onclick=n5()>
-<input type=submit value=6 id=6  onclick=n6()>  <br>
-<input type=submit value=7 id=7  onclick=n7()>
-<input type=submit value=8 id=8  onclick=n8()>
-<input type=submit value=9 id=9  onclick=n9()> <br>  
-<input type=submit value=0 id=0  onclick=n0()> <br>
-
-  
-<input type=submit value='+' id=pl onclick=setpl()> 
-<input type=submit value='-' id=min onclick=setmin()> 
-<input type=submit value='*' id=mul onclick=setmul()> 
-<input type=submit value='/' id=div onclick=setdiv()> 
-
-<input type=submit value='=' id onclick=clc()><br>
-
-<input type=submit value='c' id onclick=c()> <br>
-
-</div>
 
 </body>
 
