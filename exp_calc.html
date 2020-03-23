@@ -1,7 +1,4 @@
 
-
-
-
 <html>
 
 <head>
@@ -10,74 +7,52 @@
 <meta http-equiv="content-type" content="text/html" >
 
 <style type=text/css>
-  div
+  body
+  {
+   background:#afa;
+  }
+  
+  #clc
  {
   position:absolute;
-  margin:11%;
+  margin-left:11%;
+  margin-top:9%;
   padding:9px;
   border:27px ridge red;
   background:yellow;
   text-align:center;
+ <!-- animation:background 2s infinite;-->
  }
+ 
+ .cld
+ {
+  position:absolute;
+  left;
+  top;
+  font-size:3em;
+  background;
+  animation:background 3s infinite;
+ }
+ @keyframes background
+ {
+  0%{color:#fff;}
+  25%{color:#f00;} 
+  50%{color:#0f0;} 
+  75%{color:#00f;} 
+ }
+ 
  input
  {
   margin-top:9px;
  }
+ 
 </style>
-
-<script>
- var x=[]; var zn=[]; var op=[]; var n=0; 
-  
- x[0]=x[1]=x[2]=x[3]=x[4]=0; zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0'; op[0]=op[1]=op[2]=op[3]=op[4]=0;
-  
-  function setn(v){  document.getElementById('num').value+=v; x[n]*=10;x[n]+=v;}
-  
-  
-  function setpl(){if(zn[n]=='0')zn[n]='+'; document.getElementById('num').value+='+';   n++; zn[n]='+'; }  
-  function setmin(){ document.getElementById('num').value+='-';  n++; zn[n]='-'; }  
-  function setmul(){ document.getElementById('num').value+='*';  n++; op[n]='*'; }  
-  function setdiv(){ document.getElementById('num').value+='/';  n++; op[n]='/';}  
-  
-  
-  function c()
-  {document.getElementById('num').value=''; n=0; 
-   x[0]=x[1]=x[2]=x[3]=x[4]=0;
-   zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0'; 
-   op[0]=op[1]=op[2]=op[3]=op[4]=0; 
-  }
-  
-  
-  function clc()
-  { n++;
-   document.getElementById('num').value='';  
-   for(var i=0;i<n;i++)
-    if(zn[i]=='-') x[i]*=-1;
-
-   for(var i=0;i<n;i++)
-   {
-    if(op[i]=='*') {x[i]*=x[i-1]; x[i-1]=0;}
-	if(op[i]=='/') {x[i]=x[i-1]/x[i]; x[i-1]=0;}
-   }
-   for(var i=1;i<n;i++)
-     x[0]+=x[i];  
-	   n=0;   
-	   
-    x[1]=x[2]=x[3]=x[4]=0;
-     zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0';
-	op[0]=op[1]=op[2]=op[3]=op[4]=0;
-	
-   document.getElementById('num').value=x[0]; 
-  
-  }
-  
-  
-</script>
 
 </head>
 
 <body>
 
-<div>
+<div id=clc>
 
 <input type value id=num  onclick>      <br>
 
@@ -104,6 +79,68 @@
 
 </div>
 
+<div class=cld></div>
+<div class=cld></div>
+
+<script>
+ var x=[]; var zn=[]; var op=[]; var n=0; 
+  
+ x[0]=x[1]=x[2]=x[3]=x[4]=0; zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0'; op[0]=op[1]=op[2]=op[3]=op[4]=0;
+  
+  function setn(v){  document.getElementById('num').value+=v; x[n]*=10;x[n]+=v;}
+  
+  
+  function setpl(){if(zn[n]=='0')zn[n]='+'; document.getElementById('num').value+='+';   n++; zn[n]='+'; }  
+  function setmin(){ document.getElementById('num').value+='-';  n++; zn[n]='-'; }  
+  function setmul(){ document.getElementById('num').value+='*';  n++; op[n]='*'; }  
+  function setdiv(){ document.getElementById('num').value+='/';  n++; op[n]='/';}  
+  
+  function c()
+  {document.getElementById('num').value=''; n=0; 
+   x[0]=x[1]=x[2]=x[3]=x[4]=0;
+   zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0'; 
+   op[0]=op[1]=op[2]=op[3]=op[4]=0; 
+  }
+  
+  function clc()
+  { n++;
+   document.getElementById('num').value='';  
+   for(var i=0;i<n;i++)
+    if(zn[i]=='-') x[i]*=-1;
+
+   for(var i=0;i<n;i++)
+   {
+    if(op[i]=='*') {x[i]*=x[i-1]; x[i-1]=0;}
+	if(op[i]=='/') {x[i]=x[i-1]/x[i]; x[i-1]=0;}
+   }
+   for(var i=1;i<n;i++)
+     x[0]+=x[i];  
+	   n=0;   
+	   
+    x[1]=x[2]=x[3]=x[4]=0;
+     zn[0]=zn[1]=zn[2]=zn[3]=zn[4]='0';
+	op[0]=op[1]=op[2]=op[3]=op[4]=0;
+	
+   document.getElementById('num').value=x[0]; 
+}
+
+d=document.getElementsByClassName('cld')
+s='55+99*5='; i=0
+d[1].style.left=55+'%'
+d[1].style.top=11+'%'
+d[0].innerHTML='YOU CAN SET ALL THE EXPRESSION: '
+
+function f()
+{
+  if(i==s.length){i=0; d[1].innerHTML=''; }
+ d[1].innerHTML+=s[i]
+  i++
+}
+
+setInterval(f,666)
+
+
+</script>
 </body>
 
 
