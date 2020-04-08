@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<style>
+input{width:3em;}
+
+#cntnr 
+{
+ position:absolute; 
+  width:100%;
+  height:100%;  
+  background:linear-gradient(yellow,brown);
+  
+}
+
+#runner
+{
+position:absolute; 
+width:77px; 
+height:111px;
+
+}
+.insct
+{
+position:absolute; 
+width:77px; 
+height:111px; 
+
+}
+
+.s
+{ 
+  position:absolute;  
+  width:22px;
+  height:22px;  
+  background:red;
+  border-radius:50%;
+  cursor:pointer;
+  text-align:center;
+ animation:animation 4s infinite;
+}
+@keyframes animation
+{
+0%{background:radial-gradient(red,yellow);  }
+
+33%{ width:88px; height:88px;
+ background:radial-gradient(green,red);}
+
+66%{ width:44px; height:44px; font-size:3em; 
+ background:radial-gradient(brown,yellow);  }
+
+100%{  width:22px; height:22px; font-size:1em; 
+ background:radial-gradient(yellow,gray);}
+}
+
+
+</style>
+<body id=idbd onkeydown>
+
+<div id=cntnr onclick>
+  <img  id=runner >
+  <img  class=insct >
+  <img  class=insct > 
+  <div id class=s></div>
+  <div id class=s></div>
+  <div class=s ></div>  
+ 
+</div>
+
+<script>
+
+c=document.getElementsByClassName('s')
+
+rnr=['pics/runner/1b.png', 'pics/runner/2b.png',
+ 'pics/runner/3b.png', 'pics/runner/4b.png'] 
+rnrs=
+{  
+ x:Math.random()*77,
+ y:Math.random()*77, 
+   dx:1,
+   dy:1,
+  i:0,
+  
+cl:function()
+{  
+  //runner.style.left=this.x+'%'
+  //runner.style.top=this.y+'%'
+   this.i++
+   this.i%=rnr.length-1; 
+   runner.src=rnr[this.i]; 
+ 
+   this.x+=this.dx;
+ runner.style.left=this.x+'%'; 
+     if(this.x>87||this.x<0) this.dx*=-1;
+  
+   this.y+=this.dy;
+ runner.style.top=this.y+'%';
+   if(this.y>84||this.y<0) this.dy*=-1;	 
+ 	
+},
+mv:function()
+{
+  setInterval(()=>this.cl(),333)
+},
+
+} 
+ 
+ 
+inss=[]
+els1=document.getElementsByClassName('insct');
+ins=['pics/runner/1.png', 'pics/runner/2.png',
+    'pics/runner/3.png','pics/runner/3.png']
+  
+//for(i=0;i<2;i++)
+//ins[i]=
+inss[0]=
+{
+  x:Math.random()*77, 
+  y:Math.random()*77, 
+  dx:Math.random()*2-1, 
+  dy:Math.random()*2-1,
+   i:0,  
+   
+ cl:function()
+{  
+     this.i++
+   this.i%=rnr.length-1; 
+    els1[0].src=ins[this.i];
+ 
+   this.x+=this.dx;
+  els1[0].style.left=this.x+'%'; 
+     if(this.x>87||this.x<0) this.dx*=-1;
+  
+   this.y+=this.dy;
+  els1[0].style.top=this.y+'%';
+   if(this.y>84||this.y<0) this.dy*=-1;	 
+ 	
+},
+
+mv:function()
+{
+  setInterval(()=>this.cl(),333)
+},
+
+}
+
+ inss[1]=
+{
+  x:Math.random()*77, 
+  y:Math.random()*77, 
+  dx:Math.random()*2-1, 
+  dy:Math.random()*2-1,
+    i:0,
+   
+ cl:function()
+{  
+     this.i++
+   this.i%=rnr.length-1; 
+    els1[1].src=ins[this.i];
+ 
+   this.x+=this.dx;
+  els1[1].style.left=this.x+'%'; 
+     if(this.x>87||this.x<0) this.dx*=-1;
+  
+   this.y+=this.dy;
+  els1[1].style.top=this.y+'%';
+   if(this.y>84||this.y<0) this.dy*=-1;	 
+ 	
+},
+
+mv:function()
+{
+  setInterval(()=>this.cl(),333)
+},
+
+}   
+
+rnrs.mv()
+inss[0].mv()
+inss[1].mv()
+  
+for(i=0;i<3;i++)
+{
+ c[i].style.left=Math.random()*77+'%'
+ c[i].style.top=Math.random()*77+'%'
+ 
+}
+
+cntnr.onclick=()=>
+{
+ rnrs.dx=(event.clientX-rnrs.x)/77
+ rnrs.dy=(event.clientY-rnrs.y)/77
+ 
+ 
+}
+   
+  //Math.round(
+</script>
+
+</body>
+</html>
+
