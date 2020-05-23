@@ -1,0 +1,74 @@
+<html>
+<body id=idb>
+
+
+<img src='pics/bust/bust.png' class=d >
+<img src='pics/cat/cat.png' class=d >
+<img src='pics/face/face.png' class=d >
+<img src='pics/insect/insect.png' class=d >
+<img src='pics/tree/tree.png' class=d >
+
+<style>
+
+img
+{
+ top:11%;
+ width:6%;
+ height:11%;
+ 
+}
+img:hover
+{
+ top:22%;
+ width:22%;
+ height:33%;
+ 
+}
+
+</style>
+<script>
+  
+   d=document.getElementsByClassName('d')
+  l=t=0
+  w=h=99
+   bcol=[]
+ for(i=0;i<5;i++) {  
+   d[i].style.position='absolute'    
+     d[i].style.left=l+'px'
+     
+	  d[i].style.cursor='pointer'
+	   l+=w
+	   t+=h
+   }
+ 
+  
+ v=[1,1,1,1,1];  dv=[-0.1, -0.1, -0.1, -0.1, -0.1];  
+ b=[0,0,0,0,0]
+ function cl(n)
+ {d[n].style.opacity=v[n];  
+      v[n]+=dv[n];
+  if((v[n]>1)||(v[n]<0)) dv[n]*=-1
+ } 
+   function ft(n)
+   {
+    
+      i= setInterval(()=>cl(n),99)
+	
+      
+   }
+   
+   
+   d[0].onmousedown=()=>ft(0)
+   d[1].onmousedown=()=>ft(1)
+   d[2].onmousedown=()=>ft(2)
+   d[3].onmousedown=()=>ft(3)
+   d[4].onmousedown=()=>ft(4)
+     Math.random()*444
+   //d[2].onclick= ()=>o.f1()
+  
+  
+   
+</script>
+</body>
+
+</html>
