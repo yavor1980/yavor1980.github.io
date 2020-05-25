@@ -1,25 +1,15 @@
 <html>
 <body id=idb>
-
-
-<img src='pics/bust/bust.png' class=d >
-<img src='pics/cat/cat.png' class=d >
-<img src='pics/face/face.png' class=d >
-<img src='pics/insect/insect.png' class=d >
-<img src='pics/tree/tree.png' class=d >
-<img src='pics/auto.png' class=d >
-<img src='pics/car.png' class=d >
-<img src='pics/tree/plate.png' class=d >
-	
 <style>
 
 img
 {
- top:11%;
+ top;
  width:6%;
  height:11%;
  
 }
+
 img:hover
 {
  top:22%;
@@ -29,14 +19,25 @@ img:hover
 }
 
 </style>
+
+<img src='pics/bust/bust.png' class=d >
+<img src='pics/cat/cat.png' class=d >
+<img src='pics/face/face.png' class=d >
+<img src='pics/insect/insect.png' class=d >
+<img src='pics/tree/tree.png' class=d >
+<img src='pics/1x/auto.png' class=d >
+<img src='pics/1x/car.png' class=d >
+<img src='pics/1x/plate.png' class=d >
+
+
 <script>
   
    d=document.getElementsByClassName('d')
   l=t=0
-  w=h=99
+  w=h=199
    bcol=[]
- for(i=0;i<5;i++) {  
-   d[i].style.position='absolute'    
+ for(i=0;i<8;i++) {  
+   //d[i].style.position='absolute'    
      d[i].style.left=l+'px'
      
 	  d[i].style.cursor='pointer'
