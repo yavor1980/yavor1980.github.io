@@ -3,9 +3,6 @@ body
 }
 
 
-
-
-
 #lft
 { position:absolute;
  width:33%; 
@@ -33,7 +30,7 @@ body
  height:100%;
   top:-1px;
   left:65%;
-    text-align:center;   
+    text-align;   
   background:linear-gradient(135deg,#f4f,#4ff);  
  
 }
@@ -67,6 +64,12 @@ body
 {
  font-size:2em;		
 	z-index:4;
+}
+#idbust
+{
+	width:22%;
+	height:22%;
+	left:-1px;
 }
 
 @keyframes c
