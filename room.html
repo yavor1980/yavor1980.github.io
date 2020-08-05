@@ -12,6 +12,7 @@
  top:9%;
  width:83%;
  height:83%;
+ z-index;
 }
 
 #bust
@@ -30,6 +31,7 @@
  height:22%;  
  top:66%;  
  left:55%;  
+ animation:ct 4s infinite;
 }
 
 #face
@@ -48,10 +50,20 @@
   height:3%;  
   top:33%;  
   left:22%;  
- animation:insct;
- animation-duration:4s;
- animation-iteration-count:infinite;
+ animation:insct 4s infinite;
+ 
 }
+
+#idrdr
+{
+ position:absolute;
+ width:11%;  
+ height:22%;  
+ top:19%;  
+ left:22%;
+ z-index:1; 
+}
+
 <!---->
 @keyframes  insct
 {
@@ -59,6 +71,13 @@
  22% {left:77%; top:25%;}
  55% {left:37%; top:6%;}
  99% {left:22%; top:33%;}
+} 
+@keyframes  ct
+{
+ 0% {width:11%; height:22%;}
+ 55% {width:13%; height:24%;}
+ 99% {width:11%; height:22%;}
+ 
 } 
 
 </style>
@@ -69,6 +88,7 @@
 <img src='pics/cat/cat.png' id=cat  >
 <img src='pics/face/face.png' id=face >
 <img src='pics/insect/insect.png' id=ins >
+<img src='pics/reader/reader.png' id=idrdr >
 
 
 
