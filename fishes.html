@@ -30,7 +30,7 @@ position:absolute;
  top:11%;
  width:33%;
  height:33%;
- 
+  animation:the 4s infinite; 
 }
 #idenv
 {
@@ -39,31 +39,39 @@ position:absolute;
  top:44%;
   width:77%;
   height:55%;
+   animation:env 4s infinite; 
 }
 
 
 @keyframes  fsh
 {
   0% {width:18%; height:22%;}
-  22%   {width:20%; height:24%;}
-  44%  {width:22%; height:28%;}
-  66%   {width:18%; height:22%;}
+  33%   {width:20%; height:24%;}
+  66%  {width:22%; height:28%;}
+  99%   {width:18%; height:22%;}
  
 } 
-@keyframes  aq
+@keyframes  the
 {
-  
+  0% {opacity:1;}
+  33%   {opacity:0;}
+  99%  {opacity:1;} 
+} 
+@keyframes  env
+{
+  0% {opacity:1;}
+  55%   {opacity:0;}
+  99%  {opacity:1;} 
 } 
 
 </style>
 
 
-<img id=idaq src='pics/aquarium.png'   >
-<img  id=idfsh src='pics/fish.png'   >
+<img id=idaq src='pics/1x/aquarium.png'   >
+<img  id=idfsh src='pics/1x/fish.png'   >
 
-<img  id=idthe src='pics/the.png'   >
-<img  id=idenv src='pics/env.png'   >
-
+<img  id=idthe src='pics/1x/the.png'   >
+<img  id=idenv src='pics/1x/env.png'   >
 
 
 <script>
