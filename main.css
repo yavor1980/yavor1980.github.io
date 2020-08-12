@@ -30,7 +30,7 @@ body
  height:100%;
   top:-1px;
   left:65%;
-    text-align:left;   
+    text-align;   
   background:linear-gradient(135deg,#f4f,#4ff);  
  
 }
@@ -76,7 +76,13 @@ body
 {
   width:33%;
   height:22%;	
-	animation: bst 3s infinite;	 
+	animation: fsh 3s infinite;	 
+}
+#idtnr
+{
+  width:33%;
+  height:22%;	
+	animation: tnr 4s infinite;	 
 }
 
 @keyframes c
@@ -115,7 +121,17 @@ body
   44%{width:28%; height:26%; } 
   99%{width:22%; height:22%; }
  }
-
-
+@keyframes fsh
+{
+ 0%{width:22%; height:22%; }
+  33%{width:28%; height:26%; } 
+  99%{width:22%; height:22%; }
+ }
+@keyframes tnr
+{
+ 0%{width:22%; height:22%; }
+  55%{width:28%; height:26%; } 
+  99%{width:22%; height:22%; }
+ }
 
 
