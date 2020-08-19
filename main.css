@@ -84,7 +84,18 @@ body
   height:22%;	
 	animation: tnr 4s infinite;	 
 }
-
+#idhorror
+{
+  width:33%;
+  height:22%;	
+	animation: tnr 4s infinite;	 
+}
+#idglory
+{
+  width:33%;
+  height:22%;	
+	animation: tnr 4s infinite;	 
+}
 @keyframes c
 {
  0%{font-size:2em; }
@@ -133,5 +144,16 @@ body
   55%{width:28%; height:26%; } 
   99%{width:22%; height:22%; }
  }
-
+@keyframes horror
+{
+ 0%{width:22%; height:22%; }
+  55%{width:28%; height:26%; } 
+  99%{width:22%; height:22%; }
+ }
+@keyframes glory
+{
+ 0%{width:22%; height:22%; }
+  55%{width:28%; height:26%; } 
+  99%{width:22%; height:22%; }
+ }
 
