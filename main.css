@@ -88,7 +88,7 @@ body
 {
   width:33%;
   height:22%;	
-	animation: horror 4s infinite;	 
+	animation: horror 3s infinite;	 
 }
 #idglory
 {
@@ -96,6 +96,7 @@ body
   height:22%;	
 	animation: glory 4s infinite;	 
 }
+
 @keyframes c
 {
  0%{font-size:2em; }
@@ -147,7 +148,7 @@ body
 @keyframes horror
 {
  0%{width:22%; height:22%; }
-  55%{width:28%; height:26%; } 
+  33%{width:28%; height:26%; } 
   99%{width:22%; height:22%; }
  }
 @keyframes glory
