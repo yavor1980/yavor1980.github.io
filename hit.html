@@ -1,0 +1,101 @@
+<html>
+<body id=idb>
+<style>
+
+#idb
+{
+ background:linear-gradient(0deg,#00f,#0f0);
+}
+#idsw
+{
+position:absolute;
+width:11%;
+height:44%;
+left:77%;
+top:8%; 
+z-index:5;
+transform:scale(0.8) rotate(88deg); 
+ animation: sw 5s infinite;
+}
+#idshld
+{
+position:absolute;
+width:11%;
+height:22%;
+left:11%;
+top:8%; 
+transform:scale(1) rotate(0deg); 
+ animation: shld 5s infinite;
+} 
+#idhit
+{
+position:absolute;
+width:77%;
+height:55%;
+left:22%;
+top:22%;
+opacity:0;  
+z-index:-3;  
+ animation: hit 5s infinite;
+}
+#idacc
+{
+position:absolute;
+width:44%;
+height:22%;
+left:4%;
+top:3%;
+opacity:0;  
+z-index:-3;  
+ animation: hit 5s infinite;
+}
+
+@keyframes sw 
+{ 
+ 22% {left:26%;top:8%; }
+ 44% {left:77%;top:8%; }
+ 66% {left:26%;top:67%; }
+ 88% {left:77%;top:8%; }
+ 99% {left:20%;top:8%; }
+   
+}
+@keyframes shld 
+{ 
+ 22% {left:11%;top:8%;}
+ 44% {left:22%;top:44%;}
+ 66% {left:17%;top:68%;}
+ 88% {left:11%;top:55%;}
+ 99% {left:11%;top:8%;}
+ 
+}
+@keyframes hit 
+{
+ 0% {opacity:0;}
+ 55% {opacity:1;}
+ 99% {opacity:0;}
+}
+
+
+</style>
+
+<div id=idh></div>
+
+<img src='pics1/1x/sword.png' id=idsw >
+<img src='pics1/1x/shield.png' id=idshld >
+
+<img src='pics1/1x/accurate.png' id=idacc >
+<img src='pics1/1x/hit.png' id=idhit >
+
+<div id=idf></div>
+
+<script>
+  f=document.getElementById('idf')
+    
+
+  
+   //setInterval(ff,999)
+      
+</script>
+</body>
+
+</html>

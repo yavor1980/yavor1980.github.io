@@ -96,6 +96,12 @@ body
   height:22%;	
 	animation: glory 4s infinite;	 
 }
+#idsword
+{
+  width:33%;
+  height:22%;	
+	animation: sword 4s infinite;	 
+}
 
 @keyframes c
 {
@@ -152,6 +158,12 @@ body
   99%{width:22%; height:22%; }
  }
 @keyframes glory
+{
+ 0%{width:22%; height:22%; }
+  55%{width:28%; height:26%; } 
+  99%{width:22%; height:22%; }
+ }
+ @keyframes sword
 {
  0%{width:22%; height:22%; }
   55%{width:28%; height:26%; } 
