@@ -102,6 +102,11 @@ body
   height:22%;	
 	animation: sword 4s infinite;	 
 }
+#idcl
+{
+  width:8%;
+  height:8%;	
+}
 
 @keyframes c
 {
