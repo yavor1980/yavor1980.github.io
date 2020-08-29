@@ -104,6 +104,8 @@ body
 }
 #idclinics
 {
+ position:absolute;
+  top:55%;	
   width:8%;
   height:8%;	
   color:red;	
