@@ -1,0 +1,184 @@
+<doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+</head>
+
+<body id=idbd>
+
+<style>
+#idbd
+{
+background: linear-gradient(#000,#fff);
+}
+
+
+
+#idfc
+{
+ position:absolute;   
+ background:radial-gradient(#ff0,#000);
+ left:22%;
+ top:22%;
+ width:33%;
+ height:55%;
+ z-index:;
+  border-top-left-radius:44%;
+  border-top-right-radius:44%;
+  border-bottom-left-radius:44%;
+  border-bottom-right-radius:44%;  
+  transform:skew(0deg);
+  
+} 
+
+.fc
+{
+ position:absolute;   
+ border-radius:50%;
+   transition:3s;  
+  z-index:;
+   animation: 4s  infinite;
+   transform:translate(0,0px);
+}
+
+
+
+@keyframes  pp
+{
+ 0% {background:linear-gradient(#ff0,#f00);;}
+ 44% {background:linear-gradient(46deg,#ff0,#f00);;}
+ 99% {background:linear-gradient(99deg,#ff0,#f00);;}
+
+} 
+
+
+</style>
+
+<div id=idfc>
+
+<div class=fc ><div class=fc ></div></div>
+<div class=fc ><div class=fc ></div></div>
+<div class=fc ></div>
+<div class=fc ></div>
+</div>
+
+<div class=fc ></div>
+
+
+
+<script>
+//'use strict'<div class ></div><div class ></div>
+
+  
+  fc=document.getElementsByClassName('fc')
+ var clt=document.getElementsByClassName('clt')
+ //clt[0].onmousemove=()=>
+  //clt[0].style.background=linear-gradient(#000,#f00);
+  
+ s= 
+ {
+ l:[-19, 22, 77, 22, 39, 25, 44],
+ t:[-19, 22, -19, 22, 11, 81, 77], 
+ 
+ w:[55, 66, 55, 66, 33, 55, 66],
+ h:[55, 44, 55, 44, 66, 11, 5],
+   i:0, col:9, dcol:1, 
+   
+  init:function()
+  {
+     //d[0].style.position='absolute'
+	 fc[0].style.background='radial-gradient(#ff0,#000)'
+	 fc[0].style.left=s.l[0]+'%'
+	 fc[0].style.top=s.t[0]+'%'  
+     fc[0].style.width=s.w[0]+'%'
+     fc[0].style.height=s.h[0]+'%'	     
+
+     fc[1].style.background='radial-gradient(33px,#000,#fff)';
+     fc[1].style.left=s.l[1]+'%'
+	 fc[1].style.top=s.t[1]+'%'  
+     fc[1].style.width=s.w[1]+'%'
+     fc[1].style.height=s.h[1]+'%'	   
+	  
+	 fc[2].style.background='radial-gradient(#ff0,#000)';
+     fc[2].style.left=s.l[2]+'%'
+	 fc[2].style.top=s.t[2]+'%'  
+     fc[2].style.width=s.w[2]+'%'
+     fc[2].style.height=s.w[2]+'%'  
+	  
+	 fc[3].style.background='radial-gradient(33px,#000,#fff)';
+     fc[3].style.left=s.l[3]+'%'
+	 fc[3].style.top=s.t[3]+'%'  
+     fc[3].style.width=s.w[3]+'%'
+     fc[3].style.height=s.h[3]+'%' 
+	
+	 fc[4].style.background='radial-gradient(#ff0,#000)';
+     fc[4].style.left=s.l[4]+'%'
+	 fc[4].style.top=s.t[4]+'%'  
+     fc[4].style.width=s.w[4]+'%'
+     fc[4].style.height=s.h[4]+'%' 
+	 
+	 fc[5].style.background='radial-gradient(#f00,#000)';
+     fc[5].style.left=s.l[5]+'%'
+	 fc[5].style.top=s.t[5]+'%'  
+     fc[5].style.width=s.w[5]+'%'
+     fc[5].style.height=s.h[5]+'%' 
+	 
+	 fc[6].style.background='radial-gradient(#0f0,#000)';
+     fc[6].style.left=s.l[6]+'%'
+	 fc[6].style.top=s.t[6]+'%'  
+     fc[6].style.width=s.w[6]+'%'
+     fc[6].style.height=s.h[6]+'%' 
+	 /**/
+  }, 
+  fmig:function(a,b)
+ {
+     fc[1].style.height=a+'%'
+     fc[3].style.height=b+'%'
+	    //fc[1].style.top=22+'%'
+       //fc[3].style.top=22+'%'
+ },
+  
+  cl:function(n)
+ {  
+     s.l[n]+=s.dl[n]; s.t[n]+=s.dt[n];
+	//o.w[n]-=0.1; o.h[n]-=0.1;
+ // if(o.w[n]<33%) 
+  
+    fc[n].style.width=s.w[n]+'%';
+ 
+ },
+  
+}    
+    s.init() 
+
+
+  
+ b=0
+ 
+ function f()
+ {
+     if(b==0)
+	
+      s.fmig(11,55) 
+	    else
+      s.fmig(55,11) 
+	      b=!b
+ }  
+   //fc[6].onmousemove=()=>fc[6].style.top=event.clientY
+   
+   // if(b) 
+     fc[6].style.transform='rotate('+'187deg'+')'  
+  
+ 
+  
+  setInterval(f,999)
+  
+  	//fc[1].style.transition='2s'
+    
+   
+ 
+</script>
+</body>
+
+</html>
