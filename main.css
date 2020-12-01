@@ -70,37 +70,37 @@ body
 	width:22%;
 	height:22%;
 	left:-1px;
-	 animation: bst 5s infinite;	 
+	 animation:  5s infinite;	 
 }
 #idfish
 {
   width:33%;
   height:22%;	
-	animation: fsh 3s infinite;	 
+	animation:  3s infinite;	 
 }
 #idtnr
 {
   width:33%;
   height:22%;	
-	animation: tnr 4s infinite;	 
+	animation:  4s infinite;	 
 }
 #idhorror
 {
   width:33%;
   height:22%;	
-	animation: horror 3s infinite;	 
+	animation: 3s infinite;	 
 }
 #idglory
 {
   width:33%;
   height:22%;	
-	animation: glory 4s infinite;	 
+	animation:  4s infinite;	 
 }
 #idsword
 {
   width:33%;
   height:22%;	
-	animation: sword 4s infinite;	 
+	animation: 4s infinite;	 
 }
 #idclinics
 {
