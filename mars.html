@@ -1,0 +1,233 @@
+<html>
+<body id=idb>
+<style>
+
+#idb
+{
+ background:linear-gradient(57deg,#000,#888);
+}
+
+#grd
+{
+position:absolute;
+background:linear-gradient(#555,#f00);
+width:100%;
+height:33%;
+top:69%;
+left:0%;
+transition:3s;
+opacity:;    
+border-radius:%;
+border-top-left-radius:55%;
+border-top-right-radius:55%;
+ animation:  5s infinite;
+ transform:scale(1);
+  z-index:-1;
+}
+.kr
+{
+position:absolute;
+background:radial-gradient(#000,#900);;
+ z-index:-1;
+border-radius:60%;
+}
+.kr1
+{
+position:absolute;
+background:radial-gradient(#d00,#000);
+ left:11%;
+ top:11%;
+ width:77%;
+ height:88%;
+border-radius:60%;
+}
+.star
+{
+position:absolute;
+background:#ff0;
+width:1%;
+height:1%;
+border-radius:66%;
+opacity:0.4;
+}
+
+#ids
+{
+position:absolute;
+background:linear-gradient(-66deg,#555,yellow);
+width:33%;
+height:33%;
+left:33%;
+top:33%;
+transition:2s;
+opacity:;    
+border-top-left-radius:2%;
+border-top-right-radius:2%;
+border-bottom-left-radius:55%;
+border-bottom-right-radius:55%;
+ animation:  5s infinite;
+ transform:scale(0.5, 1);
+  z-index:;
+}
+.s1
+{
+position:absolute;
+width:19%;
+height:55%; 
+z-index:;
+transition:3s;
+opacity:;    
+
+ animation:  5s infinite;
+}
+.shz
+{
+position:absolute;
+background:#555;
+width:100%;
+height:19%; 
+bottom:-9%;
+border-radius:33%;
+}
+@keyframes s 
+{
+ 
+ 0% {transform:scale(1)  translate(0%,0%);}
+ 33% {transform:scale(1)  translate(33%,33%);}
+ 66% {transform:scale(1)  translate(0%,99%);}
+ 99% {transform:scale(1)  translate(0%,0%);}
+ 
+}
+
+
+</style>
+
+<div id=ids>
+ <div class=s1><div class=shz></div></div>
+ <div class=s1><div class=shz></div></div>
+ <div class=s1><div class> </div></div>
+ <div class=s1><div class=shz></div></div>
+ <div class=s1><div class=shz></div></div>
+</div>
+
+<div id=grd>
+ <div class=kr><div class=kr1></div></div>
+ <div class=kr><div class=kr1></div></div>
+ <div class=kr><div class=kr1></div></div>
+</div>
+<div class=star></div>
+
+<script>
+   
+  u=document.getElementsByClassName('s1')
+  kr=document.getElementsByClassName('kr')
+  star=document.getElementsByClassName('star')
+  
+ s={
+   b:0, bb:0,
+  init:function()
+  {
+  
+  u[2].style.left=33+'%' 
+  u[2].style.top=-50+'%'
+  u[2].style.width=33+'%' 
+  u[2].style.height=55+'%'
+  u[2].style.borderRadius=44+'%' 
+  u[2].style.background='linear-gradient(-89deg,#555,yellow)';
+  
+  u[0].style.left=11+'%'
+  u[0].style.top=82+'%'
+  u[0].style.borderRadius=22+'%' 
+  u[0].style.background='linear-gradient(-88deg,#555,yellow)'; 
+  
+  u[1].style.left=68+'%' 
+  u[1].style.top=82+'%'	
+  u[1].style.borderRadius=22+'%' 
+  u[1].style.background='linear-gradient(-88deg,#555,yellow)';
+  u[1].style.zIndex
+  
+  u[3].style.left=-19+'%'
+  u[3].style.top=0+'%'
+  u[3].style.borderRadius=22+'%' 
+  u[3].style.background='linear-gradient(-88deg,#555,yellow)'; 
+  u[3].style.transform='rotate(0deg)'  
+  
+  u[4].style.left=99+'%' 
+  u[4].style.top=0+'%'	
+  u[4].style.borderRadius=22+'%' 
+  u[4].style.background='linear-gradient(-88deg,#555,yellow)'
+  u[4].style.transform='rotate(0deg)' 
+ },
+ 
+ cl:function()
+ {  
+   if(!s.b) 
+   {
+    u[0].style.transform= 'translate(0%,-19%) scale(1, 1)' 
+    u[1].style.transform= 'translate(0%,19%) scale(1, 1.1)' 
+	 u[2].style.transform='rotate(44deg)'
+   }
+    else
+   {
+    u[0].style.transform= 'translate(0%,19%) scale(1,1)' 
+    u[1].style.transform= 'translate(0%,-19%) scale(1,1)' 
+	 u[2].style.transform='rotate(-44deg)' 
+   }	
+    s.b=!s.b
+ },
+ 
+} 
+   s.init()
+
+ grd=
+ {  
+  init:function()
+  {
+   kr[0].style.left=19+'%'
+   kr[0].style.top=24+'%'
+   kr[0].style.width=22+'%' 
+   kr[0].style.height=33+'%'
+   kr[0].style.borderRadius=55+'%' 
+   //kr[0].style.background='#f00'; 
+   kr[0].style.transform='rotate(0deg)'  
+  
+   kr[1].style.left=66+'%' 
+   kr[1].style.top=44+'%'
+   kr[1].style.width=27+'%' 
+   kr[1].style.height=33+'%'
+   kr[1].style.borderRadius=66+'%' 
+   //kr[1].style.background='#f00'
+   kr[1].style.transform='rotate(0deg)'  
+   
+   kr[2].style.left=4+'%' 
+   kr[2].style.top=66+'%'
+   kr[2].style.width=27+'%' 
+   kr[2].style.height=33+'%'
+   kr[2].style.borderRadius=66+'%' 
+   //kr[1].style.background='#f00'
+   kr[1].style.transform='rotate(0deg)'  
+   
+  },
+  
+ 
+ }
+    grd.init() 
+	 
+  ids.onmousedown=()=>
+ {
+      
+ }
+ u[2].onmousemove=()=>{
+ 
+//  u[1].style.transform='scale(1,0.7) translate(0%,-9%)'
+    u[2].style.transform='scale(2)' 
+     
+ }   
+  
+    setInterval(()=>s.cl(),999)
+
+      
+</script>
+</body>
+
+</html>
