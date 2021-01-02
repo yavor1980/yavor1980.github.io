@@ -37,27 +37,30 @@ body
 
 #idclc
 {
+ z-index:;
  animation: c 5s infinite;	
  font-size:2em;	
+ width:;
 }
 #idexclc
 {
- animation: e 5s infinite;	
+	z-index:2;
+ animation: e 3s infinite;	
  font-size:2em;	
 }
 #idrnr
 {
- animation: r 5s infinite;	
+ animation:  5s infinite;	
  font-size:2em;	
 }
 #idmv
 {
- animation: mv 5s infinite;	
+ animation:  4s infinite;	
  font-size:2em;	
 }
 #idtt
 {
- animation: tt 5s infinite;	
+ animation: tt 6s infinite;	
  font-size:2em;	
 }
 #idim
@@ -65,12 +68,19 @@ body
  font-size:2em;		
 	z-index:4;
 }
+#idmrs
+{
+ font-size:2em;		
+	z-index:4;
+	animation:mrs  5s infinite;
+}
+
 #idbust
 {
 	width:22%;
 	height:22%;
 	left:-1px;
-	 animation:  5s infinite;	 
+	 	 
 }
 #idfish
 {
@@ -88,7 +98,7 @@ body
 {
   width:33%;
   height:22%;	
-	animation: 3s infinite;	 
+	animation:  3s infinite;	 
 }
 #idglory
 {
@@ -100,81 +110,45 @@ body
 {
   width:33%;
   height:22%;	
-	animation: 4s infinite;	 
+	animation:  3s infinite;	 
 }
-#idclinics
+#idfire
 {
- position:absolute;
-  top:55%;	
-  width:8%;
-  height:8%;	
-  color:red;	
+  width:33%;
+  height:22%;	
+	animation:  4s infinite;	 
 }
 
 @keyframes c
 {
- 0%{font-size:2em; }
-  22%{font-size:3em; color:green; }
-  99%{font-size:2em; } 
+ 0%{width:3%; color:green; }
+  22%{width:55%; color:red; }
+  99%{width:22%; color:yellow; } 
  }
 @keyframes e
 {
- 0%{font-size:2em; }
-  44%{font-size:3em; color:red; } 
-  99%{font-size:2em; }
+ 0%{color:red; }
+  44%{; color:green; } 
+  99%{  color:yellow; }
  }
-@keyframes r
+@keyframes mrs
 {
- 0%{font-size:2em; }
-  66%{font-size:3em; color:yellow; } 
-  99%{font-size:2em; }
+ 0%{  color:red; }
+  66%{; color:yellow; } 
+  99%{ color:green; }
  }
 @keyframes mv
 {
- 0%{font-size:2em; }
-  55%{font-size:3em; color:brown; } 
-  99%{font-size:2em; }
+ 0%{; }
+  55%{; color:brown; } 
+  99%{; }
  }
 @keyframes tt
 {
- 0%{font-size:2em; }
-  33%{font-size:3em; color:orange; } 
-  99%{font-size:2em; }
+ 0%{ }
+  33%{ ; color:orange; } 
+  99%{; }
  }
-@keyframes bst
-{
- 0%{width:22%; height:22%; }
-  44%{width:28%; height:26%; } 
-  99%{width:22%; height:22%; }
- }
-@keyframes fsh
-{
- 0%{width:22%; height:22%; }
-  33%{width:28%; height:26%; } 
-  99%{width:22%; height:22%; }
- }
-@keyframes tnr
-{
- 0%{width:22%; height:22%; }
-  55%{width:28%; height:26%; } 
-  99%{width:22%; height:22%; }
- }
-@keyframes horror
-{
- 0%{width:22%; height:22%; }
-  33%{width:28%; height:26%; } 
-  99%{width:22%; height:22%; }
- }
-@keyframes glory
-{
- 0%{width:22%; height:22%; }
-  55%{width:28%; height:26%; } 
-  99%{width:22%; height:22%; }
- }
- @keyframes sword
-{
- 0%{width:22%; height:22%; }
-  55%{width:28%; height:26%; } 
-  99%{width:22%; height:22%; }
- }
+
+
 
