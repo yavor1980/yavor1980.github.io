@@ -1,0 +1,149 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+</head>
+
+<body id=idbd>
+
+<style>
+#idbd
+{
+background: linear-gradient(#222,#fff);
+}
+#idsol
+{
+ position:absolute;   
+ background:linear-gradient(44deg,#f00,#ff0);
+ left:33%;
+ top:11%;
+ width:33%;
+ height:66%;
+  border-radius:50%;
+  
+  
+}
+.d
+{
+ position:relative;   
+ border-radius:50%;
+  transition:;
+  z-index:1;
+   animation:  8s  infinite;
+}
+
+
+@keyframes  pp
+{
+ 0% {background:#b00;}
+ 44% {background:#f00;}
+ 77% {background:#f80;}
+
+ 
+} 
+
+
+</style>
+
+<div id=idsol>
+<div class=d ></div>
+<div class=d ></div>
+<div class=d ></div>
+<div class=d ></div>
+<div class=d ></div>
+</div>
+<div class=d ></div>
+
+
+
+<script>
+//radial-gradient(#f00,#ff0);
+
+   d=document.getElementsByClassName('d')
+ 
+  
+o= 
+ {
+ l:[-11, -17, -9],
+ t:[4, 44, 77], 
+ dl:[0.6, 0.8, 0.8,],
+ dt:[0.6, -0.8, -0.8,],
+ w:[11, 11, 11,],
+ h:[11, 11, 11,],
+  i:0, col:0, 
+  init:function()
+  {
+     //d[0].style.position='absolute'
+	 //d[0].style.background='linear-gradient(0deg,#0f0,#00f)'
+	 d[0].style.left=o.l[0]+'%'
+	 d[0].style.top=o.t[0]+'%'  
+     d[0].style.width=o.w[0]+'%'
+     d[0].style.height=o.h[0]+'%'
+	 //d[0].style.zIndex=2
+
+     //d[1].style.background='linear-gradient(0deg,#ff0,#00f)';
+     d[1].style.left=o.l[1]+'%'
+	 d[1].style.top=o.t[1]+'%'  
+     d[1].style.width=o.w[1]+'%'
+     d[1].style.height=o.w[1]+'%'
+	/*  */
+	 //d[2].style.background='linear-gradient(0deg,#00f,#0f0)';
+     d[2].style.left=o.l[2]+'%'
+	 d[2].style.top=o.t[2]+'%'  
+     d[2].style.width=o.w[2]+'%'
+     d[2].style.height=o.w[2]+'%'  
+	  
+  }, 
+  
+  cl:function(n)
+ {  
+    o.l[n]+=o.dl[n]; o.t[n]+=o.dt[n];
+	o.w[0]-=0.1; o.h[0]-=0.1;
+	  
+	
+ d[n].style.left=o.l[n]+'%';
+ d[n].style.top=o.t[n]+'%'; 
+  //d[n].style.width=o.l[n]+'%';
+  //d[n].style.height=o.t[n]+'%';  
+    o.col+=0.4
+   d[n].style.background='linear-gradient('+o.col+'deg,#0f0,#00f)';
+  
+	   
+  if((o.l[n]>111)||(o.l[n]<-21))
+  { 
+      o.dl[n]*=-1;  o.dt[n]*=-1;
+       d[n].style.zIndex=-5
+  }   
+  if((o.t[n]>111)||(o.t[n]<-21))
+  { 
+       o.dl[n]*=-1;  o.dt[n]*=-1;
+      
+  }   
+   // d[n].style.width=o.w[0]+'%';   
+   // d[n].style.height=o.h[0]+'%'; 
+   //o.scl()   
+   
+ },
+ scl:function()
+ { 
+    
+   idsol.style.background='linear-gradient(44deg,#f00,#ff0)';
+ }
+ 
+}
+  o.init()
+   setInterval(()=>{ o.cl(0);o.cl(1);o.cl(2);  },55);
+          
+   d[0].onmousedown//=()=>
+   d[1].onmousedown//=()=>setInterval(()=>,99);
+   d[2].onmousedown//=()=>setInterval(()=>,99);
+   //d[3].onmousedown=()=>{  d[3].style.zIndex=b;}
+   //d[4].onmousedown=()=>{b*=-1; d[3].style.zIndex=b;  }
+   
+   //if(i[n]) clearInterval(i[n]); 
+   
+</script>
+</body>
+
+</html>
