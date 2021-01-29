@@ -4,10 +4,10 @@
 
 #idb
 {
- background:linear-gradient(57deg,#000,#888);
+ background:linear-gradient(44deg,#000,#888);
 }
 
-#grd
+#idgrd
 {
 position:absolute;
 background:linear-gradient(#555,#f00);
@@ -22,14 +22,19 @@ border-top-left-radius:55%;
 border-top-right-radius:55%;
  animation:  5s infinite;
  transform:scale(1);
-  z-index:0;
+  z-index:-1;
 }
 .kr
 {
 position:absolute;
 background:radial-gradient(#000,#900);;
- z-index:-1;
+ width:0%;
+ height:0%;
+ left:0;
+ top:0%;
+ 
 border-radius:60%;
+
 }
 .kr1
 {
@@ -52,45 +57,54 @@ height:1%;
 border-radius:66%;
 opacity:1;
 z-index:;
-animation:kf  5s infinite;
+animation:  5s infinite;
 }
 
 #ids
 {
 position:absolute;
 background:linear-gradient(-66deg,#555,yellow);
-width:33%;
+width:24%;
 height:33%;
-left:33%;
+left:39%;
 top:33%;
 transition:2s;
 opacity:;    
-border-top-left-radius:2%;
-border-top-right-radius:2%;
+border-top-left-radius:22%;
+border-top-right-radius:22%;
 border-bottom-left-radius:55%;
 border-bottom-right-radius:55%;
- 
- transform:scale(0.5, 1);
+ transform:scale(1, 1);
   z-index:1;
 }
-.s1
+.hd
 {
-position:absolute;
-width:19%;
-height:55%; 
-z-index:;
-transition:3s;
-    
-
+ position:absolute;
+ 
+ border-radius:44%; 
+ background:linear-gradient(-89deg,#555,yellow);
+  transition:3s; 
 }
-.shz
+
+
+.hnds
 {
 position:absolute;
-background:#555;
-width:100%;
-height:19%; 
-bottom:-9%;
+background:linear-gradient(-88deg,#555,yellow);
+width:22%;
+height:88%; 
+transition:3s;
 border-radius:33%;
+}
+
+.lgs
+{
+position:absolute;
+width:18%;
+height:55%; 
+z-index:2;
+transition:3s;
+background:linear-gradient(-66deg,#555,yellow);
 }
 
 
@@ -98,15 +112,22 @@ border-radius:33%;
 </style>
 
 <div id=ids>
- <div class=s1><div class=shz></div></div>
- <div class=s1><div class=shz></div></div>
- <div class=s1><div class> </div></div>
- <div class=s1><div class=shz></div></div>
- <div class=s1><div class=shz></div></div>
+  <div class=hd>
+   <div class=hd> </div>
+   <div class=hd> </div>
+   <div class=hd> </div>
+   <div class=hd> </div>
+  </div>
+  
+  <div class=hnds></div>
+  <div class=hnds></div>
+  <div class=lgs></div>
+  <div class=lgs></div>
+     
 </div>
 
-<div id=grd>
- <div class=kr><div class=kr1></div></div>
+<div id=idgrd>
+ <div class=kr><div class=kr1></div></div> 
  <div class=kr><div class=kr1></div></div>
  <div class=kr><div class=kr1></div></div>
 </div>
@@ -115,67 +136,100 @@ border-radius:33%;
 <div class=star></div>
 <div class=star></div>
 <div class=star></div>
+<div class=star></div>
+
 <script>
-   
-  u=document.getElementsByClassName('s1')
+
+  hd=document.getElementsByClassName('hd')
+  lgs=document.getElementsByClassName('lgs')
+  hnds=document.getElementsByClassName('hnds')
+  
   kr=document.getElementsByClassName('kr')
   star=document.getElementsByClassName('star')
   
- s={
+ ss=
+ {
    b:0, bb:0,
   init:function()
   {
   
-  u[2].style.left=33+'%' 
-  u[2].style.top=-50+'%'
-  u[2].style.width=33+'%' 
-  u[2].style.height=55+'%'
-  u[2].style.borderRadius=44+'%' 
-  u[2].style.background='linear-gradient(-89deg,#555,yellow)';
+  hd[0].style.left=33+'%'
+  hd[0].style.top=-33+'%'
+  hd[0].style.width=44+'%'
+  hd[0].style.height=44+'%'
   
-  u[0].style.left=7+'%'
-  u[0].style.top=82+'%'
-  u[0].style.borderRadius=22+'%' 
-  u[0].style.background='linear-gradient(-88deg,#555,yellow)'; 
+  hd[1].style.left=29+'%'
+  hd[1].style.top=29+'%'
+  hd[1].style.width=11+'%'
+  hd[1].style.height=11+'%'
+  hd[1].style.background='#777'
+  hd[2].style.left=71+'%'
+  hd[2].style.top=29+'%'
+  hd[2].style.width=11+'%'  
+  hd[2].style.height=11+'%'
+  hd[2].style.background='#555'
+  hd[3].style.left=33+'%'
+  hd[3].style.top=71+'%'
+  hd[3].style.width=33+'%'
+  hd[3].style.height=11+'%'
+  hd[3].style.background='#f00'
+  hd[4].style.left=44+'%'
+  hd[4].style.top=22+'%'
+  hd[4].style.width=22+'%'
+  hd[4].style.height=44+'%'
+  hd[4].style.background='linear-gradient(-88deg,#555,yellow)'
+    
+  lgs[0].style.left=11+'%'
+  lgs[0].style.top=82+'%'
+  lgs[0].style.borderRadius=22+'%' 
+  lgs[0].style.background='linear-gradient(-88deg,#555,yellow)'; 
   
-  u[1].style.left=68+'%' 
-  u[1].style.top=82+'%'	
-  u[1].style.borderRadius=22+'%' 
-  u[1].style.background='linear-gradient(-88deg,#555,yellow)';
-  u[1].style.zIndex
+  lgs[1].style.left=68+'%' 
+  lgs[1].style.top=82+'%'	
+  lgs[1].style.borderRadius=22+'%' 
+  lgs[1].style.background='linear-gradient(-88deg,#555,yellow)';
+  lgs[1].style.zIndex=1  
   
-  u[3].style.left=-19+'%'
-  u[3].style.top=0+'%'
-  u[3].style.borderRadius=22+'%' 
-  u[3].style.background='linear-gradient(-88deg,#555,yellow)'; 
-  u[3].style.transform='rotate(0deg)'  
   
-  u[4].style.left=99+'%' 
-  u[4].style.top=0+'%'	
-  u[4].style.borderRadius=22+'%' 
-  u[4].style.background='linear-gradient(-88deg,#555,yellow)'
-  u[4].style.transform='rotate(0deg)' 
+  hnds[0].style.left=-11+'%'
+  hnds[0].style.top=1+'%'
+  hnds[0].style.width=22+'%'
+  hnds[0].style.height=66+'%'
+  
+  hnds[1].style.left=88+'%'
+  hnds[1].style.top=1+'%'
+  hnds[1].style.width=22+'%'
+  hnds[1].style.height=66+'%'
+  
+  
  },
  
  cl:function()
  {  
-   if(!s.b) 
+   if(!ss.b) 
    {
-    u[0].style.transform= 'translate(0%,-19%) scale(1, 1)' 
-    u[1].style.transform= 'translate(0%,19%) scale(1, 1.1)' 
-	 u[2].style.transform='rotate(44deg)'
+    lgs[0].style.transform= 'translate(0%,-19%) scale(1, 0.7)' 
+    lgs[1].style.transform= 'translate(0%,19%) scale(1, 1.3)' 
+	hnds[0].style.transform= 'translate(0%,19%) scale(1, 1.3) ' 
+    hnds[1].style.transform= 'translate(0%,-19%) scale(1, 0.7)' 
+	hnds[0].style.zIndex=0
+	hnds[1].style.zIndex=1
+	 hd[0].style.transform='rotate(44deg)'
    }
     else
    {
-    u[0].style.transform= 'translate(0%,19%) scale(1,1)' 
-    u[1].style.transform= 'translate(0%,-19%) scale(1,1)' 
-	 u[2].style.transform='rotate(-44deg)' 
+    lgs[0].style.transform= 'translate(0%,19%) scale(1,1.3)' 
+    lgs[1].style.transform= 'translate(0%,-19%) scale(1,0.7)' 
+	hnds[0].style.transform= 'translate(0%,-19%) scale(1, 0.7)' 
+    hnds[1].style.transform= 'translate(0%,19%) scale(1, 1.3)' 
+	 hd[0].style.transform='rotate(-44deg)' 
    }	
-    s.b=!s.b
+    ss.b=!ss.b
  },
  
 } 
-   s.init()
+   ss.init()
+hnds[0].style.zIndex=0     
 
  grd=
  {  
@@ -186,7 +240,7 @@ border-radius:33%;
    kr[0].style.width=22+'%' 
    kr[0].style.height=33+'%'
    kr[0].style.borderRadius=55+'%' 
-   //kr[0].style.background='#f00'; 
+   //kr[0].style.background
    kr[0].style.transform='rotate(0deg)'  
   
    kr[1].style.left=66+'%' 
@@ -194,15 +248,15 @@ border-radius:33%;
    kr[1].style.width=27+'%' 
    kr[1].style.height=33+'%'
    kr[1].style.borderRadius=66+'%' 
-   //kr[1].style.background='#f00'
+   //kr[1].style.background
    kr[1].style.transform='rotate(0deg)'  
    
    kr[2].style.left=4+'%' 
    kr[2].style.top=66+'%'
    kr[2].style.width=27+'%' 
    kr[2].style.height=33+'%'
-   kr[2].style.borderRadius=66+'%' 
-   //kr[1].style.background='#f00'
+   kr[2].style.borderRadius=77+'%' 
+   //kr[1].style.background
    kr[1].style.transform='rotate(0deg)'  
    
    star[0].style.left=Math.random()*88+'%' 
@@ -232,17 +286,22 @@ border-radius:33%;
 	 
   
   
- u[2].onmousemove=()=>{
+ ids.onmousemove=()=>{
  
-//  u[1].style.transform='scale(1,0.7) translate(0%,-9%)'
-    u[2].style.transform='scale(2)' 
+  hd[0].style.transform='scale(3,3) translate(0%,0%)'
+    //lgs[2].style.transform='scale(2)' 
      
  }   
-   
+ ids.onmouseout=()=>{
+ 
+  hd[0].style.transform='scale(1,1) translate(0%,0%)'
+    //lgs[2].style.transform='scale(2)' 
+     
+ }     
    
   function f()
   {
-   s.cl()
+   ss.cl()
     grd.cl()
   }  
     setInterval(()=>f(),999)
