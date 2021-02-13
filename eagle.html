@@ -2,183 +2,301 @@
 <html>
 <head>
 <meta charset='utf-8'>
+<style>
+#idbd
+{
+background: linear-gradient(5deg,#000,#aaa);
 
+}
+
+#ideagle
+{
+ position:absolute;   
+ background:radial-gradient(#444,#000);
+ left:24%;
+ top:28%;
+ width:11%;
+ height:44%;
+ transition:3s; 
+  border-top-left-radius:66%;
+  border-top-right-radius:66%;
+  border-bottom-left-radius:55%;
+  border-bottom-right-radius:55%;  
+    z-index:;
+	 //transform:scale(1,1);
+
+} 
+.hd
+{
+position:absolute;
+  background:blue;
+  opacity:;
+width:1%;
+height:2%;
+ border-top-left-radius:55%;
+ border-top-right-radius:55%;
+ border-bottom-left-radius:55%;
+ border-bottom-right-radius:55%;
+ z-index:-1;  
+ //border:4px solid red;
+
+}
+
+.lwng
+{
+ position:absolute;
+ background:;
+ border-top-left-radius:55%;
+ border-top-right-radius:5%;
+ border-bottom-left-radius:55%;
+ border-bottom-right-radius:99%; 
+ width:55%;
+ height:122%; 
+ 
+   transition:3s;
+  z-index:-1;  
+    
+}
+.rwng
+{
+ position:absolute;
+ background:;
+   
+ width:55%;
+ height:122%; 
+ border-top-left-radius:5%;
+ border-top-right-radius:55%;
+ border-bottom-left-radius:99%;
+ border-bottom-right-radius:55%;
+   transition:3s;
+  z-index:-1;  
+    
+}
+
+#iddrn
+{
+position:absolute;
+background:radial-gradient(#444,#000);
+   left:66%;
+   top:44%;
+ width:5%;
+ height:9%;
+transition:3s; 
+border-radius:50%;
+z-index:;
+}
+.prp
+{
+position:absolute;
+background:radial-gradient(#f00,#ff0) ;
+  //width:22%;
+  //height:19%;
+   left:63%;
+   top:11%;
+   border-radius:5%;
+ transition:3s;
+  
+}
+
+
+</style>
 </head>
 
 <body id=idbd>
 
-<style>
-#idbd
-{
-background: linear-gradient(#000,#fff);
-}
-
-
-
-#idfc
-{
- position:absolute;   
- background:radial-gradient(#ff0,#000);
- left:22%;
- top:22%;
- width:33%;
- height:55%;
- z-index:;
-  border-top-left-radius:44%;
-  border-top-right-radius:44%;
-  border-bottom-left-radius:44%;
-  border-bottom-right-radius:44%;  
-  transform:skew(0deg);
-  
-} 
-
-.fc
-{
- position:absolute;   
- border-radius:50%;
-   transition:3s;  
-  z-index:;
-   animation: 4s  infinite;
-   transform:translate(0,0px);
-}
-
-
-
-@keyframes  pp
-{
- 0% {background:linear-gradient(#ff0,#f00);;}
- 44% {background:linear-gradient(46deg,#ff0,#f00);;}
- 99% {background:linear-gradient(99deg,#ff0,#f00);;}
-
-} 
-
-
-</style>
-
-<div id=idfc>
-
-<div class=fc ><div class=fc ></div></div>
-<div class=fc ><div class=fc ></div></div>
-<div class=fc ></div>
-<div class=fc ></div>
+<div id=ideagle >
+ <div class=hd >
+  <div class=hd ></div>
+  <div class=hd ></div> 
+  <div class=hd ></div>
+ </div>
+ <div class=lwng ><div class=lwng ></div></div>
+ <div class=rwng ><div class=rwng ></div></div>
+ 
 </div>
 
-<div class=fc ></div>
+
+<div id=iddrn>
+ <div class=prp><div class=pr></div></div>
+ <div class=prp><div class=pr></div></div>
+ 
+</div> 
 
 
 
 <script>
 //'use strict'<div class ></div><div class ></div>
-
+//<div class=prp><div class=prp>ppp</div></div>
+  hd=document.getElementsByClassName('hd')
+  lwng=document.getElementsByClassName('lwng')
+  rwng=document.getElementsByClassName('rwng')
+    
+  prp=document.getElementsByClassName('prp')
   
-  fc=document.getElementsByClassName('fc')
- var clt=document.getElementsByClassName('clt')
- //clt[0].onmousemove=()=>
-  //clt[0].style.background=linear-gradient(#000,#f00);
   
- s= 
+var eagle= 
  {
- l:[-19, 22, 77, 22, 39, 25, 44],
- t:[-19, 22, -19, 22, 11, 81, 77], 
  
- w:[55, 66, 55, 66, 33, 55, 66],
- h:[55, 44, 55, 44, 66, 11, 5],
-   i:0, col:9, dcol:1, 
-   
+   i:Math.random()*33, 
+   b:1,
+    
   init:function()
   {
-     //d[0].style.position='absolute'
-	 fc[0].style.background='radial-gradient(#ff0,#000)'
-	 fc[0].style.left=s.l[0]+'%'
-	 fc[0].style.top=s.t[0]+'%'  
-     fc[0].style.width=s.w[0]+'%'
-     fc[0].style.height=s.h[0]+'%'	     
-
-     fc[1].style.background='radial-gradient(33px,#000,#fff)';
-     fc[1].style.left=s.l[1]+'%'
-	 fc[1].style.top=s.t[1]+'%'  
-     fc[1].style.width=s.w[1]+'%'
-     fc[1].style.height=s.h[1]+'%'	   
-	  
-	 fc[2].style.background='radial-gradient(#ff0,#000)';
-     fc[2].style.left=s.l[2]+'%'
-	 fc[2].style.top=s.t[2]+'%'  
-     fc[2].style.width=s.w[2]+'%'
-     fc[2].style.height=s.w[2]+'%'  
-	  
-	 fc[3].style.background='radial-gradient(33px,#000,#fff)';
-     fc[3].style.left=s.l[3]+'%'
-	 fc[3].style.top=s.t[3]+'%'  
-     fc[3].style.width=s.w[3]+'%'
-     fc[3].style.height=s.h[3]+'%' 
+     
+	 lwng[0].style.background='radial-gradient(#444,#000)';
+	 lwng[0].style.left='-89%'
+	 lwng[0].style.top='6%'  
+	 lwng[0].style.width='99%'
+	 lwng[0].style.height='122%'
+     lwng[0].style.zIndex=-1
+     lwng[1].style.left='-33%'
+	 lwng[1].style.top='-11%'  	 
 	
-	 fc[4].style.background='radial-gradient(#ff0,#000)';
-     fc[4].style.left=s.l[4]+'%'
-	 fc[4].style.top=s.t[4]+'%'  
-     fc[4].style.width=s.w[4]+'%'
-     fc[4].style.height=s.h[4]+'%' 
-	 
-	 fc[5].style.background='radial-gradient(#f00,#000)';
-     fc[5].style.left=s.l[5]+'%'
-	 fc[5].style.top=s.t[5]+'%'  
-     fc[5].style.width=s.w[5]+'%'
-     fc[5].style.height=s.h[5]+'%' 
-	 
-	 fc[6].style.background='radial-gradient(#0f0,#000)';
-     fc[6].style.left=s.l[6]+'%'
-	 fc[6].style.top=s.t[6]+'%'  
-     fc[6].style.width=s.w[6]+'%'
-     fc[6].style.height=s.h[6]+'%' 
-	 /**/
-  }, 
-  fmig:function(a,b)
- {
-     fc[1].style.height=a+'%'
-     fc[3].style.height=b+'%'
-	    //fc[1].style.top=22+'%'
-       //fc[3].style.top=22+'%'
- },
+	 rwng[0].style.background='radial-gradient(#444,#000)';
+     rwng[0].style.left='88%'
+	 rwng[0].style.top='6%'  
+	 rwng[0].style.width='99%'
+	 rwng[0].style.height='122%'
+	 rwng[0].style.zIndex=-1 
+     rwng[1].style.left='1%'
+	 rwng[1].style.top='11%'  
+	
+	 hd[0].style.background='radial-gradient(#444,#000)';
+     hd[0].style.left='18%'
+	 hd[0].style.top='-33%' 	 
+     hd[0].style.width='66%'
+	 hd[0].style.height='66%' 
+	 hd[0].style.zIndex=1
+	 hd[1].style.background='radial-gradient(#555,#000)';
+     hd[1].style.left='33%'
+	 hd[1].style.top='44%' 
+	 hd[1].style.width='44%'
+	 hd[1].style.height='44%' 
+	 hd[2].style.background='radial-gradient(#ff0,#f00)'
+     hd[2].style.left='22%'
+	 hd[2].style.top='17%' 
+	 hd[2].style.width='22%'
+	 hd[2].style.height='22%'
+	 hd[3].style.background='radial-gradient(#ff0,#f00)'
+     hd[3].style.left='66%'
+	 hd[3].style.top='17%' 
+	 hd[3].style.width='22%'
+	 hd[3].style.height='22%'
+     /* */
+  },
   
-  cl:function(n)
- {  
-     s.l[n]+=s.dl[n]; s.t[n]+=s.dt[n];
-	//o.w[n]-=0.1; o.h[n]-=0.1;
- // if(o.w[n]<33%) 
-  
-    fc[n].style.width=s.w[n]+'%';
- 
- },
-  
+  clin:function()
+ {       
+     
+
+    	
+	  lwng[0].style.width='222%'
+	  rwng[0].style.width='222%'
+	  rwng[0].style.left='-9%'
+	  lwng[0].style.top='-9%'
+	  rwng[0].style.top='-9%'
+	  lwng[0].style.transform='rotate(9deg)'
+	  rwng[0].style.transform='rotate(-9deg)'
+	  
+	  lwng[0].style.zIndex=-2
+	  rwng[0].style.zIndex=-1
+ }, 
+   clout:function()     
+	{
+	  lwng[0].style.width='99%'
+	  rwng[0].style.width='99%'
+	  rwng[0].style.left='91%'
+	  lwng[0].style.top='0%'
+	  rwng[0].style.top='0%'
+	  lwng[0].style.transform='rotate(0deg)'
+	  rwng[0].style.transform='rotate(0deg)'
+	  
+	  lwng[0].style.zIndex=-26
+	  rwng[0].style.zIndex=-1
+	},	
+	  
+	//hd[0].style.background='radial-gradient(#a00,#000)'; 
+	//hd[1].style.background='radial-gradient(#0a0,#000)';   
+
+   
 }    
-    s.init() 
-
-
-  
- b=0
- 
- function f()
- {
-     if(b==0)
+   eagle.init()
 	
-      s.fmig(11,55) 
-	    else
-      s.fmig(55,11) 
-	      b=!b
- }  
-   //fc[6].onmousemove=()=>fc[6].style.top=event.clientY
+	
+
+var drn=
+{  
+  b:1,  
+ init:function()
+ { 
+   prp[0].style.left=8+'%';
+   prp[0].style.top=-11+'%';
+   prp[0].style.width=44+'%'; 
+   prp[0].style.height=99+'%';
+   prp[0].style.borderRadius='45%'
+   //prp[0].style.opacity=0.5
+   //prp[0].style.transform='rotate(-66deg)';
+   prp[0].style.background='radial-gradient(#444,#000)';    
+  
+   prp[1].style.left=58+'%';
+   prp[1].style.top=-11+'%';
+   prp[1].style.width=44+'%';
+   prp[1].style.height=99+'%'; 
+   //prp[1].style.opacity=0.5
+   prp[1].style.borderRadius='44%'   
+   //prp[1].style.transform='rotate(66deg)';
+   prp[1].style.background='radial-gradient(#444,#000)';  
+   prp[0].style.zIndex
    
-   // if(b) 
-     fc[6].style.transform='rotate('+'187deg'+')'  
-  
- 
-  
-  setInterval(f,999)
-  
-  	//fc[1].style.transition='2s'
-    
    
- 
+ },
+ cl:function()
+  {  
+     //prp[2].style.background='radial-gradient(#b00,#000)';  
+ 	 //prp[3].style.background='linear-gradient('+drn.b+'deg,#c00,#000)';  
+     if(drn.b)
+	    {		
+    	 prp[0].style.transform='rotate(44deg) '  
+         prp[1].style.transform='rotate(-44deg) '  		
+		
+		}
+	   else
+	   {
+	    prp[0].style.transform='rotate(-44deg) '  
+		prp[1].style.transform='rotate(44deg) ' 
+		 
+	   }
+	 this.b=!this.b
+	  
+  },    
+}	 
+       	drn.init()  
+	
+	
+	
+	ideagle.onmousemove=()=>
+	{
+	    eagle.clin()	 
+		 
+    }		  
+	ideagle.onmouseout=()=>
+	{
+	    eagle.clout()	 
+		 
+    }	
+  	   
+	iddrn.onmousemove=()=>   
+	{
+      //setInterval(()=>,3000)
+	   drn.cl()
+	   
+    }	
+   
+	
+	
 </script>
 </body>
 
 </html>
+
+
