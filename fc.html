@@ -1,0 +1,279 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+</head>
+
+<body id=idbd>
+
+<style>
+#idbd
+{
+background: linear-gradient(#222,#666);
+}
+
+#idfc
+{
+ position:absolute;   
+ background: radial-gradient(#888,#ff0);
+ left:34%;
+ top:11%;
+ width:33%;
+ height:66%;
+ transition:5s;
+  border-top-left-radius:30%;
+  border-top-right-radius:30%;
+  border-bottom-left-radius:50%;
+  border-bottom-right-radius:50%;
+  
+}
+.gl
+{
+ position:absolute;   
+ border-radius:50%;
+   background:green;
+   
+   
+}
+.ns
+{
+ position:absolute;
+  background: radial-gradient(#666,#888);
+     left:40%;
+	 top:28%;  
+     width:22%;
+     height:44%;  
+	 border-radius:50%;
+	 transition:4s;
+}
+.mth
+{
+ position:absolute;
+  background:radial-gradient(#f00,#ff0);
+     left:22%;
+	 top:77%;  
+     width:55%;
+     height:11%;  
+	 border-radius:50%;
+	 transition:4s; 
+	 z-index:; 
+}
+.ears
+{
+position:absolute;
+ background:red;
+ border-radius:50%;
+ 
+}
+
+
+#idfl
+{
+position:absolute;   
+ border-radius:50%;
+ background:#666;
+ left:22%;
+ top:55%;
+  width:2%;
+  height:1%;
+   transition:5s;
+   animation: mm 3s 3;
+}
+.fl
+{
+ position:absolute; 
+ background:pink;
+  transition:1s;
+   border-radius:50%;
+}
+
+@keyframes  mm
+{
+ 0% {opacity:0.7;}
+ 44% {opacity:0.5;}
+ 77% {opacity:1;}
+
+} 
+
+
+
+</style>
+
+<div id=idfc>
+ <div class=gl id ></div>
+ <div class=gl  ></div>
+ <div class=ns ><div class=ns ></div></div>
+ <div class=mth ><div class=mth ></div></div>
+ <div class=ears ></div>
+ <div class=ears ></div>
+
+</div>
+
+<div id=idfl  >
+ <div class=fl ></div>
+ <div class=fl ></div>
+</div>
+
+
+
+<script>
+
+   gl=document.getElementsByClassName('gl')
+   ns=document.getElementsByClassName('ns')
+   mth=document.getElementsByClassName('mth')
+   ears=document.getElementsByClassName('ears')
+   
+   fl=document.getElementsByClassName('fl')
+   
+   
+s= 
+ {
+ 
+ b:0,
+  init:function()
+  {
+     
+	 gl[0].style.background='radial-gradient(#0f0,#666)'
+	 gl[0].style.left=11+'%'
+	 gl[0].style.top=22+'%'  
+     gl[0].style.width=11+'%'
+     gl[0].style.height=11+'%'
+	 gl[0].style.transition='5s'
+ 
+     gl[1].style.background='radial-gradient(#0f0,#666)';
+     gl[1].style.left=77+'%'
+	 gl[1].style.top=22+'%'  
+     gl[1].style.width=11+'%'
+     gl[1].style.height=11+'%'
+	 gl[1].style.transition='7s'
+	
+	 mth[1].style.left=0+'%'	
+     mth[1].style.top=33+'%'	
+	 mth[1].style.height=33+'%'	
+	 mth[1].style.width=100+'%'	
+
+     ears[0].style.background='radial-gradient(#888,#ff0)';
+     ears[0].style.left=-9+'%'
+	 ears[0].style.top=29+'%'  
+     ears[0].style.width=11+'%'
+     ears[0].style.height=22+'%'  
+	 ears[0].style.transition='4s'
+     ears[0].style.zIndex=-1	 
+	 
+	 ears[1].style.background='radial-gradient(#888,#ff0)';
+     ears[1].style.left=97+'%'
+	 ears[1].style.top=29+'%'  
+     ears[1].style.width=11+'%'
+     ears[1].style.height=22+'%'  
+	 ears[1].style.transition='4s' 
+	 ears[1].style.zIndex=-1
+  }, 
+  
+  cl:function()
+ { 
+  if(s.b==0)
+  {  
+   gl[0].style.transform='scale(1,1)'
+   gl[1].style.transform='scale(1,1)' 
+   ears[0].style.transform='scale(1,1)'
+   ears[1].style.transform='scale(1,1)'
+   
+  }
+  if(s.b==1)
+  {  
+    gl[0].style.transform='scale(2,2)'
+    gl[1].style.transform='scale(2,2)' 
+    ears[0].style.transform='scale(11,3)'
+    ears[1].style.transform='scale(11,3)'
+	//d[3].style.height=11+'%'
+  }
+  // setInterval(s.cllps,99)
+   
+ },
+ cllps:function()
+ {
+  mth[3].style.transition='1s'
+  mth[3].style.height=Math.random()*12+'%'
+  
+ },
+
+}
+     s.init()
+
+
+f=
+{
+  b:0, 
+init:function()
+{
+   fl[0].style.background='radial-gradient(#888,#f0f)';
+   fl[0].style.left=33+'%'
+   fl[0].style.top=-222+'%'  
+   fl[0].style.width=77+'%'
+   fl[0].style.height=333+'%'  
+   fl[0].style.transform='rotate(199deg)'
+   fl[0].style.transition='0.4s'
+   
+   fl[1].style.background='radial-gradient(#888,#f0f)';
+   fl[1].style.left=4+'%'
+   fl[1].style.top=-222+'%'  
+   fl[1].style.width=66+'%'
+   fl[1].style.height=333+'%'  
+   fl[1].style.transform='rotate(-199deg)'
+  // fll[1].style.transition='4s'
+},
+cl:function()
+{
+  //if(!f.b)
+  //idfl.style.transition='0s'
+ idfl.style.transform='translate('+Math.random()*3333+'%,'+
+                Math.random()*3333+'%)'+'scale('+Math.random()*11+')'+
+				 'rotate('+Math.random()*55+'deg)'
+ //idfl.style.transform='translate('+Math.random()*3333+'%,'+
+   //              Math.random()*3333+'%) scale('+Math.random()*3+'))'
+				 //'rotate('+55+'deg))'				 
+ //
+  //idfl.style.transform(Math.random())*33
+  //fll[1].style.transform='rotate('+(Math.random()-0.5)*33+'deg)' 
+  //fll[0].style.transform='scale(1,'+Math.random()+')' 
+  //fll[1].style.transform='scale(1,'+Math.random()+')' 
+    
+},
+clfl:function()
+{
+  fl[0].style.transform='scale('+Math.random()*3+')'
+  fl[1].style.transform='scale('+Math.random()*3+')'
+ 
+    
+},
+
+}	 
+   f.init()
+//f.clfl()
+ 
+          i=setInterval(()=>{f.cl(); }, 559);
+          //setInterval(()=>{f.clfl(); }, 55);
+var i=0
+  
+idfc.onmousemove=()=>{   
+   s.b=1  
+    s.cl()
+  	
+}
+idfc.onmouseout=()=>{   
+     s.b=0  
+	  s.cl()
+}
+
+idfl.onmousemove=()=>{   
+     clearInterval(i);
+}
+
+
+     // event.clientY
+   
+</script>
+</body>
+
+</html>
