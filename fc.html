@@ -16,7 +16,7 @@ background: linear-gradient(#222,#666);
 #idfc
 {
  position:absolute;   
- background: radial-gradient(#888,#ff0);
+ background: radial-gradient(#fff,#700);
  left:34%;
  top:11%;
  width:33%;
@@ -39,7 +39,7 @@ background: linear-gradient(#222,#666);
 .ns
 {
  position:absolute;
-  background: radial-gradient(#666,#888);
+  background: radial-gradient(#fff,#700);
      left:40%;
 	 top:28%;  
      width:22%;
@@ -56,17 +56,23 @@ background: linear-gradient(#222,#666);
      width:55%;
      height:11%;  
 	 border-radius:50%;
-	 transition:4s; 
+	 transition:6s; 
 	 z-index:; 
 }
-.ears
+.lears
 {
 position:absolute;
  background:red;
  border-radius:50%;
- 
+  
 }
-
+.rears
+{
+position:absolute;
+ background:red;
+ border-radius:50%;
+  
+}
 
 #idfl
 {
@@ -105,8 +111,8 @@ position:absolute;
  <div class=gl  ></div>
  <div class=ns ><div class=ns ></div></div>
  <div class=mth ><div class=mth ></div></div>
- <div class=ears ></div>
- <div class=ears ></div>
+ <div class=lears ><div class=lears ></div></div>
+ <div class=rears ><div class=rears ></div></div>
 
 </div>
 
@@ -122,87 +128,125 @@ position:absolute;
    gl=document.getElementsByClassName('gl')
    ns=document.getElementsByClassName('ns')
    mth=document.getElementsByClassName('mth')
-   ears=document.getElementsByClassName('ears')
+   lears=document.getElementsByClassName('lears')
+   rears=document.getElementsByClassName('rears')
    
    fl=document.getElementsByClassName('fl')
    
    
-s= 
+var s= 
  {
  
  b:0,
   init:function()
   {
      
-	 gl[0].style.background='radial-gradient(#0f0,#666)'
+	 gl[0].style.background='radial-gradient(22px,#202,#fff)'
 	 gl[0].style.left=11+'%'
 	 gl[0].style.top=22+'%'  
      gl[0].style.width=11+'%'
      gl[0].style.height=11+'%'
 	 gl[0].style.transition='5s'
  
-     gl[1].style.background='radial-gradient(#0f0,#666)';
+     gl[1].style.background='radial-gradient(22px,#202,#fff)';
      gl[1].style.left=77+'%'
 	 gl[1].style.top=22+'%'  
      gl[1].style.width=11+'%'
      gl[1].style.height=11+'%'
-	 gl[1].style.transition='7s'
-	
-	 mth[1].style.left=0+'%'	
-     mth[1].style.top=33+'%'	
-	 mth[1].style.height=33+'%'	
-	 mth[1].style.width=100+'%'	
-
-     ears[0].style.background='radial-gradient(#888,#ff0)';
-     ears[0].style.left=-9+'%'
-	 ears[0].style.top=29+'%'  
-     ears[0].style.width=11+'%'
-     ears[0].style.height=22+'%'  
-	 ears[0].style.transition='4s'
-     ears[0].style.zIndex=-1	 
+	 gl[1].style.transition='5s'
 	 
-	 ears[1].style.background='radial-gradient(#888,#ff0)';
-     ears[1].style.left=97+'%'
-	 ears[1].style.top=29+'%'  
-     ears[1].style.width=11+'%'
-     ears[1].style.height=22+'%'  
-	 ears[1].style.transition='4s' 
-	 ears[1].style.zIndex=-1
+	 ns[1].style.background='radial-gradient(#fff,#700)'; 
+	 ns[1].style.left=-22+'%'
+	 ns[1].style.top=83+'%'  
+     ns[1].style.width=144+'%'
+     ns[1].style.height=19+'%'
+	 ns[1].style.transition='5s'
+	
+	 mth[1].style.background='radial-gradient(#000,#000)'; 
+	 mth[1].style.left=11+'%'	
+     mth[1].style.top=44+'%'	
+	 mth[1].style.height=11+'%'	
+	 mth[1].style.width=77+'%'	
+
+     lears[0].style.background='radial-gradient(#fff,#700)';
+     lears[0].style.left=-9+'%'
+	 lears[0].style.top=29+'%'  
+     lears[0].style.width=11+'%'
+     lears[0].style.height=22+'%'  
+	 lears[0].style.transition='4s'
+     lears[0].style.zIndex=-1	 
+	 
+	 lears[1].style.background='radial-gradient(#fff,#700)';
+     lears[1].style.left=22+'%'
+	 lears[1].style.top=11+'%'  
+     lears[1].style.width=66+'%'
+     lears[1].style.height=77+'%'  
+	 lears[1].style.transition='4s' 
+	 //lears[1].style.zIndex=-1
+	 
+	 rears[0].style.background='radial-gradient(#fff,#700)';
+     rears[0].style.left=97+'%'
+	 rears[0].style.top=29+'%'  
+     rears[0].style.width=11+'%'
+     rears[0].style.height=22+'%'  
+	 rears[0].style.transition='4s'
+     rears[0].style.zIndex=-1	 
+	 
+	 rears[1].style.background='radial-gradient(#fff,#700)';
+     rears[1].style.left=19+'%'
+	 rears[1].style.top=11+'%'  
+     rears[1].style.width=66+'%'
+     rears[1].style.height=77+'%'  
+	 rears[1].style.transition='4s' 
+	 //rears[1].style.zIndex=-1
   }, 
   
   cl:function()
+  {
+    if(s.b)
+	 {
+    	mth[1].style.height=144+'%'
+		mth[1].style.top=11+'%'
+	  }	
+		
+     else
+	 {
+	    mth[1].style.height=11+'%'
+	    mth[1].style.top=44+'%'	
+     }
+		  s.b=!s.b
+  },
+  
+  clk:function(b)
  { 
-  if(s.b==0)
+  if(b==0)
   {  
    gl[0].style.transform='scale(1,1)'
    gl[1].style.transform='scale(1,1)' 
-   ears[0].style.transform='scale(1,1)'
-   ears[1].style.transform='scale(1,1)'
+   
+   
+   lears[0].style.transform='scale(1,1)'
+   rears[0].style.transform='scale(1,1)'
    
   }
-  if(s.b==1)
+  if(b==1)
   {  
     gl[0].style.transform='scale(2,2)'
     gl[1].style.transform='scale(2,2)' 
-    ears[0].style.transform='scale(11,3)'
-    ears[1].style.transform='scale(11,3)'
+    lears[0].style.transform='scale(11,3)'
+    rears[0].style.transform='scale(11,3)'
 	//d[3].style.height=11+'%'
   }
   // setInterval(s.cllps,99)
    
  },
- cllps:function()
- {
-  mth[3].style.transition='1s'
-  mth[3].style.height=Math.random()*12+'%'
-  
- },
+ 
 
 }
      s.init()
 
 
-f=
+var f=
 {
   b:0, 
 init:function()
@@ -233,12 +277,7 @@ cl:function()
  //idfl.style.transform='translate('+Math.random()*3333+'%,'+
    //              Math.random()*3333+'%) scale('+Math.random()*3+'))'
 				 //'rotate('+55+'deg))'				 
- //
-  //idfl.style.transform(Math.random())*33
-  //fll[1].style.transform='rotate('+(Math.random()-0.5)*33+'deg)' 
-  //fll[0].style.transform='scale(1,'+Math.random()+')' 
-  //fll[1].style.transform='scale(1,'+Math.random()+')' 
-    
+ 
 },
 clfl:function()
 {
@@ -250,22 +289,22 @@ clfl:function()
 
 }	 
    f.init()
-//f.clfl()
+
  
-          i=setInterval(()=>{f.cl(); }, 559);
-          //setInterval(()=>{f.clfl(); }, 55);
-var i=0
+         
+   setInterval(()=>{s.cl(); }, 999);
   
 idfc.onmousemove=()=>{   
-   s.b=1  
-    s.cl()
+     
+    s.clk(1)
   	
 }
 idfc.onmouseout=()=>{   
-     s.b=0  
-	  s.cl()
+     
+	  s.clk(0)
 }
 
+// i=setInterval(()=>{f.cl(); }, 559);
 idfl.onmousemove=()=>{   
      clearInterval(i);
 }
