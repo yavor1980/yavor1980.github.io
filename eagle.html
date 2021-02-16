@@ -5,7 +5,7 @@
 <style>
 #idbd
 {
-background: linear-gradient(5deg,#000,#aaa);
+background: linear-gradient(5deg,#0a0,#a00);
 
 }
 
@@ -13,7 +13,7 @@ background: linear-gradient(5deg,#000,#aaa);
 {
  position:absolute;   
  background:radial-gradient(#444,#000);
- left:24%;
+ left:33%;
  top:28%;
  width:11%;
  height:44%;
@@ -61,7 +61,7 @@ height:2%;
 {
  position:absolute;
  background:;
-   
+ opacity:;   
  width:55%;
  height:122%; 
  border-top-left-radius:5%;
@@ -73,31 +73,44 @@ height:2%;
     
 }
 
-#iddrn
+#idfrz
 {
 position:absolute;
-background:radial-gradient(#444,#000);
+background:#ff4;
+font-size:1em;
    left:66%;
    top:44%;
- width:5%;
- height:9%;
+ width:2%;
+ height:1%;
 transition:3s; 
 border-radius:50%;
-z-index:;
+
 }
-.prp
+.wrd
 {
 position:absolute;
-background:radial-gradient(#f00,#ff0) ;
-  //width:22%;
-  //height:19%;
+  width:22%;
+  height:19%;
    left:63%;
    top:11%;
    border-radius:5%;
- transition:3s;
-  
+   font-size:1em;
+ transition:2s;
+  animation:  9s infinite;
+  z-index:1;
+}
+.wrd:hover
+{
+font-size:3em;
+
 }
 
+@keyframes kf
+{
+0%{color:white;  }
+44%{color:red;  }
+99%{color:yellow; }
+} 
 
 </style>
 </head>
@@ -115,13 +128,13 @@ background:radial-gradient(#f00,#ff0) ;
  
 </div>
 
-
-<div id=iddrn>
- <div class=prp><div class=pr></div></div>
- <div class=prp><div class=pr></div></div>
+ <div class=wrd>AQUILA</div> 
+ <div class=wrd>NON</div>  
+ <div class=wrd>CAPTAT</div> 
+ <div class=wrd>MUSCAS</div> 
  
-</div> 
-
+<div id=idfrz>
+</div>
 
 
 <script>
@@ -131,7 +144,7 @@ background:radial-gradient(#f00,#ff0) ;
   lwng=document.getElementsByClassName('lwng')
   rwng=document.getElementsByClassName('rwng')
     
-  prp=document.getElementsByClassName('prp')
+  wrd=document.getElementsByClassName('wrd')
   
   
 var eagle= 
@@ -148,151 +161,162 @@ var eagle=
 	 lwng[0].style.top='6%'  
 	 lwng[0].style.width='99%'
 	 lwng[0].style.height='122%'
-     lwng[0].style.zIndex=-1
-     lwng[1].style.left='-33%'
-	 lwng[1].style.top='-11%'  	 
-	
+     //lwng[0].style.zIndex=-1
+     	 
 	 rwng[0].style.background='radial-gradient(#444,#000)';
      rwng[0].style.left='88%'
 	 rwng[0].style.top='6%'  
 	 rwng[0].style.width='99%'
 	 rwng[0].style.height='122%'
-	 rwng[0].style.zIndex=-1 
-     rwng[1].style.left='1%'
-	 rwng[1].style.top='11%'  
-	
+	 //rwng[0].style.zIndex=-1 
+     
 	 hd[0].style.background='radial-gradient(#444,#000)';
      hd[0].style.left='18%'
 	 hd[0].style.top='-33%' 	 
      hd[0].style.width='66%'
 	 hd[0].style.height='66%' 
 	 hd[0].style.zIndex=1
-	 hd[1].style.background='radial-gradient(#555,#000)';
+	 hd[1].style.background='radial-gradient(#888,#000)';
      hd[1].style.left='33%'
 	 hd[1].style.top='44%' 
 	 hd[1].style.width='44%'
 	 hd[1].style.height='44%' 
 	 hd[2].style.background='radial-gradient(#ff0,#f00)'
-     hd[2].style.left='22%'
+     hd[2].style.left='20%'
 	 hd[2].style.top='17%' 
 	 hd[2].style.width='22%'
 	 hd[2].style.height='22%'
 	 hd[3].style.background='radial-gradient(#ff0,#f00)'
-     hd[3].style.left='66%'
+     hd[3].style.left='62%'
 	 hd[3].style.top='17%' 
 	 hd[3].style.width='22%'
 	 hd[3].style.height='22%'
      /* */
   },
   
-  clin:function()
+  clk:function(b)
  {       
      
-
-    	
-	  lwng[0].style.width='222%'
-	  rwng[0].style.width='222%'
-	  rwng[0].style.left='-9%'
-	  lwng[0].style.top='-9%'
-	  rwng[0].style.top='-9%'
-	  lwng[0].style.transform='rotate(9deg)'
-	  rwng[0].style.transform='rotate(-9deg)'
+	if(b)
+    {	
+	  //lwng[0].style.transform='skew(115deg)'
+	  lwng[0].style.width='277%'	  
+	  lwng[0].style.height='144%'
+	  lwng[0].style.left='-144%'	  
+	  lwng[0].style.top='-19%'
+	  lwng[0].style.transform='rotate(11deg)'
+	  	  
+	  rwng[0].style.width='277%'
+	  rwng[0].style.height='144%'
+	  rwng[0].style.left='-9%'	  
+	  rwng[0].style.top='-19%'	  
+	  rwng[0].style.transform='rotate(-11deg)'
 	  
-	  lwng[0].style.zIndex=-2
-	  rwng[0].style.zIndex=-1
- }, 
-   clout:function()     
+	  wrd[0].style.left='11%' 
+      wrd[0].style.top='11%'  
+      wrd[0].style.color='#fff' 
+      wrd[0].style.fontSize='3em' 
+      wrd[1].style.left='42%'
+      wrd[1].style.top='22%'   
+      wrd[1].style.fontSize='3em' 
+      wrd[2].style.left='66%' 
+      wrd[2].style.top='34%'
+      wrd[2].style.fontSize='3em' 
+      wrd[3].style.left='66%' 
+      wrd[3].style.top='77%' 
+      wrd[3].style.fontSize='3em' 
+	} 
+        else
 	{
 	  lwng[0].style.width='99%'
-	  rwng[0].style.width='99%'
-	  rwng[0].style.left='91%'
+	  lwng[0].style.left='-89%'
 	  lwng[0].style.top='0%'
-	  rwng[0].style.top='0%'
 	  lwng[0].style.transform='rotate(0deg)'
+	  
+	  rwng[0].style.width='99%'
+	  rwng[0].style.left='89%'	  
+	  rwng[0].style.top='0%'	  
 	  rwng[0].style.transform='rotate(0deg)'
 	  
-	  lwng[0].style.zIndex=-26
-	  rwng[0].style.zIndex=-1
-	},	
+	  wrd[0].style.fontSize='1em' 
+	  wrd[1].style.fontSize='1em' 
+	  wrd[2].style.fontSize='1em' 
+	  wrd[3].style.fontSize='1em' 
+	}	
 	  
 	//hd[0].style.background='radial-gradient(#a00,#000)'; 
 	//hd[1].style.background='radial-gradient(#0a0,#000)';   
-
+	
+   this.b=!this.b	
+ },	
    
 }    
    eagle.init()
 	
 	
 
-var drn=
+var frz=
 {  
   b:1,  
  init:function()
  { 
-   prp[0].style.left=8+'%';
-   prp[0].style.top=-11+'%';
-   prp[0].style.width=44+'%'; 
-   prp[0].style.height=99+'%';
-   prp[0].style.borderRadius='45%'
-   //prp[0].style.opacity=0.5
-   //prp[0].style.transform='rotate(-66deg)';
-   prp[0].style.background='radial-gradient(#444,#000)';    
-  
-   prp[1].style.left=58+'%';
-   prp[1].style.top=-11+'%';
-   prp[1].style.width=44+'%';
-   prp[1].style.height=99+'%'; 
-   //prp[1].style.opacity=0.5
-   prp[1].style.borderRadius='44%'   
-   //prp[1].style.transform='rotate(66deg)';
-   prp[1].style.background='radial-gradient(#444,#000)';  
-   prp[0].style.zIndex
-   
-   
+  wrd[0].style.left='11%' 
+  wrd[0].style.top='11%'  
+  wrd[0].style.color='#fff' 
+ // wrd[0].style.fontSize='2em' 
+  wrd[1].style.left='42%'
+  wrd[1].style.top='22%'   
+  wrd[1].style.color='#fff' 
+  wrd[2].style.left='66%' 
+  wrd[2].style.top='34%'
+  wrd[2].style.color='#fff' 
+  wrd[3].style.left='66%' 
+  wrd[3].style.top='77%' 
+  wrd[3].style.color='#fff' 
  },
  cl:function()
   {  
      //prp[2].style.background='radial-gradient(#b00,#000)';  
  	 //prp[3].style.background='linear-gradient('+drn.b+'deg,#c00,#000)';  
-     if(drn.b)
+     if(frz.b)
 	    {		
-    	 prp[0].style.transform='rotate(44deg) '  
-         prp[1].style.transform='rotate(-44deg) '  		
+    	 idfrz.style.transform='rotate(44deg) '  
+         idfrz.style.transform='rotate(-44deg) '  		
 		
 		}
 	   else
 	   {
-	    prp[0].style.transform='rotate(-44deg) '  
-		prp[1].style.transform='rotate(44deg) ' 
+	    idfrz.style.transform='rotate(-44deg) '  
+		idfrz.style.transform='rotate(44deg) ' 
 		 
 	   }
 	 this.b=!this.b
 	  
   },    
 }	 
-       	drn.init()  
+       	frz.init()  
 	
+	var i
 	
-	
-	ideagle.onmousemove=()=>
+	ideagle.onmouseover=()=>
 	{
-	    eagle.clin()	 
+	    eagle.clk(1)	 
 		 
     }		  
 	ideagle.onmouseout=()=>
 	{
-	    eagle.clout()	 
+	      eagle.clk(0)
 		 
     }	
   	   
-	iddrn.onmousemove=()=>   
-	{
-      //setInterval(()=>,3000)
-	   drn.cl()
+	idfrz.onmouseover=()=>   
+	{  
 	   
+	   frz.cl()
+	        
     }	
-   
-	
+      
+	  //clearInterval(i)i=setInterval(()=>,3000)
 	
 </script>
 </body>
