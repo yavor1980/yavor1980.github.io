@@ -1,0 +1,240 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+</head>
+
+<body id=idbd>
+
+<style>
+#idbd
+{
+background: linear-gradient(#fff,#222);
+}
+#idsol
+{
+ position:absolute;   
+ background: radial-gradient(#ff0,#333);
+ left:33%;
+ top:22%;
+ width:55%;
+ height:55%;
+  border-top-left-radius:30%;
+  border-top-right-radius:30%;
+  border-bottom-left-radius:22%;
+  border-bottom-right-radius:22%; 
+   transition:6s;
+}
+.whl
+{
+ position:absolute;  
+  transition:2s;
+  transition-timing-function:linear; 
+  cursor:pointer;
+   z-index:1;
+   animation:  5s  infinite;
+}
+
+.fr
+{
+position:absolute;
+background:#f00;
+width:22%;
+height:66%;
+border-radius:50%;
+transition:2s;
+opacity:1;
+}
+
+
+
+
+@keyframes  pp
+{
+ 0% {left:66%;}
+ 44% {left:88%;}
+ 77% {left:33%;}
+ 100% {left:66%;}
+ 
+} 
+
+
+</style>
+
+<div id=idsol>
+<div class=whl ></div>
+<div class=whl ></div>
+<div class=whl ></div>
+<div class=whl >
+ <div class=fr></div>
+ <div class=fr></div>
+</div>
+</div>
+
+<div id ></div>
+
+
+
+<script>
+ 
+ 
+   whl=document.getElementsByClassName('whl')
+   fr=document.getElementsByClassName('fr')
+   //
+o= 
+ {
+  b:0,
+  initcar:function()
+  {
+     idsol.style.background='radial-gradient(#ff0,#333)' 
+     idsol.style.borderTopLeftRadius=33+'%'
+	 idsol.style.borderTopRightRadius=33+'%'
+     idsol.style.borderBottomLeftRadius=22+'%'
+	 idsol.style.borderBottomRightRadius=22+'%'  
+  	 
+	 
+     whl[0].style.background='#000'
+	 whl[0].style.left=9+'%'
+	 whl[0].style.top=88+'%'  
+     whl[0].style.width=11+'%'
+     whl[0].style.height=33+'%'
+	 whl[0].style.zIndex=-1
+
+     whl[1].style.background='#000';
+     whl[1].style.left=80+'%'
+	 whl[1].style.top=88+'%'  
+     whl[1].style.width=11+'%'
+     whl[1].style.height=33+'%'
+	 whl[1].style.zIndex=-1
+	   
+	 whl[2].style.background='linear-gradient(#000,#000)';
+     whl[2].style.left=6+'%'
+	 whl[2].style.top=6+'%'  
+     whl[2].style.width=88+'%'
+     whl[2].style.height=44+'%'  
+	 whl[2].style.borderTopLeftRadius=33+'%'
+	 whl[2].style.borderTopRightRadius=33+'%'  
+	 whl[3].style.borderBottomLeftRadius=22+'%'
+     whl[3].style.borderBottomRightRadius=22+'%'   
+     
+	 whl[3].style.background='radial-gradient(#ff0,#555)';
+     whl[3].style.left=6+'%'
+	 whl[3].style.top=55+'%'  
+     whl[3].style.width=88+'%'
+     whl[3].style.height=37+'%'
+	 whl[3].style.borderTopLeftRadius=33+'%'
+     whl[3].style.borderTopRightRadius=33+'%' 
+	 
+	 fr[0].style.left=6+'%'
+	 fr[0].style.top=22+'%'  
+	 fr[0].style.background='#f00';
+	 fr[0].style.width='22%'
+	 fr[0].style.height='66%'
+	 
+	 fr[1].style.left=71+'%'
+	 fr[1].style.top=22+'%' 
+     fr[1].style.background='#f00';
+	 fr[1].style.width='22%'
+	 fr[1].style.height='66%'
+	 
+	 /**/  
+  }, 
+  
+  initsn:function()
+  {
+     idsol.style.background='radial-gradient(#f00,#333)'
+	 idsol.style.borderTopLeftRadius=7+'%'
+	 idsol.style.borderTopRightRadius=7+'%'  
+	 idsol.style.borderBottomLeftRadius=55+'%'
+	 idsol.style.borderBottomRightRadius=55+'%'  
+	 //idsol.style.borderBottom=2+'%'
+	 //idsol.style.borderBottomRightRadius=22+'%'  
+	 
+     whl[0].style.background='radial-gradient(#f00,#333)'
+	 whl[0].style.left=41+'%'
+	 whl[0].style.top=88+'%'  
+     whl[0].style.width=11+'%'
+     whl[0].style.height=33+'%'
+	 
+
+     whl[1].style.background='radial-gradient(#f00,#333)';
+     whl[1].style.left=52+'%'
+	 whl[1].style.top=88+'%'  
+     whl[1].style.width=11+'%'
+     whl[1].style.height=33+'%'
+	  
+	
+	 whl[2].style.background='radial-gradient(#f00,#333)';
+     whl[2].style.left=2+'%'
+	 whl[2].style.top=4+'%'  
+     whl[2].style.width=77+'%'
+     whl[2].style.height=77+'%'
+	 whl[2].style.borderTopLeftRadius=22+'%'
+     whl[2].style.borderTopRightRadius=22+'%'   
+	 whl[2].style.borderBottomLeftRadius=44+'%'
+     whl[2].style.borderBottomRightRadius=44+'%' 
+	 
+	 whl[3].style.background='radial-gradient(#f00,#555)';
+     whl[3].style.left=22+'%'
+	 whl[3].style.top=-11+'%'  
+     whl[3].style.width=55+'%'
+     whl[3].style.height=33+'%'
+	 whl[3].style.borderTopLeftRadius=22+'%'
+     whl[3].style.borderTopRightRadius=22+'%'   
+	 whl[3].style.borderBottomLeftRadius=55+'%'
+     whl[3].style.borderBottomRightRadius=55+'%'   
+	 
+	 fr[0].style.background='#ff0';
+	 fr[0].style.top='9%'
+	 fr[0].style.left='22%'
+	 fr[0].style.width='11%'
+	 fr[0].style.height='11%'
+	 
+	 fr[1].style.background='#ff0';
+	 fr[1].style.top='9%'
+	 //fr[1].style.left='9%'
+	 fr[1].style.width='11%'
+	 fr[1].style.height='11%'
+	 
+  }, 
+  
+  cl:function()
+ {  
+   if(o.b>0)
+   {
+   o.initcar()
+   }
+   if(o.b==0)
+   {
+   o.initsn()
+   }
+  o.b=!o.b
+ },
+ 
+ 
+}
+      o.initcar()
+     
+	 i=0
+   i=setInterval(()=>{ o.cl(); }, 2222);
+           
+  
+idsol.onmouseout=()=>
+{   
+   
+    clearInterval(i); 
+}
+idsol.onmousedown=()=>
+{
+   //i=setInterval(()=>{ o.cl(); }, 2222);
+}
+
+
+   //
+   //event.clientY+''; 
+   
+</script>
+</body>
+
+</html>
