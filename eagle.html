@@ -73,18 +73,24 @@ height:2%;
     
 }
 
-#idfrz
+#idbtn
 {
 position:absolute;
-background:#ff4;
-font-size:1em;
-   left:66%;
-   top:44%;
- width:2%;
- height:1%;
+background:#300;
+   left:77%;
+   top:9%;
+ width:11%;
+ height:11%;
+ font-size:2em;
+ color:#fff;
+ text-align:center;
 transition:3s; 
-border-radius:50%;
-
+  border-top-left-radius:30%;
+  border-top-right-radius:30%;
+  border-bottom-left-radius:22%;
+  border-bottom-right-radius:22%; 
+   cursor:pointer; 
+    z-index:;
 }
 .wrd
 {
@@ -133,8 +139,7 @@ font-size:3em;
  <div class=wrd>CAPTAT</div> 
  <div class=wrd>MUSCAS</div> 
  
-<div id=idfrz>
-</div>
+<button id=idbtn>Wake up</button>
 
 
 <script>
@@ -209,11 +214,12 @@ var eagle=
      /* */
   },
   
-  clk:function(b)
+  cl:function()
  {       
      
-	if(b)
+	if(eagle.b)
     {	
+	 idbtn.innerHTML='Calm down'
 	  //lwng[0].style.transform='skew(115deg)'
 	  lwng[0].style.width='277%'	  
 	  lwng[0].style.height='144%'
@@ -248,6 +254,7 @@ var eagle=
 	} 
         else
 	{
+	 idbtn.innerHTML='Wake up' 
 	  lwng[0].style.width='99%'
 	  lwng[0].style.height='120%'	  	  
 	  lwng[0].style.left='-89%'
@@ -276,7 +283,7 @@ var eagle=
 	//hd[0].style.background='radial-gradient(#a00,#000)'; 
 	//hd[1].style.background='radial-gradient(#0a0,#000)';   
 	
-   this.b=!this.b	
+   eagle.b=!eagle.b	
  },	
    
 }    
@@ -327,23 +334,14 @@ var frz=
 	
 	var i
 	
-	ideagle.onmouseover=()=>
+	idbtn.onclick=()=>
 	{
-	    eagle.clk(1)	 
+	    eagle.cl()	 
 		 
     }		  
-	ideagle.onmouseout=()=>
-	{
-	      eagle.clk(0)
-		 
-    }	
+	
   	   
-	idfrz.onmouseover=()=>   
-	{  
-	   
-	   frz.cl()
-	        
-    }	
+	
       
 	  //clearInterval(i)i=setInterval(()=>,3000)
 	
