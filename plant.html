@@ -1,0 +1,245 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+</head>
+
+<body id=idbd>
+
+<style>
+#idbd
+{
+background: linear-gradient(#fff,#222);
+}
+
+#idbtn
+{
+position:absolute;
+background:#f00;
+left:77%;
+top:9%;
+width:11%;
+height:12%;
+border-radius:50%;
+transition:1s;
+text-align:center;
+font-size:2em;
+color:#000;
+cursor:pointer;
+box-shadow:-6px -6px;
+ border-top-left-radius:33%;
+ border-top-right-radius:33%;  
+}
+#idbtn:hover
+{
+//opacity:0;
+}
+
+#idplnt
+{
+ position:absolute;   
+ background: linear-gradient(#840,#222);
+ left:11%;
+ top:54%; 
+ width:44%;
+ height:46%;
+  border-top-left-radius:22%;
+  border-top-right-radius:22%;
+  
+}
+.plnt
+{
+ position:absolute;   
+
+   transition:6s;
+}
+.smk
+{
+position:absolute;   
+border-radius:55%;
+   transition:6s;
+ opacity:0;
+}
+
+
+
+@keyframes  pp
+{
+ 0% {left:66%;}
+ 44% {left:88%;}
+ 77% {left:33%;}
+ 100% {left:66%;}
+ 
+} 
+
+
+</style>
+
+<div id=idplnt>
+ <div class=plnt >
+    <div class=smk ></div>
+      
+ </div>
+  <div class=plnt >
+ <div class=smk ></div>  
+ </div>
+ <div class=plnt ></div>
+ <div class=plnt ></div>
+ <div class=plnt ></div>
+</div>
+
+<div id=idbtn >Start work</div>
+
+
+
+<script>
+ 
+ 
+   plnt=document.getElementsByClassName('plnt')
+   smk=document.getElementsByClassName('smk')
+    
+o= 
+ {
+  b:1, bcl:0,
+  initplnt:function()
+  {
+    // 
+     plnt[0].style.background='linear-gradient(#840,#000)' 
+  	 plnt[0].style.left=0+'%'
+	 plnt[0].style.top=-22+'%'  
+     plnt[0].style.width=22+'%'
+     plnt[0].style.height=122+'%'
+	 plnt[0].style.zIndex=-1
+
+     plnt[1].style.background='linear-gradient(#620,#000)';
+     plnt[1].style.left=66+'%'
+	 plnt[1].style.top=-22+'%'  
+     plnt[1].style.width=22+'%'
+     plnt[1].style.height=66+'%'
+	 plnt[1].style.zIndex=-1
+	   
+	 plnt[2].style.background='#000';
+     plnt[2].style.left=22+'%'
+	 plnt[2].style.top=53+'%'  
+     plnt[2].style.width=55+'%'
+     plnt[2].style.height=44+'%'  
+	 plnt[2].style.borderTopLeftRadius=33+'%'
+	 plnt[2].style.borderTopRightRadius=33+'%'  
+	   
+     plnt[3].style.background='#000';
+     plnt[3].style.left=11+'%'
+	 plnt[3].style.top=17+'%'  
+     plnt[3].style.width=22+'%'
+     plnt[3].style.height=22+'%'  
+	 plnt[3].style.borderTopLeftRadius=11+'%'
+	 plnt[3].style.borderTopRightRadius=11+'%'  
+	 
+	 plnt[4].style.background='#000';
+     plnt[4].style.left=59+'%'
+	 plnt[4].style.top=17+'%'  
+     plnt[4].style.width=22+'%'
+     plnt[4].style.height=22+'%'  
+	 plnt[4].style.borderTopLeftRadius=16+'%'
+	 plnt[4].style.borderTopRightRadius=16+'%'  
+	
+	 smk[0].style.background='linear-gradient(#000,#000)' 
+  	 smk[0].style.left=0+'%'
+	 smk[0].style.top=-33+'%'  
+     smk[0].style.width=111+'%'
+     smk[0].style.height=22+'%'
+	 
+	 smk[1].style.background='linear-gradient(#000,#000)' 
+  	 smk[1].style.left=0+'%'
+	 smk[1].style.top=-33+'%'  
+     smk[1].style.width=111+'%'
+     smk[1].style.height=22+'%'
+		 
+	 /* */  
+  }, 
+  
+  cl:function(n)
+  {
+  if(o.b)
+   {
+   plnt[n].style.background='linear-gradient(#000,#f00)';
+     smk[0].style.background='linear-gradient(#000,#000)' 
+  	 smk[0].style.opacity=0.5
+	 smk[0].style.left=-22+'%'  
+	 smk[0].style.top=-99+'%'  
+     smk[0].style.width=444+'%'
+     smk[0].style.height=99+'%'
+	 
+	 smk[1].style.background='linear-gradient(#000,#000)' 
+  	 smk[1].style.opacity=0.5
+	 smk[1].style.left=-22+'%'  
+	 smk[1].style.top=-99+'%'  
+     smk[1].style.width=444+'%'
+     smk[1].style.height=99+'%' 
+     
+   } else
+   {
+    plnt[n].style.background='linear-gradient(#000,#000)';
+   	smk[0].style.background='linear-gradient(#000,#000)' 
+  	 smk[0].style.opacity=0
+	 smk[0].style.left=-22+'%'  
+	 smk[0].style.top=-99+'%'  
+     smk[0].style.width=444+'%'
+     smk[0].style.height=99+'%'
+	 
+	 smk[1].style.background='linear-gradient(#000,#000)' 
+  	 smk[1].style.opacity=0
+	 smk[1].style.left=-22+'%'  
+	 smk[1].style.top=-99+'%'  
+     smk[1].style.width=444+'%'
+     smk[1].style.height=99+'%' 
+   }
+  },
+ 
+  clk:function()
+ {  
+   if(o.b>0)
+   {
+    idbtn.style.boxShadow='0px 0px'
+	idbtn.innerHTML='Stop work'
+	 o.cl(2)
+	 o.cl(3)
+	 o.cl(4)
+	 
+   }
+   if(o.b==0)
+   {
+      idbtn.style.boxShadow='-6px -6px'
+	  idbtn.innerHTML='Start work'
+	   o.cl(2)
+	   o.cl(3)
+	   o.cl(4)
+   }
+  o.b=!o.b
+ },
+ 
+ 
+}
+      o.initplnt()
+     
+	 
+
+idbtn.onmousedown=()=>
+{
+  o.clk() 
+ 
+}
+idbtn.onmouseup=()=>
+{
+    //o.clk()
+ 
+}
+
+   // i=setInterval(()=>{ o.cl(); }, 2222);
+   //event.clientY+''; 
+   
+</script>
+</body>
+
+</html>
+
