@@ -6,25 +6,30 @@
     <link rel="stylesheet" href="../shared/css/base.css" />
 	
 	<style>
-	div{
-	    position; 
-	   }
+	
 	
 	 #cont
-	 {	 	  
-	  width:333px;
-	  height:333px;
+	 {	 
+	  position:absolute; 
+      top:22%;	 
+	  width:66%;	  
+	  height:55%;
 	  background:yellow;
 	  text-align:center;
 	  border-radius:50%;
-	  top:44px;
+	  
 	 }
 	 .square
-	 {	 	  
-	  width:22px;
-	  height:22px;
-	  background;	  	 
-	  left:11%;
+	 {
+	  //position:absolute;
+	  width:33px;	  
+	  height:33px;
+	  
+	 }
+	 p
+	 {
+	  font-size:2em;
+	  color:red;
 	 }
 
     </style>
@@ -77,7 +82,7 @@ class Board extends React.Component {
 	  st:0,
       b:0,
 	  win:'',
-	  //ai:[],
+	  ai:[],
     };
 	
   }
@@ -153,7 +158,7 @@ if(((s[2]==s[5])&&(s[8]==s[5]))&&(s[2]=='O'))
      <div >
 	  
 	  <div Style='position:relative;top:33px'>  	   
-       Click any button   
+      <p> Click any button </p>   
         <div >
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -169,7 +174,7 @@ if(((s[2]==s[5])&&(s[8]==s[5]))&&(s[2]=='O'))
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
-		  {this.state.win}
+		<p>  {this.state.win}  </p>
       </div>
 	</div > 
        )
