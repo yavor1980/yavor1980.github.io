@@ -10,138 +10,179 @@
 <style>
 #idbd
 {
-background: linear-gradient(#222,#fff);
+background: linear-gradient(#333,#222);
 }
-#idsol
+
+.sol
 {
  position:absolute;   
- background:linear-gradient(44deg,#f00,#ff0);
- left:33%;
- top:11%;
- width:33%;
- height:66%;
-  border-radius:50%;
-  
-  
+
+ left:22%;
+ top:22%;
+ width:27%;
+ height:55%;
+  background: radial-gradient(#bb0,#f00);
+  border-radius:55%; 
+   transition:6s;
 }
-.d
+.plnt
 {
- position:relative;   
- border-radius:50%;
-  transition:;
-  z-index:1;
-   animation:  8s  infinite;
+ position:absolute;  
+  transition:6s;
+  transition-timing-function:linear; 
+  
+   border-radius:50%;
+   animation:  5s  infinite;
+}
+
+
+#idbtn
+{
+position:absolute;
+background:#f00;
+left:77%;
+width:7%;
+height:11%;
+border-radius:50%;
+transition:2s;
+opacity:1;
+cursor:pointer;
+text-align:center;
+font-size:2em;
+padding-top:3px;
 }
 
 
 @keyframes  pp
 {
- 0% {background:#b00;}
- 44% {background:#f00;}
- 77% {background:#f80;}
-
+ 0% {left:66%;}
+ 44% {left:88%;}
+ 77% {left:33%;}
+ 100% {left:66%;}
  
 } 
 
 
 </style>
+<div class=sol >
+<div class=sol></div>
 
-<div id=idsol>
-<div class=d ></div>
-<div class=d ></div>
-<div class=d ></div>
-<div class=d ></div>
-<div class=d ></div>
+<div class=plnt ></div>
+<div class=plnt ></div>
+<div class=plnt ></div>
 </div>
-<div class=d ></div>
+<div class=plnt ></div>
+
+<button id=idbtn >start</button>
 
 
 
 <script>
-//radial-gradient(#f00,#ff0);
-
-   d=document.getElementsByClassName('d')
  
-  
+ 
+   plnt=document.getElementsByClassName('plnt')
+   sol=document.getElementsByClassName('sol')
+   
 o= 
  {
- l:[-11, -17, -9],
- t:[4, 44, 77], 
- dl:[0.6, 0.8, 0.8,],
- dt:[0.6, -0.8, -0.8,],
- w:[11, 11, 11,],
- h:[11, 11, 11,],
-  i:0, col:0, 
-  init:function()
+  b:0,
+  initsol:function()
   {
-     //d[0].style.position='absolute'
-	 //d[0].style.background='linear-gradient(0deg,#0f0,#00f)'
-	 d[0].style.left=o.l[0]+'%'
-	 d[0].style.top=o.t[0]+'%'  
-     d[0].style.width=o.w[0]+'%'
-     d[0].style.height=o.h[0]+'%'
-	 //d[0].style.zIndex=2
+     //idsol.style.background='' 
+  idbtn.innerHTML='Start'     
+/* */ 	 
+     sol[1].style.opacity='0.2'
 
-     //d[1].style.background='linear-gradient(0deg,#ff0,#00f)';
-     d[1].style.left=o.l[1]+'%'
-	 d[1].style.top=o.t[1]+'%'  
-     d[1].style.width=o.w[1]+'%'
-     d[1].style.height=o.w[1]+'%'
-	/*  */
-	 //d[2].style.background='linear-gradient(0deg,#00f,#0f0)';
-     d[2].style.left=o.l[2]+'%'
-	 d[2].style.top=o.t[2]+'%'  
-     d[2].style.width=o.w[2]+'%'
-     d[2].style.height=o.w[2]+'%'  
-	  
+     //sol[1].style.zIndex=1
+	 sol[1].style.left=-6+'%'
+	 sol[1].style.top=-6+'%'  
+     sol[1].style.width=111+'%'
+     sol[1].style.height=111+'%'
+	 
+	 plnt[0].style.zIndex=-1
+     plnt[0].style.background='radial-gradient(#0f0,#333)'
+	 plnt[0].style.left=-25+'%'
+	 plnt[0].style.top=88+'%'  
+     plnt[0].style.width=33+'%'
+     plnt[0].style.height=33+'%'
+	
+     plnt[1].style.background='radial-gradient(#00f,#333)';
+     plnt[1].style.left=99+'%'
+	 plnt[1].style.top=88+'%'  
+     plnt[1].style.width=22+'%'
+     plnt[1].style.height=22+'%'
+	 
+	 plnt[2].style.background='#ff0';
+     plnt[2].style.left=9+'%'
+	 plnt[2].style.top=-22+'%'  
+     plnt[2].style.width=2+'%'
+     plnt[2].style.height=2+'%'  
+	
   }, 
   
-  cl:function(n)
- {  
-    o.l[n]+=o.dl[n]; o.t[n]+=o.dt[n];
-	o.w[0]-=0.1; o.h[0]-=0.1;
+  mov:function()
+  {
+     idbtn.innerHTML='Stop'
+	 
+	 //idsol.style.background='radial-gradient(#f00,#333)'
+	 
+	 
+   //  plnt[0].style.background='#000'
+    // plnt[0].style.zIndex=1
+	 plnt[0].style.left=99+'%'
+	 plnt[0].style.top=-8+'%'  
+     plnt[0].style.width=33+'%'
+     plnt[0].style.height=33+'%'
+	 
+
+    // plnt[1].style.background='#000';
+     plnt[1].style.left=-19+'%'
+	 plnt[1].style.top=-19+'%'  
+     plnt[1].style.width=22+'%'
+     plnt[1].style.height=22+'%'
 	  
-	
- d[n].style.left=o.l[n]+'%';
- d[n].style.top=o.t[n]+'%'; 
-  //d[n].style.width=o.l[n]+'%';
-  //d[n].style.height=o.t[n]+'%';  
-    o.col+=0.4
-   d[n].style.background='linear-gradient('+o.col+'deg,#0f0,#00f)';
+	 plnt[2].style.background='#ff0';
+     plnt[2].style.left=133+'%'
+	 plnt[2].style.top=-2+'%'  
+     plnt[2].style.width=7+'%'
+     plnt[2].style.height=7+'%'  
+	 	 
+  }, 
   
-	   
-  if((o.l[n]>111)||(o.l[n]<-21))
-  { 
-      o.dl[n]*=-1;  o.dt[n]*=-1;
-       d[n].style.zIndex=-5
-  }   
-  if((o.t[n]>111)||(o.t[n]<-21))
-  { 
-       o.dl[n]*=-1;  o.dt[n]*=-1;
-      
-  }   
-   // d[n].style.width=o.w[0]+'%';   
-   // d[n].style.height=o.h[0]+'%'; 
-   //o.scl()   
-   
+  cl:function()
+ {  
+   if(o.b)
+   {
+    //plnt[0].style.zIndex=-1
+	o.initsol()
+   }
+   if(!o.b)
+   {
+    //plnt[0].style.zIndex=1
+    o.mov()
+	 
+   }
+  o.b=!o.b
  },
- scl:function()
- { 
-    
-   idsol.style.background='linear-gradient(44deg,#f00,#ff0)';
- }
+ 
  
 }
-  o.init()
-   setInterval(()=>{ o.cl(0);o.cl(1);o.cl(2);  },55);
-          
-   d[0].onmousedown//=()=>
-   d[1].onmousedown//=()=>setInterval(()=>,99);
-   d[2].onmousedown//=()=>setInterval(()=>,99);
-   //d[3].onmousedown=()=>{  d[3].style.zIndex=b;}
-   //d[4].onmousedown=()=>{b*=-1; d[3].style.zIndex=b;  }
-   
-   //if(i[n]) clearInterval(i[n]); 
+      o.initsol()
+     
+	 i=0
+   //i=setInterval(()=>{ o.cl(); }, 2222);
+           
+  
+
+idbtn.onmousedown=()=>
+{
+    o.cl();
+   //i=setInterval(()=>{ }, 222);
+}
+
+
+   //
+   //event.clientY+''; 
    
 </script>
 </body>
