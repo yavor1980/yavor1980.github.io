@@ -12,6 +12,28 @@
 {
 background: linear-gradient(#222,#666);
 }
+#idsrs
+{
+// position:absolute;
+ left:34%;
+ top:11%;
+ width:9%;
+ height:6%;
+}
+#idsprs
+{
+ left:34%;
+ //top:22%;
+ width:9%;
+ height:6%;
+}
+#idnrml
+{
+ left:34%;
+ top:33%;
+ width:9%;
+ height:6%;
+}
 
 #idfc
 {
@@ -22,30 +44,30 @@ background: linear-gradient(#222,#666);
  width:33%;
  height:66%;
  transition:5s;
-  border-top-left-radius:30%;
-  border-top-right-radius:30%;
-  border-bottom-left-radius:50%;
-  border-bottom-right-radius:50%;
+  
   
 }
-.gl
+.lgl
 {
  position:absolute;   
  border-radius:50%;
    background:green;
-   
-   
+      
+}
+.rgl
+{
+ position:absolute;   
+ border-radius:50%;
+   background:green;
+      
 }
 .ns
 {
  position:absolute;
   background: radial-gradient(#fff,#700);
-     left:40%;
-	 top:28%;  
-     width:22%;
-     height:44%;  
+     	 
 	 border-radius:50%;
-	 transition:4s;
+	 transition:2s;
 }
 .mth
 {
@@ -74,18 +96,7 @@ position:absolute;
   
 }
 
-#idfl
-{
-position:absolute;   
- border-radius:50%;
- background:#666;
- left:22%;
- top:55%;
-  width:2%;
-  height:1%;
-   transition:5s;
-   animation: mm 3s 3;
-}
+
 .fl
 {
  position:absolute; 
@@ -107,53 +118,81 @@ position:absolute;
 </style>
 
 <div id=idfc>
- <div class=gl id ></div>
- <div class=gl  ></div>
+ <div class=lgl> <div class=lgl></div> </div>
+ <div class=rgl> <div class=rgl></div> </div>
  <div class=ns ><div class=ns ></div></div>
  <div class=mth ><div class=mth ></div></div>
  <div class=lears ><div class=lears ></div></div>
  <div class=rears ><div class=rears ></div></div>
 
 </div>
-
-<div id=idfl  >
+<button id=idsrs>serious</button>
+<button id=idsprs>surprised</button>
+<button id=idnrml>normal</button>
+ 
  <div class=fl ></div>
  <div class=fl ></div>
-</div>
 
 
 
 <script>
 
-   gl=document.getElementsByClassName('gl')
+   lgl=document.getElementsByClassName('lgl')
+   rgl=document.getElementsByClassName('rgl')
    ns=document.getElementsByClassName('ns')
    mth=document.getElementsByClassName('mth')
    lears=document.getElementsByClassName('lears')
    rears=document.getElementsByClassName('rears')
    
    fl=document.getElementsByClassName('fl')
-   
+
+
    
 var s= 
  {
  
  b:0,
-  init:function()
+  initfc:function()
   {
-     
-	 gl[0].style.background='radial-gradient(22px,#202,#fff)'
-	 gl[0].style.left=11+'%'
-	 gl[0].style.top=22+'%'  
-     gl[0].style.width=11+'%'
-     gl[0].style.height=11+'%'
-	 gl[0].style.transition='5s'
+      idfc.style.borderTopLeftRadius='30%';
+      idfc.style.borderTopRightRadius='30%';
+      idfc.style.borderBottomLeftRadius='50%';
+      idfc.style.borderBottomRightRadius='50%';
+	  
+	 lgl[0].style.background='radial-gradient(22px,#202,#fff)'
+	 lgl[0].style.left=11+'%'
+	 lgl[0].style.top=22+'%'  
+     lgl[0].style.width=22+'%'
+     lgl[0].style.height=22+'%'
+	 lgl[0].style.transition='5s'
  
-     gl[1].style.background='radial-gradient(22px,#202,#fff)';
-     gl[1].style.left=77+'%'
-	 gl[1].style.top=22+'%'  
-     gl[1].style.width=11+'%'
-     gl[1].style.height=11+'%'
-	 gl[1].style.transition='5s'
+     lgl[1].style.background='#000';
+     lgl[1].style.left=1+'%'
+	 lgl[1].style.top=-22+'%'  
+     lgl[1].style.width=88+'%'
+     lgl[1].style.height=11+'%'
+	 lgl[1].style.transition='5s'
+	 
+	 rgl[0].style.background='radial-gradient(22px,#202,#fff)'
+	 rgl[0].style.left=66+'%'
+	 rgl[0].style.top=22+'%'  
+     rgl[0].style.width=22+'%'
+     rgl[0].style.height=22+'%'
+	 rgl[0].style.transition='5s'
+ 
+     rgl[1].style.background='#000';
+     rgl[1].style.left=11+'%'
+	 rgl[1].style.top=-22+'%'  
+     rgl[1].style.width=88+'%'
+     rgl[1].style.height=11+'%'
+	 rgl[1].style.transition='5s'
+	 
+	 ns[0].style.background='radial-gradient(#fff,#700)'; 
+	 ns[0].style.left=39+'%'
+	 ns[0].style.top=22+'%'  
+     ns[0].style.width=14+'%'
+     ns[0].style.height=44+'%'
+	 ns[0].style.transition='5s'
 	 
 	 ns[1].style.background='radial-gradient(#fff,#700)'; 
 	 ns[1].style.left=-22+'%'
@@ -198,120 +237,131 @@ var s=
      rears[1].style.width=66+'%'
      rears[1].style.height=77+'%'  
 	 rears[1].style.transition='4s' 
-	 //rears[1].style.zIndex=-1
+	
   }, 
   
-  cl:function()
+    init:function()
   {
-    if(s.b)
-	 {
-    	mth[1].style.height=144+'%'
-		mth[1].style.top=11+'%'
-	  }	
-		
-     else
-	 {
-	    mth[1].style.height=11+'%'
-	    mth[1].style.top=44+'%'	
-     }
-		  s.b=!s.b
-  },
-  
-  clk:function(b)
- { 
-  if(b==0)
-  {  
-   gl[0].style.transform='scale(1,1)'
-   gl[1].style.transform='scale(1,1)' 
-   
-   
-   lears[0].style.transform='scale(1,1)'
-   rears[0].style.transform='scale(1,1)'
-   
-  }
-  if(b==1)
-  {  
-    gl[0].style.transform='scale(2,2)'
-    gl[1].style.transform='scale(2,2)' 
-    lears[0].style.transform='scale(11,3)'
-    rears[0].style.transform='scale(11,3)'
-	//d[3].style.height=11+'%'
-  }
-  // setInterval(s.cllps,99)
-   
- },
- 
-
-}
-     s.init()
-
-
-var f=
-{
-  b:0, 
-init:function()
-{
-   fl[0].style.background='radial-gradient(#888,#f0f)';
-   fl[0].style.left=33+'%'
-   fl[0].style.top=-222+'%'  
-   fl[0].style.width=77+'%'
-   fl[0].style.height=333+'%'  
-   fl[0].style.transform='rotate(199deg)'
-   fl[0].style.transition='0.4s'
-   
-   fl[1].style.background='radial-gradient(#888,#f0f)';
-   fl[1].style.left=4+'%'
-   fl[1].style.top=-222+'%'  
-   fl[1].style.width=66+'%'
-   fl[1].style.height=333+'%'  
-   fl[1].style.transform='rotate(-199deg)'
-  // fll[1].style.transition='4s'
-},
-cl:function()
-{
-  //if(!f.b)
-  //idfl.style.transition='0s'
- idfl.style.transform='translate('+Math.random()*3333+'%,'+
-                Math.random()*3333+'%)'+'scale('+Math.random()*11+')'+
-				 'rotate('+Math.random()*55+'deg)'
- //idfl.style.transform='translate('+Math.random()*3333+'%,'+
-   //              Math.random()*3333+'%) scale('+Math.random()*3+'))'
-				 //'rotate('+55+'deg))'				 
- 
-},
-clfl:function()
-{
-  fl[0].style.transform='scale('+Math.random()*3+')'
-  fl[1].style.transform='scale('+Math.random()*3+')'
- 
-    
-},
-
-}	 
-   f.init()
-
- 
-         
-   setInterval(()=>{s.cl(); }, 999);
-  
-idfc.onmousemove=()=>{   
      
-    s.clk(1)
-  	
+	 lgl[0].style.background='radial-gradient(22px,#202,#fff)'
+	 lgl[0].style.left=11+'%'
+	 lgl[0].style.top=22+'%'  
+     lgl[0].style.width=2+'%'
+     lgl[0].style.height=22+'%'
+	 lgl[0].style.transition='5s'
+ 
+     lgl[1].style.background='#000';
+     lgl[1].style.left=1+'%'
+	 lgl[1].style.top=-22+'%'  
+     lgl[1].style.width=88+'%'
+     lgl[1].style.height=11+'%'
+	 lgl[1].style.transition='5s'
+	 
+	 rgl[0].style.background='radial-gradient(22px,#202,#fff)'
+	 rgl[0].style.left=66+'%'
+	 rgl[0].style.top=22+'%'  
+     rgl[0].style.width=22+'%'
+     rgl[0].style.height=22+'%'
+	 rgl[0].style.transition='5s'
+ 
+     rgl[1].style.background='#000';
+     rgl[1].style.left=11+'%'
+	 rgl[1].style.top=-22+'%'  
+     rgl[1].style.width=88+'%'
+     rgl[1].style.height=11+'%'
+	 rgl[1].style.transition='5s'
+	 
+	 ns[1].style.background='radial-gradient(#fff,#700)'; 
+	 ns[1].style.left=-22+'%'
+	 ns[1].style.top=83+'%'  
+     ns[1].style.width=144+'%'
+     ns[1].style.height=19+'%'
+	 ns[1].style.transition='5s'
+	
+	 mth[1].style.background='radial-gradient(#000,#000)'; 
+	 mth[1].style.left=11+'%'	
+     mth[1].style.top=44+'%'	
+	 mth[1].style.height=11+'%'	
+	 mth[1].style.width=77+'%'	
+
+     lears[0].style.background='radial-gradient(#fff,#700)';
+     lears[0].style.left=-9+'%'
+	 lears[0].style.top=29+'%'  
+     lears[0].style.width=11+'%'
+     lears[0].style.height=22+'%'  
+	 lears[0].style.transition='4s'
+     lears[0].style.zIndex=-1	 
+	 
+	 lears[1].style.background='radial-gradient(#fff,#700)';
+     lears[1].style.left=22+'%'
+	 lears[1].style.top=11+'%'  
+     lears[1].style.width=66+'%'
+     lears[1].style.height=77+'%'  
+	 lears[1].style.transition='4s' 
+	 //lears[1].style.zIndex=-1
+	 
+	 rears[0].style.background='radial-gradient(#fff,#700)';
+     rears[0].style.left=97+'%'
+	 rears[0].style.top=29+'%'  
+     rears[0].style.width=11+'%'
+     rears[0].style.height=22+'%'  
+	 rears[0].style.transition='4s'
+     rears[0].style.zIndex=-1	 
+	 
+	 rears[1].style.background='radial-gradient(#fff,#700)';
+     rears[1].style.left=19+'%'
+	 rears[1].style.top=11+'%'  
+     rears[1].style.width=66+'%'
+     rears[1].style.height=77+'%'  
+	 rears[1].style.transition='4s' 
+	// rears[1].style.zIndex=-7
+  }, 
+  
+ 
+
 }
-idfc.onmouseout=()=>{   
+     s.initfc()
+
+
+ 
+
+
+   
+idsrs.onmousedown=()=>{   
      
-	  s.clk(0)
+     lgl[1].style.transform='rotate(33deg)'
+	 lgl[1].style.left='13%'
+     rgl[1].style.transform='rotate(-33deg)'
+	 rgl[1].style.left='5%'
 }
-
-// i=setInterval(()=>{f.cl(); }, 559);
-idfl.onmousemove=()=>{   
-     clearInterval(i);
+idsprs.onmousedown=()=>{   
+     
+     lgl[1].style.transform='rotate(-33deg)'
+	 lgl[1].style.left='13%'
+     rgl[1].style.transform='rotate(33deg)'
+	 rgl[1].style.left='5%'
 }
+idnrml.onmousedown=()=>{   
+     
+     lgl[1].style.transform='rotate(0deg)'
+	 lgl[1].style.left='13%'
+     rgl[1].style.transform='rotate(0deg)'
+	 rgl[1].style.left='5%'
+}
+ 
 
-
+idfc.onmousemove=()=>
+{
+  ns[1].style.left=-55+'%'
+  ns[1].style.width=222+'%'
+}
+idfc.onmouseout=()=>
+{ 
+  ns[1].style.left=-22+'%'
+  ns[1].style.width=144+'%'
+}
      // event.clientY
-   
+   //i=setInterval(()=>{s.cl(); }, 999);
 </script>
 </body>
 
