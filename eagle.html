@@ -38,6 +38,7 @@ height:2%;
  border-bottom-left-radius:55%;
  border-bottom-right-radius:55%;
  z-index:-1;  
+ transition:4s;
  //border:4px solid red;
 
 }
@@ -100,6 +101,7 @@ position:absolute;
    left:63%;
    top:11%;
    border-radius:5%;
+   opacity:0;
    font-size:1em;
  transition:2s;
   animation:  9s infinite;
@@ -205,12 +207,12 @@ var eagle=
      hd[2].style.left='20%'
 	 hd[2].style.top='17%' 
 	 hd[2].style.width='22%'
-	 hd[2].style.height='22%'
+	 hd[2].style.height='0%'
 	 hd[3].style.background='radial-gradient(#ff0,#f00)'
      hd[3].style.left='62%'
 	 hd[3].style.top='17%' 
 	 hd[3].style.width='22%'
-	 hd[3].style.height='22%'
+	 hd[3].style.height='0%'
      /* */
   },
   
@@ -229,7 +231,6 @@ var eagle=
 	  lwng[1].style.top='-22%'
 	  lwng[1].style.transform='rotate(33deg)'
 	  	  
-		  
 	  rwng[0].style.width='277%'
 	  rwng[0].style.height='144%'
 	  rwng[0].style.left='-9%'	  
@@ -238,18 +239,25 @@ var eagle=
 	  rwng[1].style.top='-22%'
 	  rwng[1].style.transform='rotate(-33deg)'
 	  
+	  hd[2].style.height='22%'
+	  hd[3].style.height='22%'
+	  
 	  wrd[0].style.left='11%' 
       wrd[0].style.top='11%'  
       wrd[0].style.color='#fff' 
+	  wrd[0].style.opacity=1
       wrd[0].style.fontSize='3em' 
       wrd[1].style.left='42%'
       wrd[1].style.top='22%'   
+	  wrd[1].style.opacity=1
       wrd[1].style.fontSize='3em' 
       wrd[2].style.left='66%' 
       wrd[2].style.top='34%'
+	  wrd[2].style.opacity=1
       wrd[2].style.fontSize='3em' 
       wrd[3].style.left='66%' 
-      wrd[3].style.top='77%' 
+      wrd[3].style.top='77%'
+      wrd[3].style.opacity=1	  
       wrd[3].style.fontSize='3em' 
 	} 
         else
@@ -272,12 +280,18 @@ var eagle=
 	  
 	  rwng[1].style.top='0%'
 	  rwng[1].style.transform='rotate(0deg)'
-	   
+	  
+      hd[2].style.height='0%'
+	  hd[3].style.height='0%'	  
 	  
 	  wrd[0].style.fontSize='1em' 
+	  wrd[0].style.opacity=0
 	  wrd[1].style.fontSize='1em' 
-	  wrd[2].style.fontSize='1em' 
-	  wrd[3].style.fontSize='1em' 
+	  wrd[1].style.opacity=0
+      wrd[2].style.fontSize='1em'
+      wrd[2].style.opacity=0		
+      wrd[3].style.fontSize='1em'
+      wrd[3].style.opacity=0		
 	}	
 	  
 	//hd[0].style.background='radial-gradient(#a00,#000)'; 
