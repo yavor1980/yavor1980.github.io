@@ -17,9 +17,9 @@ top:69%;
 left:0%;
 transition:3s;
 opacity:;    
-border-radius:%;
-border-top-left-radius:55%;
-border-top-right-radius:55%;
+border-radius:0%;
+//border-top-left-radius:55%;
+//border-top-right-radius:55%;
  animation:  5s infinite;
  transform:scale(1);
   z-index:-1;
@@ -81,13 +81,23 @@ border-bottom-right-radius:55%;
 {
  position:absolute;
  
- border-radius:44%; 
+ border-radius:4%; 
  background:linear-gradient(-89deg,#555,yellow);
   transition:3s; 
+  z-index:2;
 }
 
 
-.hnds
+.lhnd
+{
+position:absolute;
+background:linear-gradient(-88deg,#555,yellow);
+width:22%;
+height:88%; 
+transition:3s;
+border-radius:33%;
+}
+.rhnd
 {
 position:absolute;
 background:linear-gradient(-88deg,#555,yellow);
@@ -97,7 +107,16 @@ transition:3s;
 border-radius:33%;
 }
 
-.lgs
+.llg
+{
+position:absolute;
+width:18%;
+height:55%; 
+z-index:2;
+transition:3s;
+background:linear-gradient(-66deg,#555,yellow);
+}
+.rlg
 {
 position:absolute;
 width:18%;
@@ -107,7 +126,16 @@ transition:3s;
 background:linear-gradient(-66deg,#555,yellow);
 }
 
+.frz
+{
+position:absolute;
+left:33%;
+z-index:3;
+color:#fff;
 
+transition:3s;
+//text-align:center;
+}
 
 </style>
 
@@ -119,10 +147,10 @@ background:linear-gradient(-66deg,#555,yellow);
    <div class=hd> </div>
   </div>
   
-  <div class=hnds></div>
-  <div class=hnds></div>
-  <div class=lgs></div>
-  <div class=lgs></div>
+  <div class=lhnd><div class=lhnd><div class=lhnd></div></div></div>
+  <div class=rhnd><div class=rhnd><div class=rhnd></div></div></div>
+  <div class=llg><div class=llg></div></div>
+  <div class=rlg><div class=rlg></div></div>
      
 </div>
 
@@ -137,15 +165,36 @@ background:linear-gradient(-66deg,#555,yellow);
 <div class=star></div>
 <div class=star></div>
 <div class=star></div>
+<div class=frz>RED PLANET</div>
+<div class=frz> 
+Марс — планета земной группы с разреженной атмосферой (давление на 
+поверхности в 160 раз меньше земного).Особенностями поверхностного 
+рельефа Марса можно считать ударные кратеры наподобие лунных, 
+а также вулканы, долины, пустыни и полярные ледниковые шапки 
+наподобие земных.
+</div>
 
 <script>
 
   hd=document.getElementsByClassName('hd')
-  lgs=document.getElementsByClassName('lgs')
-  hnds=document.getElementsByClassName('hnds')
+  llg=document.getElementsByClassName('llg')
+  rlg=document.getElementsByClassName('rlg')
+  
+  lhnd=document.getElementsByClassName('lhnd')
+  rhnd=document.getElementsByClassName('rhnd')
   
   kr=document.getElementsByClassName('kr')
   star=document.getElementsByClassName('star')
+  frz=document.getElementsByClassName('frz')
+  
+  frz[0].style.top='11%'
+  frz[0].style.color='#f00'
+  frz[0].style.fontSize='3em'
+  
+  frz[1].style.left='9%'
+  frz[1].style.bottom='9%'
+  frz[1].style.opacity='0'
+  frz[1].style.fontSize='3em' 
   
  ss=
  {
@@ -156,51 +205,81 @@ background:linear-gradient(-66deg,#555,yellow);
   hd[0].style.left=33+'%'
   hd[0].style.top=-33+'%'
   hd[0].style.width=44+'%'
-  hd[0].style.height=44+'%'
+  hd[0].style.height=44+'%'  
   
   hd[1].style.left=29+'%'
   hd[1].style.top=29+'%'
   hd[1].style.width=11+'%'
   hd[1].style.height=11+'%'
-  hd[1].style.background='#777'
+  hd[1].style.background='#f00'
   hd[2].style.left=71+'%'
   hd[2].style.top=29+'%'
   hd[2].style.width=11+'%'  
   hd[2].style.height=11+'%'
-  hd[2].style.background='#555'
+  hd[2].style.background='#f00'
   hd[3].style.left=33+'%'
   hd[3].style.top=71+'%'
   hd[3].style.width=33+'%'
   hd[3].style.height=11+'%'
-  hd[3].style.background='#f00'
+  hd[3].style.background='#600'
   hd[4].style.left=44+'%'
   hd[4].style.top=22+'%'
   hd[4].style.width=22+'%'
   hd[4].style.height=44+'%'
-  hd[4].style.background='linear-gradient(-88deg,#555,yellow)'
-    
-  lgs[0].style.left=11+'%'
-  lgs[0].style.top=82+'%'
-  lgs[0].style.borderRadius=22+'%' 
-  lgs[0].style.background='linear-gradient(-88deg,#555,yellow)'; 
+      
+  llg[0].style.left=11+'%'
+  llg[0].style.bottom=-33+'%'
+  llg[0].style.borderRadius=22+'%' 
+  llg[0].style.background='linear-gradient(-88deg,#555,yellow)'; 
+  llg[1].style.left=1+'%'
+  llg[1].style.bottom=-2+'%'
+  llg[1].style.width=104+'%'
+  llg[1].style.height=14+'%'
+  llg[1].style.borderRadius=22+'%' 
+  llg[1].style.background='linear-gradient(#555,#000)'; 
   
-  lgs[1].style.left=68+'%' 
-  lgs[1].style.top=82+'%'	
-  lgs[1].style.borderRadius=22+'%' 
-  lgs[1].style.background='linear-gradient(-88deg,#555,yellow)';
-  lgs[1].style.zIndex=1  
+  rlg[0].style.left=68+'%' 
+  rlg[0].style.bottom=-33+'%'	
+  rlg[0].style.borderRadius=22+'%' 
+  rlg[0].style.background='linear-gradient(-88deg,#555,yellow)';
+  rlg[1].style.left=1+'%' 
+  rlg[1].style.bottom=-1+'%'
+  rlg[1].style.width=104+'%'
+  rlg[1].style.height=14+'%'
+  rlg[1].style.borderRadius=22+'%' 
+  rlg[1].style.background='linear-gradient(#555,#000)';
   
   
-  hnds[0].style.left=-11+'%'
-  hnds[0].style.top=1+'%'
-  hnds[0].style.width=22+'%'
-  hnds[0].style.height=66+'%'
+  lhnd[0].style.left=-11+'%'
+  lhnd[0].style.top=1+'%'
+  lhnd[0].style.width=22+'%'
+  lhnd[0].style.height=66+'%'
+  lhnd[1].style.left=-11+'%'
+  lhnd[1].style.bottom=-1+'%'
+  lhnd[1].style.width=99+'%'
+  lhnd[1].style.height=22+'%'
+  lhnd[1].style.background='linear-gradient(#666,#000)';
+  lhnd[2].style.left=11+'%'
+  lhnd[2].style.top=-1+'%'
+  lhnd[2].style.width=55+'%'
+  lhnd[2].style.height=55+'%'
+  lhnd[2].style.background='linear-gradient(#f00,#f00)';
   
-  hnds[1].style.left=88+'%'
-  hnds[1].style.top=1+'%'
-  hnds[1].style.width=22+'%'
-  hnds[1].style.height=66+'%'
-  hd[0].style.zIndex=2
+  
+  rhnd[0].style.left=88+'%'
+  rhnd[0].style.top=1+'%'
+  rhnd[0].style.width=22+'%'
+  rhnd[0].style.height=66+'%'
+  rhnd[1].style.left=-11+'%'
+  rhnd[1].style.bottom=-1+'%'
+  rhnd[1].style.width=99+'%'
+  rhnd[1].style.height=22+'%'
+  rhnd[1].style.background='linear-gradient(#666,#000)';
+  rhnd[2].style.right=11+'%'
+  rhnd[2].style.top=-1+'%'
+  rhnd[2].style.width=55+'%'
+  rhnd[2].style.height=55+'%'
+  rhnd[2].style.background='linear-gradient(#f00,#f00)';
   
  },
  
@@ -208,20 +287,26 @@ background:linear-gradient(-66deg,#555,yellow);
  {  
    if(!ss.b) 
    {
-    lgs[0].style.transform= 'translate(0%,-19%) scale(1, 0.7)' 
-    lgs[1].style.transform= 'translate(0%,19%) scale(1, 1.3)' 
-	hnds[0].style.transform= 'translate(0%,19%) scale(1, 1.3) ' 
-    hnds[1].style.transform= 'translate(0%,-19%) scale(1, 0.7)' 
-	hnds[0].style.zIndex=0
-	hnds[1].style.zIndex=1
+    llg[0].style.transform= 'translate(0%,-19%) scale(1, 0.7)' 
+    rlg[0].style.transform= 'translate(0%,19%) scale(1, 1.3)' 
+	lhnd[0].style.transform= 'translate(0%,22%) scale(1, 1.3) ' 
+    rhnd[0].style.transform= 'translate(0%,-44%) scale(1, 0)' 
+	lhnd[1].style.transform= 'translate(0%,-44%) scale(1,0)'
+	rhnd[1].style.transform= 'translate(0%,-44%) scale(1,5)'
+	
+	//lhnd[0].style.zIndex=0
+	//rhnd[0].style.zIndex=1
 	 hd[0].style.transform='rotate(44deg)'
+	
    }
     else
    {
-    lgs[0].style.transform= 'translate(0%,19%) scale(1,1.3)' 
-    lgs[1].style.transform= 'translate(0%,-19%) scale(1,0.7)' 
-	hnds[0].style.transform= 'translate(0%,-19%) scale(1, 0.7)' 
-    hnds[1].style.transform= 'translate(0%,19%) scale(1, 1.3)' 
+    llg[0].style.transform= 'translate(0%,19%) scale(1,1.3)' 
+    rlg[0].style.transform= 'translate(0%,-19%) scale(1,0.7)' 
+	lhnd[0].style.transform= 'translate(0%,-44%) scale(1, 0)' 
+    rhnd[0].style.transform= 'translate(0%,19%) scale(1, 1.3)' 
+	lhnd[1].style.transform= 'translate(0%,-44%) scale(1,5)'
+	rhnd[1].style.transform= 'translate(0%,-44%) scale(1,0)'
 	 hd[0].style.transform='rotate(-44deg)' 
    }	
     ss.b=!ss.b
@@ -229,7 +314,9 @@ background:linear-gradient(-66deg,#555,yellow);
  
 } 
    ss.init()
-hnds[0].style.zIndex=0     
+   
+//lhnd[0].style.zIndex=0
+     
 
  grd=
  {  
@@ -288,16 +375,31 @@ hnds[0].style.zIndex=0
   
  ids.onmousemove=()=>{
  
-  hd[0].style.transform='scale(3,3) translate(0%,0%)'
-    //lgs[2].style.transform='scale(2)' 
-     
+    hd[0].style.transform='scale(3,3) translate(0%,0%)'
+    hd[3].style.height='28%' 
+	//hd[3].style.width='88%'
+	hd[1].style.transform='scale(2,2)'
+    hd[2].style.transform='scale(2,2)' 
  }   
  ids.onmouseout=()=>{
- 
-  hd[0].style.transform='scale(1,1) translate(0%,0%)'
-    //lgs[2].style.transform='scale(2)' 
-     
+  
+   hd[0].style.transform='scale(1,1) translate(0%,0%)'
+   hd[3].style.height='11%' 
+   //hd[3].style.width='28%'
+   hd[1].style.transform='scale(1,1)'
+   hd[2].style.transform='scale(1,1)'    
  }     
+ frz[1].onmousemove=()=>
+ {
+  frz[0].style.opacity='0'
+  frz[1].style.opacity='1'
+  
+ }
+ frz[1].onmouseout=()=>
+ {
+  frz[0].style.opacity='1'
+  frz[1].style.opacity='0'
+ }
    
   function f()
   {
