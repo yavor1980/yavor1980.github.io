@@ -23,7 +23,7 @@ background: linear-gradient(#222,#666);
 #idsprs
 {
  left:34%;
- //top:22%;
+ 
  width:9%;
  height:6%;
 }
@@ -43,8 +43,8 @@ background: linear-gradient(#222,#666);
  top:11%;
  width:33%;
  height:66%;
- transition:5s;
-  
+ transition:4s;
+  z-index:;
   
 }
 .lgl
@@ -96,13 +96,20 @@ position:absolute;
   
 }
 
-
-.fl
+.frz
 {
- position:absolute; 
- background:pink;
-  transition:1s;
-   border-radius:50%;
+ position:absolute;
+  left:5%;
+  top:44%;
+  width:22%;
+  height:22%;
+ color:#fff;
+ font-size:0.2em;
+  transition:3s;
+   //border-radius:50%;
+   cursor:pointer;
+   
+   z-index:1;
 }
 
 @keyframes  mm
@@ -112,7 +119,6 @@ position:absolute;
  77% {opacity:1;}
 
 } 
-
 
 
 </style>
@@ -126,12 +132,28 @@ position:absolute;
  <div class=rears ><div class=rears ></div></div>
 
 </div>
+
 <button id=idsrs>serious</button>
 <button id=idsprs>surprised</button>
 <button id=idnrml>normal</button>
  
- <div class=fl ></div>
- <div class=fl ></div>
+<div class=frz >
+Под эмоциями понимают протяжённые во времени процессы внутренней 
+регуляции деятельности человека или животного, отражающие смысл 
+(значение для процесса его жизнедеятельности), который имеют 
+существующие или возможные в его жизни ситуации. У человека эмоции 
+порождают переживания удовольствия, неудовольствия, страха, робости 
+и тому подобного, играющие роль ориентирующих субъективных сигналов. 
+Способа оценить наличие субъективных переживаний (в виду того, что они 
+субъективны) у животных научными методами пока не найдено. В этом 
+контексте важно понимать, что сама по себе эмоция может, но не обязана 
+такое переживание порождать, и сводится именно к процессу внутренней 
+регуляции деятельности.
+
+</div>
+ 
+ 
+ <div class ></div>
 
 
 
@@ -144,7 +166,7 @@ position:absolute;
    lears=document.getElementsByClassName('lears')
    rears=document.getElementsByClassName('rears')
    
-   fl=document.getElementsByClassName('fl')
+   frz=document.getElementsByClassName('frz')
 
 
    
@@ -171,7 +193,7 @@ var s=
 	 lgl[1].style.top=-22+'%'  
      lgl[1].style.width=88+'%'
      lgl[1].style.height=11+'%'
-	 lgl[1].style.transition='5s'
+	 lgl[1].style.transition='4s'
 	 
 	 rgl[0].style.background='radial-gradient(22px,#202,#fff)'
 	 rgl[0].style.left=66+'%'
@@ -185,19 +207,19 @@ var s=
 	 rgl[1].style.top=-22+'%'  
      rgl[1].style.width=88+'%'
      rgl[1].style.height=11+'%'
-	 rgl[1].style.transition='5s'
+	 rgl[1].style.transition='4s'
 	 
 	 ns[0].style.background='radial-gradient(#fff,#700)'; 
-	 ns[0].style.left=39+'%'
+	 ns[0].style.left=43+'%'
 	 ns[0].style.top=22+'%'  
      ns[0].style.width=14+'%'
      ns[0].style.height=44+'%'
 	 ns[0].style.transition='5s'
 	 
 	 ns[1].style.background='radial-gradient(#fff,#700)'; 
-	 ns[1].style.left=-22+'%'
+	 ns[1].style.left=-70+'%'
 	 ns[1].style.top=83+'%'  
-     ns[1].style.width=144+'%'
+     ns[1].style.width=244+'%'
      ns[1].style.height=19+'%'
 	 ns[1].style.transition='5s'
 	
@@ -240,82 +262,7 @@ var s=
 	
   }, 
   
-    init:function()
-  {
-     
-	 lgl[0].style.background='radial-gradient(22px,#202,#fff)'
-	 lgl[0].style.left=11+'%'
-	 lgl[0].style.top=22+'%'  
-     lgl[0].style.width=2+'%'
-     lgl[0].style.height=22+'%'
-	 lgl[0].style.transition='5s'
- 
-     lgl[1].style.background='#000';
-     lgl[1].style.left=1+'%'
-	 lgl[1].style.top=-22+'%'  
-     lgl[1].style.width=88+'%'
-     lgl[1].style.height=11+'%'
-	 lgl[1].style.transition='5s'
-	 
-	 rgl[0].style.background='radial-gradient(22px,#202,#fff)'
-	 rgl[0].style.left=66+'%'
-	 rgl[0].style.top=22+'%'  
-     rgl[0].style.width=22+'%'
-     rgl[0].style.height=22+'%'
-	 rgl[0].style.transition='5s'
- 
-     rgl[1].style.background='#000';
-     rgl[1].style.left=11+'%'
-	 rgl[1].style.top=-22+'%'  
-     rgl[1].style.width=88+'%'
-     rgl[1].style.height=11+'%'
-	 rgl[1].style.transition='5s'
-	 
-	 ns[1].style.background='radial-gradient(#fff,#700)'; 
-	 ns[1].style.left=-22+'%'
-	 ns[1].style.top=83+'%'  
-     ns[1].style.width=144+'%'
-     ns[1].style.height=19+'%'
-	 ns[1].style.transition='5s'
-	
-	 mth[1].style.background='radial-gradient(#000,#000)'; 
-	 mth[1].style.left=11+'%'	
-     mth[1].style.top=44+'%'	
-	 mth[1].style.height=11+'%'	
-	 mth[1].style.width=77+'%'	
-
-     lears[0].style.background='radial-gradient(#fff,#700)';
-     lears[0].style.left=-9+'%'
-	 lears[0].style.top=29+'%'  
-     lears[0].style.width=11+'%'
-     lears[0].style.height=22+'%'  
-	 lears[0].style.transition='4s'
-     lears[0].style.zIndex=-1	 
-	 
-	 lears[1].style.background='radial-gradient(#fff,#700)';
-     lears[1].style.left=22+'%'
-	 lears[1].style.top=11+'%'  
-     lears[1].style.width=66+'%'
-     lears[1].style.height=77+'%'  
-	 lears[1].style.transition='4s' 
-	 //lears[1].style.zIndex=-1
-	 
-	 rears[0].style.background='radial-gradient(#fff,#700)';
-     rears[0].style.left=97+'%'
-	 rears[0].style.top=29+'%'  
-     rears[0].style.width=11+'%'
-     rears[0].style.height=22+'%'  
-	 rears[0].style.transition='4s'
-     rears[0].style.zIndex=-1	 
-	 
-	 rears[1].style.background='radial-gradient(#fff,#700)';
-     rears[1].style.left=19+'%'
-	 rears[1].style.top=11+'%'  
-     rears[1].style.width=66+'%'
-     rears[1].style.height=77+'%'  
-	 rears[1].style.transition='4s' 
-	// rears[1].style.zIndex=-7
-  }, 
+    
   
  
 
@@ -324,41 +271,49 @@ var s=
 
 
  
-
-
    
 idsrs.onmousedown=()=>{   
      
-     lgl[1].style.transform='rotate(33deg)'
-	 lgl[1].style.left='13%'
-     rgl[1].style.transform='rotate(-33deg)'
-	 rgl[1].style.left='5%'
+	 lgl[0].style.transform='scale(1,0.5)'
+  	 lgl[1].style.transform='rotate(33deg)'
+     
+	 rgl[0].style.transform='scale(1,0.5)'
+	 rgl[1].style.transform='rotate(-33deg)'
+     
+	 
+	   
 }
 idsprs.onmousedown=()=>{   
      
-     lgl[1].style.transform='rotate(-33deg)'
-	 lgl[1].style.left='13%'
-     rgl[1].style.transform='rotate(33deg)'
-	 rgl[1].style.left='5%'
+     lgl[0].style.transform='scale(1,0.5)'
+  	 lgl[1].style.transform='rotate(-33deg)'
+     
+	 rgl[0].style.transform='scale(1,0.5)'
+	 rgl[1].style.transform='rotate(33deg)'
+	 
 }
 idnrml.onmousedown=()=>{   
      
-     lgl[1].style.transform='rotate(0deg)'
-	 lgl[1].style.left='13%'
-     rgl[1].style.transform='rotate(0deg)'
-	 rgl[1].style.left='5%'
+     lgl[0].style.transform='scale(1,1)'
+  	 lgl[1].style.transform='rotate(0deg)'
+     
+	 rgl[0].style.transform='scale(1,1)'
+	 rgl[1].style.transform='rotate(0deg)'
 }
- 
 
-idfc.onmousemove=()=>
+ //frz[0].innerHTML='yui'
+
+frz[0].onmousemove=()=>
 {
-  ns[1].style.left=-55+'%'
-  ns[1].style.width=222+'%'
+   frz[0].style.fontSize='1em'
+   frz[0].style.width='77%'
+   
+ 
 }
-idfc.onmouseout=()=>
+frz[0].onmouseout=()=>
 { 
-  ns[1].style.left=-22+'%'
-  ns[1].style.width=144+'%'
+ frz[0].style.fontSize='0.2em' 
+  frz[0].style.width='22%'
 }
      // event.clientY
    //i=setInterval(()=>{s.cl(); }, 999);
