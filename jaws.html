@@ -1,0 +1,253 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+</head>
+
+<body id=idbd>
+
+<style>
+#idbd
+{
+background: linear-gradient(#fff,#222);
+}
+
+.btn
+{
+position:absolute;
+background:#f00;
+top:11%;
+width:11%;
+height:12%;
+border-radius:50%;
+transition:height,opacity 1s,1s;
+text-align:center;
+font-size:2em;
+color:#000;
+cursor:pointer;
+
+ border-top-left-radius:33%;
+ border-top-right-radius:33%;  
+ 
+}
+
+
+.jws
+{
+ position:absolute;   
+ background: radial-gradient(#880,#222);
+ left:22%;
+ top:22%; 
+ width:44%;
+ height:33%;
+ transition:3s;
+  border-top-left-radius:55%;
+  border-top-right-radius:55%;
+  border-bottom-left-radius:55%;
+  border-bottom-right-radius:55%;
+  
+}
+.mth
+{
+position:absolute;   
+  transition:4s;
+
+}
+.gl
+{
+ position:absolute;   
+  transition:4s;
+ 
+}
+.zr
+{
+ position:absolute;   
+  transition:4s;
+  left:33%;
+  top:33%;
+  width:33%;
+  height:33%;
+  background:red;
+  border-radius:55%;
+}
+
+.clk
+{
+position:absolute;   
+border-radius:55%;
+   transition:6s;
+ opacity:;
+ 
+}
+
+
+@keyframes  pp
+{
+ 0% {left:66%;}
+ 44% {left:88%;}
+ 77% {left:33%;}
+ 100% {left:66%;}
+ 
+} 
+
+
+</style>
+
+<div class=jws>
+  <div class=jws ></div>
+ 
+<div class=mth >
+  <div class=clk ></div>
+  <div class=clk ></div>
+ 
+</div>
+
+ <div class=gl ><div class=zr ></div></div>
+ <div class=gl ><div class=zr ></div></div>
+</div>
+
+<button class=btn >open</button>
+<button class=btn ></button>
+
+
+<script>
+
+   jws=document.getElementsByClassName('jws')
+   btn=document.getElementsByClassName('btn')
+   mth=document.getElementsByClassName('mth')
+   gl=document.getElementsByClassName('gl')
+   zr=document.getElementsByClassName('zr')
+   clk=document.getElementsByClassName('clk')
+    
+o= 
+ {
+  b:1, intr:0,
+  initplnt:function()
+  {
+     jws[1].style.background='radial-gradient(#cc0,#222,77%)';
+     jws[1].style.left=39+'%'
+	 jws[1].style.top=66+'%'  
+     jws[1].style.width=22+'%'
+     jws[1].style.height=133+'%'  
+	 jws[1].style.borderTopLeftRadius=55+'%'
+	 jws[1].style.borderTopRightRadius=55+'%'  
+	 jws[1].style.borderBottomLeftRadius=55+'%'
+	 jws[1].style.borderBottomRightRadius=55+'%'  
+	 jws[1].style.zIndex=-1
+	/* */  
+     
+	 mth[0].style.background='radial-gradient(#f00,#840)';
+     mth[0].style.left=19+'%'
+	 mth[0].style.top=53+'%'  
+     mth[0].style.width=55+'%'
+     mth[0].style.height=1+'%'  
+	 mth[0].style.borderTopLeftRadius=55+'%'
+	 mth[0].style.borderTopRightRadius=55+'%'  
+	 mth[0].style.borderBottomLeftRadius=55+'%'
+	 mth[0].style.borderBottomRightRadius=55+'%'  
+	   
+     gl[0].style.background='#fff';
+     gl[0].style.left=11+'%'
+	 gl[0].style.top=17+'%'  
+     gl[0].style.width=14+'%'
+     gl[0].style.height=22+'%'  
+	 gl[0].style.borderTopLeftRadius=55+'%'
+	 gl[0].style.borderTopRightRadius=55+'%'  
+	 gl[0].style.borderBottomLeftRadius=55+'%'
+	 gl[0].style.borderBottomRightRadius=55+'%'  
+	 
+	 gl[1].style.background='#fff';
+     gl[1].style.left=59+'%'
+	 gl[1].style.top=17+'%'  
+     gl[1].style.width=14+'%'
+     gl[1].style.height=22+'%'  
+	 gl[1].style.borderTopLeftRadius=55+'%'
+	 gl[1].style.borderTopRightRadius=55+'%'  
+	 gl[1].style.borderBottomLeftRadius=55+'%'
+	 gl[1].style.borderBottomRightRadius=55+'%'  
+	/* */ 
+	 clk[0].style.background='#fff';
+     clk[0].style.left=9+'%'
+	 clk[0].style.top=17+'%'  
+     clk[0].style.width=11+'%'
+     clk[0].style.height=99+'%'  
+	 clk[0].style.borderTopLeftRadius=5+'%'
+	 clk[0].style.borderTopRightRadius=5+'%'  
+	 clk[0].style.borderBottomLeftRadius=55+'%'
+	 clk[0].style.borderBottomRightRadius=55+'%'  
+	/* */ 
+	 clk[1].style.background='#fff';
+     clk[1].style.left=70+'%'
+	 clk[1].style.top=14+'%'  
+     clk[1].style.width=11+'%'
+     clk[1].style.height=99+'%'  
+	 clk[1].style.borderTopLeftRadius=5+'%'
+	 clk[1].style.borderTopRightRadius=5+'%'  
+	 clk[1].style.borderBottomLeftRadius=55+'%'
+	 clk[1].style.borderBottomRightRadius=55+'%'  	 
+		 
+	 btn[0].style.left=76+'%'
+	 btn[1].style.left=88+'%'  
+	
+  }, 
+  
+  clk:function()
+  {
+  if(o.b)
+   {
+       mth[0].style.height='22%'
+	   jws[1].style.width='122%'
+	   jws[1].style.left='-11%'
+	   btn[0].innerHTML='close' 
+	    jws[1].style.borderTopLeftRadius=5+'%'
+	    jws[1].style.borderTopRightRadius=5+'%'  
+   } 
+    else
+   {
+    mth[0].style.height='1%'
+	jws[1].style.width='22%'
+	jws[1].style.left='39%'
+	 btn[0].innerHTML='open'
+	    jws[1].style.borderTopLeftRadius=55+'%'
+	    jws[1].style.borderTopRightRadius=55+'%'  
+   }
+    o.b=!o.b
+  },
+ 
+  strt:function()
+ {  
+ 
+	  //o.intr=setInterval(()=>{ o.cl(); }, 999);
+	  
+ },
+  stp:function()
+  {
+  
+	
+  }
+ 
+}
+      o.initplnt()
+     
+	
+	 
+btn[0].onmousedown=()=>
+{ 
+  o.clk()
+  
+}
+btn[1].onmousedown=()=>
+{ 
+  
+}
+
+   
+   
+   //event.clientY+''; 
+   
+</script>
+</body>
+
+</html>
+
