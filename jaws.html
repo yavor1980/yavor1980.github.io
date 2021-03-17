@@ -95,20 +95,20 @@ border-radius:55%;
 </style>
 
 <div class=jws>
-  <div class=jws ></div>
+  
  
 <div class=mth >
   <div class=clk ></div>
   <div class=clk ></div>
  
 </div>
-
+<div class=jws ><div class=mth ></div></div>
  <div class=gl ><div class=zr ></div></div>
  <div class=gl ><div class=zr ></div></div>
 </div>
 
 <button class=btn >open</button>
-<button class=btn ></button>
+
 
 
 <script>
@@ -122,14 +122,14 @@ border-radius:55%;
     
 o= 
  {
-  b:1, intr:0,
+  b:1, bv:0, intr:0,
   initplnt:function()
   {
      jws[1].style.background='radial-gradient(#cc0,#222,77%)';
      jws[1].style.left=39+'%'
 	 jws[1].style.top=66+'%'  
      jws[1].style.width=22+'%'
-     jws[1].style.height=133+'%'  
+     jws[1].style.height=166+'%'  
 	 jws[1].style.borderTopLeftRadius=55+'%'
 	 jws[1].style.borderTopRightRadius=55+'%'  
 	 jws[1].style.borderBottomLeftRadius=55+'%'
@@ -146,6 +146,16 @@ o=
 	 mth[0].style.borderTopRightRadius=55+'%'  
 	 mth[0].style.borderBottomLeftRadius=55+'%'
 	 mth[0].style.borderBottomRightRadius=55+'%'  
+	 
+	 mth[1].style.background='radial-gradient(#f00,#222)';
+     mth[1].style.left=7+'%'
+	 mth[1].style.top=26+'%'  
+     mth[1].style.width=88+'%'
+     mth[1].style.height=55+'%'  
+	 mth[1].style.borderTopLeftRadius=55+'%'
+	 mth[1].style.borderTopRightRadius=55+'%'  
+	 mth[1].style.borderBottomLeftRadius=55+'%'
+	 mth[1].style.borderBottomRightRadius=55+'%'
 	   
      gl[0].style.background='#fff';
      gl[0].style.left=11+'%'
@@ -188,7 +198,7 @@ o=
 	 clk[1].style.borderBottomRightRadius=55+'%'  	 
 		 
 	 btn[0].style.left=76+'%'
-	 btn[1].style.left=88+'%'  
+	
 	
   }, 
   
@@ -199,27 +209,35 @@ o=
        mth[0].style.height='22%'
 	   jws[1].style.width='122%'
 	   jws[1].style.left='-11%'
+	   gl[0].style.transform='scale(2)'
+       gl[1].style.transform='scale(2)'
 	   btn[0].innerHTML='close' 
 	    jws[1].style.borderTopLeftRadius=5+'%'
 	    jws[1].style.borderTopRightRadius=5+'%'  
+		mth[1].style.borderTopLeftRadius=5+'%'
+	    mth[1].style.borderTopRightRadius=5+'%' 
    } 
     else
    {
     mth[0].style.height='1%'
 	jws[1].style.width='22%'
 	jws[1].style.left='39%'
+	gl[0].style.transform='scale(1)'
+    gl[1].style.transform='scale(1)'
 	 btn[0].innerHTML='open'
 	    jws[1].style.borderTopLeftRadius=55+'%'
 	    jws[1].style.borderTopRightRadius=55+'%'  
+		mth[1].style.borderTopLeftRadius=55+'%'
+	    mth[1].style.borderTopRightRadius=55+'%' 
    }
     o.b=!o.b
   },
  
-  strt:function()
+  view:function()
  {  
+   
  
-	  //o.intr=setInterval(()=>{ o.cl(); }, 999);
-	  
+	  //o.intr=setInterval(()=>{ o.cl(); }, 999);	  
  },
   stp:function()
   {
@@ -239,7 +257,7 @@ btn[0].onmousedown=()=>
 }
 btn[1].onmousedown=()=>
 { 
-  
+  ///o.view()
 }
 
    
