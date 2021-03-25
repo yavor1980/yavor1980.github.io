@@ -17,10 +17,7 @@ background: linear-gradient(#fff,#222);
 {
 position:absolute;
 background:#f00;
-left:0%;
-top:0%;
-width:11%;
-height:12%;
+
 border-radius:50%;
 transition:4s;
 
@@ -41,13 +38,13 @@ cursor:pointer;
  background: radial-gradient(#bbb,#660);
  left:22%;
  top:24%; 
- width:33%;
- height:33%;
+ width:22%;
+ height:44%;
  transition:3s;
-  border-top-left-radius:22%;
-  border-top-right-radius:22%;
-  border-bottom-left-radius:33%;
-  border-bottom-right-radius:33%;
+  border-top-left-radius:88%;
+  border-top-right-radius:55%;  
+  border-bottom-left-radius:11%;
+  border-bottom-right-radius:11%; 
   
 }
 .mth
@@ -87,8 +84,8 @@ cursor:pointer;
 </div>
 
   
+<button class=btn >danger</button>
 
-<button class=btn ></button>
 
 
 
@@ -99,22 +96,35 @@ cursor:pointer;
    mth=document.getElementsByClassName('mth')
    gl=document.getElementsByClassName('gl')
    wng=document.getElementsByClassName('wng')
-    
+   
+     btn[0].style.background='radial-gradient(#f00,#840)';
+     btn[0].style.left=2+'%'
+	 btn[0].style.top=0+'%'  
+     btn[0].style.width=9+'%'
+     btn[0].style.height=7+'%'  
+	 btn[0].style.borderRadius=55+'%'
+/*	 
+	 btn[1].style.background='radial-gradient(#f00,#840)';
+     btn[1].style.left=18+'%'
+	 btn[1].style.top=0+'%'  
+     btn[1].style.width=9+'%'
+     btn[1].style.height=7+'%'  
+	 btn[1].style.borderRadius=55+'%'
+ */    
+	 
+   
 o= 
  {
   b:1, intr:0, bst:0,
   init:function()
   {
-     	/* */  
-     
-	 mth[0].style.background='radial-gradient(#f00,#840)';
+     mth[0].style.background='radial-gradient(#000,#f00)';
      mth[0].style.left=22+'%'
 	 mth[0].style.top=66+'%'  
      mth[0].style.width=55+'%'
      mth[0].style.height=1+'%'  
 	 mth[0].style.borderRadius=55+'%'
 	
-	 
 	 mth[1].style.background='#fff';
      mth[1].style.left=11+'%'
 	 mth[1].style.top=17+'%'  
@@ -187,6 +197,91 @@ o=
      gl[3].style.width=44+'%'
      gl[3].style.height=44+'%'  
 	 gl[3].style.borderRadius=55+'%'
+	
+  }, 
+  
+  initt:function()
+  {
+     mth[0].style.background='radial-gradient(#f00,#840)';
+     mth[0].style.left=22+'%'
+	 mth[0].style.top=66+'%'  
+     mth[0].style.width=55+'%'
+     mth[0].style.height=1+'%'  
+	 mth[0].style.borderRadius=55+'%'
+	 
+
+	 mth[1].style.background='#fff';
+     mth[1].style.left=11+'%'
+	 mth[1].style.top=17+'%'  
+     mth[1].style.width=11+'%'
+     mth[1].style.height=99+'%'  
+	 mth[1].style.borderTopLeftRadius=5+'%'
+	 mth[1].style.borderTopRightRadius=5+'%'  
+	 mth[1].style.borderBottomLeftRadius=55+'%'
+	 mth[1].style.borderBottomRightRadius=55+'%'  
+	/* */ 
+	 mth[2].style.background='#fff';
+     mth[2].style.left=77+'%'
+	 mth[2].style.top=17+'%'  
+     mth[2].style.width=11+'%'
+     mth[2].style.height=99+'%'  
+	 mth[2].style.borderTopLeftRadius=5+'%'
+	 mth[2].style.borderTopRightRadius=5+'%'  
+	 mth[2].style.borderBottomLeftRadius=55+'%'
+	 mth[2].style.borderBottomRightRadius=55+'%'  	
+	
+    
+     wng[0].style.left=44+'%'
+	 wng[0].style.top=22+'%'  
+     wng[0].style.width=14+'%'
+     wng[0].style.height=9+'%'  
+	 wng[0].style.borderRadius=55+'%'
+	  //wng[0].style.zIndex=-1
+
+     wng[1].style.left=44+'%'
+	 wng[1].style.top=17+'%'  
+     wng[1].style.width=11+'%'
+     wng[1].style.height=9+'%'  
+	 wng[1].style.borderRadius=55+'%'
+	 
+	 wng[2].style.background='radial-gradient(#bbb,#800)'
+	 wng[2].style.left=44+'%'
+	 wng[2].style.top=22+'%'  
+     wng[2].style.width=11+'%'
+     wng[2].style.height=33+'%'  
+	 wng[2].style.borderRadius=55+'%'
+	 
+	 
+     gl[0].style.background='#fff';
+     gl[0].style.left=18+'%'
+	 gl[0].style.top=17+'%'  
+     gl[0].style.width=14+'%'
+     gl[0].style.height=22+'%'  
+	 gl[0].style.borderRadius=55+'%'
+	
+	 
+	 gl[1].style.background='#f00';
+     gl[1].style.left=22+'%'
+	 gl[1].style.top=26+'%'  
+     gl[1].style.width=44+'%'
+     gl[1].style.height=44+'%'  
+	 gl[1].style.borderRadius=55+'%'
+	 
+	
+     gl[2].style.background='#fff';
+     gl[2].style.left=66+'%'
+	 gl[2].style.top=17+'%'  
+     gl[2].style.width=14+'%'
+     gl[2].style.height=22+'%'  
+	 gl[2].style.borderRadius=55+'%'
+	 
+	 
+	 gl[3].style.background='#f00';
+     gl[3].style.left=22+'%'
+	 gl[3].style.top=26+'%'  
+     gl[3].style.width=44+'%'
+     gl[3].style.height=44+'%'  
+	 gl[3].style.borderRadius=55+'%'
 		
 	  
   }, 
@@ -195,14 +290,15 @@ o=
   {
    if(o.b)
    {
-       mth[0].style.height='22%'
+       mth[0].style.height='18%'
 	   gl[1].style.transform='scale(1.4)'
 	   gl[3].style.transform='scale(1.4)'
 	  
         jws[0].style.transform='scale(1.4)'
-	    mth[0].style.transform='scale(1.4)'
-		 btn[0].style.background='red'
-		 btn[0].innerHTML='danger'
+	     
+		
+         btn[0].style.background='red'
+		 btn[0].innerHTML='relax'
 	   	 
 		o.intr=setInterval(o.stp,999)
 		 
@@ -218,7 +314,7 @@ o=
 	 jws[0].style.transform='scale(1)'
 	 mth[0].style.transform='scale(1)'
 	  btn[0].style.background='blue'
-	  btn[0].innerHTML='relax'
+	  btn[0].innerHTML='danger'
 	  //wng[0].style.opacity=0
       	    clearInterval(o.intr);
 		o.intr=0
@@ -259,30 +355,44 @@ o=
  
 }
         o.init()
-     // clearInterval(o.intr); 
- 
+    
+ b=0
  
 btn[0].onmousedown=()=>
 { 
     o.clkk()
-   
+          
 }
+
 jws[0].onmousemove=()=>
 { 
-   
    jws[0].style.transform='scale(1.3)'
-    gl[1].style.left='55%'
-    gl[3].style.left='55%'
+    gl[1].style.width='55%'
+    gl[1].style.height='55%';
+    gl[3].style.width='55%'
+    gl[3].style.height='55%'
+	 jws[0].style.borderTopRightRadius=88+'%'  
+	 jws[0].style.borderTopLeftRadius=22+'%'  
+	// jws[1].style.borderTopRightRadius=88+'%'  
+	// jws[1].style.borderTopLeftRadius=22+'%'  
+	//gl[0].style.height='2%'
+	//gl[2].style.height='2%'
 }
 jws[0].onmouseout=()=>
 { 
    jws[0].style.transform='scale(1)'
-    gl[1].style.left='22%'
-    gl[3].style.left='22%'
+    gl[1].style.width='44%'
+    gl[1].style.height='44%'
+	gl[3].style.width='44%'
+    gl[3].style.height='44%'
+    	jws[0].style.borderTopRightRadius=22+'%'  
+	    jws[0].style.borderTopLeftRadius=88+'%' 
+	//gl[0].style.height='22%'
+	//gl[2].style.height='22%'
 }
 
 
-  // btn[0].innerHTML=v
+  
    //event.clientY+''; 
    
 </script>
