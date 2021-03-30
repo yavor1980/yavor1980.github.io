@@ -1,0 +1,295 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+</head>
+
+<body id=idbd>
+
+<style>
+#idbd
+{
+background: linear-gradient(#fff,#222);
+}
+
+.btn
+{
+position:absolute;
+background:#f00;
+
+border-radius:50%;
+transition:4s;
+
+text-align:center;
+font-size:2em;
+color:#000;
+cursor:pointer;
+
+ border-top-left-radius:33%;
+ border-top-right-radius:33%;  
+ 
+}
+
+
+.jws
+{
+ position:absolute;   
+ background: radial-gradient(#ffc,#f88);
+ left:61%;
+ top:11%; 
+ width:22%;
+ height:44%;
+ transition:3s;
+  border-top-left-radius:44%;
+  border-top-right-radius:44%;  
+  border-bottom-left-radius:33%;
+  border-bottom-right-radius:33%; 
+  
+}
+.mth
+{
+ position:absolute;    
+  transition:4s;
+
+}
+.gl
+{
+ position:absolute;   
+  transition:4s;
+
+}
+.ns
+{
+ position:absolute;   
+  transition:4s;
+    
+}
+.wng
+{
+ position:absolute;   
+ background: #f00;
+ font-size:3em;
+ text-align:center;
+ transition:3s;
+    
+}
+
+
+</style>
+
+<div class=jws>  
+ <div class=gl ><div class=gl ></div></div>
+ <div class=gl ><div class=gl ></div></div>
+<div class=mth >
+  <div class=mth ></div>
+  <div class=mth ></div>
+</div>
+  <div class=ns ><div class=ns ></div></div>  
+  
+  <div class ></div>
+</div>
+
+ <div class=wng >
+  DIAGRAMS
+   <div class=wng ></div>
+   <div class=wng ></div>
+   <div class=wng ></div>
+   <div class=wng ></div>
+ </div>
+ 
+
+  
+<button class=btn >speak</button>
+
+
+
+<script>
+
+   jws=document.getElementsByClassName('jws')
+   btn=document.getElementsByClassName('btn')
+   mth=document.getElementsByClassName('mth')
+   gl=document.getElementsByClassName('gl')
+   wng=document.getElementsByClassName('wng')
+   ns=document.getElementsByClassName('ns')
+   
+     btn[0].style.background='radial-gradient(#f00,#840)';
+     btn[0].style.left=39+'%'
+	 btn[0].style.top=2+'%'  
+     btn[0].style.width=9+'%'
+     btn[0].style.height=7+'%'  
+	 btn[0].style.borderRadius=55+'%'
+	 
+   
+o= 
+ {
+  bd:1, intrd:0,  intrm:0,
+  init:function()
+  {
+     mth[0].style.background='radial-gradient(#000,#f00)';
+     mth[0].style.left=22+'%'
+	 mth[0].style.top=66+'%'  
+     mth[0].style.width=55+'%'
+     mth[0].style.height=1+'%'  
+	 mth[0].style.borderRadius=55+'%'
+	
+	 //mth[1].style.background='#fff';
+     mth[1].style.left=0+'%'
+	 mth[1].style.top=17+'%'  
+     mth[1].style.width=88+'%'
+     mth[1].style.height=99+'%'  
+	   
+	// mth[2].style.background='#fff';
+     mth[2].style.left=0+'%'
+	 mth[2].style.bottom=1+'%'  
+     mth[2].style.width=88+'%'
+     mth[2].style.height=99+'%'  
+	
+   
+     wng[0].style.left=4+'%'
+	 wng[0].style.top=16+'%'  
+     wng[0].style.width=44+'%'
+     wng[0].style.height=66+'%'  
+	 wng[0].style.borderRadius=0+'%'
+	 wng[0].style.background='#fff'
+/**/
+     wng[1].style.left=5+'%'
+	 wng[1].style.bottom=1+'%'  
+     wng[1].style.width=22+'%'
+     wng[1].style.height=9+'%'  
+	 wng[1].style.borderRadius=5+'%'
+     wng[1].style.background='#f00'
+	 
+	 wng[2].style.left=27+'%'
+	 wng[2].style.bottom=1+'%'  
+     wng[2].style.width=22+'%'
+     wng[2].style.height=9+'%'  
+	 wng[2].style.borderRadius=5+'%'
+     wng[2].style.background='#0f0'
+ 	  
+	 wng[3].style.left=49+'%'
+	 wng[3].style.bottom=1+'%'  
+     wng[3].style.width=22+'%'
+     wng[3].style.height=9+'%'  
+	 wng[3].style.borderRadius=5+'%'
+     wng[3].style.background='#00f'
+	 
+	 wng[4].style.left=71+'%'
+	 wng[4].style.bottom=1+'%'  
+     wng[4].style.width=22+'%'
+     wng[4].style.height=9+'%'  
+	 wng[4].style.borderRadius=5+'%'
+     wng[4].style.background='#0ff'
+	  
+     gl[0].style.background='#fff';
+     gl[0].style.left=18+'%'
+	 gl[0].style.top=17+'%'  
+     gl[0].style.width=14+'%'
+     gl[0].style.height=22+'%'  
+	 gl[0].style.borderRadius=55+'%'
+	
+	 gl[1].style.background='#00f';
+     gl[1].style.left=22+'%'
+	 gl[1].style.top=26+'%'  
+     gl[1].style.width=44+'%'
+     gl[1].style.height=44+'%'  
+	 gl[1].style.borderRadius=55+'%'
+	 
+     gl[2].style.background='#fff';
+     gl[2].style.left=66+'%'
+	 gl[2].style.top=17+'%'  
+     gl[2].style.width=14+'%'
+     gl[2].style.height=22+'%'  
+	 gl[2].style.borderRadius=55+'%'
+	  
+	 gl[3].style.background='#00f';
+     gl[3].style.left=22+'%'
+	 gl[3].style.top=26+'%'  
+     gl[3].style.width=44+'%'
+     gl[3].style.height=44+'%'  
+	 gl[3].style.borderRadius=55+'%'
+	
+	
+	 ns[0].style.background='radial-gradient(#ffc,#f88)';
+     ns[0].style.left=44+'%'
+	 ns[0].style.top=33+'%'  
+     ns[0].style.width=11+'%'
+     ns[0].style.height=22+'%'  
+	 ns[0].style.borderRadius=55+'%'
+	 
+	 ns[1].style.background='radial-gradient(#ffc,#f88)';
+     ns[1].style.left=-44+'%'
+	 ns[1].style.top=77+'%'  
+     ns[1].style.width=199+'%'
+     ns[1].style.height=33+'%'  
+	 ns[1].style.borderRadius=55+'%'
+
+	 
+  }, 
+  
+  
+  clkk:function()
+  {
+   if(o.bd)
+   {
+  //  	  mth[0].style.height='18%'
+	   gl[1].style.transform='scale(1.4)'
+	   gl[3].style.transform='scale(1.4)'
+	  
+        jws[0].style.transform='scale(1.4)'
+	      
+         btn[0].style.background='red'
+		 btn[0].innerHTML='relax'
+	   	 
+o.intrd=setInterval(()=>{o.mvd(1); o.mvd(2);
+  o.mvd(3); o.mvd(4); },2222)
+o.intrm=setInterval(o.mvm, 666)
+		 
+   } 
+    else
+   {
+  
+   jws[0].style.transform='scale(1)'
+    mth[0].style.height='1%'
+	mth[0].style.transform='scale(1)'
+	gl[1].style.transform='scale(1)'
+    gl[3].style.transform='scale(1)'	
+ 	  
+	  btn[0].style.background='blue'
+	  btn[0].innerHTML='speak'
+	 
+      	    clearInterval(o.intrd);
+		o.intrd=0
+		    clearInterval(o.intrm);
+		o.intrm=0
+   }
+    o.bd=!o.bd
+  },
+ 
+ mvd:function(n)
+ {   
+   wng[n].style.height=Math.random()*88+'%'
+   
+ },
+ mvm:function()
+ { 
+  mth[0].style.height=Math.random()*11+'%'
+ }, 
+ 
+}
+         o.init()
+    
+ 
+btn[0].onmousedown=()=>
+{ 
+    o.clkk()
+          
+}
+
+
+
+</script>
+</body>
+
+</html>
+
