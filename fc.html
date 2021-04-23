@@ -10,313 +10,302 @@
 <style>
 #idbd
 {
-background: linear-gradient(#222,#666);
-}
-#idsrs
-{
-// position:absolute;
- left:34%;
- top:11%;
- width:9%;
- height:6%;
-}
-#idsprs
-{
- left:34%;
- 
- width:9%;
- height:6%;
-}
-#idnrml
-{
- left:34%;
- top:33%;
- width:9%;
- height:6%;
+background: radial-gradient(#222,#666);
+animation: 18s infinite;
 }
 
-#idfc
+.btn
 {
  position:absolute;   
- background: radial-gradient(#fff,#700);
- left:34%;
- top:11%;
- width:33%;
- height:66%;
+ text-align:center;
+   cursor:pointer;
+ font-size:2em;
  transition:4s;
-  z-index:;
-  
+ color:#fff;
+ 
 }
-.lgl
+
+.fc
+{
+ position:absolute;   
+
+}
+.gl
 {
  position:absolute;   
  border-radius:50%;
    background:green;
-      
-}
-.rgl
-{
- position:absolute;   
- border-radius:50%;
-   background:green;
-      
+   
 }
 .ns
 {
  position:absolute;
-  background: radial-gradient(#fff,#700);
-     	 
+  background: radial-gradient(#888,#ff0);
+      
 	 border-radius:50%;
-	 transition:2s;
+	 transition:4s;
 }
 .mth
 {
  position:absolute;
-  background:radial-gradient(#f00,#ff0);
-     left:22%;
-	 top:77%;  
-     width:55%;
-     height:11%;  
+  
 	 border-radius:50%;
-	 transition:6s; 
+	 transition:4s; 
 	 z-index:; 
 }
-.lears
+.ears
 {
 position:absolute;
  background:red;
  border-radius:50%;
-  
-}
-.rears
-{
-position:absolute;
- background:red;
- border-radius:50%;
-  
+ 
 }
 
-.frz
+@keyframes kf
 {
- position:absolute;
-  left:5%;
-  top:44%;
-  width:22%;
-  height:22%;
- color:#fff;
- font-size:0.2em;
-  transition:3s;
-   //border-radius:50%;
-   cursor:pointer;
-   
-   z-index:1;
+0%{background:#222;} 
+33%{background:#555;} 
+66%{background:#999;} 
+99%{background:#333;} 
+
 }
-
-@keyframes  mm
-{
- 0% {opacity:0.7;}
- 44% {opacity:0.5;}
- 77% {opacity:1;}
-
-} 
-
 
 </style>
 
-<div id=idfc>
- <div class=lgl> <div class=lgl></div> </div>
- <div class=rgl> <div class=rgl></div> </div>
+<div class=fc>
+<div class=fc></div>
+<div class=fc></div>
+ <div class=gl  >
+  <div class=gl  ></div>
+ </div>
+ <div class=gl  >
+  <div class=gl  ></div>
+ </div>
+ 
  <div class=ns ><div class=ns ></div></div>
- <div class=mth ><div class=mth ></div></div>
- <div class=lears ><div class=lears ></div></div>
- <div class=rears ><div class=rears ></div></div>
+ <div class=mth >
+  <div class=mth ></div>
+   
+ </div>
+ 
+ <div class=ears ></div>
+ <div class=ears ></div>
 
 </div>
 
-<button id=idsrs>serious</button>
-<button id=idsprs>surprised</button>
-<button id=idnrml>normal</button>
- 
-<div class=frz >
-Под эмоциями понимают протяжённые во времени процессы внутренней 
-регуляции деятельности человека или животного, отражающие смысл 
-(значение для процесса его жизнедеятельности), который имеют 
-существующие или возможные в его жизни ситуации. У человека эмоции 
-порождают переживания удовольствия, неудовольствия, страха, робости 
-и тому подобного, играющие роль ориентирующих субъективных сигналов. 
-Способа оценить наличие субъективных переживаний (в виду того, что они 
-субъективны) у животных научными методами пока не найдено. В этом 
-контексте важно понимать, что сама по себе эмоция может, но не обязана 
-такое переживание порождать, и сводится именно к процессу внутренней 
-регуляции деятельности.
+<div class=btn> HAIR
 
 </div>
- 
- 
- <div class ></div>
 
-
+<div class=btn></div>
 
 <script>
-
-   lgl=document.getElementsByClassName('lgl')
-   rgl=document.getElementsByClassName('rgl')
+   fc=document.getElementsByClassName('fc')
+   gl=document.getElementsByClassName('gl')
    ns=document.getElementsByClassName('ns')
    mth=document.getElementsByClassName('mth')
-   lears=document.getElementsByClassName('lears')
-   rears=document.getElementsByClassName('rears')
+   ears=document.getElementsByClassName('ears')
+   btn=document.getElementsByClassName('btn')
    
-   frz=document.getElementsByClassName('frz')
-
-
    
-var s= 
+s= 
  {
  
  b:0,
-  initfc:function()
+  init:function()
   {
-      idfc.style.borderTopLeftRadius='30%';
-      idfc.style.borderTopRightRadius='30%';
-      idfc.style.borderBottomLeftRadius='50%';
-      idfc.style.borderBottomRightRadius='50%';
-	  
-	 lgl[0].style.background='radial-gradient(22px,#202,#fff)'
-	 lgl[0].style.left=11+'%'
-	 lgl[0].style.top=22+'%'  
-     lgl[0].style.width=22+'%'
-     lgl[0].style.height=22+'%'
-	 lgl[0].style.transition='5s'
- 
-     lgl[1].style.background='#000';
-     lgl[1].style.left=1+'%'
-	 lgl[1].style.top=-22+'%'  
-     lgl[1].style.width=88+'%'
-     lgl[1].style.height=11+'%'
-	 lgl[1].style.transition='4s'
+     fc[0].style.background='radial-gradient(#aaa,#333)'
+	 fc[0].style.left=44+'%'
+	 fc[0].style.top=30+'%'  
+     fc[0].style.width=22+'%'
+     fc[0].style.height=44+'%'
+	 fc[0].style.transition='5s'
+	 fc[0].style.borderTopLeftRadius='33%'
+	 fc[0].style.borderBottomLeftRadius='55%'
+	 fc[0].style.borderTopRightRadius='33%'
+	 fc[0].style.borderBottomRightRadius='55%'
 	 
-	 rgl[0].style.background='radial-gradient(22px,#202,#fff)'
-	 rgl[0].style.left=66+'%'
-	 rgl[0].style.top=22+'%'  
-     rgl[0].style.width=22+'%'
-     rgl[0].style.height=22+'%'
-	 rgl[0].style.transition='5s'
- 
-     rgl[1].style.background='#000';
-     rgl[1].style.left=11+'%'
-	 rgl[1].style.top=-22+'%'  
-     rgl[1].style.width=88+'%'
-     rgl[1].style.height=11+'%'
-	 rgl[1].style.transition='4s'
-	 
-	 ns[0].style.background='radial-gradient(#fff,#700)'; 
-	 ns[0].style.left=43+'%'
-	 ns[0].style.top=22+'%'  
-     ns[0].style.width=14+'%'
-     ns[0].style.height=44+'%'
-	 ns[0].style.transition='5s'
-	 
-	 ns[1].style.background='radial-gradient(#fff,#700)'; 
-	 ns[1].style.left=-70+'%'
-	 ns[1].style.top=83+'%'  
-     ns[1].style.width=244+'%'
-     ns[1].style.height=19+'%'
-	 ns[1].style.transition='5s'
+	 fc[1].style.background='#000'
+	 fc[1].style.left=15+'%'
+	 fc[1].style.top=-11+'%'  
+     fc[1].style.width=88+'%'
+     fc[1].style.height=22+'%'
+	 fc[1].style.transition='5s'
+	 fc[1].style.borderRadius='55%'
+     fc[1].style.opacity=0
 	
-	 mth[1].style.background='radial-gradient(#000,#000)'; 
+	 fc[2].style.background='#000'
+	 fc[2].style.left=1+'%'
+	 fc[2].style.top=-9+'%'  
+     fc[2].style.width=22+'%'
+     fc[2].style.height=22+'%'
+	 fc[2].style.transition='5s'
+	 fc[2].style.borderRadius='55%'
+	 fc[2].style.opacity=0
+	 
+	 gl[0].style.background='#fff'
+	 gl[0].style.left=11+'%'
+	 gl[0].style.top=17+'%'  
+     gl[0].style.width=22+'%'
+     gl[0].style.height=22+'%'
+	 gl[0].style.transition='5s'
+	 
+     gl[1].style.background='#000';
+     gl[1].style.left=33+'%'
+	 gl[1].style.top=33+'%'  
+     gl[1].style.width=33+'%'
+     gl[1].style.height=33+'%'
+	 gl[1].style.transition='5s'
+	
+	 gl[2].style.background='#fff'
+	 gl[2].style.left=66+'%'
+	 gl[2].style.top=17+'%'  
+     gl[2].style.width=22+'%'
+     gl[2].style.height=22+'%'
+	 gl[2].style.transition='5s'
+	 
+     gl[3].style.background='#000';
+     gl[3].style.left=33+'%'
+	 gl[3].style.top=33+'%'  
+     gl[3].style.width=33+'%'
+     gl[3].style.height=33+'%'
+	 gl[3].style.transition='5s'
+	
+	 ns[0].style.left=38+'%'	
+     ns[0].style.top=22+'%'	
+	 ns[0].style.height=44+'%'	
+	 ns[0].style.width=22+'%'	
+	 ns[0].style.background='radial-gradient(#777,#333)'
+     
+	 ns[1].style.left=-2+'%'	
+     ns[1].style.top=79+'%'	
+	 ns[1].style.height=22+'%'	
+	 ns[1].style.width=111+'%'	
+	 ns[1].style.background='radial-gradient(#777,#333)'
+	 
+	 mth[0].style.left=22+'%'	
+     mth[0].style.top=77+'%'	
+	 mth[0].style.height=11+'%'	
+	 mth[0].style.width=55+'%'	
+	 mth[0].style.background='#f00'
+     
 	 mth[1].style.left=11+'%'	
      mth[1].style.top=44+'%'	
 	 mth[1].style.height=11+'%'	
 	 mth[1].style.width=77+'%'	
+	 mth[1].style.background='#000'
 
-     lears[0].style.background='radial-gradient(#fff,#700)';
-     lears[0].style.left=-9+'%'
-	 lears[0].style.top=29+'%'  
-     lears[0].style.width=11+'%'
-     lears[0].style.height=22+'%'  
-	 lears[0].style.transition='4s'
-     lears[0].style.zIndex=-1	 
+ 
+     ears[0].style.background='radial-gradient(#777,#333)'
+     ears[0].style.left=-9+'%'
+	 ears[0].style.top=29+'%'  
+     ears[0].style.width=11+'%'
+     ears[0].style.height=22+'%'  
+	 ears[0].style.transition='4s'
+     ears[0].style.zIndex=-1	 
 	 
-	 lears[1].style.background='radial-gradient(#fff,#700)';
-     lears[1].style.left=22+'%'
-	 lears[1].style.top=11+'%'  
-     lears[1].style.width=66+'%'
-     lears[1].style.height=77+'%'  
-	 lears[1].style.transition='4s' 
-	 //lears[1].style.zIndex=-1
+	 ears[1].style.background='radial-gradient(#777,#333)'
+     ears[1].style.left=97+'%'
+	 ears[1].style.top=29+'%'  
+     ears[1].style.width=11+'%'
+     ears[1].style.height=22+'%'  
+	 ears[1].style.transition='4s' 
+	 ears[1].style.zIndex=-1
+   
+     btn[0].style.background='#700'
+     btn[0].style.left=9+'%'
+	 btn[0].style.top=29+'%'  
+     btn[0].style.width=11+'%'
+     btn[0].style.height=22+'%'  
+	 btn[0].style.borderTopLeftRadius='33%'
+	 btn[0].style.borderTopRightRadius='33%'
+	 btn[0].style.borderBottomLeftRadius='55%'
+	 btn[0].style.borderBottomRightRadius='55%'
+     btn[0].style.padding='33px'
 	 
-	 rears[0].style.background='radial-gradient(#fff,#700)';
-     rears[0].style.left=97+'%'
-	 rears[0].style.top=29+'%'  
-     rears[0].style.width=11+'%'
-     rears[0].style.height=22+'%'  
-	 rears[0].style.transition='4s'
-     rears[0].style.zIndex=-1	 
-	 
-	 rears[1].style.background='radial-gradient(#fff,#700)';
-     rears[1].style.left=19+'%'
-	 rears[1].style.top=11+'%'  
-     rears[1].style.width=66+'%'
-     rears[1].style.height=77+'%'  
-	 rears[1].style.transition='4s' 
+	 btn[1].style.background='#007'
+     btn[1].style.left=-33+'%'
+	 btn[1].style.top=-22+'%'  
+     btn[1].style.width=33+'%'
+     btn[1].style.height=22+'%'  
+	 btn[1].style.transition='4s' 
+	 btn[1].style.borderTopLeftRadius='33%'
+	 btn[1].style.borderTopRightRadius='33%'
+
+ }, 
+  
+  clk:function()
+ { 
+  if(s.b==0)
+  {  
+   gl[1].style.transform='scale(1,1)'
+   gl[3].style.transform='scale(1,1)' 
+   gl[1].style.background='#000'
+	gl[3].style.background='#000'
+   mth[0].style.top='77%'
+   mth[0].style.height='11%'
+   mth[1].style.top='44%'
+   mth[1].style.height='11%'
+    ns[1].style.transform='scale(1)'
+    fc[0].style.transform='scale(1)'
 	
-  }, 
-  
-    
-  
- 
-
-}
-     s.initfc()
-
-
- 
-   
-idsrs.onmousedown=()=>{   
-     
-	 lgl[0].style.transform='scale(1,0.5)'
-  	 lgl[1].style.transform='rotate(33deg)'
-     
-	 rgl[0].style.transform='scale(1,0.5)'
-	 rgl[1].style.transform='rotate(-33deg)'
-     
+  }
+  if(s.b==1)
+  {  
+    gl[1].style.transform='scale(2)'
+    gl[3].style.transform='scale(2)' 
+	gl[1].style.background='#f00'
+	gl[3].style.background='#f00'
+	 mth[0].style.top='72%'
+     mth[0].style.height='16%'
+	 mth[1].style.top='44%'
+     mth[1].style.height='22%'
+	 ns[1].style.transform='scale(1.4)'
 	 
-	   
+     //ears[1].style.width='22%'
+	  fc[0].style.transform='scale(1.4)'
+	 // fc[0].style.zIndex=-1
+  }
+  // 
+    //!s.b   
+ },
+ 
+
 }
-idsprs.onmousedown=()=>{   
-     
-     lgl[0].style.transform='scale(1,0.5)'
-  	 lgl[1].style.transform='rotate(-33deg)'
-     
-	 rgl[0].style.transform='scale(1,0.5)'
-	 rgl[1].style.transform='rotate(33deg)'
-	 
+     s.init()
+i=0
+//setInterval(()=>{i++; alert(i); }, 99)
+  
+fc[0].onmousemove=()=>{   
+  s.b=1
+   s.clk()
+  	
 }
-idnrml.onmousedown=()=>{   
-     
-     lgl[0].style.transform='scale(1,1)'
-  	 lgl[1].style.transform='rotate(0deg)'
-     
-	 rgl[0].style.transform='scale(1,1)'
-	 rgl[1].style.transform='rotate(0deg)'
+fc[0].onmouseout=()=>{   
+  s.b=0
+   s.clk()
+  	
 }
 
- //frz[0].innerHTML='yui'
-
-frz[0].onmousemove=()=>
-{
-   frz[0].style.fontSize='1em'
-   frz[0].style.width='77%'
-   
+b=0
+btn[0].onclick=()=>{   
+if(b){ 
+ fc[1].style.opacity=0
+ fc[2].style.opacity=0
+ btn[0].innerHTML='HAIR'
+ } 
+   else{
+  //fc[0].style.transform='scale(1)'
+  fc[1].style.opacity=1
+  fc[2].style.opacity=1
+  btn[0].innerHTML='BALD'
+ }
+b=!b
  
 }
-frz[0].onmouseout=()=>
-{ 
- frz[0].style.fontSize='0.2em' 
-  frz[0].style.width='22%'
-}
-     // event.clientY
-   //i=setInterval(()=>{s.cl(); }, 999);
+ 
+ // event.clientY
+   
 </script>
 </body>
 
