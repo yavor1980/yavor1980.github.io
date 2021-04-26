@@ -37,10 +37,10 @@ cursor:pointer;
  position:absolute;   
  background: radial-gradient(#ffc,#f88);
  left:61%;
- top:11%; 
+ top:33%; 
  width:22%;
  height:44%;
- transition:3s;
+ transition:2222ms;
   border-top-left-radius:44%;
   border-top-right-radius:44%;  
   border-bottom-left-radius:33%;
@@ -74,7 +74,16 @@ cursor:pointer;
  transition:3s;
     
 }
-
+.ttl
+{
+ position:absolute;   
+ //background: #f00;
+ bottom:0%;
+ font-size:0.4em;
+ text-align:center;
+ transition:3s;
+    
+}
 
 </style>
 
@@ -82,23 +91,23 @@ cursor:pointer;
  <div class=gl ><div class=gl ></div></div>
  <div class=gl ><div class=gl ></div></div>
 <div class=mth >
-  <div class=mth ></div>
-  <div class=mth ></div>
+  
 </div>
   <div class=ns ><div class=ns ></div></div>  
   
-  <div class ></div>
+  <div ></div>
 </div>
 
  <div class=wng >
   DIAGRAMS
-   <div class=wng ></div>
-   <div class=wng ></div>
-   <div class=wng ></div>
-   <div class=wng ></div>
+   <div class=wng ><div class=ttl >R</div></div>
+   
+   <div class=wng ><div class=ttl >G</div></div>
+   <div class=wng ><div class=ttl >B</div></div>
+   <div class=wng ><div class=ttl >LB</div></div>
  </div>
  
-
+<div class=mth ></div>
   
 <button class=btn >speak</button>
 
@@ -132,19 +141,16 @@ o=
      mth[0].style.width=55+'%'
      mth[0].style.height=1+'%'  
 	 mth[0].style.borderRadius=55+'%'
+	//mth[0].style.opacity=0
 	
-	 //mth[1].style.background='#fff';
-     mth[1].style.left=0+'%'
-	 mth[1].style.top=17+'%'  
-     mth[1].style.width=88+'%'
-     mth[1].style.height=99+'%'  
-	   
-	// mth[2].style.background='#fff';
-     mth[2].style.left=0+'%'
-	 mth[2].style.bottom=1+'%'  
-     mth[2].style.width=88+'%'
-     mth[2].style.height=99+'%'  
+	 mth[1].style.background='#fff';
+     mth[1].style.left=7+'%'
+	 mth[1].style.top=1+'%'  
+     mth[1].style.width=2+'%'
+     mth[1].style.height=9+'%'  
+     mth[1].style.borderBottomLeftRadius='55deg'
 	
+	 
    
      wng[0].style.left=4+'%'
 	 wng[0].style.top=16+'%'  
@@ -232,15 +238,16 @@ o=
   {
    if(o.bd)
    {
-  //  	  mth[0].style.height='18%'
+    	  mth[0].style.height='18%'
 	   gl[1].style.transform='scale(1.4)'
 	   gl[3].style.transform='scale(1.4)'
-	  
+	  gl[1].style.left=-11+'%'
+	  gl[3].style.left=-11+'%'
         jws[0].style.transform='scale(1.4)'
 	      
          btn[0].style.background='red'
 		 btn[0].innerHTML='relax'
-	   	 
+	   wng[0].style.transform='skew(44deg)'
 o.intrd=setInterval(()=>{o.mvd(1); o.mvd(2);
   o.mvd(3); o.mvd(4); },2222)
 o.intrm=setInterval(o.mvm, 666)
@@ -253,8 +260,10 @@ o.intrm=setInterval(o.mvm, 666)
     mth[0].style.height='1%'
 	mth[0].style.transform='scale(1)'
 	gl[1].style.transform='scale(1)'
-    gl[3].style.transform='scale(1)'	
- 	  
+    gl[3].style.transform='scale(1)'
+	 gl[1].style.left=22+'%'
+	 gl[3].style.left=22+'%'
+ 	 wng[0].style.transform='skew(0deg)'
 	  btn[0].style.background='blue'
 	  btn[0].innerHTML='speak'
 	 
