@@ -9,7 +9,7 @@ background: linear-gradient(5deg,#0a0,#a00);
 
 }
 
-#ideagle
+.eagle
 {
  position:absolute;   
  background:radial-gradient(#444,#000);
@@ -23,7 +23,6 @@ background: linear-gradient(5deg,#0a0,#a00);
   border-bottom-left-radius:55%;
   border-bottom-right-radius:55%;  
     z-index:;
-	 //transform:scale(1,1);
 
 } 
 .hd
@@ -74,7 +73,7 @@ height:2%;
     
 }
 
-#idbtn
+.btn
 {
 position:absolute;
 background:#300;
@@ -107,11 +106,7 @@ position:absolute;
   animation:  9s infinite;
   z-index:1;
 }
-.wrd:hover
-{
-font-size:3em;
 
-}
 
 @keyframes kf
 {
@@ -125,7 +120,7 @@ font-size:3em;
 
 <body id=idbd>
 
-<div id=ideagle >
+<div class=eagle >
  <div class=hd >
   <div class=hd ></div>
   <div class=hd ></div> 
@@ -141,20 +136,22 @@ font-size:3em;
  <div class=wrd>CAPTAT</div> 
  <div class=wrd>MUSCAS</div> 
  
-<button id=idbtn>Wake up</button>
+<button class=btn>Wake up</button>
 
 
 <script>
 //'use strict'<div class ></div><div class ></div>
 //<div class=prp><div class=prp>ppp</div></div>
+ eagle=document.getElementsByClassName('eagle')
   hd=document.getElementsByClassName('hd')
   lwng=document.getElementsByClassName('lwng')
   rwng=document.getElementsByClassName('rwng')
-    
+  
   wrd=document.getElementsByClassName('wrd')
   
+  btn=document.getElementsByClassName('btn')
   
-var eagle= 
+var eagl= 
  {
  
    i:Math.random()*33, 
@@ -219,26 +216,27 @@ var eagle=
   cl:function()
  {       
      
-	if(eagle.b)
+	if(eagl.b)
     {	
-	 idbtn.innerHTML='Calm down'
-	  //lwng[0].style.transform='skew(115deg)'
+	 btn[0].innerHTML='Calm down'
+	 eagle[0].style.transform='skew(11deg)'
 	  lwng[0].style.width='277%'	  
 	  lwng[0].style.height='144%'
-	  lwng[0].style.left='-144%'	  
+	  lwng[0].style.left='-222%'	  
 	  lwng[0].style.top='-19%'
-	  lwng[0].style.transform='rotate(11deg)'
+	  //lwng[0].style.transform='rotate(deg)'
 	  lwng[1].style.top='-22%'
-	  lwng[1].style.transform='rotate(33deg)'
+	  //lwng[1].style.transform='rotate(11deg)'
 	  	  
 	  rwng[0].style.width='277%'
 	  rwng[0].style.height='144%'
-	  rwng[0].style.left='-9%'	  
+	  rwng[0].style.left='44%'	  
 	  rwng[0].style.top='-19%'	  
-	  rwng[0].style.transform='rotate(-11deg)'
+	 // rwng[0].style.transform='rotate(-11deg)'
 	  rwng[1].style.top='-22%'
-	  rwng[1].style.transform='rotate(-33deg)'
+	  //rwng[1].style.transform='rotate(-11deg)'
 	  
+	  hd[0].style.transform='scale(2)'
 	  hd[2].style.height='22%'
 	  hd[3].style.height='22%'
 	  
@@ -262,7 +260,8 @@ var eagle=
 	} 
         else
 	{
-	 idbtn.innerHTML='Wake up' 
+	 btn[0].innerHTML='Wake up' 
+	 eagle[0].style.transform='skew(0deg)'
 	  lwng[0].style.width='99%'
 	  lwng[0].style.height='120%'	  	  
 	  lwng[0].style.left='-89%'
@@ -281,6 +280,7 @@ var eagle=
 	  rwng[1].style.top='0%'
 	  rwng[1].style.transform='rotate(0deg)'
 	  
+	  hd[0].style.transform='scale(1)'
       hd[2].style.height='0%'
 	  hd[3].style.height='0%'	  
 	  
@@ -297,11 +297,11 @@ var eagle=
 	//hd[0].style.background='radial-gradient(#a00,#000)'; 
 	//hd[1].style.background='radial-gradient(#0a0,#000)';   
 	
-   eagle.b=!eagle.b	
+   eagl.b=!eagl.b	
  },	
    
 }    
-   eagle.init()
+   eagl.init()
 	
 	
 
@@ -324,37 +324,23 @@ var frz=
   wrd[3].style.top='77%' 
   wrd[3].style.color='#fff' 
  },
- cl:function()
-  {  
-     //prp[2].style.background='radial-gradient(#b00,#000)';  
- 	 //prp[3].style.background='linear-gradient('+drn.b+'deg,#c00,#000)';  
-     if(frz.b)
-	    {		
-    	 idfrz.style.transform='rotate(44deg) '  
-         idfrz.style.transform='rotate(-44deg) '  		
-		
-		}
-	   else
-	   {
-	    idfrz.style.transform='rotate(-44deg) '  
-		idfrz.style.transform='rotate(44deg) ' 
-		 
-	   }
-	 this.b=!this.b
-	  
-  },    
+ 
 }	 
-       	frz.init()  
+       	 frz.init()  
 	
-	var i
 	
-	idbtn.onclick=()=>
+	
+	btn[0].onclick=()=>
 	{
-	    eagle.cl()	 
+	      eagl.cl()	 
 		 
     }		  
 	
-  	   
+    eagle[0].onmousedown=()=>
+	{
+	      eagl.cl()	 
+		 
+    }			   
 	
       
 	  //clearInterval(i)i=setInterval(()=>,3000)
