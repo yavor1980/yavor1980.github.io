@@ -10,7 +10,7 @@
 <style>
 #idbd
 {
-background: linear-gradient(#333,#222);
+background: linear-gradient(#333,#555);
 }
 
 .sol
@@ -23,16 +23,14 @@ background: linear-gradient(#333,#222);
  height:55%;
   background: radial-gradient(#bb0,#f00);
   border-radius:55%; 
-   transition:6s;
+   transition:3s;
 }
-.plnt
+.sh
 {
  position:absolute;  
+  border-radius:9%;
   transition:6s;
-  transition-timing-function:linear; 
-  
-   border-radius:50%;
-   animation:  5s  infinite;
+   border-radius:55%; 
 }
 
 
@@ -53,137 +51,140 @@ padding-top:3px;
 }
 
 
-@keyframes  pp
-{
- 0% {left:66%;}
- 44% {left:88%;}
- 77% {left:33%;}
- 100% {left:66%;}
- 
-} 
-
 
 </style>
 <div class=sol >
-<div class=sol></div>
+ <div class=sol></div>
+ <div class=sol ></div>
+ <div class=sol ></div>
+ <div class=sol ></div>
 
-<div class=plnt ></div>
-<div class=plnt ></div>
-<div class=plnt ></div>
 </div>
-<div class=plnt ></div>
+<div class=sh ><div class=sh ></div></div>
+
 
 <button id=idbtn >start</button>
 
 
-
 <script>
  
- 
-   plnt=document.getElementsByClassName('plnt')
    sol=document.getElementsByClassName('sol')
+   sh=document.getElementsByClassName('sh')
+   
    
 o= 
  {
   b:0,
-  initsol:function()
+  init:function()
   {
      //idsol.style.background='' 
   idbtn.innerHTML='Start'     
 /* */ 	 
      sol[1].style.opacity='0.2'
-
-     //sol[1].style.zIndex=1
+     sol[1].style.transform='scale(1)'
+     sol[1].style.zIndex=-1
 	 sol[1].style.left=-6+'%'
 	 sol[1].style.top=-6+'%'  
      sol[1].style.width=111+'%'
      sol[1].style.height=111+'%'
-	 
-	 plnt[0].style.zIndex=-1
-     plnt[0].style.background='radial-gradient(#0f0,#333)'
-	 plnt[0].style.left=-25+'%'
-	 plnt[0].style.top=88+'%'  
-     plnt[0].style.width=33+'%'
-     plnt[0].style.height=33+'%'
-	
-     plnt[1].style.background='radial-gradient(#00f,#333)';
-     plnt[1].style.left=99+'%'
-	 plnt[1].style.top=88+'%'  
-     plnt[1].style.width=22+'%'
-     plnt[1].style.height=22+'%'
-	 
-	 plnt[2].style.background='#ff0';
-     plnt[2].style.left=9+'%'
-	 plnt[2].style.top=-22+'%'  
-     plnt[2].style.width=2+'%'
-     plnt[2].style.height=2+'%'  
-	
-  }, 
-  
-  mov:function()
-  {
-     idbtn.innerHTML='Stop'
-	 
-	 //idsol.style.background='radial-gradient(#f00,#333)'
-	 
-	 
-   //  plnt[0].style.background='#000'
-    // plnt[0].style.zIndex=1
-	 plnt[0].style.left=99+'%'
-	 plnt[0].style.top=-8+'%'  
-     plnt[0].style.width=33+'%'
-     plnt[0].style.height=33+'%'
-	 
 
-    // plnt[1].style.background='#000';
-     plnt[1].style.left=-19+'%'
-	 plnt[1].style.top=-19+'%'  
-     plnt[1].style.width=22+'%'
-     plnt[1].style.height=22+'%'
-	  
-	 plnt[2].style.background='#ff0';
-     plnt[2].style.left=133+'%'
-	 plnt[2].style.top=-2+'%'  
-     plnt[2].style.width=7+'%'
-     plnt[2].style.height=7+'%'  
-	 	 
+     sol[2].style.background='radial-gradient(#0f0,#333)'
+	 sol[2].style.transform='scale(1)'
+	 sol[2].style.left=Math.random()*77+'%'
+	 sol[2].style.top=Math.random()*77+'%'  
+     sol[2].style.width=44+'%'
+     sol[2].style.height=44+'%'
+	 sol[2].style.zIndex=1
+	
+     sol[3].style.background='radial-gradient(#00f,#333)';
+	 sol[3].style.transform='scale(1)'
+     sol[3].style.left=Math.random()*77+'%'
+	 sol[3].style.top=Math.random()*77+'%'  
+     sol[3].style.width=33+'%'
+     sol[3].style.height=33+'%'
+	 sol[3].style.zIndex=1
+	 
+	 sol[4].style.background='radial-gradient(#ff0,#333)';
+	 sol[4].style.transform='scale(1)'
+     sol[4].style.left=Math.random()*77+'%'
+	 sol[4].style.top=Math.random()*77+'%'  
+     sol[4].style.width=22+'%'
+     sol[4].style.height=22+'%'  
+	 sol[4].style.zIndex=1
+	 
+	 sh[0].style.background='radial-gradient(#fff,#880)';
+	 sh[0].style.transform='scale(1)'
+     sh[0].style.left=Math.random()*77+'%'
+	 sh[0].style.top=Math.random()*77+'%'  
+     sh[0].style.width=9+'%'
+     sh[0].style.height=7+'%' 
+	 //sh[0].style.transform=''
+	 sh[0].style.transform='rotate(20deg) skew(-55deg)'
+	 //sh[0].style.transform='scale(0.1)'
+	 
+	 sh[1].style.background='radial-gradient(#ff8,#800)';
+     sh[1].style.left=9+'%'
+	 sh[1].style.top=9+'%'  
+     sh[1].style.width=66+'%'
+     sh[1].style.height=66+'%'  
+	
   }, 
   
-  cl:function()
- {  
-   if(o.b)
-   {
-    //plnt[0].style.zIndex=-1
-	o.initsol()
-   }
-   if(!o.b)
-   {
-    //plnt[0].style.zIndex=1
-    o.mov()
+  movsh:function()
+  {
+  
+     sh[0].style.background='radial-gradient(#fff,#880)';
+	/// sh[0].style.transform='scale(1)'
+     sh[0].style.left=Math.random()*77+'%'
+	 sh[0].style.top=Math.random()*77+'%'  
+     
+	 //sh[0].style.transform='rotate(110deg) skew(-55deg)'
+	
+  },
+  
+  movpl:function()
+  {
+
+	 sol[1].style.transform='scale(1.6)'
 	 
-   }
-  o.b=!o.b
- },
- 
+	 sol[2].style.left=Math.random()*77+'%'
+	 sol[2].style.top=Math.random()*77+'%'  
+     sol[2].style.transform='scale(Math.random())'
+	 
+     sol[3].style.left=Math.random()*77+'%'
+	 sol[3].style.top=Math.random()*77+'%'  
+     sol[3].style.transform='scale(Math.random())'
+	 
+     sol[4].style.left=Math.random()*77+'%'
+	 sol[4].style.top=Math.random()*77+'%'  
+     sol[4].style.transform='scale(Math.random())'
+	// sol[3].style.zIndex=-2
+  }, 
+  
  
 }
-      o.initsol()
-     
-	 i=0
-   //i=setInterval(()=>{ o.cl(); }, 2222);
-           
+       o.init()
+    
+	i=0, f=0
+    
+  i=setInterval(()=>o.movpl(),2222)
   
-
+sol[0].onmousedown=()=>
+{
+   if(i) clearInterval(i)
+}   
 idbtn.onmousedown=()=>
 {
-    o.cl();
-   //i=setInterval(()=>{ }, 222);
+  if(f==0)  
+   f=setInterval(()=>o.movsh(),2222)
+    else
+  { clearInterval(f); f=0; }
+  
 }
 
 
-   //
-   //event.clientY+''; 
-   
+ 
+  //  
 </script>
 </body>
 
