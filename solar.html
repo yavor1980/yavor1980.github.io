@@ -23,7 +23,8 @@ background: linear-gradient(#333,#555);
  height:55%;
   background: radial-gradient(#bb0,#f00);
   border-radius:55%; 
-   transition:3s;
+   transition:5s;
+   transition-timing-function:linear;
 }
 .sh
 {
@@ -112,6 +113,7 @@ o=
      sol[4].style.height=22+'%'  
 	 sol[4].style.zIndex=1
 	 
+	 
 	 sh[0].style.background='radial-gradient(#fff,#880)';
 	 sh[0].style.transform='scale(1)'
      sh[0].style.left=Math.random()*77+'%'
@@ -134,11 +136,11 @@ o=
   {
   
      sh[0].style.background='radial-gradient(#fff,#880)';
-	/// sh[0].style.transform='scale(1)'
+	 sh[0].style.transform='scale(Math.random())'
      sh[0].style.left=Math.random()*77+'%'
 	 sh[0].style.top=Math.random()*77+'%'  
      
-	 //sh[0].style.transform='rotate(110deg) skew(-55deg)'
+	 //sh[0].style.transform='rotate(180deg) skew(-55deg)'
 	
   },
   
@@ -167,18 +169,20 @@ o=
     
 	i=0, f=0
     
-  i=setInterval(()=>o.movpl(),2222)
+  i=setInterval(()=>o.movpl(),4444)
   
 sol[0].onmousedown=()=>
 {
-   if(i) clearInterval(i)
+   ///if(i) clearInterval(i)
 }   
 idbtn.onmousedown=()=>
 {
   if(f==0)  
    f=setInterval(()=>o.movsh(),2222)
     else
-  { clearInterval(f); f=0; }
+   { clearInterval(f); f=0; 
+      //sh[0].style.transform='scale(0)'
+   }
   
 }
 
