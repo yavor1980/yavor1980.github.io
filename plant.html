@@ -33,7 +33,7 @@ cursor:pointer;
 .smk
 {
 position:absolute;   
-   transition:5s;
+   transition:2s;
 text-align:center;
 }
 
@@ -51,12 +51,11 @@ position:absolute;
 <div class=plnt>
 
 <div class=plnt >
-  <div class=smk > 
-   
-  </div>
- 
+  <div class=smk ></div> 
+  
 </div>
     
+
  <div class=plnt ></div>
  <div class=plnt ></div>
  <div class=plnt ></div>
@@ -66,7 +65,7 @@ position:absolute;
     <div class=cld > </div>
     <div class=cld > </div>
 	<div class=cld > </div>
-	<div class=cld > </div>
+	<div class=cld >  </div>
 	
 </div>
 
@@ -82,7 +81,7 @@ position:absolute;
     
 o= 
  {
-  b:0, bst:1, intr:0,
+  b:0, bst:1, intr:0, sm:0,
   initplnt:function()
   {
      
@@ -93,6 +92,7 @@ o=
      plnt[0].style.height=44+'%'	 
      plnt[0].style.borderTopLeftRadius=33+'%'
 	 plnt[0].style.borderTopRightRadius=33+'%'
+	 plnt[0].style.transform='skew(0)'
 	 
      plnt[1].style.background='linear-gradient(#620,#000)';
      plnt[1].style.left=66+'%'
@@ -116,7 +116,7 @@ o=
      plnt[3].style.height=22+'%'  
 	 plnt[3].style.borderTopLeftRadius=11+'%'
 	 plnt[3].style.borderTopRightRadius=11+'%'  
-	 
+	/* */ 
 	 plnt[4].style.background='#000';
      plnt[4].style.left=59+'%'
 	 plnt[4].style.top=17+'%'  
@@ -124,26 +124,25 @@ o=
      plnt[4].style.height=22+'%'  
 	 plnt[4].style.borderTopLeftRadius=16+'%'
 	 plnt[4].style.borderTopRightRadius=16+'%'  
-	/* */ 
+	 
 	 smk[0].style.background='#333' 
-  	 smk[0].style.left=77+'%'
-	 smk[0].style.top=-22+'%'  
+  	 smk[0].style.left=1+'%'
+	 smk[0].style.top=-42+'%'  
      smk[0].style.width=66+'%'
      smk[0].style.height=7+'%'
 	 smk[0].style.opacity=0
-	 smk[0].style.borderTopLeftRadius=55+'%'
-	 smk[0].style.borderTopRightRadius=-55+'%'  
-     smk[0].style.borderBottomLeftRadius=-99+'%'
-	 smk[0].style.borderBottomRightRadius=99+'%'  
+	 smk[0].style.borderTopLeftRadius=0+'%'
+	 smk[0].style.borderTopRightRadius=55+'%'  
+     smk[0].style.borderBottomLeftRadius=99+'%'
+	 smk[0].style.borderBottomRightRadius=0+'%'  
 	 
-	
 	 cld[0].style.background='#500'
-	 cld[0].style.opacity=1
-  	 cld[0].style.left=29+'%'
+     cld[0].style.opacity=0.4
+  	 cld[0].style.left=66+'%'
 	 cld[0].style.top=44+'%'  
      cld[0].style.width=9+'%'
      cld[0].style.height=14+'%'
-	 cld[0].style.zIndex=-2
+	 //cld[0].style.zIndex=-2
 	 
 	 cld[1].style.background='#500' 
      cld[1].style.left=17+'%'
@@ -151,24 +150,24 @@ o=
 	 cld[1].style.width=66+'%'
      cld[1].style.height=66+'%'
 	 
-	 cld[2].style.background='#fff' 
+	 cld[2].style.background='#f00' 
   	 cld[2].style.left=33+'%'
 	 cld[2].style.top=22+'%'  
      cld[2].style.width=11+'%'
      cld[2].style.height=22+'%'
 
-     cld[3].style.background='#fff' 
+     cld[3].style.background='#f00' 
   	 cld[3].style.left=66+'%'
 	 cld[3].style.top=22+'%'  
      cld[3].style.width=11+'%'
      cld[3].style.height=22+'%'
 
-     cld[4].style.background='#fff' 
+     cld[4].style.background='#f00' 
   	 cld[4].style.left=33+'%'
 	 cld[4].style.top=77+'%'  
      cld[4].style.width=33+'%'
      cld[4].style.height=8+'%'
-      cld[0].style.opacity=0
+     
 	 		 
 	 btn[0].style.left=7+'%'
 	 btn[0].style.top=7+'%'
@@ -181,21 +180,60 @@ o=
      btn[0].style.background='#00f'
 	
   },  
- 
+  
+ tomssl:function()
+ { 
+   plnt[0].style.background='linear-gradient(#840,#000)' 
+  	 plnt[0].style.left=22+'%'
+	 plnt[0].style.bottom=6+'%'  
+     plnt[0].style.width=22+'%'
+     plnt[0].style.height=44+'%'	 
+     plnt[0].style.borderTopLeftRadius=3+'%'
+	 plnt[0].style.borderTopRightRadius=3+'%'
+	 plnt[0].style.transform='skew(33deg)'
+	 plnt[1].style.opacity=0
+	 
+     plnt[1].style.background='linear-gradient(#620,#000)';
+     plnt[1].style.left=6+'%'
+	 plnt[1].style.top=-22+'%'  
+     plnt[1].style.width=22+'%'
+     plnt[1].style.height=66+'%'
+	 plnt[1].style.zIndex=-1
+	 plnt[0].style.borderTopLeftRadius=3+'%'
+	 plnt[0].style.borderTopRightRadius=3+'%'
+	 
+	 plnt[2].style.background='#000';
+     plnt[2].style.left=22+'%'
+	 plnt[2].style.top=53+'%'  
+     plnt[2].style.width=55+'%'
+     plnt[2].style.height=44+'%'  
+	 plnt[2].style.borderTopLeftRadius=33+'%'
+	 plnt[2].style.borderTopRightRadius=33+'%' 
+  
+ },
   clk:function()
  {  
    if(o.b==0){
     plnt[2].style.background='#f00';
 	plnt[3].style.background='#f00';
 	plnt[4].style.background='#f00';
-	smk[0].style.opacity=0.5
-       o.intr=setInterval(()=>{ o.cl(); }, 2000);
-		btn[0].innerHTML='stop'
-   
+	smk[0].style.opacity=0.5	
+	smk[0].style.transform='scale(9) translate(-33%,-3%)'
+	
 	cld[0].style.opacity=0.6
-	  smk[0].style.transform='scale(3)'
-	  cld[0].style.transform='scale(4) translate(33%,-22%)'
-
+	 cld[0].style.transform=
+	'skew(33deg) scale(3) translate(-3%,-22%)'
+	 cld[1].style.transform=
+	  ' translate(33%,0)'
+     cld[2].style.transform=
+	' scale(2) translate(-111%,0)'
+	 cld[3].style.transform=
+	' scale(2) translate(-111%,0)'
+  	//o.intr=setInterval(()=>{ o.cl(); }, 2222);
+	   cld[4].style.transform=' skew(33deg)'
+	  o.tomssl() 
+       btn[0].style.background='#f00'
+	   btn[0].innerHTML='stop'
    } 
    else  
    {
@@ -203,13 +241,20 @@ o=
    plnt[3].style.background='#000';
    plnt[4].style.background='#000';
      smk[0].style.opacity=0
-     cld[0].style.opacity=0
-   
+	 smk[0].style.transform='scale(1)'
+     //cld[0].style.opacity=0
+     cld[0].style.transform='scale(1)'
+	 cld[1].style.transform=
+	  ' translate(0,0)'
+	 cld[2].style.transform=
+	' scale(1) translate(0,0)'
+	 cld[3].style.transform=
+	' scale(1) translate(0,0)'
    clearInterval(o.intr)
 	btn[0].style.background='#00f'
 	btn[0].innerHTML='start'
-      	  smk[0].style.transform='scale(1)'
-		  cld[0].style.transform='scale(1)'
+      	o.initplnt()  
+		  
   }
   
      o.b=!o.b
@@ -217,46 +262,28 @@ o=
  
  cl:function()
   {
-   if(o.bst)
-   {
-     smk[0].style.borderTopLeftRadius=55+'%'
-	 smk[0].style.borderTopRightRadius=-55+'%'  
-     smk[0].style.borderBottomLeftRadius=-99+'%'
-	 smk[0].style.borderBottomRightRadius=99+'%'  
-	   //smk[0].style.background='#00f'
-	  smk[0].style.width='222%'
-	  smk[0].style.left='166%'
-	  smk[0].style.transform='scale(3)'
-	    
-	   o.bst=0
-   }	
-	 else
-	{
-	 smk[0].style.borderTopLeftRadius=55+'%'
-	 smk[0].style.borderTopRightRadius=-55+'%'  
-     smk[0].style.borderBottomLeftRadius=-99+'%'
-	 smk[0].style.borderBottomRightRadius=99+'%' 
-	    //smk[0].style.background='#f00'
-	   smk[0].style.width='143%'
-	   smk[0].style.left='177%'
-	  //  smk[0].style.top='-5%'
-	
-		 o.bst=1
-	}
-    
-	  ///v=Math.random()*88
+     	smk[0].style.width=Math.random()*88+8+'%'
+		
   },
 }
-      o.initplnt()
-    
+        o.initplnt()
+    //o.tomssl()
 	 
 btn[0].onmousedown=()=>
 {
-   
     o.clk() 
       
 }
- 
+plnt[0].onmousedown=()=>
+{
+   o.clk() 
+     
+}
+cld[0].onmousedown=()=>
+{
+   o.tomssl() 
+      
+} 
 
 
 </script>
