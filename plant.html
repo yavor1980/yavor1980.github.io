@@ -92,7 +92,7 @@ o=
      plnt[0].style.height=44+'%'	 
      plnt[0].style.borderTopLeftRadius=33+'%'
 	 plnt[0].style.borderTopRightRadius=33+'%'
-	 plnt[0].style.transform='skew(0)'
+	// plnt[0].style.transform='skew(0)'
 	 
      plnt[1].style.background='linear-gradient(#620,#000)';
      plnt[1].style.left=66+'%'
@@ -108,6 +108,7 @@ o=
      plnt[2].style.height=44+'%'  
 	 plnt[2].style.borderTopLeftRadius=33+'%'
 	 plnt[2].style.borderTopRightRadius=33+'%'  
+	 plnt[2].style.opacity=1
 	   
      plnt[3].style.background='#000';
      plnt[3].style.left=11+'%'
@@ -183,7 +184,7 @@ o=
   
  tomssl:function()
  { 
-   plnt[0].style.background='linear-gradient(#840,#000)' 
+   //plnt[0].style.background='linear-gradient(#840,#000)' 
   	 plnt[0].style.left=22+'%'
 	 plnt[0].style.bottom=6+'%'  
      plnt[0].style.width=22+'%'
@@ -222,7 +223,7 @@ o=
 	
 	cld[0].style.opacity=0.6
 	 cld[0].style.transform=
-	'skew(33deg) scale(3) translate(-3%,-22%)'
+	  'skew(33deg) scale(3) translate(-3%,-22%)'
 	 cld[1].style.transform=
 	  ' translate(33%,0)'
      cld[2].style.transform=
@@ -231,7 +232,7 @@ o=
 	' scale(2) translate(-111%,0)'
   	//o.intr=setInterval(()=>{ o.cl(); }, 2222);
 	   cld[4].style.transform=' skew(33deg)'
-	  o.tomssl() 
+	 // o.tomssl() 
        btn[0].style.background='#f00'
 	   btn[0].innerHTML='stop'
    } 
@@ -260,14 +261,10 @@ o=
      o.b=!o.b
  },
  
- cl:function()
-  {
-     	smk[0].style.width=Math.random()*88+8+'%'
-		
-  },
+ 
 }
         o.initplnt()
-    //o.tomssl()
+    
 	 
 btn[0].onmousedown=()=>
 {
@@ -277,13 +274,9 @@ btn[0].onmousedown=()=>
 plnt[0].onmousedown=()=>
 {
    o.clk() 
-     
+     //o.tomssl()
 }
-cld[0].onmousedown=()=>
-{
-   o.tomssl() 
-      
-} 
+
 
 
 </script>
