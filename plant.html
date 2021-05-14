@@ -43,7 +43,12 @@ position:absolute;
    transition:5s;
  border-radius:50%;
 }
-
+.zr
+{
+position:absolute;   
+   transition:5s;
+ border-radius:5%;
+}
 
 
 </style>
@@ -63,8 +68,8 @@ position:absolute;
 
 <div class=cld > 
     <div class=cld > </div>
-    <div class=cld > </div>
-	<div class=cld > </div>
+    <div class=cld >  </div>
+	<div class=cld >  </div>
 	<div class=cld >  </div>
 	
 </div>
@@ -78,6 +83,7 @@ position:absolute;
    plnt=document.getElementsByClassName('plnt')
    smk=document.getElementsByClassName('smk')
    cld=document.getElementsByClassName('cld')
+   zr=document.getElementsByClassName('zr')
     
 o= 
  {
@@ -92,7 +98,6 @@ o=
      plnt[0].style.height=44+'%'	 
      plnt[0].style.borderTopLeftRadius=33+'%'
 	 plnt[0].style.borderTopRightRadius=33+'%'
-	// plnt[0].style.transform='skew(0)'
 	 
      plnt[1].style.background='linear-gradient(#620,#000)';
      plnt[1].style.left=66+'%'
@@ -100,6 +105,7 @@ o=
      plnt[1].style.width=22+'%'
      plnt[1].style.height=66+'%'
 	 plnt[1].style.zIndex=-1
+	 plnt[1].style.opacity=1
 	   
 	 plnt[2].style.background='#000';
      plnt[2].style.left=22+'%'
@@ -169,7 +175,7 @@ o=
      cld[4].style.width=33+'%'
      cld[4].style.height=8+'%'
      
-	 		 
+	
 	 btn[0].style.left=7+'%'
 	 btn[0].style.top=7+'%'
 	 btn[0].style.width=7+'%'
@@ -184,40 +190,32 @@ o=
   
  tomssl:function()
  { 
-   //plnt[0].style.background='linear-gradient(#840,#000)' 
-  	 plnt[0].style.left=22+'%'
-	 plnt[0].style.bottom=6+'%'  
-     plnt[0].style.width=22+'%'
-     plnt[0].style.height=44+'%'	 
+     plnt[0].style.background='linear-gradient(#840,#000)' 
+  	 
      plnt[0].style.borderTopLeftRadius=3+'%'
-	 plnt[0].style.borderTopRightRadius=3+'%'
-	 plnt[0].style.transform='skew(33deg)'
-	 plnt[1].style.opacity=0
-	 
-     plnt[1].style.background='linear-gradient(#620,#000)';
+	 plnt[0].style.borderTopRightRadius=83+'%'
+	
+	 plnt[1].style.transform='rotate(44deg)'
+	 plnt[1].style.background='linear-gradient(#620,#000)';
      plnt[1].style.left=6+'%'
-	 plnt[1].style.top=-22+'%'  
-     plnt[1].style.width=22+'%'
-     plnt[1].style.height=66+'%'
-	 plnt[1].style.zIndex=-1
-	 plnt[0].style.borderTopLeftRadius=3+'%'
-	 plnt[0].style.borderTopRightRadius=3+'%'
-	 
-	 plnt[2].style.background='#000';
-     plnt[2].style.left=22+'%'
-	 plnt[2].style.top=53+'%'  
-     plnt[2].style.width=55+'%'
-     plnt[2].style.height=44+'%'  
-	 plnt[2].style.borderTopLeftRadius=33+'%'
-	 plnt[2].style.borderTopRightRadius=33+'%' 
-  
+     plnt[1].style.borderTopLeftRadius=3+'%'
+	 plnt[1].style.borderTopRightRadius=3+'%'
+
+	 plnt[2].style.background='radial-gradient(#f00,#000)';
+     plnt[3].style.background='#f00';
+	 plnt[3].style.borderRadius=66+'%'
+	 	 
+	 plnt[4].style.background='#f00'
+	 plnt[4].style.background='#f00'
+	 plnt[4].style.borderRadius=55+'%' 
+	 plnt[3].style.left=44+'%'
+    // plnt[4].style.left=-22+'%'
  },
+ 
   clk:function()
  {  
    if(o.b==0){
-    plnt[2].style.background='#f00';
-	plnt[3].style.background='#f00';
-	plnt[4].style.background='#f00';
+    
 	smk[0].style.opacity=0.5	
 	smk[0].style.transform='scale(9) translate(-33%,-3%)'
 	
@@ -231,19 +229,18 @@ o=
 	 cld[3].style.transform=
 	' scale(2) translate(-111%,0)'
   	//o.intr=setInterval(()=>{ o.cl(); }, 2222);
-	   cld[4].style.transform=' skew(33deg)'
-	 // o.tomssl() 
+	  cld[4].style.transform=' skew(-33deg)'
+	   
        btn[0].style.background='#f00'
 	   btn[0].innerHTML='stop'
+	    o.tomssl()
    } 
    else  
    {
-   plnt[2].style.background='#000'
-   plnt[3].style.background='#000';
-   plnt[4].style.background='#000';
+   
      smk[0].style.opacity=0
 	 smk[0].style.transform='scale(1)'
-     //cld[0].style.opacity=0
+     
      cld[0].style.transform='scale(1)'
 	 cld[1].style.transform=
 	  ' translate(0,0)'
@@ -274,7 +271,7 @@ btn[0].onmousedown=()=>
 plnt[0].onmousedown=()=>
 {
    o.clk() 
-     //o.tomssl()
+   
 }
 
 
