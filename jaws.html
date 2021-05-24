@@ -20,33 +20,26 @@ background:#f00;
 top:11%;
 width:11%;
 height:12%;
-border-radius:50%;
-transition:height,opacity 1s,1s;
+
 text-align:center;
 font-size:2em;
 color:#000;
 cursor:pointer;
 
  border-top-left-radius:33%;
- border-top-right-radius:33%;  
+ border-top-right-radius:33%; 
+ border-bottom-left-radius:111%;
+ border-bottom-right-radius:111%; 
  
 }
 
-
-.jws
+.hd
 {
  position:absolute;   
  background: radial-gradient(#880,#222);
- left:22%;
- top:22%; 
- width:44%;
- height:33%;
+ 
  transition:3s;
-  border-top-left-radius:55%;
-  border-top-right-radius:55%;
-  border-bottom-left-radius:55%;
-  border-bottom-right-radius:55%;
-  
+  border-radius:55%; 
 }
 .mth
 {
@@ -71,8 +64,7 @@ position:absolute;
   background:red;
   border-radius:55%;
 }
-
-.clk
+.lpw
 {
 position:absolute;   
 border-radius:55%;
@@ -80,6 +72,14 @@ border-radius:55%;
  opacity:;
  
 }
+.rpw
+{
+position:absolute;   
+border-radius:55%;
+   transition:6s;
+ 
+}
+
 
 
 @keyframes  pp
@@ -94,71 +94,73 @@ border-radius:55%;
 
 </style>
 
-<div class=jws>
-  
- 
-<div class=mth >
-  <div class=clk ></div>
-  <div class=clk ></div>
- 
-</div>
-<div class=jws ><div class=mth ></div></div>
+
+<div class=hd></div>
+<div class=hd>
+<div class=hd>
  <div class=gl ><div class=zr ></div></div>
  <div class=gl ><div class=zr ></div></div>
+ 
+ <div class=mth >
+  <div class=mth ></div>
+  <div class=mth ></div>
+  <div class=mth ></div>
+ </div>
+</div>
 </div>
 
-<button class=btn >open</button>
 
-
+<button class=btn >danger</button>
 
 <script>
-
-   jws=document.getElementsByClassName('jws')
-   btn=document.getElementsByClassName('btn')
-   mth=document.getElementsByClassName('mth')
+//<div class>
+   hd=document.getElementsByClassName('hd')
+   
    gl=document.getElementsByClassName('gl')
    zr=document.getElementsByClassName('zr')
-   clk=document.getElementsByClassName('clk')
+   
+   mth=document.getElementsByClassName('mth')
+   
+   btn=document.getElementsByClassName('btn')
+   
+   
+   
     
 o= 
  {
-  b:1, bv:0, intr:0,
-  initplnt:function()
+  bj:1, bt:0, intr:0,
+  initj:function()
   {
-     jws[1].style.background='radial-gradient(#cc0,#222,77%)';
-     jws[1].style.left=39+'%'
-	 jws[1].style.top=66+'%'  
-     jws[1].style.width=22+'%'
-     jws[1].style.height=166+'%'  
-	 jws[1].style.borderTopLeftRadius=55+'%'
-	 jws[1].style.borderTopRightRadius=55+'%'  
-	 jws[1].style.borderBottomLeftRadius=55+'%'
-	 jws[1].style.borderBottomRightRadius=55+'%'  
-	 jws[1].style.zIndex=-1
-	/* */  
-     
-	 mth[0].style.background='radial-gradient(#f00,#840)';
-     mth[0].style.left=19+'%'
-	 mth[0].style.top=53+'%'  
-     mth[0].style.width=55+'%'
-     mth[0].style.height=1+'%'  
-	 mth[0].style.borderTopLeftRadius=55+'%'
-	 mth[0].style.borderTopRightRadius=55+'%'  
-	 mth[0].style.borderBottomLeftRadius=55+'%'
-	 mth[0].style.borderBottomRightRadius=55+'%'  
+     hd[0].style.left=22+'%'
+	 hd[0].style.top=22+'%'  
+     hd[0].style.width=55+'%'
+     hd[0].style.height=66+'%'  
+     //hd[0].style.background='radial-gradient(#880,#222)'
+	 hd[0].style.borderTopLeftRadius=-55+'%'
+	 hd[0].style.borderTopRightRadius=55+'%'  
+	 hd[0].style.borderBottomLeftRadius=33+'%'
+	 hd[0].style.borderBottomRightRadius=33+'%'  
 	 
-	 mth[1].style.background='radial-gradient(#f00,#222)';
-     mth[1].style.left=7+'%'
-	 mth[1].style.top=26+'%'  
-     mth[1].style.width=88+'%'
-     mth[1].style.height=55+'%'  
-	 mth[1].style.borderTopLeftRadius=55+'%'
-	 mth[1].style.borderTopRightRadius=55+'%'  
-	 mth[1].style.borderBottomLeftRadius=55+'%'
-	 mth[1].style.borderBottomRightRadius=55+'%'
-	   
-     gl[0].style.background='#fff';
-     gl[0].style.left=11+'%'
+	 hd[1].style.top=33+'%'  
+	 hd[1].style.left=38+'%'
+     hd[1].style.width=22+'%'
+     hd[1].style.height=44+'%'  
+	 hd[1].style.borderTopLeftRadius=55+'%'
+	 hd[1].style.borderTopRightRadius=55+'%'  
+	 hd[1].style.borderBottomLeftRadius=33+'%'
+	 hd[1].style.borderBottomRightRadius=33+'%'  
+	 
+	 hd[2].style.left=19+'%'
+	 hd[2].style.top=22+'%'  
+     hd[2].style.width=66+'%'
+     hd[2].style.height=66+'%'  
+	 hd[2].style.borderTopLeftRadius=55+'%'
+	 hd[2].style.borderTopRightRadius=55+'%'  
+	 hd[2].style.borderBottomLeftRadius=33+'%'
+	 hd[2].style.borderBottomRightRadius=33+'%'  
+	
+	 gl[0].style.background='#fff';
+     gl[0].style.left=18+'%'
 	 gl[0].style.top=17+'%'  
      gl[0].style.width=14+'%'
      gl[0].style.height=22+'%'  
@@ -176,94 +178,115 @@ o=
 	 gl[1].style.borderTopRightRadius=55+'%'  
 	 gl[1].style.borderBottomLeftRadius=55+'%'
 	 gl[1].style.borderBottomRightRadius=55+'%'  
+	 
+	 mth[0].style.background='radial-gradient(#f00,#840)';
+     mth[0].style.left=22+'%'
+	 mth[0].style.top=53+'%'  
+     mth[0].style.width=55+'%'
+     mth[0].style.height=1+'%'  
+	 mth[0].style.borderTopLeftRadius=55+'%'
+	 mth[0].style.borderTopRightRadius=55+'%'  
+	 mth[0].style.borderBottomLeftRadius=55+'%'
+	 mth[0].style.borderBottomRightRadius=55+'%'  
+	 
+	 mth[1].style.background='#fff';
+     mth[1].style.left=9+'%'
+	 mth[1].style.top=17+'%'  
+     mth[1].style.width=11+'%'
+     mth[1].style.height=99+'%'  
+	 mth[1].style.borderTopLeftRadius=5+'%'
+	 mth[1].style.borderTopRightRadius=5+'%'  
+	 mth[1].style.borderBottomLeftRadius=55+'%'
+	 mth[1].style.borderBottomRightRadius=55+'%'  
 	/* */ 
-	 clk[0].style.background='#fff';
-     clk[0].style.left=9+'%'
-	 clk[0].style.top=17+'%'  
-     clk[0].style.width=11+'%'
-     clk[0].style.height=99+'%'  
-	 clk[0].style.borderTopLeftRadius=5+'%'
-	 clk[0].style.borderTopRightRadius=5+'%'  
-	 clk[0].style.borderBottomLeftRadius=55+'%'
-	 clk[0].style.borderBottomRightRadius=55+'%'  
-	/* */ 
-	 clk[1].style.background='#fff';
-     clk[1].style.left=70+'%'
-	 clk[1].style.top=14+'%'  
-     clk[1].style.width=11+'%'
-     clk[1].style.height=99+'%'  
-	 clk[1].style.borderTopLeftRadius=5+'%'
-	 clk[1].style.borderTopRightRadius=5+'%'  
-	 clk[1].style.borderBottomLeftRadius=55+'%'
-	 clk[1].style.borderBottomRightRadius=55+'%'  	 
-		 
+	 mth[2].style.background='#fff';
+     mth[2].style.left=70+'%'
+	 mth[2].style.top=14+'%'  
+     mth[2].style.width=11+'%'
+     mth[2].style.height=99+'%'  
+	 mth[2].style.borderTopLeftRadius=5+'%'
+	 mth[2].style.borderTopRightRadius=5+'%'  
+	 mth[2].style.borderBottomLeftRadius=55+'%'
+	 mth[2].style.borderBottomRightRadius=55+'%'  	 
+	
+     mth[3].style.background='#600';
+     mth[3].style.left=22+'%'
+	 mth[3].style.top=29+'%'  
+     mth[3].style.width=44+'%'
+     mth[3].style.height=33+'%'  
+	 mth[3].style.borderTopLeftRadius=55+'%'
+	 mth[3].style.borderTopRightRadius=55+'%'  
+	 mth[3].style.borderBottomLeftRadius=55+'%'
+	 mth[3].style.borderBottomRightRadius=55+'%'  
+	
+     
+	 
 	 btn[0].style.left=76+'%'
 	
 	
   }, 
   
-  clk:function()
+  clkk:function()
   {
-  if(o.b)
+  if(o.bj)
    {
        mth[0].style.height='22%'
-	   jws[1].style.width='122%'
-	   jws[1].style.left='-11%'
+	  
 	   gl[0].style.transform='scale(2)'
        gl[1].style.transform='scale(2)'
-	   btn[0].innerHTML='close' 
-	    jws[1].style.borderTopLeftRadius=5+'%'
-	    jws[1].style.borderTopRightRadius=5+'%'  
-		mth[1].style.borderTopLeftRadius=5+'%'
-	    mth[1].style.borderTopRightRadius=5+'%' 
+	  
+	 //  mth[3].style.height='111%'
+	   btn[0].innerHTML='quiet'
+	     setTimeout(()=>o.scl(0.7), 2222)
+         setTimeout(()=>o.scl(1.3), 3333)
+	   
+		 
    } 
     else
    {
     mth[0].style.height='1%'
-	jws[1].style.width='22%'
-	jws[1].style.left='39%'
+	
 	gl[0].style.transform='scale(1)'
     gl[1].style.transform='scale(1)'
-	 btn[0].innerHTML='open'
-	    jws[1].style.borderTopLeftRadius=55+'%'
-	    jws[1].style.borderTopRightRadius=55+'%'  
-		mth[1].style.borderTopLeftRadius=55+'%'
-	    mth[1].style.borderTopRightRadius=55+'%' 
+	
+	  btn[0].innerHTML='danger'
    }
-    o.b=!o.b
+    o.bj=!o.bj
+	
   },
  
-  view:function()
- {  
-   
+  scl:function(v)
+ {   
+    hd[1].style.transform='scale('+v+')'
  
-	  //o.intr=setInterval(()=>{ o.cl(); }, 999);	  
  },
-  stp:function()
-  {
-  
-	
-  }
  
+  
 }
-      o.initplnt()
-     
-	
+
+        o.initj()
+
+      
 	 
 btn[0].onmousedown=()=>
 { 
-  o.clk()
+   o.clkk()
+   
+}
+	 
+hd[2].onmouseover=()=>
+{ 
+    o.clkk()
   
 }
-btn[1].onmousedown=()=>
+hd[2].onmouseout=()=>
 { 
-  ///o.view()
+    o.clkk()
+ 
 }
-
-   
-   
+   //setInterval(()=>{ btn[0].onmousedown() }, 3377);	
    //event.clientY+''; 
-   
+    //Math.round(Math.random()
 </script>
 </body>
 
