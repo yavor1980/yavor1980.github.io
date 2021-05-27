@@ -67,35 +67,34 @@ position:absolute;
 .lpw
 {
 position:absolute;   
-border-radius:55%;
-   transition:6s;
- opacity:;
- 
+border-radius:22%;
+border-top-left-radius:55%;
+border-top-right-radius:55%;
+transition:1s;
+ background: radial-gradient(#330,#222);
+  
 }
 .rpw
 {
 position:absolute;   
-border-radius:55%;
-   transition:6s;
- 
+border-radius:22%;
+border-top-left-radius:55%;
+border-top-right-radius:55%;
+transition:1s;
+ background: radial-gradient(#330,#222);
+      
 }
 
-
-
-@keyframes  pp
-{
- 0% {left:66%;}
- 44% {left:88%;}
- 77% {left:33%;}
- 100% {left:66%;}
- 
-} 
 
 
 </style>
 
 
-<div class=hd></div>
+<div class=hd>
+ <div class=lpw ><div class ></div></div>
+ <div class=rpw ><div class ></div></div>
+</div>
+
 <div class=hd>
 <div class=hd>
  <div class=gl ><div class=zr ></div></div>
@@ -115,6 +114,8 @@ border-radius:55%;
 <script>
 //<div class>
    hd=document.getElementsByClassName('hd')
+   lpw=document.getElementsByClassName('lpw')
+   rpw=document.getElementsByClassName('rpw')
    
    gl=document.getElementsByClassName('gl')
    zr=document.getElementsByClassName('zr')
@@ -128,7 +129,7 @@ border-radius:55%;
     
 o= 
  {
-  bj:1, bt:0, intr:0,
+  bp:1, bstp:0, 
   initj:function()
   {
      hd[0].style.left=22+'%'
@@ -209,7 +210,7 @@ o=
 	 mth[2].style.borderBottomLeftRadius=55+'%'
 	 mth[2].style.borderBottomRightRadius=55+'%'  	 
 	
-     mth[3].style.background='#600';
+     mth[3].style.background='#f00';
      mth[3].style.left=22+'%'
 	 mth[3].style.top=29+'%'  
      mth[3].style.width=44+'%'
@@ -219,7 +220,15 @@ o=
 	 mth[3].style.borderBottomLeftRadius=55+'%'
 	 mth[3].style.borderBottomRightRadius=55+'%'  
 	
-     
+     lpw[0].style.left=2+'%'
+	 lpw[0].style.top=88+'%'  
+     lpw[0].style.width=33+'%'
+     lpw[0].style.height=22+'%' 
+	 
+	 rpw[0].style.left=66+'%'
+	 rpw[0].style.top=88+'%'  
+     rpw[0].style.width=33+'%'
+     rpw[0].style.height=22+'%' 
 	 
 	 btn[0].style.left=76+'%'
 	
@@ -228,44 +237,55 @@ o=
   
   clkk:function()
   {
-  if(o.bj)
+  if(o.bp)
    {
-       mth[0].style.height='22%'
+      mth[0].style.height='22%'
+	  hd[2].style.transform='scale(2) translate(-44%,0)'
 	  
 	   gl[0].style.transform='scale(2)'
        gl[1].style.transform='scale(2)'
-	  
-	 //  mth[3].style.height='111%'
+	  lpw[0].style.transform='translate(0,0)'
+	  rpw[0].style.transform='translate(0,0)'
 	   btn[0].innerHTML='quiet'
-	     setTimeout(()=>o.scl(0.7), 2222)
-         setTimeout(()=>o.scl(1.3), 3333)
-	   
-		 
+	  
    } 
     else
    {
     mth[0].style.height='1%'
-	
+	hd[2].style.transform='scale(1) translate(0%,0)'
 	gl[0].style.transform='scale(1)'
     gl[1].style.transform='scale(1)'
-	
-	  btn[0].innerHTML='danger'
+	  lpw[0].style.transform='translate(0,0%)'
+	  rpw[0].style.transform='translate(0,0)'
+	    btn[0].innerHTML='danger'
    }
-    o.bj=!o.bj
+    o.bp=!o.bp
 	
   },
- 
-  scl:function(v)
- {   
-    hd[1].style.transform='scale('+v+')'
- 
+  
+  stp:function()
+ {  
+    if(o.bstp)
+   {
+    lpw[0].style.transform='translate(0,-33%)'
+	rpw[0].style.transform='translate(0,33%)'
+	hd[1].style.transform='scale(1.3) translate(0%,0)'
+	hd[2].style.transform='rotate(-22deg) translate(0%,0)'
+   } else
+   {
+    lpw[0].style.transform='translate(0,33%)'
+	rpw[0].style.transform='translate(0,-33%)'
+	hd[1].style.transform='scale(1) translate(0%,0)'
+	hd[2].style.transform='rotate(22deg) translate(0%,0)'
+   }
+     o.bstp=!o.bstp
  },
  
   
 }
 
         o.initj()
-
+ setInterval(o.stp, 1111);	
       
 	 
 btn[0].onmousedown=()=>
