@@ -85,7 +85,7 @@ position:absolute;
     
 o= 
  {
-  b:0, bvbr:0, 
+  b:0, bvbr:0, intr:0,
   initplnt:function()
   {
      
@@ -232,34 +232,7 @@ o=
  
   clk:function()
  {  
-   if(o.b==0){
-  	 
-       btn[0].style.background='#f00'
-	   btn[0].innerHTML='stop'
-	   
-	    setTimeout(o.tomssl, 2222)
-   } 
-   else  
-   {
    
-     
-  
-     cld[0].style.transform='scale(1)'
-	 cld[1].style.transform=
-	  ' translate(0,0)'
-	 cld[2].style.transform=
-	' scale(1) translate(0,0)'
-	 cld[3].style.transform=
-	' scale(1) translate(0,0)'
-  
-	btn[0].style.background='#00f'
-	btn[0].innerHTML='start'
-      	o.initplnt()  
-		o.initcld()
-		  
-  }
-  
-     o.b=!o.b
  },
 // 
  
@@ -270,19 +243,26 @@ o=
 	 
 btn[0].onmousedown=()=>
 {
-    o.clk() 
+  if(o.intr!=0) 
+  {
+   clearInterval(o.intr)
+	  o.intr=0
+	   smk[0].style.opacity=0
+	   smk[1].style.opacity=0
+	   cld[0].style.transform='scale(0)'
+	   plnt[2].style.background='#000'
+	   plnt[3].style.background='#000'
+	   plnt[4].style.background='#000'
+	  btn[0].innerHTML='start'
+   } else
+   {
+   o.intr=setInterval(()=>{ o.vbr(); }, 999);
+    btn[0].innerHTML='stop'
+   }   
       
 }
-plnt[0].onmouseover=()=>
-{
-   
-       
-}
-plnt[0].onmouseout=()=>
-{
-   o.clk() 
-   
-}
+
+
 
 
 
