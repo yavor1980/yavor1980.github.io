@@ -17,7 +17,7 @@ background: linear-gradient(5deg,#0a0,#a00);
  top:28%;
  width:11%;
  height:44%;
- transition:3s; 
+ transition:2s; 
   border-top-left-radius:66%;
   border-top-right-radius:66%;
   border-bottom-left-radius:55%;
@@ -108,12 +108,6 @@ position:absolute;
 }
 
 
-@keyframes kf
-{
-0%{color:white;  }
-44%{color:red;  }
-99%{color:yellow; }
-} 
 
 </style>
 </head>
@@ -136,7 +130,7 @@ position:absolute;
  <div class=wrd>CAPTAT</div> 
  <div class=wrd>MUSCAS</div> 
  
-<button class=btn>Wake up</button>
+<button class=btn>stop</button>
 
 
 <script>
@@ -154,9 +148,9 @@ position:absolute;
 var eagl= 
  {
  
-   i:Math.random()*33, 
-   b:1,
-    
+  
+   b:1, intr:0,
+   bst:0, 
   init:function()
   {
      
@@ -218,7 +212,7 @@ var eagl=
      
 	if(eagl.b)
     {	
-	 btn[0].innerHTML='Calm down'
+	// btn[0].innerHTML='Calm down'
 	 eagle[0].style.transform='skew(11deg)'
 	  lwng[0].style.width='277%'	  
 	  lwng[0].style.height='144%'
@@ -260,7 +254,7 @@ var eagl=
 	} 
         else
 	{
-	 btn[0].innerHTML='Wake up' 
+	 //btn[0].innerHTML='Wake up' 
 	 eagle[0].style.transform='skew(0deg)'
 	  lwng[0].style.width='99%'
 	  lwng[0].style.height='120%'	  	  
@@ -313,7 +307,7 @@ var frz=
   wrd[0].style.left='11%' 
   wrd[0].style.top='11%'  
   wrd[0].style.color='#fff' 
- // wrd[0].style.fontSize='2em' 
+  //wrd[0].style.fontSize='2em' 
   wrd[1].style.left='42%'
   wrd[1].style.top='22%'   
   wrd[1].style.color='#fff' 
@@ -328,22 +322,27 @@ var frz=
 }	 
        	 frz.init()  
 	
-	
+   eagl.intr= setInterval(()=>eagl.cl(),2222)
 	
 	btn[0].onclick=()=>
 	{
-	      eagl.cl()	 
-		 
+	  if(eagl.bst==0)
+	  {
+	   btn[0].innerHTML='start' 
+	   clearInterval(eagl.intr)
+	    eagl.intr=0
+      }	   
+		else
+		{
+		 btn[0].innerHTML='stop' 
+		   eagl.intr= setInterval(()=>eagl.cl(),2222)
+		}
+       		eagl.bst=!eagl.bst
     }		  
 	
-    eagle[0].onmousedown=()=>
-	{
-	      eagl.cl()	 
-		 
-    }			   
-	
+    	
       
-	  //clearInterval(i)i=setInterval(()=>,3000)
+	  //
 	
 </script>
 </body>
