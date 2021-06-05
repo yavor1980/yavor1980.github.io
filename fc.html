@@ -11,7 +11,7 @@
 #idbd
 {
 background: radial-gradient(#222,#666);
-animation: 18s infinite;
+
 }
 
 .btn
@@ -20,7 +20,6 @@ animation: 18s infinite;
  text-align:center;
    cursor:pointer;
  font-size:2em;
- transition:4s;
  color:#fff;
  
 }
@@ -28,14 +27,14 @@ animation: 18s infinite;
 .fc
 {
  position:absolute;   
-
+ transition:2s;
 }
 .gl
 {
  position:absolute;   
  border-radius:50%;
    background:green;
-   
+   transition:2s;
 }
 .ns
 {
@@ -60,15 +59,14 @@ position:absolute;
  border-radius:50%;
  
 }
-
-@keyframes kf
+.smk
 {
-0%{background:#222;} 
-33%{background:#555;} 
-66%{background:#999;} 
-99%{background:#333;} 
-
+position:absolute;
+ background:radial-gradient(#000,#333);
+ border-radius:50%;
+ 
 }
+
 
 </style>
 
@@ -84,18 +82,18 @@ position:absolute;
  
  <div class=ns ><div class=ns ></div></div>
  <div class=mth >
-  <div class=mth ></div>
+  <div class=mth ><div class=mth ></div></div>
    
  </div>
  
- <div class=ears ></div>
+ <div class=ears >
+  <div class=smk ><div class=smk ></div></div>
+ </div>
  <div class=ears ></div>
 
 </div>
 
-<div class=btn> HAIR
-
-</div>
+<div class=btn> stop</div>
 
 <div class=btn></div>
 
@@ -105,21 +103,21 @@ position:absolute;
    ns=document.getElementsByClassName('ns')
    mth=document.getElementsByClassName('mth')
    ears=document.getElementsByClassName('ears')
+   smk=document.getElementsByClassName('smk')
    btn=document.getElementsByClassName('btn')
    
    
 s= 
  {
- 
- b:0,
+ //Math.random()*44
+ b:0, intr:0, 
   init:function()
   {
      fc[0].style.background='radial-gradient(#aaa,#333)'
 	 fc[0].style.left=44+'%'
 	 fc[0].style.top=30+'%'  
-     fc[0].style.width=22+'%'
+     fc[0].style.width=+22+'%'
      fc[0].style.height=44+'%'
-	 fc[0].style.transition='5s'
 	 fc[0].style.borderTopLeftRadius='33%'
 	 fc[0].style.borderBottomLeftRadius='55%'
 	 fc[0].style.borderTopRightRadius='33%'
@@ -130,18 +128,18 @@ s=
 	 fc[1].style.top=-11+'%'  
      fc[1].style.width=88+'%'
      fc[1].style.height=22+'%'
-	 fc[1].style.transition='5s'
+	 fc[1].style.transition='2s'
 	 fc[1].style.borderRadius='55%'
-     fc[1].style.opacity=0
+ 
 	
 	 fc[2].style.background='#000'
 	 fc[2].style.left=1+'%'
 	 fc[2].style.top=-9+'%'  
      fc[2].style.width=22+'%'
      fc[2].style.height=22+'%'
-	 fc[2].style.transition='5s'
+	 fc[2].style.transition='2s'
 	 fc[2].style.borderRadius='55%'
-	 fc[2].style.opacity=0
+
 	 
 	 gl[0].style.background='#fff'
 	 gl[0].style.left=11+'%'
@@ -194,6 +192,12 @@ s=
 	 mth[1].style.height=11+'%'	
 	 mth[1].style.width=77+'%'	
 	 mth[1].style.background='#000'
+	 
+	 mth[2].style.left=33+'%'	
+     mth[2].style.top=44+'%'	
+	 mth[2].style.height=11+'%'	
+	 mth[2].style.width=44+'%'	
+	 mth[2].style.background='#f00'
 
  
      ears[0].style.background='radial-gradient(#777,#333)'
@@ -211,100 +215,81 @@ s=
      ears[1].style.height=22+'%'  
 	 ears[1].style.transition='4s' 
 	 ears[1].style.zIndex=-1
+	 
+     smk[0].style.left=-97+'%'
+	 smk[0].style.top=29+'%'  
+     smk[0].style.width=333+'%'
+     smk[0].style.height=22+'%'  
+	 smk[0].style.opacity=0
+
+	 smk[1].style.left=19+'%'
+	 smk[1].style.top=29+'%'  
+     smk[1].style.width=117+'%'
+     smk[1].style.height=223+'%'  
+//	 smk[1].style.opacity=0
+	 
    
      btn[0].style.background='#700'
      btn[0].style.left=9+'%'
-	 btn[0].style.top=29+'%'  
+	 btn[0].style.top=9+'%'  
      btn[0].style.width=11+'%'
-     btn[0].style.height=22+'%'  
+     btn[0].style.height=11+'%'  
 	 btn[0].style.borderTopLeftRadius='33%'
 	 btn[0].style.borderTopRightRadius='33%'
 	 btn[0].style.borderBottomLeftRadius='55%'
 	 btn[0].style.borderBottomRightRadius='55%'
-     btn[0].style.padding='33px'
-	 
-	 btn[1].style.background='#007'
-     btn[1].style.left=-33+'%'
-	 btn[1].style.top=-22+'%'  
-     btn[1].style.width=33+'%'
-     btn[1].style.height=22+'%'  
-	 btn[1].style.transition='4s' 
-	 btn[1].style.borderTopLeftRadius='33%'
-	 btn[1].style.borderTopRightRadius='33%'
-
+     
  }, 
   
   clk:function()
  { 
-  if(s.b==0)
-  {  
+  
+  
+   fc[0].style.transform=
+    'rotate('+(Math.random()*(-44)+22)+'deg'
    gl[1].style.transform='scale(1,1)'
    gl[3].style.transform='scale(1,1)' 
-   gl[1].style.background='#000'
+    gl[1].style.background='#000'
 	gl[3].style.background='#000'
    mth[0].style.top='77%'
    mth[0].style.height='11%'
    mth[1].style.top='44%'
    mth[1].style.height='11%'
+   
     ns[1].style.transform='scale(1)'
-    fc[0].style.transform='scale(1)'
+    ears[0].style.transform='scale(1,1)'
+    ears[1].style.transform='scale(1,1)'
 	
-  }
-  if(s.b==1)
-  {  
-    gl[1].style.transform='scale(2)'
-    gl[3].style.transform='scale(2)' 
-	gl[1].style.background='#f00'
-	gl[3].style.background='#f00'
-	 mth[0].style.top='72%'
-     mth[0].style.height='16%'
-	 mth[1].style.top='44%'
-     mth[1].style.height='22%'
-	 ns[1].style.transform='scale(1.4)'
-	 
-     //ears[1].style.width='22%'
-	  fc[0].style.transform='scale(1.4)'
-	 // fc[0].style.zIndex=-1
-  }
-  // 
-    //!s.b   
+  
  },
  
 
 }
      s.init()
-i=0
-//setInterval(()=>{i++; alert(i); }, 99)
-  
-fc[0].onmousemove=()=>{   
-  s.b=1
-   s.clk()
-  	
-}
-fc[0].onmouseout=()=>{   
-  s.b=0
-   s.clk()
-  	
-}
 
-b=0
+
+  // setInterval(()=>{ s.init();  }, 888)
+    s.intr= setInterval(()=>{ s.clk();  }, 2222)
+
+
 btn[0].onclick=()=>{   
-if(b){ 
- fc[1].style.opacity=0
- fc[2].style.opacity=0
- btn[0].innerHTML='HAIR'
+if(s.intr)
+{
+   
+	clearInterval(s.intr)
+	  s.intr=0
+  btn[0].innerHTML='go'
  } 
-   else{
-  //fc[0].style.transform='scale(1)'
-  fc[1].style.opacity=1
-  fc[2].style.opacity=1
-  btn[0].innerHTML='BALD'
+   else
+ {
+   s.intr= setInterval(()=>{ s.clk();  }, 2222)
+    btn[0].innerHTML='stop'
  }
-b=!b
+ 
  
 }
  
- // event.clientY
+
    
 </script>
 </body>
