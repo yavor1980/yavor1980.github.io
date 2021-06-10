@@ -27,7 +27,7 @@ background: radial-gradient(#222,#666);
 .fc
 {
  position:absolute;   
- transition:2s;
+ transition:666ms;
 }
 .gl
 {
@@ -42,14 +42,14 @@ background: radial-gradient(#222,#666);
   background: radial-gradient(#888,#ff0);
       
 	 border-radius:50%;
-	 transition:4s;
+	 transition:2s;
 }
 .mth
 {
  position:absolute;
   
 	 border-radius:50%;
-	 transition:4s; 
+	 transition:2s; 
 	 
 }
 .ears
@@ -66,6 +66,7 @@ position:absolute;
  background: #000;
  border-radius:0%;
  opacity:1;
+ 
 }
 
 
@@ -100,7 +101,7 @@ position:absolute;
  
 </div>
 
-<button class=btn> stop</button>
+<button class=btn> inject</button>
 
 
 
@@ -117,7 +118,7 @@ position:absolute;
 s= 
  {
  //Math.random()*44
- b:0, intr:0, r:0, g:0, b:0,
+ bs:0, intr:1, bm:0, r:0, g:0, b:0,
   init:function()
   {
      fc[0].style.background='radial-gradient(#aaa,#333)'
@@ -224,7 +225,7 @@ s=
 	 ears[1].style.zIndex=-1
 	 
 	 smk[0].style.background='radial-gradient(#f00,#333)'
-     smk[0].style.left=17+'%'
+     smk[0].style.left=9+'%'
 	 smk[0].style.top=33+'%'  
      smk[0].style.width=11+'%'
      smk[0].style.height=22+'%' 
@@ -241,24 +242,17 @@ s=
 	 smk[1].style.zIndex=-2
 	 
 	 smk[2].style.background='#333'
-	 smk[2].style.left=66+'%'
-	 smk[2].style.top=-18+'%'  
-     smk[2].style.width=122+'%'
-     smk[2].style.height=22+'%'
+	 smk[2].style.left=99+'%'
+	 smk[2].style.top=-44+'%'  
+     smk[2].style.width=333+'%'
+     smk[2].style.height=88+'%'
      smk[2].style.borderTopLeftRadius=55+'%'
-	 smk[2].style.borderTopRightRadius=55+'%'
+	 smk[2].style.borderTopRightRadius=11+'%'
 	 smk[2].style.borderBottomLeftRadius=55+'%'
-	 smk[2].style.borderBottomRightRadius=55+'%'
+	 smk[2].style.borderBottomRightRadius=11+'%'
 	 smk[2].style.opacity=0
 	
-	 smk[3].style.background='#333'
-	 smk[3].style.left=55+'%'
-	 smk[3].style.top=-111+'%'  
-     smk[3].style.width=66+'%'
-     smk[3].style.height=333+'%'
-     smk[3].style.borderRadius=55+'%'
-	 //smk[3].style.opacity=0
- 
+	
      btn[0].style.background='#700'
      btn[0].style.left=9+'%'
 	 btn[0].style.top=9+'%'  
@@ -271,63 +265,49 @@ s=
      
  }, 
   
-  clk:function()
+  cl:function()
  { 
+  if(s.bs)
+   fc[0].style.transform='scale(0.9)'
+     else
+   fc[0].style.transform='scale(1.1)'
+     s.bs=!s.bs
+   
+ },
+ clk:function()
+ { 
+  
   s.r=Math.round(Math.random()*8)
   s.g=Math.round(Math.random()*8)
   s.b=Math.round(Math.random()*8)
-  
-   fc[0].style.transform=
-    'rotate('+(Math.random()*(-22)+11)+'deg'
-   gl[0].style.transform=
-    'scale(1,'+(Math.random())
-   gl[2].style.transform=
-    'scale(1,'+(Math.random())
-   
-    smk[2].style.background=
-    	'#'+s.r+s.g+s.b
-	smk[3].style.background=
-	 '#'+s.r+s.g+s.b
+    
     fc[1].style.background=
     	'#'+s.r+s.g+s.b
 	fc[2].style.background=
 	 '#'+s.r+s.g+s.b
-	
- smk[1].style.transform='translate(0,'+Math.random()*22+'%)'
- smk[2].style.opacity=Math.random()
-    ns[1].style.transform='scale('+(Math.random()+0.9)
-   
+   smk[2].style.background=
+    	'#'+s.r+s.g+s.b
+  smk[2].style.opacity=0.7
   
+  setTimeout(()=>{smk[2].style.opacity=0;}, 888)
+  setTimeout(()=>{smk[2].style.opacity=0;}, 888)
+     
  },
- 
 
 }
      s.init()
 
-
-  // setInterval(()=>{ s.init();  }, 888)
-    s.intr= setInterval(()=>{ s.clk();  }, 2222)
+    setInterval(()=>{ s.cl();  }, 666)
 
 
 btn[0].onclick=()=>{   
-if(s.intr)
-{
-   
-	clearInterval(s.intr)
-	  s.intr=0
-  btn[0].innerHTML='go'
- } 
-   else
- {
-   s.intr= setInterval(()=>{ s.clk();  }, 2222)
-    btn[0].innerHTML='stop'
- }
- 
- 
+  
+   s.clk();
+   // 
 }
- 
 
-   
+
+
 </script>
 </body>
 
