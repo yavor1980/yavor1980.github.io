@@ -90,12 +90,11 @@ cursor:pointer;
 <div class=jws>  
  <div class=gl ><div class=gl ></div></div>
  <div class=gl ><div class=gl ></div></div>
-<div class=mth >
-  
-</div>
-  <div class=ns ><div class=ns ></div></div>  
-  
-  <div ></div>
+ 
+ <div class=ns ><div class=ns ></div></div>
+
+ <div class=mth ></div>
+ 
 </div>
 
  <div class=wng >
@@ -110,7 +109,6 @@ cursor:pointer;
 <div class=mth ></div>
   
 <button class=btn >speak</button>
-
 
 
 <script>
@@ -132,7 +130,7 @@ cursor:pointer;
    
 o= 
  {
-  bd:1, intrd:0,  intrm:0,
+  bd:1, bs:0, intrd:0,  intrm:0,
   init:function()
   {
      mth[0].style.background='radial-gradient(#000,#f00)';
@@ -141,17 +139,8 @@ o=
      mth[0].style.width=55+'%'
      mth[0].style.height=1+'%'  
 	 mth[0].style.borderRadius=55+'%'
-	//mth[0].style.opacity=0
 	
-	 mth[1].style.background='#fff';
-     mth[1].style.left=7+'%'
-	 mth[1].style.top=1+'%'  
-     mth[1].style.width=2+'%'
-     mth[1].style.height=9+'%'  
-     mth[1].style.borderBottomLeftRadius='55deg'
-	
-	 
-   
+	 	  
      wng[0].style.left=4+'%'
 	 wng[0].style.top=16+'%'  
      wng[0].style.width=44+'%'
@@ -249,7 +238,7 @@ o=
 		 btn[0].innerHTML='relax'
 	   wng[0].style.transform='skew(44deg)'
 o.intrd=setInterval(()=>{o.mvd(1); o.mvd(2);
-  o.mvd(3); o.mvd(4); },2222)
+    o.mvd(3); o.mvd(4); },2222)
 o.intrm=setInterval(o.mvm, 666)
 		 
    } 
@@ -266,6 +255,10 @@ o.intrm=setInterval(o.mvm, 666)
  	 wng[0].style.transform='skew(0deg)'
 	  btn[0].style.background='blue'
 	  btn[0].innerHTML='speak'
+	 wng[1].style.height=9+'%'
+	 wng[2].style.height=9+'%'
+	 wng[3].style.height=9+'%'
+	 wng[4].style.height=9+'%'
 	 
       	    clearInterval(o.intrd);
 		o.intrd=0
@@ -278,16 +271,27 @@ o.intrm=setInterval(o.mvm, 666)
  mvd:function(n)
  {   
    wng[n].style.height=Math.random()*88+'%'
-   
+  
  },
  mvm:function()
  { 
   mth[0].style.height=Math.random()*11+'%'
+ },
+ 
+ cl:function()
+ { 
+  if(o.bs) 
+    jws[0].style.transform='scale(1.1)'
+   else	
+    jws[0].style.transform='scale(0.9)'
+	  
+	  o.bs=!o.bs
  }, 
  
 }
          o.init()
     
+	setInterval(o.cl,999)
  
 btn[0].onmousedown=()=>
 { 
