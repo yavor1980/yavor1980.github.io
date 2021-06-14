@@ -1,0 +1,220 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+</head>
+
+<body id=idbd>
+
+<style>
+#idbd
+{
+background: linear-gradient(#fff,#222);
+}
+
+.whl
+{
+ position:absolute;  
+  transition:2s;
+  transition-timing-function:linear; 
+  
+}
+
+.btn
+{
+position:absolute;
+background:#f00;
+left:11%;
+top:5%;
+width:11%;
+height:11%;
+transition:2s;
+ font-size:2em;
+  border-top-left-radius:30%;
+  border-top-right-radius:30%;
+  border-bottom-left-radius:55%;
+  border-bottom-right-radius:55%; 
+  color:#fff;
+  cursor:pointer;
+}
+
+.fr
+{
+position:absolute;
+
+width:22%;
+height:66%;
+border-radius:50%;
+transition:2s;
+
+}
+
+.rd
+{
+position:absolute;
+background:#777;
+width:99%;
+height:22%;
+bottom:0%;
+border-radius:5%;
+border-top-left-radius:33%;
+border-top-right-radius:33%;
+z-index:-2;
+
+}
+
+
+</style>
+
+<div class=whl>
+
+<div class=whl ></div>
+<div class=whl ></div>
+<div class=whl ></div>
+<div class=whl >
+ <div class=fr></div>
+ <div class=fr> </div>
+</div>
+
+</div>
+<div class=rd> <div class=rd> </div></div>
+
+<button class=btn >stop</button>
+
+
+
+<script>
+ 
+   btn=document.getElementsByClassName('btn')
+   whl=document.getElementsByClassName('whl')
+   fr=document.getElementsByClassName('fr')
+   rd=document.getElementsByClassName('rd')
+   //
+o= 
+ {
+  btr:1, intr:0, bs:0, 
+  initcar:function()
+  {
+     whl[1].style.background='#000'
+	 whl[1].style.left=9+'%'
+	 whl[1].style.top=88+'%'  
+     whl[1].style.width=11+'%'
+     whl[1].style.height=33+'%'
+	 whl[1].style.zIndex=-17
+	 whl[1].style.borderBottomLeftRadius=44+'%'
+	 whl[1].style.borderBottomRightRadius=44+'%'
+  
+     whl[0].style.background='radial-gradient(#ff0,#333)'
+	 whl[0].style.left=22+'%'
+     whl[0].style.top=22+'%'
+     whl[0].style.width=55+'%'
+     whl[0].style.height=55+'%'
+     whl[0].style.borderTopLeftRadius=33+'%'
+	 whl[0].style.borderTopRightRadius=33+'%'
+     whl[0].style.borderBottomLeftRadius=22+'%'
+	 whl[0].style.borderBottomRightRadius=22+'%'  
+  	 
+	 
+       
+
+     whl[2].style.background='#000';
+     whl[2].style.left=80+'%'
+	 whl[2].style.top=88+'%'  
+     whl[2].style.width=11+'%'
+     whl[2].style.height=33+'%'
+	 whl[2].style.zIndex=-1
+	 whl[2].style.borderBottomLeftRadius=44+'%'
+	 whl[2].style.borderBottomRightRadius=44+'%'  
+	   
+	 whl[3].style.background=
+	    'linear-gradient(77deg,#888,#000)';
+     whl[3].style.left=6+'%'
+	 whl[3].style.top=6+'%'  
+     whl[3].style.width=88+'%'
+     whl[3].style.height=44+'%'  
+	 whl[3].style.borderTopLeftRadius=55+'%'
+	 whl[3].style.borderTopRightRadius=55+'%'  
+	 whl[3].style.borderBottomLeftRadius=2+'%'
+     whl[3].style.borderBottomRightRadius=2+'%'   
+     
+	 whl[4].style.background='radial-gradient(#ff0,#555)';
+     whl[4].style.left=6+'%'
+	 whl[4].style.top=55+'%'  
+     whl[4].style.width=88+'%'
+     whl[4].style.height=44+'%'
+	 whl[4].style.borderTopLeftRadius=33+'%'
+     whl[4].style.borderTopRightRadius=33+'%' 
+	 whl[4].style.borderBottomLeftRadius=22+'%'
+     whl[4].style.borderBottomRightRadius=22+'%'   
+	 
+	 fr[0].style.left=6+'%'
+	 fr[0].style.top=22+'%'  
+	 fr[0].style.background='#f00';
+	 fr[0].style.width='22%'
+	 fr[0].style.height='66%'
+	 
+	 fr[1].style.left=71+'%'
+	 fr[1].style.top=22+'%' 
+     fr[1].style.background='#f00';
+	 fr[1].style.width='22%'
+	 fr[1].style.height='66%'
+/**/	 
+	 rd[1].style.left=44+'%'
+	 rd[1].style.top=0+'%' 
+     rd[1].style.background='#fff';
+	 rd[1].style.width='2%'
+	 rd[1].style.height='100%'
+	 
+	
+  }, 
+  
+  cl:function()
+ {  
+   whl[0].style.transform=
+   'rotate('+(Math.random()*22-11)+'deg)'+ 
+     'scale('+(Math.random()+0.6)
+ },
+ 
+ clk:function()
+ {  
+   if(o.btr)
+   { 
+    clearInterval(o.intr)
+   btn[0].innerHTML='go'
+	btn[0].style.background='green'
+    btn[0].style.color='black'
+	whl[0].style.transform=
+	'rotate(0deg) translate(-33%,0) '
+      
+   }
+   else
+   {
+     o.intr= setInterval(()=>{o.cl();  }, 222);
+   
+    btn[0].innerHTML='stop'
+   btn[0].style.background='red'
+	btn[0].style.color='white'
+   }
+  o.btr=!o.btr
+ } 
+ 
+ 
+}
+       o.initcar()
+     
+	
+     o.intr= setInterval(()=>{o.cl();  }, 222);
+        
+  
+btn[0].onclick=()=>
+{
+     o.clk();
+}
+
+   //event.clientY+''; 
+   
+</script>
+</body>
+
+</html>
