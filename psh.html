@@ -43,8 +43,8 @@ cursor:pointer;
  transition:2s;
   border-top-left-radius:77%;
   border-top-right-radius:77%;  
-  border-bottom-left-radius:33%;
-  border-bottom-right-radius:33%; 
+  border-bottom-left-radius:11%;
+  border-bottom-right-radius:11%; 
   
 }
 .mth
@@ -68,22 +68,21 @@ cursor:pointer;
 .lwng
 {
  position:absolute;    
- transition:2s;
+ transition:1s;
     
 }
 .rwng
 {
  position:absolute;    
- transition:2s;
+ transition:1s;
     
 }
 .plh
 {
  position:absolute;    
  transition:2s;
-    
+  background:red;  
 }
-
 
 
 
@@ -92,24 +91,24 @@ cursor:pointer;
 <div class=jws>  
  <div class=gl ><div class=gl ></div></div>
  <div class=gl ><div class=gl ></div></div>
-<div class=mth >
- 
-</div>
+
   <div class=ns ><div class=ns ></div></div>  
   
 <div class=jws >
  <div class=lwng > <div class=lwng ></div></div> 
- <div class=rwng ><div class=rwng >
-   <div class=plh >
-   <div class=plh >
-   </div>
-   </div>
+ <div class=rwng >
+   <div class=plh ></div>
+   <div class=plh ></div>
+   <div class=plh ></div>
+ <div class=rwng >
+   
+   
  </div>
  </div>
 </div>
 </div>
 
-<button class=btn >stop</button>
+<button class=btn >strike</button>
 
 
 
@@ -151,23 +150,15 @@ o=
      jws[1].style.left=-33+'%'
 	 jws[1].style.top=88+'%'  
      jws[1].style.width=166+'%'
-     jws[1].style.height=88+'%'  
-	 jws[1].style.borderRadius=55+'%'
+     jws[1].style.height=101+'%'  
+	 jws[1].style.borderRadius=1+'%'
 	 jws[1].style.borderTopLeftRadius=11+'%'
 	 jws[1].style.borderTopRightRadius=11+'%' 
 	 jws[1].style.zIndex=-1
 	 jws[1].style.opacity=0.6
 
   
-     mth[0].style.background='radial-gradient(#000,#f00)';
-     mth[0].style.left=22+'%'
-	 mth[0].style.top=66+'%'  
-     mth[0].style.width=55+'%'
-     mth[0].style.height=1+'%'  
-	 mth[0].style.borderRadius=55+'%'
-	
 
-     
      lwng[0].style.background='radial-gradient(#bbb,#660)'
      lwng[0].style.left=-18+'%'
 	 lwng[0].style.top=2+'%'  
@@ -190,6 +181,7 @@ o=
      rwng[0].style.height=55+'%'  
 	 rwng[0].style.borderRadius=33+'%'
 	 rwng[0].style.transform='scale(1)'
+	 rwng[0].style.zIndex=-13
 	 
 	 rwng[1].style.background='radial-gradient(#bbb,#ff0)'
      rwng[1].style.left=9+'%'
@@ -197,20 +189,31 @@ o=
      rwng[1].style.width=88+'%'
      rwng[1].style.height=22+'%'  
 	 rwng[1].style.borderRadius=33+'%'
-	 
-	 plh[0].style.background='000'
+	  
+	  
+	 plh[0].style.background='#000'
      plh[0].style.left=9+'%'
-	 plh[0].style.top=88+'%'  
-     plh[0].style.width=88+'%'
-     plh[0].style.height=22+'%'  
+	 plh[0].style.top=97+'%'  
+     plh[0].style.width=333+'%'
+     plh[0].style.height=15+'%'  
 	 plh[0].style.borderRadius=33+'%'
+	 plh[0].style.opacity=0.5
 	 
-     plh[1].style.background='radial-gradient(#bbb,#ff0)'
-     plh[1].style.left=9+'%'
-	 plh[1].style.top=88+'%'  
-     plh[1].style.width=88+'%'
-     plh[1].style.height=22+'%'  
-	 plh[1].style.borderRadius=33+'%'
+     plh[1].style.background='#bbb'
+     plh[1].style.left=154+'%'
+	 plh[1].style.top=95+'%'  
+     plh[1].style.width=222+'%'
+     plh[1].style.height=11+'%'  
+	 plh[1].style.borderRadius=9+'%'
+	 plh[1].style.opacity=1
+	 
+	 plh[2].style.background='#fff'
+     plh[2].style.left=154+'%'
+	 plh[2].style.top=106+'%'  
+     plh[2].style.width=222+'%'
+     plh[2].style.height=11+'%'  
+	 plh[2].style.borderRadius=9+'%'
+	 plh[2].style.opacity=1
 
      gl[0].style.background='#fff';
      gl[0].style.left=18+'%'
@@ -264,46 +267,58 @@ o=
  {   if(o.bst)
      {   	 
 		 jws[0].style.transform='scale(0.9)'
-		 
-	     lwng[0].style.transform=' rotate(88deg)'
-		 lwng[1].style.transform='scale(1,2) '
-		 lwng[0].style.top=-33+'%'
-		 
-		 rwng[0].style.transform='scale(1)'
-		 rwng[1].style.transform='scale(1,1)'
-         rwng[0].style.top=0+'%'
+		 lwng[0].style.transform='scale(0.9)'
+		 rwng[0].style.transform='scale(1.1)'
+		
+		 plh[1].style.transform='scale(1,0.4)'
+		 plh[2].style.transform='scale(1,1.4)'
+	     
 	 }	 
     else
 	{
 	     jws[0].style.transform='scale(1.1)'
-		 jws[1].style.transform='scale(1)'
-		 lwng[0].style.transform='scale(1)'
-		 lwng[1].style.transform='scale(1,1)'
-         lwng[0].style.top=0+'%'
-		 
-		 rwng[0].style.transform='scale(1,1) rotate(-88deg)'
-		 rwng[1].style.transform='scale(1,2)'
-		 rwng[0].style.top=-33+'%'
+		 lwng[0].style.transform='scale(1.1)'
+		 rwng[0].style.transform='scale(0.9)'
+		 plh[1].style.transform='scale(1,1.4)'
+		 plh[2].style.transform='scale(1,0.4)'
 	}
 	 o.bst=!o.bst
  },
+
 
  clk:function()
  {
   if(o.b)
     {
-	    clearInterval(o.intr);
-      btn[0].innerHTML='go'	
+	 
+	  rwng[0].style.transform=
+ 'translate(99%,-33%) scale(1.6,1.4)'+ 
+    'rotate(-88deg) skew(22deg)'
+	
+   	 
+ 
+      	 setTimeout(o.strk, 997)
+      btn[0].innerHTML='strike'	
 	  btn[0].style.background='#0f0'
 	}
    else
    {
-    o.intr=setInterval(o.cl,1111)
-      	btn[0].innerHTML='stop'	
+         
+      	btn[0].innerHTML='strike'	
 		btn[0].style.background='#f00'
    }
-           o.b=!o.b
+           //o.b=!o.b
  },
+ 
+  strk:function()
+  {
+    rwng[0].style.transition='0s'
+	rwng[0].style.transform=
+   'translate(77%,-33%) scale(1.6)'+ 
+    'rotate(-88deg) skew(0deg)'
+	
+    rwng[0].style.transition='1s'
+  }
  
 }
          o.init()
@@ -315,7 +330,11 @@ btn[0].onmousedown=()=>
       o.clk()
 
 }
-
+jws[0].onmousemove=()=>
+{ 
+      o.clk()
+   
+}
 
 
 
