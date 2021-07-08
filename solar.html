@@ -10,7 +10,7 @@
 <style>
 #idbd
 {
-background: linear-gradient(#333,#555);
+background: linear-gradient(#000,#000);
 }
 
 .sol
@@ -26,12 +26,41 @@ background: linear-gradient(#333,#555);
    transition: 5s;
    transition-timing-function:linear;
 }
-.sh
+.plnt
 {
  position:absolute;  
   border-radius:9%;
-  transition:2s;
+  transition:3s;
    border-radius:55%; 
+   transition-timing-function:linear;
+}
+.sh
+{
+ position:absolute;  
+  transition:2s;
+ 
+  // border-radius:55%;
+      
+}
+
+.strs
+{
+ position:absolute;  
+  border-radius:55%;
+  transition:2s;
+  width:0.4%;
+  height:1%;
+  
+}
+
+.flm
+{
+ position:absolute;  
+  border-radius:55%;
+  transition:2s;
+  width:11%;
+  height:5%;
+  
 }
 
 
@@ -43,8 +72,8 @@ left:77%;
 width:7%;
 height:11%;
 border-radius:50%;
-transition:2s;
 opacity:1;
+color:#fff;
 cursor:pointer;
 text-align:center;
 font-size:2em;
@@ -56,31 +85,44 @@ padding-top:3px;
 </style>
 <div class=sol >
  <div class=sol></div>
- <div class=sol ></div>
- <div class=sol ></div>
- <div class=sol ></div>
+ <div class=plnt ></div>
+ <div class=plnt ></div>
+ <div class=plnt ></div>
 
 </div>
-<div class=sh ><div class=sh ></div></div>
 
+<div class=sh >
+ <div class=sh ><div class=flm ></div></div>
+ <div class=sh ></div>
+ <div class=sh ><div class=flm ></div></div>
+ 
+</div>
+
+<div class=strs ></div>
+<div class=strs ></div>
+<div class=strs ></div>
+<div class=strs ></div>
+<div class=strs ></div>
 
 <button class=btn >stop</button>
 
 
 <script>
- 
+ btn=document.getElementsByClassName('btn')
    sol=document.getElementsByClassName('sol')
-   sh=document.getElementsByClassName('sh')
-   btn=document.getElementsByClassName('btn')
-   
+   plnt=document.getElementsByClassName('plnt')
+    sh=document.getElementsByClassName('sh')
+   strs=document.getElementsByClassName('strs')
+  flm=document.getElementsByClassName('flm')
+  
+  
 o= 
  {
-    bplnt:0, bsh:0,
+     b1sh:1, b2sh:0,
+	 
   init:function()
   {
-     //idsol.style.background='' 
-  //idbtn.innerHTML='Start'     
-/* */ 	 
+      	 
      sol[1].style.opacity='0.2'
      sol[1].style.transform='scale(1)'
      sol[1].style.zIndex=-1
@@ -89,75 +131,135 @@ o=
      sol[1].style.width=111+'%'
      sol[1].style.height=111+'%'
 
-     sol[2].style.background='radial-gradient(#0f0,#333)'
-	 sol[2].style.transform='scale(1)'
-	 sol[2].style.left=Math.random()*77+'%'
-	 sol[2].style.top=Math.random()*77+'%'  
-     sol[2].style.width=44+'%'
-     sol[2].style.height=44+'%'
-	 sol[2].style.zIndex=1
+      plnt[0].style.background='radial-gradient(#0f0,#333)'
+	  plnt[0].style.left=Math.random()*77+'%'
+	  plnt[0].style.top=Math.random()*77+'%'  
+      plnt[0].style.width=44+'%'
+      plnt[0].style.height=44+'%'
+	  //plnt[0].style.zIndex=1
 	
-     sol[3].style.background='radial-gradient(#00f,#333)';
-	 sol[3].style.transform='scale(1)'
-     sol[3].style.left=Math.random()*77+'%'
-	 sol[3].style.top=Math.random()*77+'%'  
-     sol[3].style.width=33+'%'
-     sol[3].style.height=33+'%'
-	 sol[3].style.zIndex=1
+      plnt[1].style.background='radial-gradient(#f00,#000)';
+      plnt[1].style.left=Math.random()*77+'%'
+	  plnt[1].style.top=Math.random()*77+'%'  
+      plnt[1].style.width=33+'%'
+      plnt[1].style.height=33+'%'
+	  //plnt[1].style.zIndex=-1
 	 
-	 sol[4].style.background='radial-gradient(#ff0,#333)';
-	 sol[4].style.transform='scale(1)'
-     sol[4].style.left=Math.random()*77+'%'
-	 sol[4].style.top=Math.random()*77+'%'  
-     sol[4].style.width=22+'%'
-     sol[4].style.height=22+'%'  
-	 sol[4].style.zIndex=1
+	 plnt[2].style.background=
+	   'radial-gradient(#ff0,#333)';
+     plnt[2].style.left=Math.random()*77+'%'
+	 plnt[2].style.top=Math.random()*77+'%'  
+     plnt[2].style.width=22+'%'
+     plnt[2].style.height=22+'%'  
 	 
-	 
-	 sh[0].style.background='radial-gradient(#fff,#880)';
-	 sh[0].style.transform='rotate(20deg) skew(-55deg)'
-     sh[0].style.left=Math.random()*77+'%'
-	 sh[0].style.top=Math.random()*77+'%'  
-     sh[0].style.width=9+'%'
-     sh[0].style.height=7+'%' 
+
+     sh[0].style.left=66+'%'
+	 sh[0].style.top=45+'%'  
+     sh[0].style.width=16+'%'
+     sh[0].style.height=11+'%' 
+     sh[0].style.transform=
+	  'rotate(0deg)  skew(44deg)'
+	  
+  sh[1].style.background='radial-gradient(#090,#444)';
+     sh[1].style.left=6+'%'
+	 sh[1].style.top=-3+'%'  
+     sh[1].style.width=99+'%'
+     sh[1].style.height=33+'%'
+	 sh[1].style.transform=
+	  'rotate(0deg)  skew(0deg)'
+	  sh[1].style.borderTopLeftRadius=55+'%'
+	 sh[1].style.borderBottomLeftRadius=55+'%'
+	 flm[1].style.background='red' 
+	 flm[1].style.left=-44+'%'
+	 flm[1].style.top=7+'%'  
+     flm[1].style.width=33+'%'
+     flm[1].style.height=99+'%'
+	 flm[1].style.opacity=0
 	
+     sh[2].style.background='radial-gradient(#080,#444)';	  
+     sh[2].style.left=55+'%'
+	 sh[2].style.top=-22+'%'  
+     sh[2].style.width=55+'%'
+     sh[2].style.height=144+'%'	
+	 sh[2].style.borderTopLeftRadius=22+'%'
+	 sh[2].style.borderBottomLeftRadius=22+'%'
 	 
-	 sh[1].style.background='radial-gradient(#ff8,#800)';
-     sh[1].style.left=9+'%'
-	 sh[1].style.top=9+'%'  
-     sh[1].style.width=66+'%'
-     sh[1].style.height=66+'%'  
+	sh[3].style.background='radial-gradient(#090,#444)';  
+     sh[3].style.left=5+'%'
+	 sh[3].style.top=77+'%'  
+     sh[3].style.width=99+'%'
+     sh[3].style.height=33+'%'	
+	 sh[3].style.borderTopLeftRadius=55+'%'
+	 sh[3].style.borderBottomLeftRadius=55+'%'
+	  sh[3].style.zIndex=-1
+	 flm[0].style.background='red' 
+	 flm[0].style.left=-44+'%'
+	 flm[0].style.top=7+'%'  
+     flm[0].style.width=33+'%'
+     flm[0].style.height=99+'%'
+	 flm[0].style.opacity=0
 	
+	 strs[0].style.left=11+'%'
+	 strs[0].style.top=55+'%'
+	 strs[0].style.background='#ff0';
+	 strs[1].style.left=77+'%'
+	 strs[1].style.top=22+'%'
+	 strs[1].style.background='#ff0';
+	 strs[2].style.left=22+'%'
+	 strs[2].style.top=22+'%'
+	 strs[2].style.background='#ff0';
+	 strs[3].style.left=44+'%'
+	 strs[3].style.top=88+'%'
+	 strs[3].style.background='#ff0';
+	 strs[4].style.left=88+'%'
+	 strs[4].style.top=77+'%'
+	 strs[4].style.background='#ff0';
+	 
+	 
   }, 
   
-  movsh:function()
+  clsh:function()
   {
-  
-     sh[0].style.background='radial-gradient(#fff,#880)';
-	 sh[0].style.transform='scale('+Math.random()+0.5+')'
-     sh[0].style.left=Math.random()*77+'%'
-	 sh[0].style.top=Math.random()*77+'%'  
-    
-	
+ if(o.b1sh){
+  sh[0].style.transform='skew(22deg) scale(1.1) '
+  sh[2].style.width='77%'
+  sh[0].style.height='8%'
+  flm[0].style.opacity=1
+  flm[1].style.opacity=1
+ }
+   else {
+   sh[0].style.transform='skew(44deg) scale(0.9) '
+   sh[2].style.width='55%'
+   sh[0].style.height='11%'
+   flm[0].style.opacity=0
+   flm[1].style.opacity=0
+  } 
+     o.b1sh=!o.b1sh
   },
   
-  movpl:function()
+  clpl:function()
   {
-//
 	 sol[1].style.transform='scale('+Math.random()*2+')'
 	 
-	 sol[2].style.left=Math.random()*77+'%'
-	 sol[2].style.top=Math.random()*77+'%'  
-     sol[2].style.transform='scale('+Math.random()+0.5+')'
+	 plnt[0].style.left=Math.random()*77+'%'
+	 plnt[0].style.top=Math.random()*77+'%'  
+     plnt[0].style.transform='scale('+Math.random()*2
 	 
-     sol[3].style.left=Math.random()*77+'%'
-	 sol[3].style.top=Math.random()*77+'%'  
-     sol[3].style.transform='scale('+Math.random()+0.5+')'
+     plnt[1].style.left=Math.random()*77+'%'
+	 plnt[1].style.top=Math.random()*77+'%'  
+     plnt[1].style.transform='scale('+Math.random()*2
 	 
-     sol[4].style.left=Math.random()*77+'%'
-	 sol[4].style.top=Math.random()*77+'%'  
-     sol[4].style.transform='scale('+Math.random()+0.5+')'
-	// sol[3].style.zIndex=-2
+     plnt[2].style.left=Math.random()*77+'%'
+	 plnt[2].style.top=Math.random()*77+'%'  
+     plnt[2].style.transform='scale('+Math.random()*2
+	// Math.random()*99
+	strs[0].style.transform='scale('+Math.random()*2+
+	' translate()'
+	strs[1].style.transform='scale('+Math.random()*2
+	strs[2].style.transform='scale('+Math.random()*2
+	strs[3].style.transform='scale('+Math.random()*2
+	strs[4].style.transform='scale('+Math.random()*2
+	
   }, 
   
  
@@ -165,29 +267,48 @@ o=
        o.init()
     
     
-  o.bplnt=setInterval(()=>o.movpl(),2222)
-  o.bsh=setInterval(()=>o.movsh(),2222)
+   setInterval(()=>o.clpl(),2222)
+   setInterval(()=>o.clsh(),2222)
+   
+   
+sh[0].onmousemove=()=>
+{
+  // btn[0].onmousedown()
+     
+}
+sh[0].onmouseout=()=>
+{
+  // btn[0].onmousedown()
+     
+}
 
 btn[0].onmousedown=()=>
 {
-  if(o.bsh!=0)  
+  
+  if(o.b2sh==0)  
    {
-   clearInterval(o.bsh); 
-    o.bsh=0
-      sh[0].style.transform='scale(0)'
+      // clearInterval(o.bsh); 
+     btn[0].style.background='#0f0'
+	 btn[0].style.color='#000'
 	   btn[0].innerHTML='start'
+	   sh[0].style.opacity=0.2
+	   sh[0].style.transform='scale(0.2)'
+	   
    }
    else
    {
-     o.bsh=setInterval(()=>o.movsh(),2222)
-	 sh[0].style.transform='scale(1)'
+    // o.bsh=setInterval(()=>o.clsh(),2222)
+	 btn[0].style.background='#ff0'
+	 btn[0].style.color='#fff'
       btn[0].innerHTML='stop'
+	  sh[0].style.opacity=1
+	  sh[0].style.transform='scale(1)'
    }
+   o.b2sh=!o.b2sh
 }
 
 
- 
-  //  
+   
 </script>
 </body>
 
