@@ -43,10 +43,10 @@ position:absolute;
    transition:1s;
  border-radius:50%;
 }
-.zr
+.frz
 {
 position:absolute;   
-   transition:5s;
+   transition:3s;
  border-radius:5%;
 }
 
@@ -58,6 +58,8 @@ position:absolute;
 <div class=plnt >
   <div class=smk ></div> 
   <div class=smk ></div> 
+  <div class=smk ></div> 
+  <div class=smk ></div>
 </div>
     
  <div class=plnt ></div>
@@ -72,6 +74,8 @@ position:absolute;
 	<div class=cld >  </div>
 	
 </div>
+<div class=frz ></div>
+<div class=frz ></div>
 
 <button class=btn >stop</button>
 
@@ -82,7 +86,8 @@ position:absolute;
    plnt=document.getElementsByClassName('plnt')
    smk=document.getElementsByClassName('smk')
    cld=document.getElementsByClassName('cld')
-    
+   frz=document.getElementsByClassName('frz')
+	
 o= 
  {
   b:0, bvbr:0, intr:0,
@@ -144,14 +149,30 @@ o=
      smk[1].style.height=33+'%'
 	 smk[1].style.opacity=0
 	 smk[1].style.borderRadius=55+'%'
+	 
+	 smk[2].style.background='#333' 
+  	 smk[2].style.left=1+'%'
+	 smk[2].style.top=-42+'%'  
+     smk[2].style.width=99+'%'
+     smk[2].style.height=33+'%'
+	 smk[2].style.opacity=0
+	 smk[2].style.borderRadius=55+'%'
+	 
+	 smk[3].style.background='#333' 
+  	 smk[3].style.left=222+'%'
+	 smk[3].style.top=-77+'%'  
+     smk[3].style.width=99+'%'
+     smk[3].style.height=33+'%'
+	 smk[3].style.opacity=0
+	 smk[3].style.borderRadius=55+'%'
    },
    
   initcld:function()
   {  
 	 cld[0].style.background='#500'
-     cld[0].style.opacity
+     cld[0].style.opacity=0
   	 cld[0].style.left=66+'%'
-	 cld[0].style.top=44+'%'  
+	 cld[0].style.top=33+'%'  
      cld[0].style.width=9+'%'
      cld[0].style.height=14+'%'
 	 
@@ -179,6 +200,18 @@ o=
      cld[4].style.width=33+'%'
      cld[4].style.height=8+'%'
      
+	 frz[0].innerHTML='GLOBAL POLUTION' 
+  	 frz[0].style.left=Math.random()*77+'%'
+	 frz[0].style.top=Math.random()*77+'%'  
+     frz[0].style.fontSize=3+'em'
+     frz[0].style.color='#ff0'
+	 
+	 
+	 frz[1].innerHTML='STOP IT!' 
+  	 frz[1].style.left=33+'%'
+	 frz[1].style.top=33+'%'  
+     frz[1].style.fontSize=5+'em'
+     frz[1].style.color='#f00'
 	
 	 btn[0].style.left=7+'%'
 	 btn[0].style.top=7+'%'
@@ -205,11 +238,27 @@ o=
 	 plnt[2].style.background='#800'
 	 plnt[3].style.background='#700'
 	 plnt[4].style.background='#600'
-	 cld[0].style.transform='scale(1) '
+	 cld[0].style.transform='scale(1) '	
+	 cld[0].style.opacity=0
+	 cld[2].style.transform='scale(1) '	
+	 cld[3].style.transform='scale(1) '	
+	 cld[2].style.background='#ddd'
+	 cld[3].style.background='#ddd'
+	 cld[4].style.background='#ddd'
     smk[0].style.opacity=0.5	
-	smk[0].style.transform='scale(9) translate(-33%,-3%)'
+	smk[0].style.transform='scale(22,9) translate(-33%,-3%)'
 	smk[1].style.opacity=0.5	
-	smk[1].style.transform='scale(9) translate(-33%,-3%)'
+	smk[1].style.transform='scale(22,9) translate(22%,-3%)'
+	smk[2].style.opacity=0.5	
+	smk[2].style.transform='scale(9) translate(-33%,-3%)'
+	smk[3].style.opacity=0.5	
+	smk[3].style.transform='scale(9) translate(3%,-3%)'
+	
+     frz[0].style.left=Math.random()*77+'%'
+	 frz[0].style.top=Math.random()*77+'%'  
+	 
+	 frz[1].innerHTML='STOP IT!'
+	 
 	}
      else
 	{
@@ -221,7 +270,16 @@ o=
 	plnt[2].style.background='#f00'
 	plnt[3].style.background='#f00'
 	plnt[4].style.background='#f00'
-	cld[0].style.transform='scale(2) '
+	cld[0].style.transform='scale(4) '
+	cld[0].style.opacity=1
+	cld[2].style.transform='scale(1.5) '
+	cld[3].style.transform='scale(1.5) '
+	 cld[2].style.background='#f00'
+	 cld[3].style.background='#f00'
+	 cld[4].style.background='#f00'
+	 
+	 //frz[1].innerHTML=''
+	 
 	 smk[0].style.opacity=0
 	 smk[0].style.transform='scale(1)'
 	 smk[1].style.opacity=0
@@ -230,11 +288,7 @@ o=
 	o.bvbr=!o.bvbr 
  },  
  
-  clk:function()
- {  
-   
- },
-// 
+  
  
 }
         o.initplnt()
@@ -242,27 +296,38 @@ o=
     o.intr=setInterval(()=>{ o.vbr(); }, 999);
 	 
 btn[0].onmousedown=()=>
-{
+{ 
   if(o.intr!=0) 
   {
    clearInterval(o.intr)
 	  o.intr=0
 	   smk[0].style.opacity=0
 	   smk[1].style.opacity=0
+	   smk[2].style.opacity=0
+	   smk[3].style.opacity=0
 	   cld[0].style.transform='scale(0)'
 	   plnt[2].style.background='#000'
 	   plnt[3].style.background='#000'
 	   plnt[4].style.background='#000'
 	  btn[0].innerHTML='start'
+	  frz[0].style.opacity=0
+	  frz[1].style.opacity=0
+	  
    } else
    {
    o.intr=setInterval(()=>{ o.vbr(); }, 999);
     btn[0].innerHTML='stop'
+	 frz[0].style.opacity=1
+	 frz[1].style.opacity=1
    }   
       
 }
 
 
+plnt[0].onmousemove=()=>
+{
+ 
+}
 
 
 
