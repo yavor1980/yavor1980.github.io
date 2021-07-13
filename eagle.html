@@ -29,7 +29,7 @@ background: linear-gradient(5deg,#0a0,#a00);
 {
 position:absolute;
   background:blue;
-  opacity:;
+
 width:1%;
 height:2%;
  border-top-left-radius:55%;
@@ -37,15 +37,14 @@ height:2%;
  border-bottom-left-radius:55%;
  border-bottom-right-radius:55%;
  z-index:-1;  
- transition:4s;
- //border:4px solid red;
-
+ transition:2s;
+ 
 }
 
 .lwng
 {
  position:absolute;
- background:;
+ 
  border-top-left-radius:55%;
  border-top-right-radius:5%;
  border-bottom-left-radius:55%;
@@ -54,7 +53,6 @@ height:2%;
  height:122%; 
  
    transition:3s;
-  z-index:;  
     
 }
 .rwng
@@ -101,9 +99,9 @@ position:absolute;
    top:11%;
    border-radius:5%;
    opacity:0;
-   font-size:1em;
+   font-size:3em;
  transition:2s;
-  animation:  9s infinite;
+ 
   z-index:1;
 }
 
@@ -124,6 +122,7 @@ position:absolute;
  <div class=rwng ><div class=rwng ></div></div>
  
 </div>
+
 
  <div class=wrd>AQUILA</div> 
  <div class=wrd>NON</div>  
@@ -148,9 +147,8 @@ position:absolute;
 var eagl= 
  {
  
-  
    b:1, intr:0,
-   bst:0, 
+    bst:0, 
   init:function()
   {
      
@@ -159,16 +157,15 @@ var eagl=
 	 lwng[0].style.top='6%'  
 	 lwng[0].style.width='99%'
 	 lwng[0].style.height='122%'
-     lwng[0].style.zIndex=-1
+    
 	  
 	 lwng[1].style.background='radial-gradient(#444,#000)';
 	 lwng[1].style.left='-33%'
 	 lwng[1].style.top='0%'  
 	 lwng[1].style.width='99%'
 	 lwng[1].style.height='99%'
-     lwng[1].style.zIndex=-2
-	  
-		 
+     
+	 
 	 rwng[0].style.background='radial-gradient(#444,#000)';
      rwng[0].style.left='88%'
 	 rwng[0].style.top='6%'  
@@ -185,13 +182,13 @@ var eagl=
      
 	 hd[0].style.background='radial-gradient(#444,#000)';
      hd[0].style.left='18%'
-	 hd[0].style.top='-33%' 	 
+	 hd[0].style.top='-11%' 	 
      hd[0].style.width='66%'
 	 hd[0].style.height='66%' 
 	 hd[0].style.zIndex=1
-	 hd[1].style.background='radial-gradient(#888,#000)';
+	 hd[1].style.background='radial-gradient(#f60,#000)';
      hd[1].style.left='33%'
-	 hd[1].style.top='44%' 
+	 hd[1].style.top='33%' 
 	 hd[1].style.width='44%'
 	 hd[1].style.height='44%' 
 	 hd[2].style.background='radial-gradient(#ff0,#f00)'
@@ -204,7 +201,9 @@ var eagl=
 	 hd[3].style.top='17%' 
 	 hd[3].style.width='22%'
 	 hd[3].style.height='0%'
-     /* */
+	 
+	
+     
   },
   
   cl:function()
@@ -212,25 +211,23 @@ var eagl=
      
 	if(eagl.b)
     {	
-	// btn[0].innerHTML='Calm down'
+	
 	 eagle[0].style.transform='skew(11deg)'
 	  lwng[0].style.width='277%'	  
 	  lwng[0].style.height='144%'
 	  lwng[0].style.left='-222%'	  
 	  lwng[0].style.top='-19%'
-	  //lwng[0].style.transform='rotate(deg)'
+	  lwng[0].style.transform='translate(0,11%)'
 	  lwng[1].style.top='-22%'
-	  //lwng[1].style.transform='rotate(11deg)'
 	  	  
 	  rwng[0].style.width='277%'
 	  rwng[0].style.height='144%'
 	  rwng[0].style.left='44%'	  
-	  rwng[0].style.top='-19%'	  
-	 // rwng[0].style.transform='rotate(-11deg)'
+	  rwng[0].style.top='-19%'	 
 	  rwng[1].style.top='-22%'
-	  //rwng[1].style.transform='rotate(-11deg)'
 	  
-	  hd[0].style.transform='scale(2)'
+	  hd[0].style.transform='scale(2) rotate(11deg)'
+	  
 	  hd[2].style.height='22%'
 	  hd[3].style.height='22%'
 	  
@@ -263,16 +260,16 @@ var eagl=
 	  lwng[0].style.transform='rotate(0deg)'
 	  
 	  lwng[1].style.top='0%'
-	  lwng[1].style.transform='rotate(0deg)'
+	 
 	  
 	  rwng[0].style.width='99%'
 	  rwng[0].style.height='120%'
 	  rwng[0].style.left='89%'	  
 	  rwng[0].style.top='0%'	  
-	  rwng[0].style.transform='rotate(0deg)'
+	 
 	  
 	  rwng[1].style.top='0%'
-	  rwng[1].style.transform='rotate(0deg)'
+	  
 	  
 	  hd[0].style.transform='scale(1)'
       hd[2].style.height='0%'
@@ -339,10 +336,14 @@ var frz=
 		}
        		eagl.bst=!eagl.bst
     }		  
-	
-    	
+	 
+   eagle[0].onclick=()=>
+   {
       
-	  //
+   
+   }
+      
+
 	
 </script>
 </body>
