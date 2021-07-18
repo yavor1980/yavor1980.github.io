@@ -13,21 +13,19 @@
 background: radial-gradient(#222,#666);
 
 }
-
 .btn
 {
  position:absolute;   
  text-align:center;
-   cursor:pointer;
+  cursor:pointer;
  font-size:2em;
- color:#fff;
  
 }
 
 .fc
 {
  position:absolute;   
- transition:666ms;
+ transition:2222ms;
 }
 .gl
 {
@@ -66,9 +64,20 @@ position:absolute;
  background: #000;
  border-radius:0%;
  opacity:1;
- 
+ z-index:0;
 }
-
+.frz
+{
+transition:2s; 
+position:absolute;
+//background:green;
+ color:red;
+ font-size:5em;
+ left:11%;
+ top:33%;
+ opacity:0;
+ border-radius:55%;
+}
 
 </style>
 
@@ -81,38 +90,43 @@ position:absolute;
  <div class=gl  >
   <div class=gl  ></div>
  </div>
- 
  <div class=ns ><div class=ns ></div></div>
+ 
  <div class=mth >
-  <div class=mth ><div class=mth ></div></div>
+  <div class=mth >
+   <div class=mth ><div class=mth ></div></div>
    
+  </div> 
  </div>
  
- <div class=ears >
-  
- </div>
- <div class=ears ></div>
  
-
+<div class=ears >
+</div> 
+<div class=ears ></div>
 </div>
+
+
 <div class=smk >
  <div class=smk ></div>
- <div class=smk ><div class=smk ></div></div>
- 
+ <div class=smk ></div>
 </div>
 
-<button class=btn> inject</button>
+<div class=frz >FIRE TO EVERYONE</div>
 
+<button class=btn> FIRE</button>
 
 
 <script>
+   btn=document.getElementsByClassName('btn')
+
    fc=document.getElementsByClassName('fc')
    gl=document.getElementsByClassName('gl')
    ns=document.getElementsByClassName('ns')
    mth=document.getElementsByClassName('mth')
    ears=document.getElementsByClassName('ears')
+
    smk=document.getElementsByClassName('smk')
-   btn=document.getElementsByClassName('btn')
+   frz=document.getElementsByClassName('frz')
    
    
 s= 
@@ -122,7 +136,7 @@ s=
   init:function()
   {
      fc[0].style.background='radial-gradient(#aaa,#333)'
-	 fc[0].style.left=44+'%'
+	 fc[0].style.left=55+'%'
 	 fc[0].style.top=30+'%'  
      fc[0].style.width=+22+'%'
      fc[0].style.height=44+'%'
@@ -154,28 +168,28 @@ s=
 	 gl[0].style.top=17+'%'  
      gl[0].style.width=22+'%'
      gl[0].style.height=22+'%'
-	 gl[0].style.transition='5s'
+	 gl[0].style.transition='2s'
 	 
      gl[1].style.background='#000';
      gl[1].style.left=33+'%'
 	 gl[1].style.top=33+'%'  
      gl[1].style.width=33+'%'
      gl[1].style.height=33+'%'
-	 gl[1].style.transition='5s'
+	 gl[1].style.transition='2s'
 	
 	 gl[2].style.background='#fff'
 	 gl[2].style.left=66+'%'
 	 gl[2].style.top=17+'%'  
      gl[2].style.width=22+'%'
      gl[2].style.height=22+'%'
-	 gl[2].style.transition='5s'
+	 gl[2].style.transition='2s'
 	 
      gl[3].style.background='#000';
      gl[3].style.left=33+'%'
 	 gl[3].style.top=33+'%'  
      gl[3].style.width=33+'%'
      gl[3].style.height=33+'%'
-	 gl[3].style.transition='5s'
+	 gl[3].style.transition='2s'
 	
 	 ns[0].style.left=38+'%'	
      ns[0].style.top=22+'%'	
@@ -201,12 +215,21 @@ s=
 	 mth[1].style.width=77+'%'	
 	 mth[1].style.background='#000'
 	 
-	 mth[2].style.left=33+'%'	
-     mth[2].style.top=44+'%'	
-	 mth[2].style.height=11+'%'	
-	 mth[2].style.width=44+'%'	
-	 mth[2].style.background='#f00'
-
+	 mth[2].style.left=55+'%'	
+     mth[2].style.top=-333+'%'	
+	 mth[2].style.height=444+'%'	
+	 mth[2].style.width=111+'%'	
+	 mth[2].style.background='radial-gradient(#070,#333)'
+     mth[2].style.transform='rotate(-9deg)'
+	 mth[2].style.borderTopRightRadius='5%'
+	 mth[2].style.borderBottomRightRadius='5%'
+	 
+	 mth[3].style.left=99+'%'	
+     mth[3].style.top=0+'%'	
+	 mth[3].style.height=111+'%'	
+	 mth[3].style.width=11+'%'	
+	 mth[3].style.background='red'
+ 
  
      ears[0].style.background='radial-gradient(#777,#333)'
      ears[0].style.left=-9+'%'
@@ -221,12 +244,12 @@ s=
 	 ears[1].style.top=29+'%'  
      ears[1].style.width=11+'%'
      ears[1].style.height=22+'%'  
-	 ears[1].style.transition='4s' 
+	 ears[1].style.transition='2s' 
 	 ears[1].style.zIndex=-1
 	 
 	 smk[0].style.background='radial-gradient(#f00,#333)'
-     smk[0].style.left=9+'%'
-	 smk[0].style.top=33+'%'  
+     smk[0].style.left=22+'%'
+	 smk[0].style.top=66+'%'  
      smk[0].style.width=11+'%'
      smk[0].style.height=22+'%' 
 	 smk[0].style.borderTopLeftRadius=44+'%'
@@ -241,19 +264,20 @@ s=
      smk[1].style.height=44+'%'  
 	 smk[1].style.zIndex=-2
 	 
-	 smk[2].style.background='#333'
-	 smk[2].style.left=99+'%'
-	 smk[2].style.top=-44+'%'  
-     smk[2].style.width=333+'%'
-     smk[2].style.height=88+'%'
-     smk[2].style.borderTopLeftRadius=55+'%'
-	 smk[2].style.borderTopRightRadius=11+'%'
+	 smk[2].style.background='#f00'
+	 smk[2].style.left=-9+'%'
+	 smk[2].style.top=-133+'%'  
+     smk[2].style.width=111+'%'
+     smk[2].style.height=111+'%'
+     smk[2].style.borderTopLeftRadius=44+'%'
+	 smk[2].style.borderTopRightRadius=66+'%'
 	 smk[2].style.borderBottomLeftRadius=55+'%'
-	 smk[2].style.borderBottomRightRadius=11+'%'
+	 smk[2].style.borderBottomRightRadius=33+'%'
 	 smk[2].style.opacity=0
 	
 	
      btn[0].style.background='#700'
+	 btn[0].style.color='#fff'
      btn[0].style.left=9+'%'
 	 btn[0].style.top=9+'%'  
      btn[0].style.width=11+'%'
@@ -267,43 +291,63 @@ s=
   
   cl:function()
  { 
-  if(s.bs)
+  if(s.bs){
    fc[0].style.transform='scale(0.9)'
-     else
+   fc[1].style.transform='scale(0.8)'
+   fc[2].style.transform='scale(0.8)'
+   gl[1].style.transform='scale(0.9)'
+   gl[3].style.transform='scale(0.9)'
+    smk[0].style.transform='scale(1.1)'
+	frz[0].style.transform='scale(1.1)'
+    }
+     else{
    fc[0].style.transform='scale(1.1)'
+   fc[1].style.transform='scale(1.2)'
+   fc[2].style.transform='scale(1.2)'
+   gl[1].style.transform='scale(2)'
+   gl[3].style.transform='scale(2)'
+    smk[0].style.transform='scale(0.9)'
+	frz[0].style.transform='scale(0.9)'
+    }
      s.bs=!s.bs
    
  },
  clk:function()
  { 
   
-  s.r=Math.round(Math.random()*8)
-  s.g=Math.round(Math.random()*8)
-  s.b=Math.round(Math.random()*8)
-    
-    fc[1].style.background=
-    	'#'+s.r+s.g+s.b
-	fc[2].style.background=
-	 '#'+s.r+s.g+s.b
-   smk[2].style.background=
-    	'#'+s.r+s.g+s.b
-  smk[2].style.opacity=0.7
+  //s.r=Math.round(Math.random()*8)
+ // s.g=Math.round(Math.random()*8)
+ // s.b=Math.round(Math.random()*8)
+   frz[0].style.opacity=0.9
+   smk[2].style.opacity=0.9
   
-  setTimeout(()=>{smk[2].style.opacity=0;}, 888)
-  setTimeout(()=>{smk[2].style.opacity=0;}, 888)
+  setTimeout(()=>{smk[2].style.opacity=0;
+     
+   }, 1111)
+  
      
  },
 
 }
      s.init()
 
-    setInterval(()=>{ s.cl();  }, 666)
+    setInterval(()=>{ s.cl();   }, 2222)
 
 
 btn[0].onclick=()=>{   
   
    s.clk();
-   // 
+  
+}
+fc[0].onmousemove=()=>{   
+  
+   fc[0].style.transform='scale(1.6)'
+  
+}
+fc[0].onmouseout=()=>{   
+  
+   fc[0].style.transform='scale(1)'
+  
 }
 
 
